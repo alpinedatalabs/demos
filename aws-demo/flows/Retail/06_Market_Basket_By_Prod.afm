@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Process Description="" UserName="hfarinas" Version="3.0">
+<Operator X="136" Y="150" name="alp_pivot_by_product" type="com.alpine.miner.gef.runoperator.datasource.DbTableOperator" uuid="1295935247647_0">
+<Parameter key="dbConnectionName" value="aws-retail"/>
+<Parameter key="schemaName" value="public"/>
+<Parameter key="tableName" value="alp_pivot_by_product"/>
+<Parameter key="userName" value="miner_demo"/>
+<Parameter key="url" value="jdbc:postgresql://50.18.43.89:5432/retail"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+</Operator>
+<Operator X="362" Y="146" name="Association" type="com.alpine.miner.gef.runoperator.association.AssociationOperator" uuid="1337986997681">
+<Parameter key="minSupport" value="0.35"/>
+<Parameter key="tableSizeThreshold" value="10000000"/>
+<Parameter key="minConfidence" value="0.8"/>
+<Parameter key="useArray" value="false"/>
+<Parameter key="outputSchema" value="ddemo"/>
+<Parameter key="outputTable" value="alp_assoc_prod"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<Parameter key="columnNames" value="product_name_Alex Toys My Giant Busy Box,product_name_B. Zany Zoo,product_name_Baby Ballet,product_name_Baby Einstein - Discovering Shapes,product_name_Baby Einstein - Neighborhood Animals,product_name_Baby Einstein - Numbers Nursery,product_name_Baby Einstein: My First Signs,product_name_Baby Signing Time Volume 2 DVD,product_name_Baby Songs: Original,product_name_Barbie Fab Fashion Case 32 Piece Make-up Set,product_name_Blokus Classics Game,product_name_Blokus Duo Game,product_name_Bop It,product_name_Breyer Stablemates Pick - Up Truck and Gooseneck T,product_name_Calico Critters Deluxe Kitchen Set,product_name_Calico Critters Norwood Mouse Family,product_name_Christmas Story Strand Of Leg Holiday Lights,product_name_Crayola 240 Sheet Construction Paper,product_name_Enchantmints Ballet School Music Box,product_name_Hasbro Playskool Lullaby Gloworm,product_name_Home Improvement - The Complete Third Season,product_name_I Love Lucy - The Complete Third Season,product_name_ICarly Megabyte Mic Microphone,product_name_IQ Baby Knock-Knock Blocks,product_name_IQ Baby Zoom Zoom Vehicles,product_name_Icarly: Ispace Out,product_name_Invictus,product_name_It Might Get Loud,product_name_Its Always Sunny In Philadelphia: Season 4,product_name_Jack''s Big Music Show: Let''s Rock,product_name_LeapFrog Leapster Learning Game Disney Princess,product_name_LeapFrog Leapster Learning Game Scholastic My Amus,product_name_LeapFrog Leapster Messenger Bag,product_name_LeapFrog Learning Baby Tad,product_name_Leapfrog Counting Candles Birthday Cake,product_name_Little Mommy Baby Ah-Choo Doll,product_name_My Sister''s Keeper,product_name_No Country for Old Men,product_name_Olivia: Olivia Takes Ballet,product_name_Ravensburger Fairytale Ballet - 60 Piece Puzzle,product_name_Sesame Street - Elmo Visits the Firehouse,product_name_Sesame Street - Learning About Letters,product_name_Sesame Street Presents: Follow That Bird,product_name_Sesame Street: Abby in Wonderland"/>
+<Expression expression="=" positiveValue="1"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.43.89:5432/retail"/>
+<Parameter key="schema" value="public"/>
+<Parameter key="table" value="alp_pivot_by_product"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="customer_id" type="INTEGER"/>
+<Field name="product_name_Sesame Street Presents: Follow That Bird" type="DOUBLE PRECISION"/>
+<Field name="product_name_Sesame Street - Learning About Letters" type="DOUBLE PRECISION"/>
+<Field name="product_name_Sesame Street - Elmo Visits the Firehouse" type="DOUBLE PRECISION"/>
+<Field name="product_name_Sesame Street: Abby in Wonderland" type="DOUBLE PRECISION"/>
+<Field name="product_name_Ravensburger Fairytale Ballet - 60 Piece Puzzle" type="DOUBLE PRECISION"/>
+<Field name="product_name_Olivia: Olivia Takes Ballet" type="DOUBLE PRECISION"/>
+<Field name="product_name_No Country for Old Men" type="DOUBLE PRECISION"/>
+<Field name="product_name_New York City Ballet: The Complete Workout, Vol. 1" type="DOUBLE PRECISION"/>
+<Field name="product_name_My Sister''s Keeper" type="DOUBLE PRECISION"/>
+<Field name="product_name_Little Mommy Baby Ah-Choo Doll" type="DOUBLE PRECISION"/>
+<Field name="product_name_LeapFrog Learning Baby Tad" type="DOUBLE PRECISION"/>
+<Field name="product_name_LeapFrog Leapster Messenger Bag" type="DOUBLE PRECISION"/>
+<Field name="product_name_LeapFrog Leapster Learning Game Scholastic My Amus" type="DOUBLE PRECISION"/>
+<Field name="product_name_LeapFrog Leapster Learning Game Disney Princess" type="DOUBLE PRECISION"/>
+<Field name="product_name_Leapfrog Counting Candles Birthday Cake" type="DOUBLE PRECISION"/>
+<Field name="product_name_Jack''s Big Music Show: Let''s Rock" type="DOUBLE PRECISION"/>
+<Field name="product_name_Its Always Sunny In Philadelphia: Season 4" type="DOUBLE PRECISION"/>
+<Field name="product_name_It Might Get Loud" type="DOUBLE PRECISION"/>
+<Field name="product_name_IQ Baby Zoom Zoom Vehicles" type="DOUBLE PRECISION"/>
+<Field name="product_name_IQ Baby Knock-Knock Blocks" type="DOUBLE PRECISION"/>
+<Field name="product_name_Invictus" type="DOUBLE PRECISION"/>
+<Field name="product_name_I Love Lucy - The Complete Third Season" type="DOUBLE PRECISION"/>
+<Field name="product_name_ICarly Megabyte Mic Microphone" type="DOUBLE PRECISION"/>
+<Field name="product_name_Icarly: Ispace Out" type="DOUBLE PRECISION"/>
+<Field name="product_name_Home Improvement - The Complete Third Season" type="DOUBLE PRECISION"/>
+<Field name="product_name_Hasbro Playskool Lullaby Gloworm" type="DOUBLE PRECISION"/>
+<Field name="product_name_Enchantmints Ballet School Music Box" type="DOUBLE PRECISION"/>
+<Field name="product_name_Crayola 240 Sheet Construction Paper" type="DOUBLE PRECISION"/>
+<Field name="product_name_Christmas Story Strand Of Leg Holiday Lights" type="DOUBLE PRECISION"/>
+<Field name="product_name_Calico Critters Norwood Mouse Family" type="DOUBLE PRECISION"/>
+<Field name="product_name_Calico Critters Deluxe Kitchen Set" type="DOUBLE PRECISION"/>
+<Field name="product_name_B. Zany Zoo" type="DOUBLE PRECISION"/>
+<Field name="product_name_Breyer Stablemates Pick - Up Truck and Gooseneck T" type="DOUBLE PRECISION"/>
+<Field name="product_name_Bop It" type="DOUBLE PRECISION"/>
+<Field name="product_name_Blokus Duo Game" type="DOUBLE PRECISION"/>
+<Field name="product_name_Blokus Classics Game" type="DOUBLE PRECISION"/>
+<Field name="product_name_Barbie Fab Fashion Case 32 Piece Make-up Set" type="DOUBLE PRECISION"/>
+<Field name="product_name_Baby Songs: Original" type="DOUBLE PRECISION"/>
+<Field name="product_name_Baby Signing Time Volume 2 DVD" type="DOUBLE PRECISION"/>
+<Field name="product_name_Baby Einstein - Numbers Nursery" type="DOUBLE PRECISION"/>
+<Field name="product_name_Baby Einstein - Neighborhood Animals" type="DOUBLE PRECISION"/>
+<Field name="product_name_Baby Einstein: My First Signs" type="DOUBLE PRECISION"/>
+<Field name="product_name_Baby Einstein - Discovering Shapes" type="DOUBLE PRECISION"/>
+<Field name="product_name_Baby Ballet" type="DOUBLE PRECISION"/>
+<Field name="product_name_Aurora Plush 10&quot; Mei, Aurora Babies Baby Panda" type="DOUBLE PRECISION"/>
+<Field name="product_name_Alex Toys My Giant Busy Box" type="DOUBLE PRECISION"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Link source="alp_pivot_by_product" target="Association"/>
+<VariableModel>
+<Variable>
+<Name>@default_schema</Name>
+<Value>public</Value>
+</Variable>
+<Variable>
+<Name>@default_prefix</Name>
+<Value>alp</Value>
+</Variable>
+</VariableModel>
+</Process>

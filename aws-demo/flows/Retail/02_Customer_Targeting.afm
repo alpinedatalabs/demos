@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Process Description="" UserName="hfarinas" Version="3.0">
+<Operator X="3" Y="12" name="campaign exposure" type="com.alpine.miner.gef.runoperator.datasource.DbTableOperator" uuid="1294779778128">
+<Parameter key="dbConnectionName" value="aws-retail"/>
+<Parameter key="schemaName" value="public"/>
+<Parameter key="tableName" value="ap_camp_exposure"/>
+<Parameter key="userName" value="miner_demo"/>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+</Operator>
+<Operator X="20" Y="108" name="demographics" type="com.alpine.miner.gef.runoperator.datasource.DbTableOperator" uuid="1294779800006">
+<Parameter key="dbConnectionName" value="aws-retail"/>
+<Parameter key="schemaName" value="ddemo"/>
+<Parameter key="tableName" value="customer_demographics"/>
+<Parameter key="userName" value="miner_demo"/>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+</Operator>
+<Operator X="150" Y="61" name="camp_and_demog" type="com.alpine.miner.gef.runoperator.datasource.TableJoinOperator" uuid="1294779812160">
+<Parameter key="createSequenceID" value="No"/>
+<Parameter key="outputType" value="TABLE"/>
+<Parameter key="outputSchema" value="public"/>
+<Parameter key="outputTable" value="ap_camp_and_demog"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<TableJoinDefinition>
+<JoinTableModel alias="exp" operID="1294779778128" schema="public" table="ap_camp_exposure"/>
+<JoinTableModel alias="demog" operID="1294779800006" schema="ddemo" table="customer_demographics"/>
+<JoinColumnModel columnName="customer_id" columnType="INTEGER" newColumnName="demog_customer_id" tableAlias="demog"/>
+<JoinColumnModel columnName="city" columnType="CHARACTER VARYING(200)" newColumnName="city" tableAlias="demog"/>
+<JoinColumnModel columnName="state_code" columnType="CHARACTER VARYING(2)" newColumnName="state_code" tableAlias="demog"/>
+<JoinColumnModel columnName="country" columnType="CHARACTER VARYING(10)" newColumnName="country" tableAlias="demog"/>
+<JoinColumnModel columnName="customer_gender" columnType="CHAR" newColumnName="customer_gender" tableAlias="demog"/>
+<JoinColumnModel columnName="customer_age" columnType="INTEGER" newColumnName="customer_age" tableAlias="demog"/>
+<JoinColumnModel columnName="frequent_shopper_class" columnType="CHAR" newColumnName="frequent_shopper_class" tableAlias="demog"/>
+<JoinColumnModel columnName="tenure_with_company_in_years" columnType="INTEGER" newColumnName="tenure_with_company_in_years" tableAlias="demog"/>
+<JoinColumnModel columnName="parent" columnType="CHAR" newColumnName="parent" tableAlias="demog"/>
+<JoinColumnModel columnName="multiple_kids" columnType="CHAR" newColumnName="multiple_kids" tableAlias="demog"/>
+<JoinColumnModel columnName="student" columnType="CHAR" newColumnName="student" tableAlias="demog"/>
+<JoinColumnModel columnName="innovation_adapter_category" columnType="CHARACTER VARYING(50)" newColumnName="innovation_adapter_category" tableAlias="demog"/>
+<JoinColumnModel columnName="fashion_buying_category" columnType="CHARACTER VARYING(10)" newColumnName="fashion_buying_category" tableAlias="demog"/>
+<JoinColumnModel columnName="campaign_id_2008 November - Big DVD Sales Event" columnType="INTEGER" newColumnName="campaign_id_2008 November - Big DVD Sales Event" tableAlias="exp"/>
+<JoinColumnModel columnName="campaign_id_2008 June - Big DVD Sales Event" columnType="INTEGER" newColumnName="campaign_id_2008 June - Big DVD Sales Event" tableAlias="exp"/>
+<JoinColumnModel columnName="campaign_id_2008 January - Big DVD Sales Event" columnType="INTEGER" newColumnName="campaign_id_2008 January - Big DVD Sales Event" tableAlias="exp"/>
+<JoinColumnModel columnName="campaign_id_2008 August - Big DVD Sales Event" columnType="INTEGER" newColumnName="campaign_id_2008 August - Big DVD Sales Event" tableAlias="exp"/>
+<JoinColumnModel columnName="campaign_id_2007 January - Big DVD Sales Event" columnType="INTEGER" newColumnName="campaign_id_2007 January - Big DVD Sales Event" tableAlias="exp"/>
+<JoinColumnModel columnName="campaign_id_2006 April - DVD  30 Prct Discount Event" columnType="INTEGER" newColumnName="campaign_id_2006 April - DVD  30 Prct Discount Event" tableAlias="exp"/>
+<JoinColumnModel columnName="campaign_id_2005 July - Big DVD Sales Event" columnType="INTEGER" newColumnName="campaign_id_2005 July - Big DVD Sales Event" tableAlias="exp"/>
+<JoinColumnModel columnName="campaign_id_2005 January - DVD  10 Prct Discount Event" columnType="INTEGER" newColumnName="campaign_id_2005 January - DVD  10 Prct Discount Event" tableAlias="exp"/>
+<JoinConditionModel andOr="" column1="&quot;exp&quot;.&quot;customer_id&quot;" column2="&quot;demog&quot;.&quot;customer_id&quot;" condition="=" joinType="RIGHT JOIN" tableAlias1="exp" tableAlias2="demog"/>
+</TableJoinDefinition>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="schema" value="public"/>
+<Parameter key="table" value="ap_camp_exposure"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="customer_id" type="INTEGER"/>
+<Field name="campaign_id_2008 November - Big DVD Sales Event" type="DOUBLE PRECISION"/>
+<Field name="campaign_id_2008 June - Big DVD Sales Event" type="DOUBLE PRECISION"/>
+<Field name="campaign_id_2008 January - Big DVD Sales Event" type="DOUBLE PRECISION"/>
+<Field name="campaign_id_2008 August - Big DVD Sales Event" type="DOUBLE PRECISION"/>
+<Field name="campaign_id_2007 January - Big DVD Sales Event" type="DOUBLE PRECISION"/>
+<Field name="campaign_id_2006 April - DVD  30 Prct Discount Event" type="DOUBLE PRECISION"/>
+<Field name="campaign_id_2005 July - Big DVD Sales Event" type="DOUBLE PRECISION"/>
+<Field name="campaign_id_2005 January - DVD  10 Prct Discount Event" type="DOUBLE PRECISION"/>
+</Fields>
+</InPutFieldList>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="schema" value="ddemo"/>
+<Parameter key="table" value="customer_demographics"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="customer_id" type="INTEGER"/>
+<Field name="city" type="CHARACTER VARYING(200)"/>
+<Field name="state_code" type="CHARACTER VARYING(2)"/>
+<Field name="country" type="CHARACTER VARYING(10)"/>
+<Field name="customer_gender" type="CHAR"/>
+<Field name="customer_age" type="INTEGER"/>
+<Field name="frequent_shopper_class" type="CHAR"/>
+<Field name="tenure_with_company_in_years" type="INTEGER"/>
+<Field name="parent" type="CHAR"/>
+<Field name="multiple_kids" type="CHAR"/>
+<Field name="student" type="CHAR"/>
+<Field name="innovation_adapter_category" type="CHARACTER VARYING(50)"/>
+<Field name="fashion_buying_category" type="CHARACTER VARYING(10)"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="484" Y="114" name="sampling" type="com.alpine.miner.gef.runoperator.sampling.RandomSamplingOperator" uuid="1294779857801">
+<Parameter key="sampleCount" value="2"/>
+<Parameter key="sampleSizeType" value="Row"/>
+<Parameter key="sampleSize" value="100000"/>
+<Parameter key="disjoint" value="true"/>
+<Parameter key="outputSchema" value="public"/>
+<Parameter key="outputTable" value="ap_rand_total"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="schema" value="public"/>
+<Parameter key="table" value="ap_dep_var_added"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="demog_customer_id" type="INTEGER"/>
+<Field name="city" type="CHARACTER VARYING(200)"/>
+<Field name="state_code" type="CHARACTER VARYING(2)"/>
+<Field name="country" type="CHARACTER VARYING(10)"/>
+<Field name="customer_gender" type="CHAR"/>
+<Field name="customer_age" type="INTEGER"/>
+<Field name="frequent_shopper_class" type="CHAR"/>
+<Field name="tenure_with_company_in_years" type="INTEGER"/>
+<Field name="parent" type="CHAR"/>
+<Field name="multiple_kids" type="CHAR"/>
+<Field name="student" type="CHAR"/>
+<Field name="innovation_adapter_category" type="CHARACTER VARYING(50)"/>
+<Field name="fashion_buying_category" type="CHARACTER VARYING(10)"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+<Field name="quantity_sold" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_Nov" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_June" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_Jan" type="BIGINT"/>
+<Field name="DVD_Campaign_2006_April" type="BIGINT"/>
+<Field name="DVD_Campaign_2005_July" type="BIGINT"/>
+<Field name="DVD_Campaign_2005_Jan" type="BIGINT"/>
+<Field name="customer_age_bin" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="584" Y="114" name="training set" type="com.alpine.miner.gef.runoperator.sampling.SampleSelectorOperator" uuid="1294779860123">
+<Parameter key="selectedTable" value="public.ap_rand_total_0"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="schema" value="public"/>
+<Parameter key="table" value="ap_rand_total_0"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="demog_customer_id" type="INTEGER"/>
+<Field name="city" type="CHARACTER VARYING(200)"/>
+<Field name="state_code" type="CHARACTER VARYING(2)"/>
+<Field name="country" type="CHARACTER VARYING(10)"/>
+<Field name="customer_gender" type="CHAR"/>
+<Field name="customer_age" type="INTEGER"/>
+<Field name="frequent_shopper_class" type="CHAR"/>
+<Field name="tenure_with_company_in_years" type="INTEGER"/>
+<Field name="parent" type="CHAR"/>
+<Field name="multiple_kids" type="CHAR"/>
+<Field name="student" type="CHAR"/>
+<Field name="innovation_adapter_category" type="CHARACTER VARYING(50)"/>
+<Field name="fashion_buying_category" type="CHARACTER VARYING(10)"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+<Field name="quantity_sold" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_Nov" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_June" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_Jan" type="BIGINT"/>
+<Field name="DVD_Campaign_2006_April" type="BIGINT"/>
+<Field name="DVD_Campaign_2005_July" type="BIGINT"/>
+<Field name="DVD_Campaign_2005_Jan" type="BIGINT"/>
+<Field name="customer_age_bin" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="schema" value="public"/>
+<Parameter key="table" value="ap_rand_total_1"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="demog_customer_id" type="INTEGER"/>
+<Field name="city" type="CHARACTER VARYING(200)"/>
+<Field name="state_code" type="CHARACTER VARYING(2)"/>
+<Field name="country" type="CHARACTER VARYING(10)"/>
+<Field name="customer_gender" type="CHAR"/>
+<Field name="customer_age" type="INTEGER"/>
+<Field name="frequent_shopper_class" type="CHAR"/>
+<Field name="tenure_with_company_in_years" type="INTEGER"/>
+<Field name="parent" type="CHAR"/>
+<Field name="multiple_kids" type="CHAR"/>
+<Field name="student" type="CHAR"/>
+<Field name="innovation_adapter_category" type="CHARACTER VARYING(50)"/>
+<Field name="fashion_buying_category" type="CHARACTER VARYING(10)"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+<Field name="quantity_sold" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_Nov" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_June" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_Jan" type="BIGINT"/>
+<Field name="DVD_Campaign_2006_April" type="BIGINT"/>
+<Field name="DVD_Campaign_2005_July" type="BIGINT"/>
+<Field name="DVD_Campaign_2005_Jan" type="BIGINT"/>
+<Field name="customer_age_bin" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="404" Y="208" name="test set" type="com.alpine.miner.gef.runoperator.sampling.SampleSelectorOperator" uuid="1294779893177">
+<Parameter key="selectedTable" value="public.ap_rand_total_1"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="schema" value="public"/>
+<Parameter key="table" value="ap_rand_total_0"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="demog_customer_id" type="INTEGER"/>
+<Field name="city" type="CHARACTER VARYING(200)"/>
+<Field name="state_code" type="CHARACTER VARYING(2)"/>
+<Field name="country" type="CHARACTER VARYING(10)"/>
+<Field name="customer_gender" type="CHAR"/>
+<Field name="customer_age" type="INTEGER"/>
+<Field name="frequent_shopper_class" type="CHAR"/>
+<Field name="tenure_with_company_in_years" type="INTEGER"/>
+<Field name="parent" type="CHAR"/>
+<Field name="multiple_kids" type="CHAR"/>
+<Field name="student" type="CHAR"/>
+<Field name="innovation_adapter_category" type="CHARACTER VARYING(50)"/>
+<Field name="fashion_buying_category" type="CHARACTER VARYING(10)"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+<Field name="quantity_sold" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_Nov" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_June" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_Jan" type="BIGINT"/>
+<Field name="DVD_Campaign_2006_April" type="BIGINT"/>
+<Field name="DVD_Campaign_2005_July" type="BIGINT"/>
+<Field name="DVD_Campaign_2005_Jan" type="BIGINT"/>
+<Field name="customer_age_bin" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="schema" value="public"/>
+<Parameter key="table" value="ap_rand_total_1"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="demog_customer_id" type="INTEGER"/>
+<Field name="city" type="CHARACTER VARYING(200)"/>
+<Field name="state_code" type="CHARACTER VARYING(2)"/>
+<Field name="country" type="CHARACTER VARYING(10)"/>
+<Field name="customer_gender" type="CHAR"/>
+<Field name="customer_age" type="INTEGER"/>
+<Field name="frequent_shopper_class" type="CHAR"/>
+<Field name="tenure_with_company_in_years" type="INTEGER"/>
+<Field name="parent" type="CHAR"/>
+<Field name="multiple_kids" type="CHAR"/>
+<Field name="student" type="CHAR"/>
+<Field name="innovation_adapter_category" type="CHARACTER VARYING(50)"/>
+<Field name="fashion_buying_category" type="CHARACTER VARYING(10)"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+<Field name="quantity_sold" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_Nov" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_June" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_Jan" type="BIGINT"/>
+<Field name="DVD_Campaign_2006_April" type="BIGINT"/>
+<Field name="DVD_Campaign_2005_July" type="BIGINT"/>
+<Field name="DVD_Campaign_2005_Jan" type="BIGINT"/>
+<Field name="customer_age_bin" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="9" Y="351" name="order lineitem" type="com.alpine.miner.gef.runoperator.datasource.DbTableOperator" uuid="1294779964596">
+<Parameter key="dbConnectionName" value="aws-retail"/>
+<Parameter key="schemaName" value="ddemo"/>
+<Parameter key="tableName" value="order_lineitems"/>
+<Parameter key="userName" value="miner_demo"/>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+</Operator>
+<Operator X="141" Y="353" name="agg by cust by categ" type="com.alpine.miner.gef.runoperator.field.AggregateOperator" uuid="1294779998568">
+<Parameter key="outputType" value="TABLE"/>
+<Parameter key="outputSchema" value="public"/>
+<Parameter key="outputTable" value="ap_order_by_custID_categID"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<AggregateFieldsModel>
+<groupBy columnName="customer_id"/>
+<groupBy columnName="product_category_id"/>
+<parentFieldList columnName="order_id"/>
+<parentFieldList columnName="order_item_id"/>
+<parentFieldList columnName="product_id"/>
+<parentFieldList columnName="product_name"/>
+<parentFieldList columnName="customer_id"/>
+<parentFieldList columnName="store_id"/>
+<parentFieldList columnName="item_shipment_status_code"/>
+<parentFieldList columnName="order_datetime"/>
+<parentFieldList columnName="ship_datetime"/>
+<parentFieldList columnName="item_return_datetime"/>
+<parentFieldList columnName="item_refund_datetime"/>
+<parentFieldList columnName="product_category_id"/>
+<parentFieldList columnName="product_category_name"/>
+<parentFieldList columnName="payment_method_code"/>
+<parentFieldList columnName="tax_amount"/>
+<parentFieldList columnName="item_quantity"/>
+<parentFieldList columnName="item_price"/>
+<parentFieldList columnName="discount_amount"/>
+<parentFieldList columnName="coupon_code"/>
+<parentFieldList columnName="coupon_amount"/>
+<parentFieldList columnName="ship_address_line1"/>
+<parentFieldList columnName="ship_address_line2"/>
+<parentFieldList columnName="ship_address_line3"/>
+<parentFieldList columnName="ship_address_city"/>
+<parentFieldList columnName="ship_address_state"/>
+<parentFieldList columnName="ship_address_postal_code"/>
+<parentFieldList columnName="ship_address_country"/>
+<parentFieldList columnName="ship_phone_number"/>
+<parentFieldList columnName="ship_customer_name"/>
+<parentFieldList columnName="ship_customer_email_address"/>
+<parentFieldList columnName="ordering_session_id"/>
+<parentFieldList columnName="website_url"/>
+<AggregateField columnName="sum(item_quantity)" dataType="DOUBLE PRECISION" expression="sum(&quot;item_quantity&quot;)"/>
+</AggregateFieldsModel>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="schema" value="ddemo"/>
+<Parameter key="table" value="order_lineitems"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="order_id" type="CHARACTER VARYING(20)"/>
+<Field name="order_item_id" type="INTEGER"/>
+<Field name="product_id" type="INTEGER"/>
+<Field name="product_name" type="CHARACTER VARYING(500)"/>
+<Field name="customer_id" type="INTEGER"/>
+<Field name="store_id" type="INTEGER"/>
+<Field name="item_shipment_status_code" type="CHARACTER VARYING(30)"/>
+<Field name="order_datetime" type="TIMESTAMP"/>
+<Field name="ship_datetime" type="TIMESTAMP"/>
+<Field name="item_return_datetime" type="TIMESTAMP"/>
+<Field name="item_refund_datetime" type="TIMESTAMP"/>
+<Field name="product_category_id" type="INTEGER"/>
+<Field name="product_category_name" type="CHARACTER VARYING(200)"/>
+<Field name="payment_method_code" type="CHARACTER VARYING(20)"/>
+<Field name="tax_amount" type="NUMERIC(10,5)"/>
+<Field name="item_quantity" type="INTEGER"/>
+<Field name="item_price" type="NUMERIC(10,2)"/>
+<Field name="discount_amount" type="NUMERIC(10,5)"/>
+<Field name="coupon_code" type="CHARACTER VARYING(20)"/>
+<Field name="coupon_amount" type="NUMERIC(10,5)"/>
+<Field name="ship_address_line1" type="CHARACTER VARYING(200)"/>
+<Field name="ship_address_line2" type="CHARACTER VARYING(200)"/>
+<Field name="ship_address_line3" type="CHARACTER VARYING(200)"/>
+<Field name="ship_address_city" type="CHARACTER VARYING(200)"/>
+<Field name="ship_address_state" type="CHARACTER VARYING(200)"/>
+<Field name="ship_address_postal_code" type="CHARACTER VARYING(20)"/>
+<Field name="ship_address_country" type="CHARACTER VARYING(200)"/>
+<Field name="ship_phone_number" type="CHARACTER VARYING(20)"/>
+<Field name="ship_customer_name" type="CHARACTER VARYING(200)"/>
+<Field name="ship_customer_email_address" type="CHARACTER VARYING(200)"/>
+<Field name="ordering_session_id" type="CHARACTER VARYING(20)"/>
+<Field name="website_url" type="CHARACTER VARYING(500)"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="252" Y="293" name="just dvd" type="com.alpine.miner.gef.runoperator.field.FilterOperator" uuid="1294780176478">
+<Parameter key="whereClause" value="product_category_id=29"/>
+<Parameter key="outputType" value="TABLE"/>
+<Parameter key="outputSchema" value="public"/>
+<Parameter key="outputTable" value="ap_order_by_cust_for_dvd"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="schema" value="public"/>
+<Parameter key="table" value="ap_order_by_custID_categID"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="customer_id" type="INTEGER"/>
+<Field name="product_category_id" type="INTEGER"/>
+<Field name="sum(item_quantity)" type="DOUBLE PRECISION"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="245" Y="192" name="Normalized" type="com.alpine.miner.gef.runoperator.field.VariableOperator" uuid="1294780205577">
+<Parameter key="outputType" value="TABLE"/>
+<Parameter key="outputSchema" value="public"/>
+<Parameter key="outputTable" value="ap_order_by_categ_normalized"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<QuantileModel>
+<QuantileItem columnName="sum(item_quantity)" isCreateNewColumn="true" newColumnName="sum(item_quantity)_bin" numberOfBin="2" quantileType="0">
+<QuantileItemBinNumeric binIndex="1" binType="0" endTo="1.0" startFrom="0.0" values=""/>
+<QuantileItemBinNumeric binIndex="2" binType="0" endTo="1000.0" startFrom="1.0" values=""/>
+</QuantileItem>
+</QuantileModel>
+<DerivedFieldsModel>
+<selectedColumnName columnName="sum(item_quantity)"/>
+<selectedColumnName columnName="customer_id"/>
+<selectedColumnName columnName="customer_id"/>
+<selectedColumnName columnName="product_category_id"/>
+<selectedColumnName columnName="product_category_id"/>
+</DerivedFieldsModel>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="schema" value="public"/>
+<Parameter key="table" value="alp_cust_with_order"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="product_category_id" type="INTEGER"/>
+<Field name="sum(item_quantity)" type="DOUBLE PRECISION"/>
+<Field name="customer_id" type="SERIAL"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="281" Y="116" name="cust target data" type="com.alpine.miner.gef.runoperator.datasource.TableJoinOperator" uuid="1294780648574">
+<Parameter key="createSequenceID" value="No"/>
+<Parameter key="outputType" value="TABLE"/>
+<Parameter key="outputSchema" value="public"/>
+<Parameter key="outputTable" value="ap_customer_target_data"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<TableJoinDefinition>
+<JoinTableModel alias="order" operID="1294780205577" schema="public" table="ap_order_by_categ_normalized"/>
+<JoinTableModel alias="campdemog" operID="1294779812160" schema="public" table="ap_camp_and_demog"/>
+<JoinColumnModel columnName="demog_customer_id" columnType="INTEGER" newColumnName="demog_customer_id" tableAlias="campdemog"/>
+<JoinColumnModel columnName="city" columnType="CHARACTER VARYING(200)" newColumnName="city" tableAlias="campdemog"/>
+<JoinColumnModel columnName="state_code" columnType="CHARACTER VARYING(2)" newColumnName="state_code" tableAlias="campdemog"/>
+<JoinColumnModel columnName="country" columnType="CHARACTER VARYING(10)" newColumnName="country" tableAlias="campdemog"/>
+<JoinColumnModel columnName="customer_gender" columnType="CHAR" newColumnName="customer_gender" tableAlias="campdemog"/>
+<JoinColumnModel columnName="customer_age" columnType="INTEGER" newColumnName="customer_age" tableAlias="campdemog"/>
+<JoinColumnModel columnName="frequent_shopper_class" columnType="CHAR" newColumnName="frequent_shopper_class" tableAlias="campdemog"/>
+<JoinColumnModel columnName="tenure_with_company_in_years" columnType="INTEGER" newColumnName="tenure_with_company_in_years" tableAlias="campdemog"/>
+<JoinColumnModel columnName="parent" columnType="CHAR" newColumnName="parent" tableAlias="campdemog"/>
+<JoinColumnModel columnName="multiple_kids" columnType="CHAR" newColumnName="multiple_kids" tableAlias="campdemog"/>
+<JoinColumnModel columnName="student" columnType="CHAR" newColumnName="student" tableAlias="campdemog"/>
+<JoinColumnModel columnName="innovation_adapter_category" columnType="CHARACTER VARYING(50)" newColumnName="innovation_adapter_category" tableAlias="campdemog"/>
+<JoinColumnModel columnName="fashion_buying_category" columnType="CHARACTER VARYING(10)" newColumnName="fashion_buying_category" tableAlias="campdemog"/>
+<JoinColumnModel columnName="campaign_id_2008 November - Big DVD Sales Event" columnType="INTEGER" newColumnName="campaign_id_2008 November - Big DVD Sales Event" tableAlias="campdemog"/>
+<JoinColumnModel columnName="campaign_id_2008 June - Big DVD Sales Event" columnType="INTEGER" newColumnName="campaign_id_2008 June - Big DVD Sales Event" tableAlias="campdemog"/>
+<JoinColumnModel columnName="campaign_id_2008 January - Big DVD Sales Event" columnType="INTEGER" newColumnName="campaign_id_2008 January - Big DVD Sales Event" tableAlias="campdemog"/>
+<JoinColumnModel columnName="campaign_id_2008 August - Big DVD Sales Event" columnType="INTEGER" newColumnName="campaign_id_2008 August - Big DVD Sales Event" tableAlias="campdemog"/>
+<JoinColumnModel columnName="campaign_id_2007 January - Big DVD Sales Event" columnType="INTEGER" newColumnName="campaign_id_2007 January - Big DVD Sales Event" tableAlias="campdemog"/>
+<JoinColumnModel columnName="campaign_id_2006 April - DVD  30 Prct Discount Event" columnType="INTEGER" newColumnName="campaign_id_2006 April - DVD  30 Prct Discount Event" tableAlias="campdemog"/>
+<JoinColumnModel columnName="campaign_id_2005 July - Big DVD Sales Event" columnType="INTEGER" newColumnName="campaign_id_2005 July - Big DVD Sales Event" tableAlias="campdemog"/>
+<JoinColumnModel columnName="campaign_id_2005 January - DVD  10 Prct Discount Event" columnType="INTEGER" newColumnName="campaign_id_2005 January - DVD  10 Prct Discount Event" tableAlias="campdemog"/>
+<JoinColumnModel columnName="sum(item_quantity)_bin" columnType="INTEGER" newColumnName="sum(item_quantity)_bin" tableAlias="order"/>
+<JoinConditionModel andOr="" column1="&quot;order&quot;.&quot;customer_id&quot;" column2="&quot;campdemog&quot;.&quot;demog_customer_id&quot;" condition="=" joinType="JOIN" tableAlias1="order" tableAlias2="campdemog"/>
+</TableJoinDefinition>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="schema" value="public"/>
+<Parameter key="table" value="ap_order_by_categ_normalized"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="sum(item_quantity)" type="DOUBLE PRECISION"/>
+<Field name="customer_id" type="SERIAL"/>
+<Field name="customer_id" type="SERIAL"/>
+<Field name="product_category_id" type="INTEGER"/>
+<Field name="product_category_id" type="INTEGER"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="schema" value="public"/>
+<Parameter key="table" value="ap_camp_and_demog"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="demog_customer_id" type="INTEGER"/>
+<Field name="city" type="CHARACTER VARYING(200)"/>
+<Field name="state_code" type="CHARACTER VARYING(2)"/>
+<Field name="country" type="CHARACTER VARYING(10)"/>
+<Field name="customer_gender" type="CHAR"/>
+<Field name="customer_age" type="INTEGER"/>
+<Field name="frequent_shopper_class" type="CHAR"/>
+<Field name="tenure_with_company_in_years" type="INTEGER"/>
+<Field name="parent" type="CHAR"/>
+<Field name="multiple_kids" type="CHAR"/>
+<Field name="student" type="CHAR"/>
+<Field name="innovation_adapter_category" type="CHARACTER VARYING(50)"/>
+<Field name="fashion_buying_category" type="CHARACTER VARYING(10)"/>
+<Field name="campaign_id_2008 November - Big DVD Sales Event" type="INTEGER"/>
+<Field name="campaign_id_2008 June - Big DVD Sales Event" type="INTEGER"/>
+<Field name="campaign_id_2008 January - Big DVD Sales Event" type="INTEGER"/>
+<Field name="campaign_id_2008 August - Big DVD Sales Event" type="INTEGER"/>
+<Field name="campaign_id_2007 January - Big DVD Sales Event" type="INTEGER"/>
+<Field name="campaign_id_2006 April - DVD  30 Prct Discount Event" type="INTEGER"/>
+<Field name="campaign_id_2005 July - Big DVD Sales Event" type="INTEGER"/>
+<Field name="campaign_id_2005 January - DVD  10 Prct Discount Event" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="520" Y="206" name="Goodness Of Fit" type="com.alpine.miner.gef.runoperator.model.evaluator.GoodnessOfFitOperator" uuid="1294780905631">
+<Parameter key="dependentColumn" value="quantity_sold"/>
+<Parameter key="useModel" value="true"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="schema" value="public"/>
+<Parameter key="table" value="ap_rand_total_1"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="demog_customer_id" type="INTEGER"/>
+<Field name="city" type="CHARACTER VARYING(200)"/>
+<Field name="state_code" type="CHARACTER VARYING(2)"/>
+<Field name="country" type="CHARACTER VARYING(10)"/>
+<Field name="customer_gender" type="CHAR"/>
+<Field name="customer_age" type="INTEGER"/>
+<Field name="frequent_shopper_class" type="CHAR"/>
+<Field name="tenure_with_company_in_years" type="INTEGER"/>
+<Field name="parent" type="CHAR"/>
+<Field name="multiple_kids" type="CHAR"/>
+<Field name="student" type="CHAR"/>
+<Field name="innovation_adapter_category" type="CHARACTER VARYING(50)"/>
+<Field name="fashion_buying_category" type="CHARACTER VARYING(10)"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+<Field name="quantity_sold" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_Nov" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_June" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_Jan" type="BIGINT"/>
+<Field name="DVD_Campaign_2006_April" type="BIGINT"/>
+<Field name="DVD_Campaign_2005_July" type="BIGINT"/>
+<Field name="DVD_Campaign_2005_Jan" type="BIGINT"/>
+<Field name="customer_age_bin" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="371" Y="82" name="dep var added" type="com.alpine.miner.gef.runoperator.field.VariableOperator" uuid="1294807353223">
+<Parameter key="outputType" value="TABLE"/>
+<Parameter key="outputSchema" value="public"/>
+<Parameter key="outputTable" value="ap_dep_var_added"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<QuantileModel>
+<QuantileItem columnName="customer_age" isCreateNewColumn="true" newColumnName="customer_age_bin" numberOfBin="3" quantileType="0">
+<QuantileItemBinNumeric binIndex="1" binType="0" endTo="36.0" startFrom="15.0" values=""/>
+<QuantileItemBinNumeric binIndex="2" binType="0" endTo="46.0" startFrom="36.0" values=""/>
+<QuantileItemBinNumeric binIndex="3" binType="0" endTo="70.0" startFrom="46.0" values=""/>
+</QuantileItem>
+</QuantileModel>
+<DerivedFieldsModel>
+<selectedColumnName columnName="demog_customer_id"/>
+<selectedColumnName columnName="city"/>
+<selectedColumnName columnName="state_code"/>
+<selectedColumnName columnName="country"/>
+<selectedColumnName columnName="customer_gender"/>
+<selectedColumnName columnName="customer_age"/>
+<selectedColumnName columnName="frequent_shopper_class"/>
+<selectedColumnName columnName="tenure_with_company_in_years"/>
+<selectedColumnName columnName="parent"/>
+<selectedColumnName columnName="multiple_kids"/>
+<selectedColumnName columnName="student"/>
+<selectedColumnName columnName="innovation_adapter_category"/>
+<selectedColumnName columnName="fashion_buying_category"/>
+<selectedColumnName columnName="sum(item_quantity)_bin"/>
+<selectedColumnName columnName="sum(item_quantity)_bin"/>
+<DerivedFieldItem columnName="quantity_sold" dataType="BIGINT" expression="CASE WHEN &quot;sum(item_quantity)_bin&quot; IS NULL THEN 0 &#10;ELSE (CASE WHEN &quot;sum(item_quantity)_bin&quot;=0 THEN 0 ELSE 1 END)  END"/>
+<DerivedFieldItem columnName="DVD_Campaign_2008_Nov" dataType="BIGINT" expression="CASE WHEN &quot;campaign_id_2008 November - Big DVD Sales Event&quot; IS NULL THEN 0 &#10;ELSE &quot;campaign_id_2008 November - Big DVD Sales Event&quot; &#10;END"/>
+<DerivedFieldItem columnName="DVD_Campaign_2008_June" dataType="BIGINT" expression="CASE WHEN &quot;campaign_id_2008 June - Big DVD Sales Event&quot; IS NULL THEN 0 &#10;ELSE &quot;campaign_id_2008 June - Big DVD Sales Event&quot; &#10;END"/>
+<DerivedFieldItem columnName="DVD_Campaign_2008_Jan" dataType="BIGINT" expression="CASE WHEN &quot;campaign_id_2008 January - Big DVD Sales Event&quot; IS NULL THEN 0 &#10;ELSE &quot;campaign_id_2008 January - Big DVD Sales Event&quot; &#10;END"/>
+<DerivedFieldItem columnName="DVD_Campaign_2006_April" dataType="BIGINT" expression="CASE WHEN &quot;campaign_id_2006 April - DVD  30 Prct Discount Event&quot; IS NULL THEN 0 &#10;ELSE &quot;campaign_id_2006 April - DVD  30 Prct Discount Event&quot; &#10;END"/>
+<DerivedFieldItem columnName="DVD_Campaign_2005_July" dataType="BIGINT" expression="CASE WHEN &quot;campaign_id_2005 July - Big DVD Sales Event&quot; IS NULL THEN 0 &#10;ELSE &quot;campaign_id_2005 July - Big DVD Sales Event&quot; &#10;END"/>
+<DerivedFieldItem columnName="DVD_Campaign_2005_Jan" dataType="BIGINT" expression="CASE WHEN &quot;campaign_id_2005 January - DVD  10 Prct Discount Event&quot; IS NULL THEN 0 &#10;ELSE &quot;campaign_id_2005 January - DVD  10 Prct Discount Event&quot; &#10;END"/>
+</DerivedFieldsModel>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="schema" value="public"/>
+<Parameter key="table" value="ap_customer_target_data"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="demog_customer_id" type="INTEGER"/>
+<Field name="city" type="CHARACTER VARYING(200)"/>
+<Field name="state_code" type="CHARACTER VARYING(2)"/>
+<Field name="country" type="CHARACTER VARYING(10)"/>
+<Field name="customer_gender" type="CHAR"/>
+<Field name="customer_age" type="INTEGER"/>
+<Field name="frequent_shopper_class" type="CHAR"/>
+<Field name="tenure_with_company_in_years" type="INTEGER"/>
+<Field name="parent" type="CHAR"/>
+<Field name="multiple_kids" type="CHAR"/>
+<Field name="student" type="CHAR"/>
+<Field name="innovation_adapter_category" type="CHARACTER VARYING(50)"/>
+<Field name="fashion_buying_category" type="CHARACTER VARYING(10)"/>
+<Field name="campaign_id_2008 November - Big DVD Sales Event" type="INTEGER"/>
+<Field name="campaign_id_2008 June - Big DVD Sales Event" type="INTEGER"/>
+<Field name="campaign_id_2008 January - Big DVD Sales Event" type="INTEGER"/>
+<Field name="campaign_id_2008 August - Big DVD Sales Event" type="INTEGER"/>
+<Field name="campaign_id_2007 January - Big DVD Sales Event" type="INTEGER"/>
+<Field name="campaign_id_2006 April - DVD  30 Prct Discount Event" type="INTEGER"/>
+<Field name="campaign_id_2005 July - Big DVD Sales Event" type="INTEGER"/>
+<Field name="campaign_id_2005 January - DVD  10 Prct Discount Event" type="INTEGER"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="14" Y="226" name="all customers" type="com.alpine.miner.gef.runoperator.datasource.DbTableOperator" uuid="1295040269300_0">
+<Parameter key="dbConnectionName" value="aws-retail"/>
+<Parameter key="schemaName" value="ddemo"/>
+<Parameter key="tableName" value="customers_dim"/>
+<Parameter key="userName" value="miner_demo"/>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+</Operator>
+<Operator X="133" Y="231" name="custs with order" type="com.alpine.miner.gef.runoperator.datasource.TableJoinOperator" uuid="1295040290361">
+<Parameter key="createSequenceID" value="No"/>
+<Parameter key="outputType" value="TABLE"/>
+<Parameter key="outputSchema" value="public"/>
+<Parameter key="outputTable" value="alp_cust_with_order"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<TableJoinDefinition>
+<JoinTableModel alias="order" operID="1294780176478" schema="public" table="ap_order_by_cust_for_dvd"/>
+<JoinTableModel alias="cust" operID="1295040269300_0" schema="ddemo" table="customers_dim"/>
+<JoinColumnModel columnName="product_category_id" columnType="INTEGER" newColumnName="product_category_id" tableAlias="order"/>
+<JoinColumnModel columnName="sum(item_quantity)" columnType="DOUBLE PRECISION" newColumnName="sum(item_quantity)" tableAlias="order"/>
+<JoinColumnModel columnName="customer_id" columnType="SERIAL" newColumnName="customer_id" tableAlias="cust"/>
+<JoinConditionModel andOr="" column1="&quot;order&quot;.&quot;customer_id&quot;" column2="&quot;cust&quot;.&quot;customer_id&quot;" condition="=" joinType="RIGHT JOIN" tableAlias1="order" tableAlias2="cust"/>
+</TableJoinDefinition>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="schema" value="public"/>
+<Parameter key="table" value="ap_order_by_cust_for_dvd"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="customer_id" type="INTEGER"/>
+<Field name="product_category_id" type="INTEGER"/>
+<Field name="sum(item_quantity)" type="DOUBLE PRECISION"/>
+</Fields>
+</InPutFieldList>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="schema" value="ddemo"/>
+<Parameter key="table" value="customers_dim"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="customer_id" type="INTEGER"/>
+<Field name="first_name" type="CHARACTER VARYING(100)"/>
+<Field name="last_name" type="CHARACTER VARYING(200)"/>
+<Field name="gender" type="CHAR"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="540" Y="314" name="ROC" type="com.alpine.miner.gef.runoperator.model.evaluator.ROCOperator" uuid="1295040911988">
+<Parameter key="dependentColumn" value="quantity_sold"/>
+<Parameter key="columnValue" value="1"/>
+<Parameter key="useModel" value="true"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="schema" value="public"/>
+<Parameter key="table" value="ap_rand_total_1"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="demog_customer_id" type="INTEGER"/>
+<Field name="city" type="CHARACTER VARYING(200)"/>
+<Field name="state_code" type="CHARACTER VARYING(2)"/>
+<Field name="country" type="CHARACTER VARYING(10)"/>
+<Field name="customer_gender" type="CHAR"/>
+<Field name="customer_age" type="INTEGER"/>
+<Field name="frequent_shopper_class" type="CHAR"/>
+<Field name="tenure_with_company_in_years" type="INTEGER"/>
+<Field name="parent" type="CHAR"/>
+<Field name="multiple_kids" type="CHAR"/>
+<Field name="student" type="CHAR"/>
+<Field name="innovation_adapter_category" type="CHARACTER VARYING(50)"/>
+<Field name="fashion_buying_category" type="CHARACTER VARYING(10)"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+<Field name="quantity_sold" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_Nov" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_June" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_Jan" type="BIGINT"/>
+<Field name="DVD_Campaign_2006_April" type="BIGINT"/>
+<Field name="DVD_Campaign_2005_July" type="BIGINT"/>
+<Field name="DVD_Campaign_2005_Jan" type="BIGINT"/>
+<Field name="customer_age_bin" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="623" Y="30" name="scoring" type="com.alpine.miner.gef.runoperator.logisticregression.LogisticRegressionPredictOperator" uuid="1295051080225">
+<Parameter key="outputSchema" value="public"/>
+<Parameter key="outputTable" value="alp_log_reg_scoring"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="schema" value="public"/>
+<Parameter key="table" value="ap_dep_var_added"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="demog_customer_id" type="INTEGER"/>
+<Field name="city" type="CHARACTER VARYING(200)"/>
+<Field name="state_code" type="CHARACTER VARYING(2)"/>
+<Field name="country" type="CHARACTER VARYING(10)"/>
+<Field name="customer_gender" type="CHAR"/>
+<Field name="customer_age" type="INTEGER"/>
+<Field name="frequent_shopper_class" type="CHAR"/>
+<Field name="tenure_with_company_in_years" type="INTEGER"/>
+<Field name="parent" type="CHAR"/>
+<Field name="multiple_kids" type="CHAR"/>
+<Field name="student" type="CHAR"/>
+<Field name="innovation_adapter_category" type="CHARACTER VARYING(50)"/>
+<Field name="fashion_buying_category" type="CHARACTER VARYING(10)"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+<Field name="quantity_sold" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_Nov" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_June" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_Jan" type="BIGINT"/>
+<Field name="DVD_Campaign_2006_April" type="BIGINT"/>
+<Field name="DVD_Campaign_2005_July" type="BIGINT"/>
+<Field name="DVD_Campaign_2005_Jan" type="BIGINT"/>
+<Field name="customer_age_bin" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="654" Y="204" name="Logistic Regression" type="com.alpine.miner.gef.runoperator.logisticregression.LogisticRegressionOperator" uuid="1321644704348">
+<Parameter key="dependentColumn" value="quantity_sold"/>
+<Parameter key="goodValue" value="1"/>
+<Parameter key="forceRetrain" value="Yes"/>
+<Parameter key="max_generations" value="80"/>
+<Parameter key="epsilon" value="0.001"/>
+<Parameter key="columnNames" value="DVD_Campaign_2005_Jan,DVD_Campaign_2005_July,DVD_Campaign_2006_April,DVD_Campaign_2008_Jan,DVD_Campaign_2008_June,DVD_Campaign_2008_Nov,customer_gender,frequent_shopper_class,multiple_kids,parent,tenure_with_company_in_years"/>
+<Parameter key="isStepWise" value="false"/>
+<Parameter key="stepWiseType" value=""/>
+<Parameter key="criterionType" value=""/>
+<Parameter key="checkValue" value=""/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/retail"/>
+<Parameter key="schema" value="public"/>
+<Parameter key="table" value="ap_rand_total_0"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="demog_customer_id" type="INTEGER"/>
+<Field name="city" type="CHARACTER VARYING(200)"/>
+<Field name="state_code" type="CHARACTER VARYING(2)"/>
+<Field name="country" type="CHARACTER VARYING(10)"/>
+<Field name="customer_gender" type="CHAR"/>
+<Field name="customer_age" type="INTEGER"/>
+<Field name="frequent_shopper_class" type="CHAR"/>
+<Field name="tenure_with_company_in_years" type="INTEGER"/>
+<Field name="parent" type="CHAR"/>
+<Field name="multiple_kids" type="CHAR"/>
+<Field name="student" type="CHAR"/>
+<Field name="innovation_adapter_category" type="CHARACTER VARYING(50)"/>
+<Field name="fashion_buying_category" type="CHARACTER VARYING(10)"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+<Field name="sum(item_quantity)_bin" type="INTEGER"/>
+<Field name="quantity_sold" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_Nov" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_June" type="BIGINT"/>
+<Field name="DVD_Campaign_2008_Jan" type="BIGINT"/>
+<Field name="DVD_Campaign_2006_April" type="BIGINT"/>
+<Field name="DVD_Campaign_2005_July" type="BIGINT"/>
+<Field name="DVD_Campaign_2005_Jan" type="BIGINT"/>
+<Field name="customer_age_bin" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+<Model>rO0ABXNyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuRW5naW5lTW9kZWxyBs7TjRuF
+xwIAA0wABW1vZGVsdAAmTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9vcGVyYXRvci9Nb2RlbDtMAAlt
+b2RlbFR5cGV0ABJMamF2YS9sYW5nL1N0cmluZztMAARuYW1lcQB+AAJ4cHNyAERjb20uYWxwaW5l
+LmRhdGFtaW5pbmcub3BlcmF0b3IucmVncmVzc2lvbnMuTG9naXN0aWNSZWdyZXNzaW9uTW9kZWxE
+QrslYdam2fEaAgAVRAAJY2hpU3F1YXJlWgAPaW1wcm92ZW1lbnRTdG9wWgAOaW50ZXJjZXB0QWRk
+ZWRKAAlpdGVyYXRpb25EAA1tb2RlbERldmlhbmNlRAAMbnVsbERldmlhbmNlWgAMdXNlQ0Z1bmN0
+aW9uTAAYYWxsVHJhbnNmb3JtTWFwX3ZhbHVlS2V5dAATTGphdmEvdXRpbC9IYXNoTWFwO1sABGJl
+dGF0AAJbRFsAC2NvbHVtbk5hbWVzdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wAEGNvbHVtbk5hbWVz
+QXJyYXl0ABVMamF2YS91dGlsL0FycmF5TGlzdDtMAA5kYXRhU291cmNlSW5mb3QAJ0xjb20vYWxw
+aW5lL3V0aWxpdHkvZGIvSURhdGFTb3VyY2VJbmZvO0wABGdvb2RxAH4AAkwAGmludGVyYWN0aW9u
+Q29sdW1uQ29sdW1uTWFwcQB+AAVMABdpbnRlcmFjdGlvbkNvbHVtbkV4cE1hcHEAfgAFTAAObXVs
+dGlEQlV0aWxpdHl0ACdMY29tL2FscGluZS91dGlsaXR5L2RiL0lNdWx0aURCVXRpbGl0eTtMAApv
+bGREYXRhU2V0dAAiTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9kYi9EYXRhU2V0O1sABnBWYWx1ZXEA
+fgAGWwANc3RhbmRhcmRFcnJvcnEAfgAGWwANd2FsZFN0YXRpc3RpY3EAfgAGWwAGelZhbHVlcQB+
+AAZ4cgA9Y29tLmFscGluZS5kYXRhbWluaW5nLm9wZXJhdG9yLnRyYWluaW5nLkJpbmFyeVByZWRp
+Y3Rpb25Nb2RlbDqM5dkRy007AgABRAAJdGhyZXNob2xkeHIAMmNvbS5hbHBpbmUuZGF0YW1pbmlu
+Zy5vcGVyYXRvci50cmFpbmluZy5QcmVkaWN0aW9uQRaIqfO+9IACAAB4cgAsY29tLmFscGluZS5k
+YXRhbWluaW5nLm9wZXJhdG9yLkFic3RyYWN0TW9kZWz2i8GBtSDbHAIAAUwADWhlYWRlckRhdGFT
+ZXR0ACRMY29tL2FscGluZS9kYXRhbWluaW5nL2RiL0RCRGF0YVNldDt4cgArY29tLmFscGluZS5k
+YXRhbWluaW5nLm9wZXJhdG9yLk91dHB1dE9iamVjdFuP2rT89nduAgABTAAGc291cmNlcQB+AAJ4
+cHBzcgAiY29tLmFscGluZS5kYXRhbWluaW5nLmRiLkRCRGF0YVNldKMtNq6RCGCMAgAHTAAHYXZl
+cmFnZXEAfgAFTAAHY29sdW1uc3QAIkxjb20vYWxwaW5lL2RhdGFtaW5pbmcvZGIvQ29sdW1ucztM
+AAdtYXhpbXVtcQB+AAVMAAdtaW5pbXVtcQB+AAVMAANzdW1xAH4ABUwABXRhYmxldAAgTGNvbS9h
+bHBpbmUvZGF0YW1pbmluZy9kYi9UYWJsZTtMAAh2YXJpYW5jZXEAfgAFeHIAKGNvbS5hbHBpbmUu
+ZGF0YW1pbmluZy5kYi5BYnN0cmFjdERhdGFTZXQgXHHM0QEvBAIABFoAG2NvbXB1dGVkQWxsQ29s
+dW1uU3RhdGlzdGljc1oAFWNvbXB1dGVkQWxsU3RhdGlzdGljc0wABWlkTWFwdAAPTGphdmEvdXRp
+bC9NYXA7TAANc3RhdGlzdGljc01hcHEAfgAWeHEAfgAQcAAAc3IAEWphdmEudXRpbC5IYXNoTWFw
+BQfawcMWYNEDAAJGAApsb2FkRmFjdG9ySQAJdGhyZXNob2xkeHA/QAAAAAAADHcIAAAAEAAAAAB4
+c3EAfgAYP0AAAAAAAAx3CAAAABAAAAAAeHBzcgAjY29tLmFscGluZS5kYXRhbWluaW5nLmRiLkNv
+bHVtbnNJbXAgscwk+1aF3QIAAUwAB2NvbHVtbnN0ABBMamF2YS91dGlsL0xpc3Q7eHBzcgAUamF2
+YS51dGlsLkxpbmtlZExpc3QMKVNdSmCIIgMAAHhwdwQAAAAOc3IAJmNvbS5hbHBpbmUuZGF0YW1p
+bmluZy5kYi5OdW1lcmljQ29sdW1uAAAAAAAAAAECAAJaAAhjYXRlZ29yeUwAB21hcHBpbmd0ACJM
+Y29tL2FscGluZS9kYXRhbWluaW5nL2RiL01hcHBpbmc7eHIAJ2NvbS5hbHBpbmUuZGF0YW1pbmlu
+Zy5kYi5BYnN0cmFjdENvbHVtbt7a3ZGEwHRqAgAHRAAMZGVmYXVsdFZhbHVlSQAFaW5kZXhaAAdz
+cGVjaWFsSQAJdmFsdWVUeXBlTAALY29sdW1uU3RhdHNxAH4AHEwABG5hbWVxAH4AAkwAC3NwZWNp
+YWxOYW1lcQB+AAJ4cAAAAAAAAAAAAAAAAAAAAAACc3EAfgAedwQAAAABc3IAK2NvbS5hbHBpbmUu
+ZGF0YW1pbmluZy5kYi5OdW1lcmljQ29sdW1uU3RhdHNtt8FTBNnewgIAB0oACm1heENvdW50ZXJK
+AARtb2RlRAAKc3F1YXJlZFN1bUQAA3N1bUkADHZhbHVlQ291bnRlckwABmNvbHVtbnQAIUxjb20v
+YWxwaW5lL2RhdGFtaW5pbmcvZGIvQ29sdW1uO1sABnNjb3Jlc3QAAltKeHAAAAAAAAAAAP//////
+////AAAAAAAAAAAAAAAAAAAAAAAAAABwcHh0ABFjdXN0b21lcl9nZW5kZXJfTXAAc3IAJGNvbS5h
+bHBpbmUuZGF0YW1pbmluZy5kYi5NYXBwaW5nSW1wbGNyNc7gjRALAgACTAAQaW5kZXhUb1N5bWJv
+bE1hcHEAfgAcTAAQc3ltYm9sVG9JbmRleE1hcHEAfgAWeHBzcgATamF2YS51dGlsLkFycmF5TGlz
+dHiB0h2Zx2GdAwABSQAEc2l6ZXhwAAAAAHcEAAAACnhzcQB+ABg/QAAAAAAADHcIAAAAEAAAAAB4
+c3EAfgAgAAAAAAAAAAAAAAABAAAAAAJzcQB+AB53BAAAAAFzcQB+ACUAAAAAAAAAAP//////////
+AAAAAAAAAAAAAAAAAAAAAAAAAABwcHh0ABhmcmVxdWVudF9zaG9wcGVyX2NsYXNzX0RwAHNxAH4A
+KnNxAH4ALAAAAAB3BAAAAAp4c3EAfgAYP0AAAAAAAAx3CAAAABAAAAAAeHNxAH4AIAAAAAAAAAAA
+AAAAAgAAAAACc3EAfgAedwQAAAABc3EAfgAlAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAA
+AAAAAAAAcHB4dAAYZnJlcXVlbnRfc2hvcHBlcl9jbGFzc19DcABzcQB+ACpzcQB+ACwAAAAAdwQA
+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
+fgCLc3EAfgCNAAAAAXh4cHBwc3IAIGNvbS5hbHBpbmUuZGF0YW1pbmluZy5kYi5EQlRhYmxlkfA3
+xbVlA1kCAAZKAARzaXplTAAIcGFzc3dvcmRxAH4AAkwACXRhYmxlTmFtZXEAfgACTAADdXJscQB+
+AAJMAAh1c2VyTmFtZXEAfgACTAAOd2hlcmVDb25kaXRpb25xAH4AAnhyACpjb20uYWxwaW5lLmRh
+dGFtaW5pbmcuZGIuQWJzdHJhY3REYXRhVGFibGW9HwMEenr6KgIAAkwAB2NvbHVtbnNxAH4AHEwA
+EHVudXNlZENvbHVtbkxpc3RxAH4AHHhwc3EAfgAsAAAADncEAAAAD3NxAH4AIAAAAAAAAAAAAAAA
+AAAAAAACc3EAfgAedwQAAAABc3EAfgAlAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAAAA
+AAAAcHB4cQB+AClwAHEAfgArc3EAfgAgAAAAAAAAAAAAAAABAAAAAAJzcQB+AB53BAAAAAFzcQB+
+ACUAAAAAAAAAAP//////////AAAAAAAAAAAAAAAAAAAAAAAAAABwcHhxAH4AMnAAcQB+ADNzcQB+
+ACAAAAAAAAAAAAAAAAIAAAAAAnNxAH4AHncEAAAAAXNxAH4AJQAAAAAAAAAA//////////8AAAAA
+AAAAAAAAAAAAAAAAAAAAAHBweHEAfgA5cABxAH4AOnNxAH4AIAAAAAAAAAAAAAAAAwAAAAACc3EA
+fgAedwQAAAABc3EAfgAlAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAAAAAAAAcHB4cQB+
+AEBwAHEAfgBBc3EAfgAgAAAAAAAAAAAAAAAEAAAAAANzcQB+AB53BAAAAAFzcQB+ACUAAAAAAAAA
+AP//////////AAAAAAAAAAAAAAAAAAAAAAAAAABwcHhxAH4AR3AAcQB+AEhzcQB+ACAAAAAAAAAA
+AAAAAAUAAAAAAnNxAH4AHncEAAAAAXNxAH4AJQAAAAAAAAAA//////////8AAAAAAAAAAAAAAAAA
+AAAAAAAAAHBweHEAfgBOcABxAH4AT3NxAH4AIAAAAAAAAAAAAAAABgAAAAACc3EAfgAedwQAAAAB
+c3EAfgAlAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAAAAAAAAcHB4cQB+AFVwAHEAfgBW
+c3EAfgAgAAAAAAAAAAAAAAAHAAAAAARzcQB+AB53BAAAAAFzcQB+ACUAAAAAAAAAAP//////////
+AAAAAAAAAAAAAAAAAAAAAAAAAABwcHhxAH4AXHAAcQB+AF1zcQB+ACAAAAAAAAAAAAAAAAgAAAAA
+BHNxAH4AHncEAAAAAXNxAH4AJQAAAAAAAAAA//////////8AAAAAAAAAAAAAAAAAAAAAAAAAAHBw
+eHEAfgBjcABxAH4AZHNxAH4AIAAAAAAAAAAAAAAACQAAAAAEc3EAfgAedwQAAAABc3EAfgAlAAAA
+AAAAAAD//////////wAAAAAAAAAAAAAAAAAAAAAAAAAAcHB4cQB+AGpwAHEAfgBrc3EAfgAgAAAA
+AAAAAAAAAAAKAAAAAARzcQB+AB53BAAAAAFzcQB+ACUAAAAAAAAAAP//////////AAAAAAAAAAAA
+AAAAAAAAAAAAAABwcHhxAH4AcXAAcQB+AHJzcQB+ACAAAAAAAAAAAAAAAAsAAAAABHNxAH4AHncE
+AAAAAXNxAH4AJQAAAAAAAAAA//////////8AAAAAAAAAAAAAAAAAAAAAAAAAAHBweHEAfgB4cABx
+AH4AeXNxAH4AIAAAAAAAAAAAAAAADAAAAAAEc3EAfgAedwQAAAABc3EAfgAlAAAAAAAAAAD/////
+/////wAAAAAAAAAAAAAAAAAAAAAAAAAAcHB4cQB+AH9wAHEAfgCAc3EAfgAgAAAAAAAAAAAAAAAN
+AAAAAANzcQB+AB53BAAAAAFzcQB+ACUAAAAAAAAAAP//////////AAAAAAAAAAAAAAAAAAAAAAAA
+AABwcHh0AA1xdWFudGl0eV9zb2xkcABzcQB+ACpzcQB+ACwAAAAAdwQAAAAKeHNxAH4AGD9AAAAA
+AAAMdwgAAAAQAAAAAHh4c3EAfgAedwQAAAAAeP//////////dAAKbWluZXJfZGVtb3QAFSJBbHBU
+bXAxMzM5NDM0OTM1ODkyInQAJ2pkYmM6cG9zdGdyZXNxbDovLzEyNy4wLjAuMTo1NDMyL3JldGFp
+bHQACm1pbmVyX2RlbW9wcD/gAAAAAAAAQOzuQ81HiEIBAQAAAAAAAAAHQOuCpr7aHSZA/Dh1RhDS
+tAFzcQB+ABg/QAAAAAAADHcIAAAAEAAAAAR0AA9jdXN0b21lcl9nZW5kZXJzcQB+ABg/QAAAAAAA
+DHcIAAAAEAAAAAF0AAFNdAARY3VzdG9tZXJfZ2VuZGVyX014dAAWZnJlcXVlbnRfc2hvcHBlcl9j
+bGFzc3NxAH4AGD9AAAAAAAAMdwgAAAAQAAAAA3QAAUR0ABhmcmVxdWVudF9zaG9wcGVyX2NsYXNz
+X0R0AAFCdAAYZnJlcXVlbnRfc2hvcHBlcl9jbGFzc19CdAABQ3QAGGZyZXF1ZW50X3Nob3BwZXJf
+Y2xhc3NfQ3h0AA1tdWx0aXBsZV9raWRzc3EAfgAYP0AAAAAAAAx3CAAAABAAAAABdAABWXQAD211
+bHRpcGxlX2tpZHNfWXh0AAZwYXJlbnRzcQB+ABg/QAAAAAAADHcIAAAAEAAAAAF0AAFZdAAIcGFy
+ZW50X1l4eHVyAAJbRD6mjBSrY1oeAgAAeHAAAAAOv6BHdeBDdVHADKyNjFb2qr/D6TZUwktbP+RX
+xaWE6e4/3KZ2klEkrj/9yQwrKlEvQBnb3Nxl5AA/4CCaNXo5osAFio0GcUp1P8kV1MWd5wRAClgv
+Y25cmj/ooXOhJUAyP+kPUpTrNFzAAmTcIaUV4nVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kd
+e0cCAAB4cAAAAA1xAH4AKXEAfgAycQB+ADlxAH4AQHEAfgBHcQB+AE5xAH4AVXEAfgBccQB+AGNx
+AH4AanEAfgBxcQB+AHhxAH4Af3NxAH4ALAAAAA13BAAAAA9xAH4AKXEAfgAycQB+ADlxAH4AQHEA
+fgBHcQB+AE5xAH4AVXEAfgBccQB+AGNxAH4AanEAfgBxcQB+AHhxAH4Af3hzcgAsY29tLmFscGlu
+ZS51dGlsaXR5LmRiLkRhdGFTb3VyY2VJbmZvUG9zdGdyZXOlveN0jFeviwIAAHhyADBjb20uYWxw
+aW5lLnV0aWxpdHkuZGIuQWJzdHJhY3REYXRhU291cmNlSW5mb1BHR1ClveN0jFeviwIAAUwABmxv
+Y2FsZXQAEkxqYXZhL3V0aWwvTG9jYWxlO3hwc3IAEGphdmEudXRpbC5Mb2NhbGV++BFgnDD57AMA
+BkkACGhhc2hjb2RlTAAHY291bnRyeXEAfgACTAAKZXh0ZW5zaW9uc3EAfgACTAAIbGFuZ3VhZ2Vx
+AH4AAkwABnNjcmlwdHEAfgACTAAHdmFyaWFudHEAfgACeHD/////dAACVVN0AAB0AAJlbnEAfgDp
+cQB+AOl4dAABMXNxAH4AGD9AAAAAAAAMdwgAAAAQAAAAAHhzcQB+ABg/QAAAAAAADHcIAAAAEAAA
+AAB4c3IAK2NvbS5hbHBpbmUudXRpbGl0eS5kYi5NdWx0aURCUG9zdGdyZVV0aWxpdHkDQz3AamlL
+BgIAAHhyADBjb20uYWxwaW5lLnV0aWxpdHkuZGIuQWJzdHJhY3RNdWx0aURCVXRpbGl0eUdQUEft
+3lfYRzP1ngIAAHhwc3EAfgAScAEAc3EAfgAYP0AAAAAAAAx3CAAAABAAAAAAeHNxAH4AGD9AAAAA
+AAAMdwgAAAAQAAAAAHhwc3EAfgAbc3EAfgAedwQAAAAMc3IAJmNvbS5hbHBpbmUuZGF0YW1pbmlu
+Zy5kYi5Ob21pbmFsQ29sdW1uDVT6IDWHfC0CAAFMAAdtYXBwaW5ncQB+ACF4cQB+ACIAAAAAAAAA
+AAAAAAQAAAAAAXNxAH4AHncEAAAAAXNyACtjb20uYWxwaW5lLmRhdGFtaW5pbmcuZGIuTm9taW5h
+bENvbHVtblN0YXRzXE1wNlSUQOgCAARKAAptYXhDb3VudGVySgAEbW9kZUwABmNvbHVtbnEAfgAm
+WwAGc2NvcmVzcQB+ACd4cAAAAAAAAAAA//////////9wcHhxAH4AyXBzcQB+ACpzcQB+ACwAAAAC
+dwQAAAAKcQB+AMt0AAFGeHNxAH4AGD9AAAAAAAAMdwgAAAAQAAAAAnEAfgD9cQB+AJBxAH4Ay3EA
+fgCPeHNxAH4A9gAAAAAAAAAAAAAABgAAAAABc3EAfgAedwQAAAABc3EAfgD5AAAAAAAAAAD/////
+/////3BweHEAfgDNcHNxAH4AKnNxAH4ALAAAAAR3BAAAAApxAH4Az3EAfgDTcQB+ANF0AAFBeHNx
+AH4AGD9AAAAAAAAMdwgAAAAQAAAABHEAfgDPcQB+AI9xAH4BBHNxAH4AjQAAAANxAH4A0XNxAH4A
+jQAAAAJxAH4A03EAfgCQeHNxAH4AIAAAAAAAAAAAAAAABwAAAAADc3EAfgAedwQAAAABc3EAfgAl
+AAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAAAAAAAAcHB4dAAcdGVudXJlX3dpdGhfY29t
+cGFueV9pbl95ZWFyc3AAc3EAfgAqc3EAfgAsAAAAAHcEAAAACnhzcQB+ABg/QAAAAAAADHcIAAAA
+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
+5nB0ABNMb2dpc3RpYyBSZWdyZXNzaW9u</Model>
+</Operator>
+<Link source="campaign exposure" target="camp_and_demog"/>
+<Link source="demographics" target="camp_and_demog"/>
+<Link source="sampling" target="training set"/>
+<Link source="sampling" target="test set"/>
+<Link source="order lineitem" target="agg by cust by categ"/>
+<Link source="agg by cust by categ" target="just dvd"/>
+<Link source="Normalized" target="cust target data"/>
+<Link source="test set" target="Goodness Of Fit"/>
+<Link source="camp_and_demog" target="cust target data"/>
+<Link source="cust target data" target="dep var added"/>
+<Link source="dep var added" target="sampling"/>
+<Link source="just dvd" target="custs with order"/>
+<Link source="all customers" target="custs with order"/>
+<Link source="custs with order" target="Normalized"/>
+<Link source="test set" target="ROC"/>
+<Link source="dep var added" target="scoring"/>
+<Link source="training set" target="Logistic Regression"/>
+<Link source="Logistic Regression" target="Goodness Of Fit"/>
+<Link source="Logistic Regression" target="ROC"/>
+<Link source="Logistic Regression" target="scoring"/>
+<VariableModel>
+<Variable>
+<Name>@default_schema</Name>
+<Value>public</Value>
+</Variable>
+<Variable>
+<Name>@default_prefix</Name>
+<Value>alp</Value>
+</Variable>
+</VariableModel>
+</Process>

@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Process Description="" UserName="shillion" Version="3.0">
+<Operator X="65" Y="158" name="accounts" type="com.alpine.miner.gef.runoperator.datasource.DbTableOperator" uuid="1327788143812_0">
+<Parameter key="dbConnectionName" value="Amazon"/>
+<Parameter key="schemaName" value="finance"/>
+<Parameter key="tableName" value="accounts"/>
+<Parameter key="userName" value="miner_demo"/>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+</Operator>
+<Operator X="38" Y="30" name="account_statements" type="com.alpine.miner.gef.runoperator.datasource.DbTableOperator" uuid="1328071139446_0">
+<Parameter key="dbConnectionName" value="Amazon"/>
+<Parameter key="schemaName" value="finance"/>
+<Parameter key="tableName" value="account_statements"/>
+<Parameter key="userName" value="miner_demo"/>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+</Operator>
+<Operator X="63" Y="396" name="zip_income" type="com.alpine.miner.gef.runoperator.datasource.DbTableOperator" uuid="1328071146257_0">
+<Parameter key="dbConnectionName" value="Amazon"/>
+<Parameter key="schemaName" value="finance"/>
+<Parameter key="tableName" value="zip_income"/>
+<Parameter key="userName" value="miner_demo"/>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+</Operator>
+<Operator X="302" Y="290" name="Table Join - Income" type="com.alpine.miner.gef.runoperator.datasource.TableJoinOperator" uuid="1328071159768">
+<Parameter key="createSequenceID" value="No"/>
+<Parameter key="outputType" value="VIEW"/>
+<Parameter key="outputSchema" value="finance"/>
+<Parameter key="outputTable" value="account_summary"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<TableJoinDefinition>
+<JoinTableModel alias="ddemo_accounts_a" operID="1327788143812_0" schema="finance" table="accounts"/>
+<JoinTableModel alias="ddemo_zip_income_a" operID="1328071146257_0" schema="finance" table="zip_income"/>
+<JoinColumnModel columnName="acct_id" columnType="INTEGER" newColumnName="acct_id" tableAlias="ddemo_accounts_a"/>
+<JoinColumnModel columnName="acct_type" columnType="CHARACTER VARYING(16)" newColumnName="acct_type" tableAlias="ddemo_accounts_a"/>
+<JoinColumnModel columnName="acct_status" columnType="CHAR" newColumnName="acct_status" tableAlias="ddemo_accounts_a"/>
+<JoinColumnModel columnName="credit" columnType="SMALLINT" newColumnName="credit" tableAlias="ddemo_accounts_a"/>
+<JoinColumnModel columnName="zipcode" columnType="CHAR(5)" newColumnName="zipcode" tableAlias="ddemo_accounts_a"/>
+<JoinColumnModel columnName="mdn_income" columnType="INTEGER" newColumnName="mdn_income" tableAlias="ddemo_zip_income_a"/>
+<JoinConditionModel andOr="" column1="&quot;ddemo_accounts_a&quot;.&quot;zipcode&quot;" column2="&quot;ddemo_zip_income_a&quot;.&quot;zipcode&quot;" condition="=" joinType="JOIN" tableAlias1="ddemo_accounts_a" tableAlias2="ddemo_zip_income_a"/>
+</TableJoinDefinition>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="accounts"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="acct_id" type="INTEGER"/>
+<Field name="acct_type" type="CHARACTER VARYING(16)"/>
+<Field name="acct_status" type="CHAR"/>
+<Field name="credit" type="SMALLINT"/>
+<Field name="zipcode" type="CHAR(5)"/>
+</Fields>
+</InPutFieldList>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="zip_income"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="mdn_income" type="INTEGER"/>
+<Field name="zipcode" type="CHAR(5)"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="250" Y="101" name="Aggregate" type="com.alpine.miner.gef.runoperator.field.AggregateOperator" uuid="1328071188416">
+<Parameter key="outputType" value="VIEW"/>
+<Parameter key="outputSchema" value="finance"/>
+<Parameter key="outputTable" value="account_statement_summary"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<AggregateFieldsModel>
+<groupBy columnName="acct_id"/>
+<parentFieldList columnName="acct_id"/>
+<parentFieldList columnName="statement_date"/>
+<parentFieldList columnName="balance"/>
+<AggregateField columnName="avg_balance" dataType="INTEGER" expression="avg(&quot;balance&quot;)"/>
+<AggregateField columnName="max_balance" dataType="INTEGER" expression="max(&quot;balance&quot;)"/>
+</AggregateFieldsModel>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="account_statements"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="acct_id" type="INTEGER"/>
+<Field name="statement_date" type="DATE"/>
+<Field name="balance" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="378" Y="173" name="Training Dataset" type="com.alpine.miner.gef.runoperator.datasource.TableJoinOperator" uuid="1328071217546">
+<Parameter key="createSequenceID" value="No"/>
+<Parameter key="outputType" value="TABLE"/>
+<Parameter key="outputSchema" value="finance"/>
+<Parameter key="outputTable" value="account_profiles"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<TableJoinDefinition>
+<JoinTableModel alias="ddemo_account_summary_a" operID="1328071159768" schema="finance" table="account_summary"/>
+<JoinTableModel alias="ddemo_account_statement_summary_a" operID="1328071188416" schema="finance" table="account_statement_summary"/>
+<JoinColumnModel columnName="acct_id" columnType="INTEGER" newColumnName="acct_id" tableAlias="ddemo_account_summary_a"/>
+<JoinColumnModel columnName="acct_type" columnType="CHARACTER VARYING(16)" newColumnName="acct_type" tableAlias="ddemo_account_summary_a"/>
+<JoinColumnModel columnName="acct_status" columnType="CHAR" newColumnName="acct_status" tableAlias="ddemo_account_summary_a"/>
+<JoinColumnModel columnName="credit" columnType="SMALLINT" newColumnName="credit" tableAlias="ddemo_account_summary_a"/>
+<JoinColumnModel columnName="zipcode" columnType="CHAR(5)" newColumnName="zipcode" tableAlias="ddemo_account_summary_a"/>
+<JoinColumnModel columnName="mdn_income" columnType="INTEGER" newColumnName="mdn_income" tableAlias="ddemo_account_summary_a"/>
+<JoinColumnModel columnName="avg_balance" columnType="INTEGER" newColumnName="avg_balance" tableAlias="ddemo_account_statement_summary_a"/>
+<JoinColumnModel columnName="max_balance" columnType="INTEGER" newColumnName="max_balance" tableAlias="ddemo_account_statement_summary_a"/>
+<JoinConditionModel andOr="" column1="&quot;ddemo_account_summary_a&quot;.&quot;acct_id&quot;" column2="&quot;ddemo_account_statement_summary_a&quot;.&quot;acct_id&quot;" condition="=" joinType="JOIN" tableAlias1="ddemo_account_summary_a" tableAlias2="ddemo_account_statement_summary_a"/>
+</TableJoinDefinition>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="account_summary"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="acct_id" type="INTEGER"/>
+<Field name="acct_type" type="CHARACTER VARYING(16)"/>
+<Field name="acct_status" type="CHAR"/>
+<Field name="credit" type="SMALLINT"/>
+<Field name="zipcode" type="CHAR(5)"/>
+<Field name="mdn_income" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="account_statement_summary"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="acct_id" type="INTEGER"/>
+<Field name="avg_balance" type="INTEGER"/>
+<Field name="max_balance" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="469" Y="319" name="Decision Tree" type="com.alpine.miner.gef.runoperator.decisiontree.DecisionTreeOperator" uuid="1328071906344">
+<Parameter key="dependentColumn" value="acct_status"/>
+<Parameter key="forceRetrain" value="Yes"/>
+<Parameter key="maximal_depth" value="5"/>
+<Parameter key="confidence" value="0.25"/>
+<Parameter key="minimal_gain" value="0.1"/>
+<Parameter key="number_of_prepruning_alternatives" value="3"/>
+<Parameter key="minimal_size_for_split" value="4"/>
+<Parameter key="no_pruning" value="false"/>
+<Parameter key="no_pre_pruning" value="false"/>
+<Parameter key="size_threshold_load_data" value="1000000"/>
+<Parameter key="minimal_leaf_size" value="2"/>
+<Parameter key="columnNames" value="acct_type,avg_balance,credit,max_balance,mdn_income"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="account_profiles"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="acct_id" type="INTEGER"/>
+<Field name="acct_type" type="CHARACTER VARYING(16)"/>
+<Field name="acct_status" type="CHAR"/>
+<Field name="credit" type="SMALLINT"/>
+<Field name="zipcode" type="CHAR(5)"/>
+<Field name="mdn_income" type="INTEGER"/>
+<Field name="avg_balance" type="INTEGER"/>
+<Field name="max_balance" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+<Model>rO0ABXNyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuRW5naW5lTW9kZWxyBs7TjRuF
+xwIAA0wABW1vZGVsdAAmTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9vcGVyYXRvci9Nb2RlbDtMAAlt
+b2RlbFR5cGV0ABJMamF2YS9sYW5nL1N0cmluZztMAARuYW1lcQB+AAJ4cHNyAD9jb20uYWxwaW5l
+LmRhdGFtaW5pbmcub3BlcmF0b3IudHJlZS50aHJlc2hvbGQuRGVjaXNpb25UcmVlTW9kZWxT7C/s
+jE52bAIAAlsABlVQREFURXQAE1tMamF2YS9sYW5nL1N0cmluZztMAARyb290dAA0TGNvbS9hbHBp
+bmUvZGF0YW1pbmluZy9vcGVyYXRvci90cmVlL3RocmVzaG9sZC9UcmVlO3hyADNjb20uYWxwaW5l
+LmRhdGFtaW5pbmcub3BlcmF0b3IudHJhaW5pbmcuU2luZ2xlTW9kZWyxSlqt4qUX+AIAAHhyADJj
+b20uYWxwaW5lLmRhdGFtaW5pbmcub3BlcmF0b3IudHJhaW5pbmcuUHJlZGljdGlvbkEWiKnzvvSA
+AgAAeHIALGNvbS5hbHBpbmUuZGF0YW1pbmluZy5vcGVyYXRvci5BYnN0cmFjdE1vZGVs9ovBgbUg
+2xwCAAFMAA1oZWFkZXJEYXRhU2V0dAAkTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9kYi9EQkRhdGFT
+ZXQ7eHIAK2NvbS5hbHBpbmUuZGF0YW1pbmluZy5vcGVyYXRvci5PdXRwdXRPYmplY3Rbj9q0/PZ3
+bgIAAUwABnNvdXJjZXEAfgACeHBwc3IAImNvbS5hbHBpbmUuZGF0YW1pbmluZy5kYi5EQkRhdGFT
+ZXSjLTaukQhgjAIAB0wAB2F2ZXJhZ2V0ABNMamF2YS91dGlsL0hhc2hNYXA7TAAHY29sdW1uc3QA
+Ikxjb20vYWxwaW5lL2RhdGFtaW5pbmcvZGIvQ29sdW1ucztMAAdtYXhpbXVtcQB+AA5MAAdtaW5p
+bXVtcQB+AA5MAANzdW1xAH4ADkwABXRhYmxldAAgTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9kYi9U
+YWJsZTtMAAh2YXJpYW5jZXEAfgAOeHIAKGNvbS5hbHBpbmUuZGF0YW1pbmluZy5kYi5BYnN0cmFj
+dERhdGFTZXQgXHHM0QEvBAIABFoAG2NvbXB1dGVkQWxsQ29sdW1uU3RhdGlzdGljc1oAFWNvbXB1
+dGVkQWxsU3RhdGlzdGljc0wABWlkTWFwdAAPTGphdmEvdXRpbC9NYXA7TAANc3RhdGlzdGljc01h
+cHEAfgASeHEAfgALcAAAc3IAEWphdmEudXRpbC5IYXNoTWFwBQfawcMWYNEDAAJGAApsb2FkRmFj
+dG9ySQAJdGhyZXNob2xkeHA/QAAAAAAADHcIAAAAEAAAAAB4c3EAfgAUP0AAAAAAAAx3CAAAABAA
+AAAAeHBzcgAjY29tLmFscGluZS5kYXRhbWluaW5nLmRiLkNvbHVtbnNJbXAgscwk+1aF3QIAAUwA
+B2NvbHVtbnN0ABBMamF2YS91dGlsL0xpc3Q7eHBzcgAUamF2YS51dGlsLkxpbmtlZExpc3QMKVNd
+SmCIIgMAAHhwdwQAAAAGc3IAJmNvbS5hbHBpbmUuZGF0YW1pbmluZy5kYi5Ob21pbmFsQ29sdW1u
+DVT6IDWHfC0CAAFMAAdtYXBwaW5ndAAiTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9kYi9NYXBwaW5n
+O3hyACdjb20uYWxwaW5lLmRhdGFtaW5pbmcuZGIuQWJzdHJhY3RDb2x1bW7e2t2RhMB0agIAB0QA
+DGRlZmF1bHRWYWx1ZUkABWluZGV4WgAHc3BlY2lhbEkACXZhbHVlVHlwZUwAC2NvbHVtblN0YXRz
+cQB+ABhMAARuYW1lcQB+AAJMAAtzcGVjaWFsTmFtZXEAfgACeHAAAAAAAAAAAAAAAAEAAAAAAXNx
+AH4AGncEAAAAAXNyACtjb20uYWxwaW5lLmRhdGFtaW5pbmcuZGIuTm9taW5hbENvbHVtblN0YXRz
+XE1wNlSUQOgCAARKAAptYXhDb3VudGVySgAEbW9kZUwABmNvbHVtbnQAIUxjb20vYWxwaW5lL2Rh
+dGFtaW5pbmcvZGIvQ29sdW1uO1sABnNjb3Jlc3QAAltKeHAAAAAAAAAAAP//////////cHB4dAAJ
+YWNjdF90eXBlcHNyACRjb20uYWxwaW5lLmRhdGFtaW5pbmcuZGIuTWFwcGluZ0ltcGxjcjXO4I0Q
+CwIAAkwAEGluZGV4VG9TeW1ib2xNYXBxAH4AGEwAEHN5bWJvbFRvSW5kZXhNYXBxAH4AEnhwc3IA
+E2phdmEudXRpbC5BcnJheUxpc3R4gdIdmcdhnQMAAUkABHNpemV4cAAAAAJ3BAAAAAp0AAhTdGFu
+ZGFyZHQABlNpbHZlcnhzcQB+ABQ/QAAAAAAADHcIAAAAEAAAAAJxAH4AKnNyABFqYXZhLmxhbmcu
+SW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAA
+eHAAAAAAcQB+ACtzcQB+AC0AAAABeHNyACZjb20uYWxwaW5lLmRhdGFtaW5pbmcuZGIuTnVtZXJp
+Y0NvbHVtbgAAAAAAAAABAgACWgAIY2F0ZWdvcnlMAAdtYXBwaW5ncQB+AB14cQB+AB4AAAAAAAAA
+AAAAAAMAAAAAA3NxAH4AGncEAAAAAXNyACtjb20uYWxwaW5lLmRhdGFtaW5pbmcuZGIuTnVtZXJp
+Y0NvbHVtblN0YXRzbbfBUwTZ3sICAAdKAAptYXhDb3VudGVySgAEbW9kZUQACnNxdWFyZWRTdW1E
+AANzdW1JAAx2YWx1ZUNvdW50ZXJMAAZjb2x1bW5xAH4AIlsABnNjb3Jlc3EAfgAjeHAAAAAAAAAA
+AP//////////AAAAAAAAAAAAAAAAAAAAAAAAAABwcHh0AAZjcmVkaXRwAHNxAH4AJnNxAH4AKAAA
+AAB3BAAAAAp4c3EAfgAUP0AAAAAAAAx3CAAAABAAAAAAeHNxAH4AMQAAAAAAAAAAAAAABQAAAAAD
+c3EAfgAadwQAAAABc3EAfgA0AAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAAAAAAAAcHB4
+dAAKbWRuX2luY29tZXAAc3EAfgAmc3EAfgAoAAAAAHcEAAAACnhzcQB+ABQ/QAAAAAAADHcIAAAA
+EAAAAAB4c3EAfgAxAAAAAAAAAAAAAAAGAAAAAAJzcQB+ABp3BAAAAAFzcQB+ADQAAAAAAAAAAP//
+////////AAAAAAAAAAAAAAAAAAAAAAAAAABwcHh0AAthdmdfYmFsYW5jZXAAc3EAfgAmc3EAfgAo
+AAAAAHcEAAAACnhzcQB+ABQ/QAAAAAAADHcIAAAAEAAAAAB4c3EAfgAxAAAAAAAAAAAAAAAHAAAA
+AANzcQB+ABp3BAAAAAFzcQB+ADQAAAAAAAAAAP//////////AAAAAAAAAAAAAAAAAAAAAAAAAABw
+cHh0AAttYXhfYmFsYW5jZXAAc3EAfgAmc3EAfgAoAAAAAHcEAAAACnhzcQB+ABQ/QAAAAAAADHcI
+AAAAEAAAAAB4c3EAfgAcAAAAAAAAAAAAAAACAQAAAAFzcQB+ABp3BAAAAAFzcQB+ACEAAAAAAAAA
+AP//////////cHB4dAALYWNjdF9zdGF0dXN0ABVBTFBJTkVfREVQRU5ERU5UX05BTUVzcQB+ACZz
+cQB+ACgAAAACdwQAAAAKdAABQ3QAAUF4c3EAfgAUP0AAAAAAAAx3CAAAABAAAAACcQB+AFdxAH4A
+MHEAfgBWcQB+AC94eHBwcHNyACBjb20uYWxwaW5lLmRhdGFtaW5pbmcuZGIuREJUYWJsZZHwN8W1
+ZQNZAgAGSgAEc2l6ZUwACHBhc3N3b3JkcQB+AAJMAAl0YWJsZU5hbWVxAH4AAkwAA3VybHEAfgAC
+TAAIdXNlck5hbWVxAH4AAkwADndoZXJlQ29uZGl0aW9ucQB+AAJ4cgAqY29tLmFscGluZS5kYXRh
+bWluaW5nLmRiLkFic3RyYWN0RGF0YVRhYmxlvR8DBHp6+ioCAAJMAAdjb2x1bW5zcQB+ABhMABB1
+bnVzZWRDb2x1bW5MaXN0cQB+ABh4cHNxAH4AKAAAAAh3BAAAAApzcQB+ADEAAAAAAAAAAAAAAAAA
+AAAAA3NxAH4AGncEAAAAAXNxAH4ANAAAAAAAAAAA//////////8AAAAAAAAAAAAAAAAAAAAAAAAA
+AHBweHQAB2FjY3RfaWRwAHNxAH4AJnNxAH4AKAAAAAB3BAAAAAp4c3EAfgAUP0AAAAAAAAx3CAAA
+ABAAAAAAeHNxAH4AHAAAAAAAAAAAAAAAAQAAAAABc3EAfgAadwQAAAABc3EAfgAhAAAAAAAAAAD/
+/////////3BweHQACWFjY3RfdHlwZXBzcQB+ACZzcQB+ACgAAAAAdwQAAAAKeHNxAH4AFD9AAAAA
+AAAMdwgAAAAQAAAAAHhzcQB+ABwAAAAAAAAAAAAAAAIAAAAAAXNxAH4AGncEAAAAAXNxAH4AIQAA
+AAAAAAAA//////////9wcHh0AAthY2N0X3N0YXR1c3BzcQB+ACZzcQB+ACgAAAAAdwQAAAAKeHNx
+AH4AFD9AAAAAAAAMdwgAAAAQAAAAAHhzcQB+ADEAAAAAAAAAAAAAAAMAAAAAA3NxAH4AGncEAAAA
+AXNxAH4ANAAAAAAAAAAA//////////8AAAAAAAAAAAAAAAAAAAAAAAAAAHBweHQABmNyZWRpdHAA
+c3EAfgAmc3EAfgAoAAAAAHcEAAAACnhzcQB+ABQ/QAAAAAAADHcIAAAAEAAAAAB4c3EAfgAcAAAA
+AAAAAAAAAAAEAAAAAAFzcQB+ABp3BAAAAAFzcQB+ACEAAAAAAAAAAP//////////cHB4dAAHemlw
+Y29kZXBzcQB+ACZzcQB+ACgAAAAAdwQAAAAKeHNxAH4AFD9AAAAAAAAMdwgAAAAQAAAAAHhzcQB+
+ADEAAAAAAAAAAAAAAAUAAAAAA3NxAH4AGncEAAAAAXNxAH4ANAAAAAAAAAAA//////////8AAAAA
+AAAAAAAAAAAAAAAAAAAAAHBweHQACm1kbl9pbmNvbWVwAHNxAH4AJnNxAH4AKAAAAAB3BAAAAAp4
+c3EAfgAUP0AAAAAAAAx3CAAAABAAAAAAeHNxAH4AMQAAAAAAAAAAAAAABgAAAAACc3EAfgAadwQA
+AAABc3EAfgA0AAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAAAAAAAAcHB4dAALYXZnX2Jh
+bGFuY2VwAHNxAH4AJnNxAH4AKAAAAAB3BAAAAAp4c3EAfgAUP0AAAAAAAAx3CAAAABAAAAAAeHNx
+AH4AMQAAAAAAAAAAAAAABwAAAAADc3EAfgAadwQAAAABc3EAfgA0AAAAAAAAAAD//////////wAA
+AAAAAAAAAAAAAAAAAAAAAAAAcHB4dAALbWF4X2JhbGFuY2VwAHNxAH4AJnNxAH4AKAAAAAB3BAAA
+AAp4c3EAfgAUP0AAAAAAAAx3CAAAABAAAAAAeHhzcQB+ABp3BAAAAAB4AAAAAAAAPix0AAptaW5l
+cl9kZW1vdAAcImZpbmFuY2UiLiJhY2NvdW50X3Byb2ZpbGVzInQAKGpkYmM6cG9zdGdyZXNxbDov
+LzUwLjE4LjIzMC4xODU6NTQzMi9hd3N0AAptaW5lcl9kZW1vdACtImFjY3RfdHlwZSIgaXMgbm90
+IG51bGwgIGFuZCAiY3JlZGl0IiBpcyBub3QgbnVsbCAgYW5kICJtZG5faW5jb21lIiBpcyBub3Qg
+bnVsbCAgYW5kICJhdmdfYmFsYW5jZSIgaXMgbm90IG51bGwgIGFuZCAibWF4X2JhbGFuY2UiIGlz
+IG5vdCBudWxsICBhbmQgImFjY3Rfc3RhdHVzIiBpcyBub3QgbnVsbCBwcHNyADJjb20uYWxwaW5l
+LmRhdGFtaW5pbmcub3BlcmF0b3IudHJlZS50aHJlc2hvbGQuVHJlZWJK5RPlcal+AgAETAAIY2hp
+bGRyZW5xAH4AGEwACmNvdW50ZXJNYXBxAH4AEkwADGRpc3BsYXlMYWJlbHEAfgACTAAFbGFiZWxx
+AH4AAnhwc3EAfgAadwQAAAACc3IAMmNvbS5hbHBpbmUuZGF0YW1pbmluZy5vcGVyYXRvci50cmVl
+LnRocmVzaG9sZC5TaWRls4CUNVix2cQCAAJMAAVjaGlsZHEAfgAGTAAJY29uZGl0aW9udAA6TGNv
+bS9hbHBpbmUvZGF0YW1pbmluZy9vcGVyYXRvci90cmVlL3RocmVzaG9sZC9EZXZpZGVDb25kO3hw
+c3EAfgCbc3EAfgAadwQAAAACc3EAfgCec3EAfgCbc3EAfgAadwQAAAAAeHNyABdqYXZhLnV0aWwu
+TGlua2VkSGFzaE1hcDTATlwQbMD7AgABWgALYWNjZXNzT3JkZXJ4cQB+ABQ/QAAAAAAADHcIAAAA
+EAAAAAJ0AAFBcQB+AC90AAFDc3EAfgAtAAADnXgAcHEAfgCpc3IAQWNvbS5hbHBpbmUuZGF0YW1p
+bmluZy5vcGVyYXRvci50cmVlLnRocmVzaG9sZC5MZXNzRXF1YWxEZXZpZGVDb25kwNfAi9aVAGwC
+AAFEAAV2YWx1ZXhyAEBjb20uYWxwaW5lLmRhdGFtaW5pbmcub3BlcmF0b3IudHJlZS50aHJlc2hv
+bGQuQWJzdHJhY3REZXZpZGVDb25knn3to0TfMHMCAAFMAApjb2x1bW5OYW1lcQB+AAJ4cHQABmNy
+ZWRpdECE7AAAAAAAc3EAfgCec3EAfgCbc3EAfgAadwQAAAACc3EAfgCec3EAfgCbc3EAfgAadwQA
+AAAAeHNxAH4Apj9AAAAAAAAMdwgAAAAQAAAAAnEAfgCoc3EAfgAtAAALInEAfgCpcQB+AC94AHBx
+AH4AqHNxAH4Aq3QAC21heF9iYWxhbmNlQGuQAAAAAABzcQB+AJ5zcQB+AJtzcQB+ABp3BAAAAAB4
+c3EAfgCmP0AAAAAAAAx3CAAAABAAAAACcQB+AKhzcQB+AC0AAACTcQB+AKlzcQB+AC0AAAJ6eAB0
+AAlhY2N0X3R5cGVxAH4AqXNyAD9jb20uYWxwaW5lLmRhdGFtaW5pbmcub3BlcmF0b3IudHJlZS50
+aHJlc2hvbGQuR3JlYXRlckRldmlkZUNvbmS575Hy6qw9nwIAAUQABXZhbHVleHEAfgCscQB+ALhA
+a5AAAAAAAHhzcQB+AKY/QAAAAAAADHcIAAAAEAAAAAB4AHEAfgC4cHNxAH4AwHEAfgCuQITsAAAA
+AAB4c3EAfgCmP0AAAAAAAAx3CAAAABAAAAAAeABxAH4ArnBzcQB+AKt0AAptZG5faW5jb21lQM1L
+QAAAAABzcQB+AJ5zcQB+AJtzcQB+ABp3BAAAAAJzcQB+AJ5zcQB+AJtzcQB+ABp3BAAAAAJzcQB+
+AJ5zcQB+AJtzcQB+ABp3BAAAAAB4c3EAfgCmP0AAAAAAAAx3CAAAABAAAAACcQB+AKhzcQB+AC0A
+ACXlcQB+AKlxAH4AL3gAcHEAfgCoc3EAfgCrcQB+ALhAbhAAAAAAAHNxAH4AnnNxAH4Am3NxAH4A
+GncEAAAAAnNxAH4AnnNxAH4Am3NxAH4AGncEAAAAAHhzcQB+AKY/QAAAAAAADHcIAAAAEAAAAAJx
+AH4AqHNxAH4ALQAAANdxAH4AqXNxAH4ALQAAATN4AHBxAH4AqXNyAEBjb20uYWxwaW5lLmRhdGFt
+aW5pbmcub3BlcmF0b3IudHJlZS50aHJlc2hvbGQuTm9ybWluYWxEZXZpZGVDb25keIQOqsIfKlUC
+AANMAAZjb2x1bW5xAH4AIkwABmRiVHlwZXEAfgACTAALdmFsdWVTdHJpbmdxAH4AAnhxAH4ArHEA
+fgC/c3EAfgAcAAAAAAAAAAAAAAAAAAAAAAFzcQB+ABp3BAAAAAFzcQB+ACEAAAAAAAAlmwAAAAAA
+AAAAc3EAfgAcAAAAAAAAAAAAAAAAAAAAAAFzcQB+ABp3BAAAAAFzcQB+ACEAAAAAAAAlmwAAAAAA
+AAAAcQB+AOF1cgACW0p4IAS1ErF1kwIAAHhwAAAAAgAAAAAAACWbAAAAAAAAGJF4cQB+AL9wc3EA
+fgAmc3EAfgAoAAAAAncEAAAACnQACFN0YW5kYXJkdAAGU2lsdmVyeHNxAH4AFD9AAAAAAAAMdwgA
+AAAQAAAAAnEAfgDocQB+AC9xAH4A6XEAfgAweHVxAH4A5AAAAAIAAAAAAAAlmwAAAAAAABiReHEA
+fgC/cHEAfgDmdAAKUG9zdGdyZVNRTHEAfgDpc3EAfgCec3EAfgCbc3EAfgAadwQAAAAAeHNxAH4A
+pj9AAAAAAAAMdwgAAAAQAAAAAnEAfgCoc3EAfgAtAAACxnEAfgCpcQB+AC94AHBxAH4AqHNxAH4A
+3HEAfgC/cQB+AN5xAH4A7HEAfgDoeHNxAH4Apj9AAAAAAAAMdwgAAAAQAAAAAHgAcQB+AL9wc3EA
+fgDAcQB+ALhAbhAAAAAAAHhzcQB+AKY/QAAAAAAADHcIAAAAEAAAAAB4AHEAfgC4cHNxAH4Aq3EA
+fgDGQOOJMAAAAABzcQB+AJ5zcQB+AJtzcQB+ABp3BAAAAAJzcQB+AJ5zcQB+AJtzcQB+ABp3BAAA
+AAB4c3EAfgCmP0AAAAAAAAx3CAAAABAAAAACcQB+AKhzcQB+AC0AAABjcQB+AKlxAH4AL3gAcHEA
+fgCoc3EAfgCrcQB+AK5AhOwAAAAAAHNxAH4AnnNxAH4Am3NxAH4AGncEAAAAAHhzcQB+AKY/QAAA
+AAAADHcIAAAAEAAAAAJxAH4AqHEAfgAvcQB+AKlzcQB+AC0AAAFIeABwcQB+AKlzcQB+AMBxAH4A
+rkCE7AAAAAAAeHNxAH4Apj9AAAAAAAAMdwgAAAAQAAAAAHgAcQB+AK5wc3EAfgDAcQB+AMZA44kw
+AAAAAHhzcQB+AKY/QAAAAAAADHcIAAAAEAAAAAB4AHEAfgDGcHNxAH4AwHEAfgDGQM1LQAAAAAB4
+c3EAfgCmP0AAAAAAAAx3CAAAABAAAAAAeABxAH4AxnBwdAANRGVjaXNpb24gVHJlZQ==</Model>
+</Operator>
+<Operator X="92" Y="280" name="Histogram Analysis" type="com.alpine.miner.gef.runoperator.field.HistogramOperator" uuid="1330992514047">
+<ColumnBinsModel>
+<ColumnBin bin="10" columnName="credit" isMax="false" isMin="false" max="100.0" min="0.0" type="0" width="1.0"/>
+</ColumnBinsModel>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="accounts"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="acct_id" type="INTEGER"/>
+<Field name="acct_type" type="CHARACTER VARYING(16)"/>
+<Field name="acct_status" type="CHAR"/>
+<Field name="credit" type="SMALLINT"/>
+<Field name="zipcode" type="CHAR(5)"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Link source="accounts" target="Table Join - Income"/>
+<Link source="zip_income" target="Table Join - Income"/>
+<Link source="account_statements" target="Aggregate"/>
+<Link source="Table Join - Income" target="Training Dataset"/>
+<Link source="Aggregate" target="Training Dataset"/>
+<Link source="Training Dataset" target="Decision Tree"/>
+<Link source="accounts" target="Histogram Analysis"/>
+<VariableModel>
+<Variable>
+<Name>@default_schema</Name>
+<Value>public</Value>
+</Variable>
+<Variable>
+<Name>@default_prefix</Name>
+<Value>alp</Value>
+</Variable>
+</VariableModel>
+</Process>

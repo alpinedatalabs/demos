@@ -1,0 +1,1113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Process Description="" UserName="Administrator" Version="3.0">
+<Operator X="52" Y="242" name="DRG_LOOKUP" type="com.alpine.miner.gef.runoperator.datasource.DbTableOperator" uuid="1327070088315_0">
+<Parameter key="dbConnectionName" value="Amazon"/>
+<Parameter key="schemaName" value="health"/>
+<Parameter key="tableName" value="drg_lookup"/>
+<Parameter key="userName" value="miner_demo"/>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/aws"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+</Operator>
+<Operator X="55" Y="95" name="patientdata" type="com.alpine.miner.gef.runoperator.datasource.DbTableOperator" uuid="1327070170901_0">
+<Parameter key="dbConnectionName" value="Amazon"/>
+<Parameter key="schemaName" value="health"/>
+<Parameter key="tableName" value="patientdata"/>
+<Parameter key="userName" value="miner_demo"/>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/aws"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+</Operator>
+<Operator X="142" Y="122" name="Variable" type="com.alpine.miner.gef.runoperator.field.VariableOperator" uuid="1327070222519">
+<Parameter key="outputType" value="VIEW"/>
+<Parameter key="outputSchema" value="health"/>
+<Parameter key="outputTable" value="patientCreateInterval"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<DerivedFieldsModel>
+<selectedColumnName columnName="recordid"/>
+<selectedColumnName columnName="recordcount"/>
+<selectedColumnName columnName="interval"/>
+<selectedColumnName columnName="patientsex"/>
+<selectedColumnName columnName="age"/>
+<selectedColumnName columnName="patientrace"/>
+<selectedColumnName columnName="patientethnicity"/>
+<selectedColumnName columnName="patientdisposition"/>
+<selectedColumnName columnName="lengthofstay"/>
+<selectedColumnName columnName="admittype"/>
+<selectedColumnName columnName="admitsource"/>
+<selectedColumnName columnName="hospitalid"/>
+<selectedColumnName columnName="regionid"/>
+<selectedColumnName columnName="other_diag_code"/>
+<selectedColumnName columnName="placecode"/>
+<selectedColumnName columnName="reimbdrg"/>
+<selectedColumnName columnName="reimbmdc"/>
+<selectedColumnName columnName="accomcharges"/>
+<selectedColumnName columnName="ancilcharges"/>
+<selectedColumnName columnName="totalcharges"/>
+<selectedColumnName columnName="servclass"/>
+<selectedColumnName columnName="residenceind"/>
+<selectedColumnName columnName="emergencydeptind"/>
+<selectedColumnName columnName="potamb"/>
+<selectedColumnName columnName="complicationminor"/>
+<selectedColumnName columnName="complicationsever"/>
+<selectedColumnName columnName="traumaminor"/>
+<selectedColumnName columnName="traumasevere"/>
+<selectedColumnName columnName="traumaseverity"/>
+<selectedColumnName columnName="nosocomialinf"/>
+<selectedColumnName columnName="severity"/>
+<selectedColumnName columnName="costweight"/>
+<selectedColumnName columnName="otherdxcode1_4280"/>
+<selectedColumnName columnName="flag_othdxcode_4280"/>
+<DerivedFieldItem columnName="interval2" dataType="INTEGER" expression="CASE &#13;&#10;WHEN recordcount = 1 THEN 0&#13;&#10; ELSE interval&#13;&#10; END"/>
+</DerivedFieldsModel>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/aws"/>
+<Parameter key="schema" value="health"/>
+<Parameter key="table" value="patientdata"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="recordid" type="NUMERIC(38)"/>
+<Field name="recordcount" type="NUMERIC(38)"/>
+<Field name="interval" type="NUMERIC(38)"/>
+<Field name="patientsex" type="CHARACTER VARYING(1)"/>
+<Field name="age" type="INTEGER"/>
+<Field name="patientrace" type="CHARACTER VARYING(2)"/>
+<Field name="patientethnicity" type="CHARACTER VARYING(2)"/>
+<Field name="patientdisposition" type="CHARACTER VARYING(100)"/>
+<Field name="lengthofstay" type="NUMERIC(38)"/>
+<Field name="admittype" type="CHARACTER VARYING(26)"/>
+<Field name="admitsource" type="CHARACTER VARYING(1)"/>
+<Field name="hospitalid" type="CHARACTER VARYING(3)"/>
+<Field name="regionid" type="CHARACTER VARYING(2)"/>
+<Field name="other_diag_code" type="CHARACTER VARYING(100)"/>
+<Field name="placecode" type="CHARACTER VARYING(25)"/>
+<Field name="reimbdrg" type="INTEGER"/>
+<Field name="reimbmdc" type="INTEGER"/>
+<Field name="accomcharges" type="NUMERIC(10)"/>
+<Field name="ancilcharges" type="NUMERIC(10)"/>
+<Field name="totalcharges" type="NUMERIC(10)"/>
+<Field name="servclass" type="CHARACTER VARYING(26)"/>
+<Field name="residenceind" type="CHARACTER VARYING(5)"/>
+<Field name="emergencydeptind" type="CHARACTER VARYING(1)"/>
+<Field name="potamb" type="NUMERIC(10)"/>
+<Field name="complicationminor" type="NUMERIC(38)"/>
+<Field name="complicationsever" type="NUMERIC(38)"/>
+<Field name="traumaminor" type="NUMERIC(38)"/>
+<Field name="traumasevere" type="NUMERIC(38)"/>
+<Field name="traumaseverity" type="NUMERIC(38)"/>
+<Field name="nosocomialinf" type="NUMERIC(38)"/>
+<Field name="severity" type="NUMERIC(38)"/>
+<Field name="costweight" type="NUMERIC(4)"/>
+<Field name="otherdxcode1_4280" type="CHARACTER VARYING(26)"/>
+<Field name="flag_othdxcode_4280" type="NUMERIC(38)"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="214" Y="147" name="Row Filter" type="com.alpine.miner.gef.runoperator.field.FilterOperator" uuid="1327070299425">
+<Parameter key="whereClause" value="patientdisposition &lt;&gt; '20' AND&#13;&#10;interval2  between 0 and 3 "/>
+<Parameter key="outputType" value="VIEW"/>
+<Parameter key="outputSchema" value="health"/>
+<Parameter key="outputTable" value="patientFliter"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/aws"/>
+<Parameter key="schema" value="health"/>
+<Parameter key="table" value="patientCreateInterval"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="recordid" type="NUMERIC(38)"/>
+<Field name="recordcount" type="NUMERIC(38)"/>
+<Field name="interval" type="NUMERIC(38)"/>
+<Field name="patientsex" type="CHARACTER VARYING(1)"/>
+<Field name="age" type="INTEGER"/>
+<Field name="patientrace" type="CHARACTER VARYING(2)"/>
+<Field name="patientethnicity" type="CHARACTER VARYING(2)"/>
+<Field name="patientdisposition" type="CHARACTER VARYING(100)"/>
+<Field name="lengthofstay" type="NUMERIC(38)"/>
+<Field name="admittype" type="CHARACTER VARYING(26)"/>
+<Field name="admitsource" type="CHARACTER VARYING(1)"/>
+<Field name="hospitalid" type="CHARACTER VARYING(3)"/>
+<Field name="regionid" type="CHARACTER VARYING(2)"/>
+<Field name="other_diag_code" type="CHARACTER VARYING(100)"/>
+<Field name="placecode" type="CHARACTER VARYING(25)"/>
+<Field name="reimbdrg" type="INTEGER"/>
+<Field name="reimbmdc" type="INTEGER"/>
+<Field name="accomcharges" type="NUMERIC(10)"/>
+<Field name="ancilcharges" type="NUMERIC(10)"/>
+<Field name="totalcharges" type="NUMERIC(10)"/>
+<Field name="servclass" type="CHARACTER VARYING(26)"/>
+<Field name="residenceind" type="CHARACTER VARYING(5)"/>
+<Field name="emergencydeptind" type="CHARACTER VARYING(1)"/>
+<Field name="potamb" type="NUMERIC(10)"/>
+<Field name="complicationminor" type="NUMERIC(38)"/>
+<Field name="complicationsever" type="NUMERIC(38)"/>
+<Field name="traumaminor" type="NUMERIC(38)"/>
+<Field name="traumasevere" type="NUMERIC(38)"/>
+<Field name="traumaseverity" type="NUMERIC(38)"/>
+<Field name="nosocomialinf" type="NUMERIC(38)"/>
+<Field name="severity" type="NUMERIC(38)"/>
+<Field name="costweight" type="NUMERIC(4)"/>
+<Field name="otherdxcode1_4280" type="CHARACTER VARYING(26)"/>
+<Field name="flag_othdxcode_4280" type="NUMERIC(38)"/>
+<Field name="interval2" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="299" Y="183" name="Table Join" type="com.alpine.miner.gef.runoperator.datasource.TableJoinOperator" uuid="1327070349515">
+<Parameter key="createSequenceID" value="No"/>
+<Parameter key="outputType" value="VIEW"/>
+<Parameter key="outputSchema" value="health"/>
+<Parameter key="outputTable" value="patientTableJoin"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<TableJoinDefinition>
+<JoinTableModel alias="public_patientFliter_a" operID="1327070299425" schema="health" table="patientFliter"/>
+<JoinTableModel alias="public_drg_lookup_a" operID="1327070088315_0" schema="health" table="drg_lookup"/>
+<JoinColumnModel columnName="recordid" columnType="NUMERIC(38)" newColumnName="recordid" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="recordcount" columnType="NUMERIC(38)" newColumnName="recordcount" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="interval" columnType="NUMERIC(38)" newColumnName="interval" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="patientsex" columnType="CHARACTER VARYING(1)" newColumnName="patientsex" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="age" columnType="INTEGER" newColumnName="age" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="patientrace" columnType="CHARACTER VARYING(2)" newColumnName="patientrace" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="patientethnicity" columnType="CHARACTER VARYING(2)" newColumnName="patientethnicity" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="patientdisposition" columnType="CHARACTER VARYING(100)" newColumnName="patientdisposition" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="lengthofstay" columnType="NUMERIC(38)" newColumnName="lengthofstay" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="admittype" columnType="CHARACTER VARYING(26)" newColumnName="admittype" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="admitsource" columnType="CHARACTER VARYING(1)" newColumnName="admitsource" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="hospitalid" columnType="CHARACTER VARYING(3)" newColumnName="hospitalid" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="regionid" columnType="CHARACTER VARYING(2)" newColumnName="regionid" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="other_diag_code" columnType="CHARACTER VARYING(100)" newColumnName="other_diag_code" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="placecode" columnType="CHARACTER VARYING(25)" newColumnName="placecode" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="reimbdrg" columnType="INTEGER" newColumnName="reimbdrg" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="reimbmdc" columnType="INTEGER" newColumnName="reimbmdc" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="accomcharges" columnType="NUMERIC(10)" newColumnName="accomcharges" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="ancilcharges" columnType="NUMERIC(10)" newColumnName="ancilcharges" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="totalcharges" columnType="NUMERIC(10)" newColumnName="totalcharges" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="servclass" columnType="CHARACTER VARYING(26)" newColumnName="servclass" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="residenceind" columnType="CHARACTER VARYING(5)" newColumnName="residenceind" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="emergencydeptind" columnType="CHARACTER VARYING(1)" newColumnName="emergencydeptind" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="potamb" columnType="NUMERIC(10)" newColumnName="potamb" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="complicationminor" columnType="NUMERIC(38)" newColumnName="complicationminor" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="complicationsever" columnType="NUMERIC(38)" newColumnName="complicationsever" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="traumaminor" columnType="NUMERIC(38)" newColumnName="traumaminor" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="traumasevere" columnType="NUMERIC(38)" newColumnName="traumasevere" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="traumaseverity" columnType="NUMERIC(38)" newColumnName="traumaseverity" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="nosocomialinf" columnType="NUMERIC(38)" newColumnName="nosocomialinf" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="severity" columnType="NUMERIC(38)" newColumnName="severity" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="costweight" columnType="NUMERIC(4)" newColumnName="costweight" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="otherdxcode1_4280" columnType="CHARACTER VARYING(26)" newColumnName="otherdxcode1_4280" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="flag_othdxcode_4280" columnType="NUMERIC(38)" newColumnName="flag_othdxcode_4280" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="interval2" columnType="INTEGER" newColumnName="interval2" tableAlias="public_patientFliter_a"/>
+<JoinColumnModel columnName="REIMBDRG" columnType="NUMERIC(38)" newColumnName="REIMBDRG" tableAlias="public_drg_lookup_a"/>
+<JoinColumnModel columnName="MDC" columnType="CHARACTER VARYING(10)" newColumnName="MDC" tableAlias="public_drg_lookup_a"/>
+<JoinColumnModel columnName="DRG_TYPE" columnType="CHARACTER VARYING(10)" newColumnName="DRG_TYPE" tableAlias="public_drg_lookup_a"/>
+<JoinColumnModel columnName="DRG_DESC" columnType="CHARACTER VARYING(125)" newColumnName="DRG_DESC" tableAlias="public_drg_lookup_a"/>
+<JoinColumnModel columnName="RELATIVE_WEIGHTS" columnType="NUMERIC(18)" newColumnName="RELATIVE_WEIGHTS" tableAlias="public_drg_lookup_a"/>
+<JoinColumnModel columnName="GEOMETRIC_MEAN_LOS" columnType="NUMERIC(4)" newColumnName="GEOMETRIC_MEAN_LOS" tableAlias="public_drg_lookup_a"/>
+<JoinColumnModel columnName="ARITHMETIC_MEAN_LOS" columnType="NUMERIC(4)" newColumnName="ARITHMETIC_MEAN_LOS" tableAlias="public_drg_lookup_a"/>
+<JoinColumnModel columnName="SERVICE_CATEGORY" columnType="NUMERIC(38)" newColumnName="SERVICE_CATEGORY" tableAlias="public_drg_lookup_a"/>
+<JoinConditionModel andOr="" column1="public_patientFliter_a.reimbdrg" column2="public_drg_lookup_a.REIMBDRG" condition="=" joinType="JOIN" tableAlias1="public_patientFliter_a" tableAlias2="public_drg_lookup_a"/>
+</TableJoinDefinition>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/aws"/>
+<Parameter key="schema" value="health"/>
+<Parameter key="table" value="patientFliter"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="recordid" type="NUMERIC(38)"/>
+<Field name="recordcount" type="NUMERIC(38)"/>
+<Field name="interval" type="NUMERIC(38)"/>
+<Field name="patientsex" type="CHARACTER VARYING(1)"/>
+<Field name="age" type="INTEGER"/>
+<Field name="patientrace" type="CHARACTER VARYING(2)"/>
+<Field name="patientethnicity" type="CHARACTER VARYING(2)"/>
+<Field name="patientdisposition" type="CHARACTER VARYING(100)"/>
+<Field name="lengthofstay" type="NUMERIC(38)"/>
+<Field name="admittype" type="CHARACTER VARYING(26)"/>
+<Field name="admitsource" type="CHARACTER VARYING(1)"/>
+<Field name="hospitalid" type="CHARACTER VARYING(3)"/>
+<Field name="regionid" type="CHARACTER VARYING(2)"/>
+<Field name="other_diag_code" type="CHARACTER VARYING(100)"/>
+<Field name="placecode" type="CHARACTER VARYING(25)"/>
+<Field name="reimbdrg" type="INTEGER"/>
+<Field name="reimbmdc" type="INTEGER"/>
+<Field name="accomcharges" type="NUMERIC(10)"/>
+<Field name="ancilcharges" type="NUMERIC(10)"/>
+<Field name="totalcharges" type="NUMERIC(10)"/>
+<Field name="servclass" type="CHARACTER VARYING(26)"/>
+<Field name="residenceind" type="CHARACTER VARYING(5)"/>
+<Field name="emergencydeptind" type="CHARACTER VARYING(1)"/>
+<Field name="potamb" type="NUMERIC(10)"/>
+<Field name="complicationminor" type="NUMERIC(38)"/>
+<Field name="complicationsever" type="NUMERIC(38)"/>
+<Field name="traumaminor" type="NUMERIC(38)"/>
+<Field name="traumasevere" type="NUMERIC(38)"/>
+<Field name="traumaseverity" type="NUMERIC(38)"/>
+<Field name="nosocomialinf" type="NUMERIC(38)"/>
+<Field name="severity" type="NUMERIC(38)"/>
+<Field name="costweight" type="NUMERIC(4)"/>
+<Field name="otherdxcode1_4280" type="CHARACTER VARYING(26)"/>
+<Field name="flag_othdxcode_4280" type="NUMERIC(38)"/>
+<Field name="interval2" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/aws"/>
+<Parameter key="schema" value="health"/>
+<Parameter key="table" value="drg_lookup"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="REIMBDRG" type="NUMERIC(38)"/>
+<Field name="MDC" type="CHARACTER VARYING(10)"/>
+<Field name="DRG_TYPE" type="CHARACTER VARYING(10)"/>
+<Field name="DRG_DESC" type="CHARACTER VARYING(125)"/>
+<Field name="RELATIVE_WEIGHTS" type="NUMERIC(18)"/>
+<Field name="GEOMETRIC_MEAN_LOS" type="NUMERIC(4)"/>
+<Field name="ARITHMETIC_MEAN_LOS" type="NUMERIC(4)"/>
+<Field name="SERVICE_CATEGORY" type="NUMERIC(38)"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="391" Y="183" name="calcVars" type="com.alpine.miner.gef.runoperator.field.VariableOperator" uuid="1327070420336">
+<Parameter key="outputType" value="VIEW"/>
+<Parameter key="outputSchema" value="health"/>
+<Parameter key="outputTable" value="patientCalcVars"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<DerivedFieldsModel>
+<selectedColumnName columnName="MDC"/>
+<selectedColumnName columnName="DRG_TYPE"/>
+<selectedColumnName columnName="DRG_DESC"/>
+<selectedColumnName columnName="RELATIVE_WEIGHTS"/>
+<selectedColumnName columnName="GEOMETRIC_MEAN_LOS"/>
+<selectedColumnName columnName="ARITHMETIC_MEAN_LOS"/>
+<selectedColumnName columnName="SERVICE_CATEGORY"/>
+<selectedColumnName columnName="recordid"/>
+<selectedColumnName columnName="recordcount"/>
+<selectedColumnName columnName="interval"/>
+<selectedColumnName columnName="patientsex"/>
+<selectedColumnName columnName="age"/>
+<selectedColumnName columnName="patientrace"/>
+<selectedColumnName columnName="patientethnicity"/>
+<selectedColumnName columnName="patientdisposition"/>
+<selectedColumnName columnName="lengthofstay"/>
+<selectedColumnName columnName="admittype"/>
+<selectedColumnName columnName="admitsource"/>
+<selectedColumnName columnName="hospitalid"/>
+<selectedColumnName columnName="regionid"/>
+<selectedColumnName columnName="other_diag_code"/>
+<selectedColumnName columnName="placecode"/>
+<selectedColumnName columnName="reimbdrg"/>
+<selectedColumnName columnName="reimbmdc"/>
+<selectedColumnName columnName="accomcharges"/>
+<selectedColumnName columnName="ancilcharges"/>
+<selectedColumnName columnName="totalcharges"/>
+<selectedColumnName columnName="servclass"/>
+<selectedColumnName columnName="residenceind"/>
+<selectedColumnName columnName="emergencydeptind"/>
+<selectedColumnName columnName="potamb"/>
+<selectedColumnName columnName="complicationminor"/>
+<selectedColumnName columnName="complicationsever"/>
+<selectedColumnName columnName="traumaminor"/>
+<selectedColumnName columnName="traumasevere"/>
+<selectedColumnName columnName="traumaseverity"/>
+<selectedColumnName columnName="nosocomialinf"/>
+<selectedColumnName columnName="severity"/>
+<selectedColumnName columnName="costweight"/>
+<selectedColumnName columnName="otherdxcode1_4280"/>
+<selectedColumnName columnName="flag_othdxcode_4280"/>
+<selectedColumnName columnName="interval2"/>
+<selectedColumnName columnName="REIMBDRG"/>
+<DerivedFieldItem columnName="los_diff" dataType="NUMERIC" expression="lengthofstay - &quot;GEOMETRIC_MEAN_LOS&quot;"/>
+<DerivedFieldItem columnName="cardiac" dataType="INTEGER" expression="CASE &#13;&#10;WHEN &quot;MDC&quot; = '05' THEN 1&#13;&#10; ELSE 0&#13;&#10; END"/>
+<DerivedFieldItem columnName="respitory" dataType="INTEGER" expression="CASE &#13;&#10;WHEN &quot;MDC&quot; = '04' THEN 1&#13;&#10; ELSE 0&#13;&#10; END"/>
+</DerivedFieldsModel>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/aws"/>
+<Parameter key="schema" value="health"/>
+<Parameter key="table" value="patientTableJoin"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="recordid" type="NUMERIC(38)"/>
+<Field name="recordcount" type="NUMERIC(38)"/>
+<Field name="interval" type="NUMERIC(38)"/>
+<Field name="patientsex" type="CHARACTER VARYING(1)"/>
+<Field name="age" type="INTEGER"/>
+<Field name="patientrace" type="CHARACTER VARYING(2)"/>
+<Field name="patientethnicity" type="CHARACTER VARYING(2)"/>
+<Field name="patientdisposition" type="CHARACTER VARYING(100)"/>
+<Field name="lengthofstay" type="NUMERIC(38)"/>
+<Field name="admittype" type="CHARACTER VARYING(26)"/>
+<Field name="admitsource" type="CHARACTER VARYING(1)"/>
+<Field name="hospitalid" type="CHARACTER VARYING(3)"/>
+<Field name="regionid" type="CHARACTER VARYING(2)"/>
+<Field name="other_diag_code" type="CHARACTER VARYING(100)"/>
+<Field name="placecode" type="CHARACTER VARYING(25)"/>
+<Field name="reimbdrg" type="INTEGER"/>
+<Field name="reimbmdc" type="INTEGER"/>
+<Field name="accomcharges" type="NUMERIC(10)"/>
+<Field name="ancilcharges" type="NUMERIC(10)"/>
+<Field name="totalcharges" type="NUMERIC(10)"/>
+<Field name="servclass" type="CHARACTER VARYING(26)"/>
+<Field name="residenceind" type="CHARACTER VARYING(5)"/>
+<Field name="emergencydeptind" type="CHARACTER VARYING(1)"/>
+<Field name="potamb" type="NUMERIC(10)"/>
+<Field name="complicationminor" type="NUMERIC(38)"/>
+<Field name="complicationsever" type="NUMERIC(38)"/>
+<Field name="traumaminor" type="NUMERIC(38)"/>
+<Field name="traumasevere" type="NUMERIC(38)"/>
+<Field name="traumaseverity" type="NUMERIC(38)"/>
+<Field name="nosocomialinf" type="NUMERIC(38)"/>
+<Field name="severity" type="NUMERIC(38)"/>
+<Field name="costweight" type="NUMERIC(4)"/>
+<Field name="otherdxcode1_4280" type="CHARACTER VARYING(26)"/>
+<Field name="flag_othdxcode_4280" type="NUMERIC(38)"/>
+<Field name="interval2" type="INTEGER"/>
+<Field name="REIMBDRG" type="NUMERIC(38)"/>
+<Field name="MDC" type="CHARACTER VARYING(10)"/>
+<Field name="DRG_TYPE" type="CHARACTER VARYING(10)"/>
+<Field name="DRG_DESC" type="CHARACTER VARYING(125)"/>
+<Field name="RELATIVE_WEIGHTS" type="NUMERIC(18)"/>
+<Field name="GEOMETRIC_MEAN_LOS" type="NUMERIC(4)"/>
+<Field name="ARITHMETIC_MEAN_LOS" type="NUMERIC(4)"/>
+<Field name="SERVICE_CATEGORY" type="NUMERIC(38)"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="466" Y="184" name="Calc Negative LOS" type="com.alpine.miner.gef.runoperator.field.VariableOperator" uuid="1327070595239">
+<Parameter key="outputType" value="VIEW"/>
+<Parameter key="outputSchema" value="health"/>
+<Parameter key="outputTable" value="patientNegLOS"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<DerivedFieldsModel>
+<selectedColumnName columnName="admitsource"/>
+<selectedColumnName columnName="admittype"/>
+<selectedColumnName columnName="age"/>
+<selectedColumnName columnName="cardiac"/>
+<selectedColumnName columnName="nosocomialinf"/>
+<selectedColumnName columnName="patientrace"/>
+<selectedColumnName columnName="patientsex"/>
+<selectedColumnName columnName="recordid"/>
+<selectedColumnName columnName="respitory"/>
+<selectedColumnName columnName="severity"/>
+<selectedColumnName columnName="hospitalid"/>
+<DerivedFieldItem columnName="negative_los" dataType="INTEGER" expression="CASE &#13;&#10; WHEN los_diff &lt; 0 THEN 1&#13;&#10;  ELSE 0&#13;&#10;  END"/>
+</DerivedFieldsModel>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/aws"/>
+<Parameter key="schema" value="health"/>
+<Parameter key="table" value="patientCalcVars"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="MDC" type="CHARACTER VARYING(10)"/>
+<Field name="DRG_TYPE" type="CHARACTER VARYING(10)"/>
+<Field name="DRG_DESC" type="CHARACTER VARYING(125)"/>
+<Field name="RELATIVE_WEIGHTS" type="NUMERIC(18)"/>
+<Field name="GEOMETRIC_MEAN_LOS" type="NUMERIC(4)"/>
+<Field name="ARITHMETIC_MEAN_LOS" type="NUMERIC(4)"/>
+<Field name="SERVICE_CATEGORY" type="NUMERIC(38)"/>
+<Field name="recordid" type="NUMERIC(38)"/>
+<Field name="recordcount" type="NUMERIC(38)"/>
+<Field name="interval" type="NUMERIC(38)"/>
+<Field name="patientsex" type="CHARACTER VARYING(1)"/>
+<Field name="age" type="INTEGER"/>
+<Field name="patientrace" type="CHARACTER VARYING(2)"/>
+<Field name="patientethnicity" type="CHARACTER VARYING(2)"/>
+<Field name="patientdisposition" type="CHARACTER VARYING(100)"/>
+<Field name="lengthofstay" type="NUMERIC(38)"/>
+<Field name="admittype" type="CHARACTER VARYING(26)"/>
+<Field name="admitsource" type="CHARACTER VARYING(1)"/>
+<Field name="hospitalid" type="CHARACTER VARYING(3)"/>
+<Field name="regionid" type="CHARACTER VARYING(2)"/>
+<Field name="other_diag_code" type="CHARACTER VARYING(100)"/>
+<Field name="placecode" type="CHARACTER VARYING(25)"/>
+<Field name="reimbdrg" type="INTEGER"/>
+<Field name="reimbmdc" type="INTEGER"/>
+<Field name="accomcharges" type="NUMERIC(10)"/>
+<Field name="ancilcharges" type="NUMERIC(10)"/>
+<Field name="totalcharges" type="NUMERIC(10)"/>
+<Field name="servclass" type="CHARACTER VARYING(26)"/>
+<Field name="residenceind" type="CHARACTER VARYING(5)"/>
+<Field name="emergencydeptind" type="CHARACTER VARYING(1)"/>
+<Field name="potamb" type="NUMERIC(10)"/>
+<Field name="complicationminor" type="NUMERIC(38)"/>
+<Field name="complicationsever" type="NUMERIC(38)"/>
+<Field name="traumaminor" type="NUMERIC(38)"/>
+<Field name="traumasevere" type="NUMERIC(38)"/>
+<Field name="traumaseverity" type="NUMERIC(38)"/>
+<Field name="nosocomialinf" type="NUMERIC(38)"/>
+<Field name="severity" type="NUMERIC(38)"/>
+<Field name="costweight" type="NUMERIC(4)"/>
+<Field name="otherdxcode1_4280" type="CHARACTER VARYING(26)"/>
+<Field name="flag_othdxcode_4280" type="NUMERIC(38)"/>
+<Field name="interval2" type="INTEGER"/>
+<Field name="REIMBDRG" type="NUMERIC(38)"/>
+<Field name="los_diff" type="NUMERIC"/>
+<Field name="cardiac" type="INTEGER"/>
+<Field name="respitory" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="606" Y="290" name="Random Sampling" type="com.alpine.miner.gef.runoperator.sampling.RandomSamplingOperator" uuid="1327070672566">
+<Parameter key="sampleCount" value="2"/>
+<Parameter key="sampleSizeType" value="Percentage"/>
+<Parameter key="sampleSize" value="100"/>
+<Parameter key="randomSeed" value=".1"/>
+<Parameter key="consistent" value="false"/>
+<Parameter key="replacement" value="false"/>
+<Parameter key="disjoint" value="false"/>
+<Parameter key="keyColumnList" value="recordid"/>
+<Parameter key="outputSchema" value="health"/>
+<Parameter key="outputTable" value="patientSamp"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/aws"/>
+<Parameter key="schema" value="health"/>
+<Parameter key="table" value="patientNulls"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="admitsource" type="CHARACTER VARYING(1)"/>
+<Field name="admittype" type="CHARACTER VARYING(26)"/>
+<Field name="age" type="INTEGER"/>
+<Field name="cardiac" type="INTEGER"/>
+<Field name="nosocomialinf" type="NUMERIC(38)"/>
+<Field name="patientrace" type="CHARACTER VARYING(2)"/>
+<Field name="patientsex" type="CHARACTER VARYING(1)"/>
+<Field name="recordid" type="NUMERIC(38)"/>
+<Field name="respitory" type="INTEGER"/>
+<Field name="severity" type="NUMERIC(38)"/>
+<Field name="hospitalid" type="CHARACTER VARYING(3)"/>
+<Field name="negative_los" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="519" Y="376" name="Training" type="com.alpine.miner.gef.runoperator.sampling.SampleSelectorOperator" uuid="1327086723243">
+<Parameter key="selectedTable" value="health.patientSamp_0"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/aws"/>
+<Parameter key="schema" value="health"/>
+<Parameter key="table" value="patientSamp_0"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="admitsource" type="CHARACTER VARYING(1)"/>
+<Field name="admittype" type="CHARACTER VARYING(26)"/>
+<Field name="age" type="INTEGER"/>
+<Field name="cardiac" type="INTEGER"/>
+<Field name="nosocomialinf" type="NUMERIC(38)"/>
+<Field name="patientrace" type="CHARACTER VARYING(2)"/>
+<Field name="patientsex" type="CHARACTER VARYING(1)"/>
+<Field name="recordid" type="NUMERIC(38)"/>
+<Field name="respitory" type="INTEGER"/>
+<Field name="severity" type="NUMERIC(38)"/>
+<Field name="hospitalid" type="CHARACTER VARYING(3)"/>
+<Field name="negative_los" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/aws"/>
+<Parameter key="schema" value="health"/>
+<Parameter key="table" value="patientSamp_1"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="admitsource" type="CHARACTER VARYING(1)"/>
+<Field name="admittype" type="CHARACTER VARYING(26)"/>
+<Field name="age" type="INTEGER"/>
+<Field name="cardiac" type="INTEGER"/>
+<Field name="nosocomialinf" type="NUMERIC(38)"/>
+<Field name="patientrace" type="CHARACTER VARYING(2)"/>
+<Field name="patientsex" type="CHARACTER VARYING(1)"/>
+<Field name="recordid" type="NUMERIC(38)"/>
+<Field name="respitory" type="INTEGER"/>
+<Field name="severity" type="NUMERIC(38)"/>
+<Field name="hospitalid" type="CHARACTER VARYING(3)"/>
+<Field name="negative_los" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="727" Y="369" name="Testing" type="com.alpine.miner.gef.runoperator.sampling.SampleSelectorOperator" uuid="1327086725739">
+<Parameter key="selectedTable" value="health.patientSamp_1"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/aws"/>
+<Parameter key="schema" value="health"/>
+<Parameter key="table" value="patientSamp_0"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="admitsource" type="CHARACTER VARYING(1)"/>
+<Field name="admittype" type="CHARACTER VARYING(26)"/>
+<Field name="age" type="INTEGER"/>
+<Field name="cardiac" type="INTEGER"/>
+<Field name="nosocomialinf" type="NUMERIC(38)"/>
+<Field name="patientrace" type="CHARACTER VARYING(2)"/>
+<Field name="patientsex" type="CHARACTER VARYING(1)"/>
+<Field name="recordid" type="NUMERIC(38)"/>
+<Field name="respitory" type="INTEGER"/>
+<Field name="severity" type="NUMERIC(38)"/>
+<Field name="hospitalid" type="CHARACTER VARYING(3)"/>
+<Field name="negative_los" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/aws"/>
+<Parameter key="schema" value="health"/>
+<Parameter key="table" value="patientSamp_1"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="admitsource" type="CHARACTER VARYING(1)"/>
+<Field name="admittype" type="CHARACTER VARYING(26)"/>
+<Field name="age" type="INTEGER"/>
+<Field name="cardiac" type="INTEGER"/>
+<Field name="nosocomialinf" type="NUMERIC(38)"/>
+<Field name="patientrace" type="CHARACTER VARYING(2)"/>
+<Field name="patientsex" type="CHARACTER VARYING(1)"/>
+<Field name="recordid" type="NUMERIC(38)"/>
+<Field name="respitory" type="INTEGER"/>
+<Field name="severity" type="NUMERIC(38)"/>
+<Field name="hospitalid" type="CHARACTER VARYING(3)"/>
+<Field name="negative_los" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="523" Y="503" name="Logistic Regression" type="com.alpine.miner.gef.runoperator.logisticregression.LogisticRegressionOperator" uuid="1327086759090">
+<Parameter key="dependentColumn" value="negative_los"/>
+<Parameter key="goodValue" value="1"/>
+<Parameter key="forceRetrain" value="Yes"/>
+<Parameter key="max_generations" value="25"/>
+<Parameter key="epsilon" value="0.00000001"/>
+<Parameter key="columnNames" value="admitsource,admittype,age,cardiac,nosocomialinf,patientrace,patientsex,respitory,severity"/>
+<Parameter key="isStepWise" value="false"/>
+<Parameter key="stepWiseType" value="FORWARD"/>
+<Parameter key="checkValue" value="0.05"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/aws"/>
+<Parameter key="schema" value="health"/>
+<Parameter key="table" value="patientSamp_0"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="admitsource" type="CHARACTER VARYING(1)"/>
+<Field name="admittype" type="CHARACTER VARYING(26)"/>
+<Field name="age" type="INTEGER"/>
+<Field name="cardiac" type="INTEGER"/>
+<Field name="nosocomialinf" type="NUMERIC(38)"/>
+<Field name="patientrace" type="CHARACTER VARYING(2)"/>
+<Field name="patientsex" type="CHARACTER VARYING(1)"/>
+<Field name="recordid" type="NUMERIC(38)"/>
+<Field name="respitory" type="INTEGER"/>
+<Field name="severity" type="NUMERIC(38)"/>
+<Field name="hospitalid" type="CHARACTER VARYING(3)"/>
+<Field name="negative_los" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+<Model>rO0ABXNyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuRW5naW5lTW9kZWxyBs7TjRuF
+xwIAA0wABW1vZGVsdAAmTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9vcGVyYXRvci9Nb2RlbDtMAAlt
+b2RlbFR5cGV0ABJMamF2YS9sYW5nL1N0cmluZztMAARuYW1lcQB+AAJ4cHNyAERjb20uYWxwaW5l
+LmRhdGFtaW5pbmcub3BlcmF0b3IucmVncmVzc2lvbnMuTG9naXN0aWNSZWdyZXNzaW9uTW9kZWxE
+QrslYdam2fEaAgAVRAAJY2hpU3F1YXJlWgAPaW1wcm92ZW1lbnRTdG9wWgAOaW50ZXJjZXB0QWRk
+ZWRKAAlpdGVyYXRpb25EAA1tb2RlbERldmlhbmNlRAAMbnVsbERldmlhbmNlWgAMdXNlQ0Z1bmN0
+aW9uTAAYYWxsVHJhbnNmb3JtTWFwX3ZhbHVlS2V5dAATTGphdmEvdXRpbC9IYXNoTWFwO1sABGJl
+dGF0AAJbRFsAC2NvbHVtbk5hbWVzdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wAEGNvbHVtbk5hbWVz
+QXJyYXl0ABVMamF2YS91dGlsL0FycmF5TGlzdDtMAA5kYXRhU291cmNlSW5mb3QAJ0xjb20vYWxw
+aW5lL3V0aWxpdHkvZGIvSURhdGFTb3VyY2VJbmZvO0wABGdvb2RxAH4AAkwAGmludGVyYWN0aW9u
+Q29sdW1uQ29sdW1uTWFwcQB+AAVMABdpbnRlcmFjdGlvbkNvbHVtbkV4cE1hcHEAfgAFTAAObXVs
+dGlEQlV0aWxpdHl0ACdMY29tL2FscGluZS91dGlsaXR5L2RiL0lNdWx0aURCVXRpbGl0eTtMAApv
+bGREYXRhU2V0dAAiTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9kYi9EYXRhU2V0O1sABnBWYWx1ZXEA
+fgAGWwANc3RhbmRhcmRFcnJvcnEAfgAGWwANd2FsZFN0YXRpc3RpY3EAfgAGWwAGelZhbHVlcQB+
+AAZ4cgA9Y29tLmFscGluZS5kYXRhbWluaW5nLm9wZXJhdG9yLnRyYWluaW5nLkJpbmFyeVByZWRp
+Y3Rpb25Nb2RlbDqM5dkRy007AgABRAAJdGhyZXNob2xkeHIAMmNvbS5hbHBpbmUuZGF0YW1pbmlu
+Zy5vcGVyYXRvci50cmFpbmluZy5QcmVkaWN0aW9uQRaIqfO+9IACAAB4cgAsY29tLmFscGluZS5k
+YXRhbWluaW5nLm9wZXJhdG9yLkFic3RyYWN0TW9kZWz2i8GBtSDbHAIAAUwADWhlYWRlckRhdGFT
+ZXR0ACRMY29tL2FscGluZS9kYXRhbWluaW5nL2RiL0RCRGF0YVNldDt4cgArY29tLmFscGluZS5k
+YXRhbWluaW5nLm9wZXJhdG9yLk91dHB1dE9iamVjdFuP2rT89nduAgABTAAGc291cmNlcQB+AAJ4
+cHBzcgAiY29tLmFscGluZS5kYXRhbWluaW5nLmRiLkRCRGF0YVNldKMtNq6RCGCMAgAHTAAHYXZl
+cmFnZXEAfgAFTAAHY29sdW1uc3QAIkxjb20vYWxwaW5lL2RhdGFtaW5pbmcvZGIvQ29sdW1ucztM
+AAdtYXhpbXVtcQB+AAVMAAdtaW5pbXVtcQB+AAVMAANzdW1xAH4ABUwABXRhYmxldAAgTGNvbS9h
+bHBpbmUvZGF0YW1pbmluZy9kYi9UYWJsZTtMAAh2YXJpYW5jZXEAfgAFeHIAKGNvbS5hbHBpbmUu
+ZGF0YW1pbmluZy5kYi5BYnN0cmFjdERhdGFTZXQgXHHM0QEvBAIABFoAG2NvbXB1dGVkQWxsQ29s
+dW1uU3RhdGlzdGljc1oAFWNvbXB1dGVkQWxsU3RhdGlzdGljc0wABWlkTWFwdAAPTGphdmEvdXRp
+bC9NYXA7TAANc3RhdGlzdGljc01hcHEAfgAWeHEAfgAQcAAAc3IAEWphdmEudXRpbC5IYXNoTWFw
+BQfawcMWYNEDAAJGAApsb2FkRmFjdG9ySQAJdGhyZXNob2xkeHA/QAAAAAAADHcIAAAAEAAAAAB4
+c3EAfgAYP0AAAAAAAAx3CAAAABAAAAAAeHBzcgAjY29tLmFscGluZS5kYXRhbWluaW5nLmRiLkNv
+bHVtbnNJbXAgscwk+1aF3QIAAUwAB2NvbHVtbnN0ABBMamF2YS91dGlsL0xpc3Q7eHBzcgAUamF2
+YS51dGlsLkxpbmtlZExpc3QMKVNdSmCIIgMAAHhwdwQAAAAac3IAJmNvbS5hbHBpbmUuZGF0YW1p
+bmluZy5kYi5OdW1lcmljQ29sdW1uAAAAAAAAAAECAAJaAAhjYXRlZ29yeUwAB21hcHBpbmd0ACJM
+Y29tL2FscGluZS9kYXRhbWluaW5nL2RiL01hcHBpbmc7eHIAJ2NvbS5hbHBpbmUuZGF0YW1pbmlu
+Zy5kYi5BYnN0cmFjdENvbHVtbt7a3ZGEwHRqAgAHRAAMZGVmYXVsdFZhbHVlSQAFaW5kZXhaAAdz
+cGVjaWFsSQAJdmFsdWVUeXBlTAALY29sdW1uU3RhdHNxAH4AHEwABG5hbWVxAH4AAkwAC3NwZWNp
+YWxOYW1lcQB+AAJ4cAAAAAAAAAAAAAAAAAAAAAACc3EAfgAedwQAAAABc3IAK2NvbS5hbHBpbmUu
+ZGF0YW1pbmluZy5kYi5OdW1lcmljQ29sdW1uU3RhdHNtt8FTBNnewgIAB0oACm1heENvdW50ZXJK
+AARtb2RlRAAKc3F1YXJlZFN1bUQAA3N1bUkADHZhbHVlQ291bnRlckwABmNvbHVtbnQAIUxjb20v
+YWxwaW5lL2RhdGFtaW5pbmcvZGIvQ29sdW1uO1sABnNjb3Jlc3QAAltKeHAAAAAAAAAAAP//////
+////AAAAAAAAAAAAAAAAAAAAAAAAAABwcHh0AAxwYXRpZW50c2V4X01wAHNyACRjb20uYWxwaW5l
+LmRhdGFtaW5pbmcuZGIuTWFwcGluZ0ltcGxjcjXO4I0QCwIAAkwAEGluZGV4VG9TeW1ib2xNYXBx
+AH4AHEwAEHN5bWJvbFRvSW5kZXhNYXBxAH4AFnhwc3IAE2phdmEudXRpbC5BcnJheUxpc3R4gdId
+mcdhnQMAAUkABHNpemV4cAAAAAB3BAAAAAp4c3EAfgAYP0AAAAAAAAx3CAAAABAAAAAAeHNxAH4A
+IAAAAAAAAAAAAAAAAQAAAAADc3EAfgAedwQAAAABc3EAfgAlAAAAAAAAAAD//////////wAAAAAA
+AAAAAAAAAAAAAAAAAAAAcHB4dAADYWdlcABzcQB+ACpzcQB+ACwAAAAAdwQAAAAKeHNxAH4AGD9A
+AAAAAAAMdwgAAAAQAAAAAHhzcQB+ACAAAAAAAAAAAAAAAAIAAAAAAnNxAH4AHncEAAAAAXNxAH4A
+JQAAAAAAAAAA//////////8AAAAAAAAAAAAAAAAAAAAAAAAAAHBweHQADnBhdGllbnRyYWNlXzk5
+cABzcQB+ACpzcQB+ACwAAAAAdwQAAAAKeHNxAH4AGD9AAAAAAAAMdwgAAAAQAAAAAHhzcQB+ACAA
+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
+cQB+ABg/QAAAAAAADHcIAAAAEAAAAAl0AAEzdAANYWRtaXRzb3VyY2VfM3QAATJ0AA1hZG1pdHNv
+dXJjZV8ydAABMXQADWFkbWl0c291cmNlXzF0AAE3dAANYWRtaXRzb3VyY2VfN3QAATZ0AA1hZG1p
+dHNvdXJjZV82dAABNXQADWFkbWl0c291cmNlXzV0AAE0dAANYWRtaXRzb3VyY2VfNHQAATl0AA1h
+ZG1pdHNvdXJjZV85dAABOHQADWFkbWl0c291cmNlXzh4dAALcGF0aWVudHJhY2VzcQB+ABg/QAAA
+AAAADHcIAAAAEAAAAAZ0AAEzdAANcGF0aWVudHJhY2VfM3QAATJ0AA1wYXRpZW50cmFjZV8ydAAB
+NXQADXBhdGllbnRyYWNlXzV0AAE0dAANcGF0aWVudHJhY2VfNHQAAjk5dAAOcGF0aWVudHJhY2Vf
+OTl0AAI4OHQADnBhdGllbnRyYWNlXzg4eHQACWFkbWl0dHlwZXNxAH4AGD9AAAAAAAAMdwgAAAAQ
+AAAABHQAB05ld2Jvcm50ABFhZG1pdHR5cGVfTmV3Ym9ybnQACEVtZXJnZW50dAASYWRtaXR0eXBl
+X0VtZXJnZW50dAAGVXJnZW50dAAQYWRtaXR0eXBlX1VyZ2VudHQADU5vdCBBdmFpbGFibGV0ABdh
+ZG1pdHR5cGVfTm90IEF2YWlsYWJsZXh0AApwYXRpZW50c2V4c3EAfgAYP0AAAAAAAAx3CAAAABAA
+AAABdAABTXQADHBhdGllbnRzZXhfTXh4dXIAAltEPqaMFKtjWh4CAAB4cAAAABo/vZLsVl1b57+B
+dufslV+uv8szEl3taaI/oYhBEWiR2sAcwYdMEpySv4YiNgHdd2o/rMD+LnzSRr+1dAej1GsEv7OJ
+lZbF/FM/4tjahoN6JsAAl9G1M7ymv8RMbf3cHqI/1JakBFa4lL/wlUZo0++5P9V1q0xG0eK/x7Oa
+SCFbWz/U7K0+uWz/v9RkC/OU/K0/1eJBxRex0D/ZQ+xpD2jwP9JsDcBH7RTABKbJ5mE/yr/IU3gN
+WG2sP7U3ZppUvS8/02DHW/8RCT/G6x9JERnWdXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17
+RwIAAHhwAAAAGXEAfgApcQB+ADJxAH4AOXEAfgBAcQB+AEdxAH4ATnEAfgBVcQB+AFxxAH4AY3EA
+fgBqcQB+AHFxAH4AeHEAfgB/cQB+AIZxAH4AjXEAfgCUcQB+AJtxAH4AonEAfgCpcQB+ALBxAH4A
+t3EAfgC+cQB+AMVxAH4AzHEAfgDTc3EAfgAsAAAAGXcEAAAAGXEAfgApcQB+ADJxAH4AOXEAfgBA
+cQB+AEdxAH4ATnEAfgBVcQB+AFxxAH4AY3EAfgBqcQB+AHFxAH4AeHEAfgB/cQB+AIZxAH4AjXEA
+fgCUcQB+AJtxAH4AonEAfgCpcQB+ALBxAH4At3EAfgC+cQB+AMVxAH4AzHEAfgDTeHNyACxjb20u
+YWxwaW5lLnV0aWxpdHkuZGIuRGF0YVNvdXJjZUluZm9Qb3N0Z3Jlc6W943SMV6+LAgAAeHIAMGNv
+bS5hbHBpbmUudXRpbGl0eS5kYi5BYnN0cmFjdERhdGFTb3VyY2VJbmZvUEdHUKW943SMV6+LAgAB
+TAAGbG9jYWxldAASTGphdmEvdXRpbC9Mb2NhbGU7eHBzcgAQamF2YS51dGlsLkxvY2FsZX74EWCc
+MPnsAwAGSQAIaGFzaGNvZGVMAAdjb3VudHJ5cQB+AAJMAApleHRlbnNpb25zcQB+AAJMAAhsYW5n
+dWFnZXEAfgACTAAGc2NyaXB0cQB+AAJMAAd2YXJpYW50cQB+AAJ4cP////90AAJVU3QAAHQAAmVu
+cQB+AX1xAH4BfXh0AAExc3EAfgAYP0AAAAAAAAx3CAAAABAAAAAAeHNxAH4AGD9AAAAAAAAMdwgA
+AAAQAAAAAHhzcgArY29tLmFscGluZS51dGlsaXR5LmRiLk11bHRpREJQb3N0Z3JlVXRpbGl0eQND
+PcBqaUsGAgAAeHIAMGNvbS5hbHBpbmUudXRpbGl0eS5kYi5BYnN0cmFjdE11bHRpREJVdGlsaXR5
+R1BQR+3eV9hHM/WeAgAAeHBzcQB+ABJwAQBzcQB+ABg/QAAAAAAADHcIAAAAEAAAAAB4c3EAfgAY
+P0AAAAAAAAx3CAAAABAAAAAAeHBzcQB+ABtzcQB+AB53BAAAAApzcgAmY29tLmFscGluZS5kYXRh
+bWluaW5nLmRiLk5vbWluYWxDb2x1bW4NVPogNYd8LQIAAUwAB21hcHBpbmdxAH4AIXhxAH4AIgAA
+AAAAAAAAAAAAAQAAAAABc3EAfgAedwQAAAABc3IAK2NvbS5hbHBpbmUuZGF0YW1pbmluZy5kYi5O
+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
+dGljIFJlZ3Jlc3Npb24=</Model>
+</Operator>
+<Operator X="728" Y="501" name="Goodness Of Fit" type="com.alpine.miner.gef.runoperator.model.evaluator.GoodnessOfFitOperator" uuid="1327086789276">
+<Parameter key="dependentColumn" value="negative_los"/>
+<Parameter key="useModel" value="true"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/aws"/>
+<Parameter key="schema" value="health"/>
+<Parameter key="table" value="patientSamp_1"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="admitsource" type="CHARACTER VARYING(1)"/>
+<Field name="admittype" type="CHARACTER VARYING(26)"/>
+<Field name="age" type="INTEGER"/>
+<Field name="cardiac" type="INTEGER"/>
+<Field name="nosocomialinf" type="NUMERIC(38)"/>
+<Field name="patientrace" type="CHARACTER VARYING(2)"/>
+<Field name="patientsex" type="CHARACTER VARYING(1)"/>
+<Field name="recordid" type="NUMERIC(38)"/>
+<Field name="respitory" type="INTEGER"/>
+<Field name="severity" type="NUMERIC(38)"/>
+<Field name="hospitalid" type="CHARACTER VARYING(3)"/>
+<Field name="negative_los" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="586" Y="187" name="Null Value Replacement" type="com.alpine.miner.gef.runoperator.field.ReplaceNullOperator" uuid="1327147295887">
+<Parameter key="outputType" value="VIEW"/>
+<Parameter key="outputSchema" value="health"/>
+<Parameter key="outputTable" value="patientNulls"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<NullReplacementModel>
+<NullReplacementItem columnName="admittype" nullValue="'0'"/>
+</NullReplacementModel>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/aws"/>
+<Parameter key="schema" value="health"/>
+<Parameter key="table" value="patientNegLOS"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="admitsource" type="CHARACTER VARYING(1)"/>
+<Field name="admittype" type="CHARACTER VARYING(26)"/>
+<Field name="age" type="INTEGER"/>
+<Field name="cardiac" type="INTEGER"/>
+<Field name="nosocomialinf" type="NUMERIC(38)"/>
+<Field name="patientrace" type="CHARACTER VARYING(2)"/>
+<Field name="patientsex" type="CHARACTER VARYING(1)"/>
+<Field name="recordid" type="NUMERIC(38)"/>
+<Field name="respitory" type="INTEGER"/>
+<Field name="severity" type="NUMERIC(38)"/>
+<Field name="hospitalid" type="CHARACTER VARYING(3)"/>
+<Field name="negative_los" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="616" Y="425" name="Decision Tree" type="com.alpine.miner.gef.runoperator.decisiontree.DecisionTreeOperator" uuid="1339437146496">
+<Parameter key="dependentColumn" value="negative_los"/>
+<Parameter key="forceRetrain" value="Yes"/>
+<Parameter key="maximal_depth" value="5"/>
+<Parameter key="confidence" value="0.15"/>
+<Parameter key="minimal_gain" value="0.02"/>
+<Parameter key="number_of_prepruning_alternatives" value="3"/>
+<Parameter key="minimal_size_for_split" value="4"/>
+<Parameter key="no_pruning" value="false"/>
+<Parameter key="no_pre_pruning" value="false"/>
+<Parameter key="size_threshold_load_data" value="50000"/>
+<Parameter key="minimal_leaf_size" value="2"/>
+<Parameter key="columnNames" value="admitsource,admittype,age,cardiac,nosocomialinf,patientrace,patientsex,respitory,severity"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://127.0.0.1:5432/aws"/>
+<Parameter key="schema" value="health"/>
+<Parameter key="table" value="patientSamp_0"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="admitsource" type="CHARACTER VARYING(1)"/>
+<Field name="admittype" type="CHARACTER VARYING(26)"/>
+<Field name="age" type="INTEGER"/>
+<Field name="cardiac" type="INTEGER"/>
+<Field name="nosocomialinf" type="NUMERIC(38)"/>
+<Field name="patientrace" type="CHARACTER VARYING(2)"/>
+<Field name="patientsex" type="CHARACTER VARYING(1)"/>
+<Field name="recordid" type="NUMERIC(38)"/>
+<Field name="respitory" type="INTEGER"/>
+<Field name="severity" type="NUMERIC(38)"/>
+<Field name="hospitalid" type="CHARACTER VARYING(3)"/>
+<Field name="negative_los" type="INTEGER"/>
+</Fields>
+</InPutFieldList>
+<Model>rO0ABXNyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuRW5naW5lTW9kZWxyBs7TjRuF
+xwIAA0wABW1vZGVsdAAmTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9vcGVyYXRvci9Nb2RlbDtMAAlt
+b2RlbFR5cGV0ABJMamF2YS9sYW5nL1N0cmluZztMAARuYW1lcQB+AAJ4cHNyAD9jb20uYWxwaW5l
+LmRhdGFtaW5pbmcub3BlcmF0b3IudHJlZS50aHJlc2hvbGQuRGVjaXNpb25UcmVlTW9kZWxT7C/s
+jE52bAIAAlsABlVQREFURXQAE1tMamF2YS9sYW5nL1N0cmluZztMAARyb290dAA0TGNvbS9hbHBp
+bmUvZGF0YW1pbmluZy9vcGVyYXRvci90cmVlL3RocmVzaG9sZC9UcmVlO3hyADNjb20uYWxwaW5l
+LmRhdGFtaW5pbmcub3BlcmF0b3IudHJhaW5pbmcuU2luZ2xlTW9kZWyxSlqt4qUX+AIAAHhyADJj
+b20uYWxwaW5lLmRhdGFtaW5pbmcub3BlcmF0b3IudHJhaW5pbmcuUHJlZGljdGlvbkEWiKnzvvSA
+AgAAeHIALGNvbS5hbHBpbmUuZGF0YW1pbmluZy5vcGVyYXRvci5BYnN0cmFjdE1vZGVs9ovBgbUg
+2xwCAAFMAA1oZWFkZXJEYXRhU2V0dAAkTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9kYi9EQkRhdGFT
+ZXQ7eHIAK2NvbS5hbHBpbmUuZGF0YW1pbmluZy5vcGVyYXRvci5PdXRwdXRPYmplY3Rbj9q0/PZ3
+bgIAAUwABnNvdXJjZXEAfgACeHBwc3IAImNvbS5hbHBpbmUuZGF0YW1pbmluZy5kYi5EQkRhdGFT
+ZXSjLTaukQhgjAIAB0wAB2F2ZXJhZ2V0ABNMamF2YS91dGlsL0hhc2hNYXA7TAAHY29sdW1uc3QA
+Ikxjb20vYWxwaW5lL2RhdGFtaW5pbmcvZGIvQ29sdW1ucztMAAdtYXhpbXVtcQB+AA5MAAdtaW5p
+bXVtcQB+AA5MAANzdW1xAH4ADkwABXRhYmxldAAgTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9kYi9U
+YWJsZTtMAAh2YXJpYW5jZXEAfgAOeHIAKGNvbS5hbHBpbmUuZGF0YW1pbmluZy5kYi5BYnN0cmFj
+dERhdGFTZXQgXHHM0QEvBAIABFoAG2NvbXB1dGVkQWxsQ29sdW1uU3RhdGlzdGljc1oAFWNvbXB1
+dGVkQWxsU3RhdGlzdGljc0wABWlkTWFwdAAPTGphdmEvdXRpbC9NYXA7TAANc3RhdGlzdGljc01h
+cHEAfgASeHEAfgALcAAAc3IAEWphdmEudXRpbC5IYXNoTWFwBQfawcMWYNEDAAJGAApsb2FkRmFj
+dG9ySQAJdGhyZXNob2xkeHA/QAAAAAAADHcIAAAAEAAAAAB4c3EAfgAUP0AAAAAAAAx3CAAAABAA
+AAAAeHBzcgAjY29tLmFscGluZS5kYXRhbWluaW5nLmRiLkNvbHVtbnNJbXAgscwk+1aF3QIAAUwA
+B2NvbHVtbnN0ABBMamF2YS91dGlsL0xpc3Q7eHBzcgAUamF2YS51dGlsLkxpbmtlZExpc3QMKVNd
+SmCIIgMAAHhwdwQAAAAKc3IAJmNvbS5hbHBpbmUuZGF0YW1pbmluZy5kYi5Ob21pbmFsQ29sdW1u
+DVT6IDWHfC0CAAFMAAdtYXBwaW5ndAAiTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9kYi9NYXBwaW5n
+O3hyACdjb20uYWxwaW5lLmRhdGFtaW5pbmcuZGIuQWJzdHJhY3RDb2x1bW7e2t2RhMB0agIAB0QA
+DGRlZmF1bHRWYWx1ZUkABWluZGV4WgAHc3BlY2lhbEkACXZhbHVlVHlwZUwAC2NvbHVtblN0YXRz
+cQB+ABhMAARuYW1lcQB+AAJMAAtzcGVjaWFsTmFtZXEAfgACeHAAAAAAAAAAAAAAAAEAAAAAAXNx
+AH4AGncEAAAAAXNyACtjb20uYWxwaW5lLmRhdGFtaW5pbmcuZGIuTm9taW5hbENvbHVtblN0YXRz
+XE1wNlSUQOgCAARKAAptYXhDb3VudGVySgAEbW9kZUwABmNvbHVtbnQAIUxjb20vYWxwaW5lL2Rh
+dGFtaW5pbmcvZGIvQ29sdW1uO1sABnNjb3Jlc3QAAltKeHAAAAAAAAAAAP//////////cHB4dAAK
+cGF0aWVudHNleHBzcgAkY29tLmFscGluZS5kYXRhbWluaW5nLmRiLk1hcHBpbmdJbXBsY3I1zuCN
+EAsCAAJMABBpbmRleFRvU3ltYm9sTWFwcQB+ABhMABBzeW1ib2xUb0luZGV4TWFwcQB+ABJ4cHNy
+ABNqYXZhLnV0aWwuQXJyYXlMaXN0eIHSHZnHYZ0DAAFJAARzaXpleHAAAAACdwQAAAAKdAABTXQA
+AUZ4c3EAfgAUP0AAAAAAAAx3CAAAABAAAAACcQB+ACtzcgARamF2YS5sYW5nLkludGVnZXIS4qCk
+94GHOAIAAUkABXZhbHVleHIAEGphdmEubGFuZy5OdW1iZXKGrJUdC5TgiwIAAHhwAAAAAXEAfgAq
+c3EAfgAtAAAAAHhzcgAmY29tLmFscGluZS5kYXRhbWluaW5nLmRiLk51bWVyaWNDb2x1bW4AAAAA
+AAAAAQIAAloACGNhdGVnb3J5TAAHbWFwcGluZ3EAfgAdeHEAfgAeAAAAAAAAAAAAAAACAAAAAANz
+cQB+ABp3BAAAAAFzcgArY29tLmFscGluZS5kYXRhbWluaW5nLmRiLk51bWVyaWNDb2x1bW5TdGF0
+c223wVME2d7CAgAHSgAKbWF4Q291bnRlckoABG1vZGVEAApzcXVhcmVkU3VtRAADc3VtSQAMdmFs
+dWVDb3VudGVyTAAGY29sdW1ucQB+ACJbAAZzY29yZXNxAH4AI3hwAAAAAAAAAAD//////////wAA
+AAAAAAAAAAAAAAAAAAAAAAAAcHB4dAADYWdlcABzcQB+ACZzcQB+ACgAAAAAdwQAAAAKeHNxAH4A
+FD9AAAAAAAAMdwgAAAAQAAAAAHhzcQB+ABwAAAAAAAAAAAAAAAMAAAAAAXNxAH4AGncEAAAAAXNx
+AH4AIQAAAAAAAAAA//////////9wcHh0AAtwYXRpZW50cmFjZXBzcQB+ACZzcQB+ACgAAAAGdwQA
+AAAKdAACOTl0AAI4OHQAATR0AAEzdAABMnQAATF4c3EAfgAUP0AAAAAAAAx3CAAAABAAAAAGcQB+
+AENzcQB+AC0AAAADcQB+AERzcQB+AC0AAAAEcQB+AEVzcQB+AC0AAAAFcQB+AEJzcQB+AC0AAAAC
+cQB+AEBxAH4AMHEAfgBBcQB+AC94c3EAfgAcAAAAAAAAAAAAAAAEAAAAAAFzcQB+ABp3BAAAAAFz
+cQB+ACEAAAAAAAAAAP//////////cHB4dAAJYWRtaXR0eXBlcHNxAH4AJnNxAH4AKAAAAAV3BAAA
+AAp0AAZVcmdlbnR0AA1Ob3QgQXZhaWxhYmxldAAHTmV3Ym9ybnQACEVtZXJnZW50dAAIRWxlY3Rp
+dmV4c3EAfgAUP0AAAAAAAAx3CAAAABAAAAAFcQB+AFNxAH4ASnEAfgBVcQB+AEhxAH4AVHEAfgBH
+cQB+AFFxAH4AMHEAfgBScQB+AC94c3EAfgAcAAAAAAAAAAAAAAAFAAAAAAFzcQB+ABp3BAAAAAFz
+cQB+ACEAAAAAAAAAAP//////////cHB4dAALYWRtaXRzb3VyY2Vwc3EAfgAmc3EAfgAoAAAACXcE
+AAAACnQAATl0AAE4dAABN3QAATZ0AAE1dAABNHQAATN0AAEydAABMXhzcQB+ABQ/QAAAAAAADHcI
+AAAAEAAAAAlxAH4AY3NxAH4ALQAAAAZxAH4AZHNxAH4ALQAAAAdxAH4AZXNxAH4ALQAAAAhxAH4A
+X3EAfgBKcQB+AGBxAH4AR3EAfgBhcQB+AEhxAH4AYnEAfgBJcQB+AF1xAH4AMHEAfgBecQB+AC94
+c3EAfgAxAAAAAAAAAAAAAAAHAAAAAAJzcQB+ABp3BAAAAAFzcQB+ADQAAAAAAAAAAP//////////
+AAAAAAAAAAAAAAAAAAAAAAAAAABwcHh0AA1ub3NvY29taWFsaW5mcABzcQB+ACZzcQB+ACgAAAAA
+dwQAAAAKeHNxAH4AFD9AAAAAAAAMdwgAAAAQAAAAAHhzcQB+ADEAAAAAAAAAAAAAAAgAAAAAAnNx
+AH4AGncEAAAAAXNxAH4ANAAAAAAAAAAA//////////8AAAAAAAAAAAAAAAAAAAAAAAAAAHBweHQA
+CHNldmVyaXR5cABzcQB+ACZzcQB+ACgAAAAAdwQAAAAKeHNxAH4AFD9AAAAAAAAMdwgAAAAQAAAA
+AHhzcQB+ADEAAAAAAAAAAAAAAAkAAAAAA3NxAH4AGncEAAAAAXNxAH4ANAAAAAAAAAAA////////
+//8AAAAAAAAAAAAAAAAAAAAAAAAAAHBweHQAB2NhcmRpYWNwAHNxAH4AJnNxAH4AKAAAAAB3BAAA
+AAp4c3EAfgAUP0AAAAAAAAx3CAAAABAAAAAAeHNxAH4AMQAAAAAAAAAAAAAACgAAAAADc3EAfgAa
+dwQAAAABc3EAfgA0AAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAAAAAAAAcHB4dAAJcmVz
+cGl0b3J5cABzcQB+ACZzcQB+ACgAAAAAdwQAAAAKeHNxAH4AFD9AAAAAAAAMdwgAAAAQAAAAAHhz
+cQB+ADEAAAAAAAAAAAAAAAsBAAAAA3NxAH4AGncEAAAAAXNxAH4ANAAAAAAAAAAA//////////8A
+AAAAAAAAAAAAAAAAAAAAAAAAAHBweHQADG5lZ2F0aXZlX2xvc3QAFUFMUElORV9ERVBFTkRFTlRf
+TkFNRQFzcQB+ACZzcQB+ACgAAAACdwQAAAAKdAABMXQAATB4c3EAfgAUP0AAAAAAAAx3CAAAABAA
+AAACcQB+AI1xAH4AMHEAfgCOcQB+AC94eHBwcHNyACBjb20uYWxwaW5lLmRhdGFtaW5pbmcuZGIu
+REJUYWJsZZHwN8W1ZQNZAgAGSgAEc2l6ZUwACHBhc3N3b3JkcQB+AAJMAAl0YWJsZU5hbWVxAH4A
+AkwAA3VybHEAfgACTAAIdXNlck5hbWVxAH4AAkwADndoZXJlQ29uZGl0aW9ucQB+AAJ4cgAqY29t
+LmFscGluZS5kYXRhbWluaW5nLmRiLkFic3RyYWN0RGF0YVRhYmxlvR8DBHp6+ioCAAJMAAdjb2x1
+bW5zcQB+ABhMABB1bnVzZWRDb2x1bW5MaXN0cQB+ABh4cHNxAH4AKAAAAAx3BAAAAA9zcQB+ADEA
+AAAAAAAAAAAAAAAAAAAAAnNxAH4AGncEAAAAAXNxAH4ANAAAAAAAAAAA//////////8AAAAAAAAA
+AAAAAAAAAAAAAAAAAHBweHQACHJlY29yZGlkcABzcQB+ACZzcQB+ACgAAAAAdwQAAAAKeHNxAH4A
+FD9AAAAAAAAMdwgAAAAQAAAAAHhzcQB+ABwAAAAAAAAAAAAAAAEAAAAAAXNxAH4AGncEAAAAAXNx
+AH4AIQAAAAAAAAAA//////////9wcHh0AApwYXRpZW50c2V4cHNxAH4AJnNxAH4AKAAAAAB3BAAA
+AAp4c3EAfgAUP0AAAAAAAAx3CAAAABAAAAAAeHNxAH4AMQAAAAAAAAAAAAAAAgAAAAADc3EAfgAa
+dwQAAAABc3EAfgA0AAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAAAAAAAAcHB4dAADYWdl
+cABzcQB+ACZzcQB+ACgAAAAAdwQAAAAKeHNxAH4AFD9AAAAAAAAMdwgAAAAQAAAAAHhzcQB+ABwA
+AAAAAAAAAAAAAAMAAAAAAXNxAH4AGncEAAAAAXNxAH4AIQAAAAAAAAAA//////////9wcHh0AAtw
+YXRpZW50cmFjZXBzcQB+ACZzcQB+ACgAAAAAdwQAAAAKeHNxAH4AFD9AAAAAAAAMdwgAAAAQAAAA
+AHhzcQB+ABwAAAAAAAAAAAAAAAQAAAAAAXNxAH4AGncEAAAAAXNxAH4AIQAAAAAAAAAA////////
+//9wcHh0AAlhZG1pdHR5cGVwc3EAfgAmc3EAfgAoAAAAAHcEAAAACnhzcQB+ABQ/QAAAAAAADHcI
+AAAAEAAAAAB4c3EAfgAcAAAAAAAAAAAAAAAFAAAAAAFzcQB+ABp3BAAAAAFzcQB+ACEAAAAAAAAA
+AP//////////cHB4dAALYWRtaXRzb3VyY2Vwc3EAfgAmc3EAfgAoAAAAAHcEAAAACnhzcQB+ABQ/
+QAAAAAAADHcIAAAAEAAAAAB4c3EAfgAcAAAAAAAAAAAAAAAGAAAAAAFzcQB+ABp3BAAAAAFzcQB+
+ACEAAAAAAAAAAP//////////cHB4dAAKaG9zcGl0YWxpZHBzcQB+ACZzcQB+ACgAAAAAdwQAAAAK
+eHNxAH4AFD9AAAAAAAAMdwgAAAAQAAAAAHhzcQB+ADEAAAAAAAAAAAAAAAcAAAAAAnNxAH4AGncE
+AAAAAXNxAH4ANAAAAAAAAAAA//////////8AAAAAAAAAAAAAAAAAAAAAAAAAAHBweHQADW5vc29j
+b21pYWxpbmZwAHNxAH4AJnNxAH4AKAAAAAB3BAAAAAp4c3EAfgAUP0AAAAAAAAx3CAAAABAAAAAA
+eHNxAH4AMQAAAAAAAAAAAAAACAAAAAACc3EAfgAadwQAAAABc3EAfgA0AAAAAAAAAAD/////////
+/wAAAAAAAAAAAAAAAAAAAAAAAAAAcHB4dAAIc2V2ZXJpdHlwAHNxAH4AJnNxAH4AKAAAAAB3BAAA
+AAp4c3EAfgAUP0AAAAAAAAx3CAAAABAAAAAAeHNxAH4AMQAAAAAAAAAAAAAACQAAAAADc3EAfgAa
+dwQAAAABc3EAfgA0AAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAAAAAAAAcHB4dAAHY2Fy
+ZGlhY3AAc3EAfgAmc3EAfgAoAAAAAHcEAAAACnhzcQB+ABQ/QAAAAAAADHcIAAAAEAAAAAB4c3EA
+fgAxAAAAAAAAAAAAAAAKAAAAAANzcQB+ABp3BAAAAAFzcQB+ADQAAAAAAAAAAP//////////AAAA
+AAAAAAAAAAAAAAAAAAAAAABwcHh0AAlyZXNwaXRvcnlwAHNxAH4AJnNxAH4AKAAAAAB3BAAAAAp4
+c3EAfgAUP0AAAAAAAAx3CAAAABAAAAAAeHNxAH4AMQAAAAAAAAAAAAAACwAAAAADc3EAfgAadwQA
+AAABc3EAfgA0AAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAAAAAAAAcHB4dAAMbmVnYXRp
+dmVfbG9zcABzcQB+ACZzcQB+ACgAAAAAdwQAAAAKeHNxAH4AFD9AAAAAAAAMdwgAAAAQAAAAAHh4
+c3EAfgAadwQAAAAAeAAAAAAAAVqKdAAKbWluZXJfZGVtb3QAGCJoZWFsdGgiLiJwYXRpZW50U2Ft
+cF8wInQAJGpkYmM6cG9zdGdyZXNxbDovLzEyNy4wLjAuMTo1NDMyL2F3c3QACm1pbmVyX2RlbW90
+ASAicGF0aWVudHNleCIgaXMgbm90IG51bGwgIGFuZCAiYWdlIiBpcyBub3QgbnVsbCAgYW5kICJw
+YXRpZW50cmFjZSIgaXMgbm90IG51bGwgIGFuZCAiYWRtaXR0eXBlIiBpcyBub3QgbnVsbCAgYW5k
+ICJhZG1pdHNvdXJjZSIgaXMgbm90IG51bGwgIGFuZCAibm9zb2NvbWlhbGluZiIgaXMgbm90IG51
+bGwgIGFuZCAic2V2ZXJpdHkiIGlzIG5vdCBudWxsICBhbmQgImNhcmRpYWMiIGlzIG5vdCBudWxs
+ICBhbmQgInJlc3BpdG9yeSIgaXMgbm90IG51bGwgIGFuZCAibmVnYXRpdmVfbG9zIiBpcyBub3Qg
+bnVsbCBwcHNyADJjb20uYWxwaW5lLmRhdGFtaW5pbmcub3BlcmF0b3IudHJlZS50aHJlc2hvbGQu
+VHJlZWJK5RPlcal+AgAETAAIY2hpbGRyZW5xAH4AGEwACmNvdW50ZXJNYXBxAH4AEkwADGRpc3Bs
+YXlMYWJlbHEAfgACTAAFbGFiZWxxAH4AAnhwc3EAfgAadwQAAAAAeHNyABdqYXZhLnV0aWwuTGlu
+a2VkSGFzaE1hcDTATlwQbMD7AgABWgALYWNjZXNzT3JkZXJ4cQB+ABQ/QAAAAAAADHcIAAAAEAAA
+AAJxAH4AjXNxAH4ALQAAXXdxAH4AjnNxAH4ALQAA/RN4AHB0AAEwcHQADURlY2lzaW9uIFRyZWU=</Model>
+</Operator>
+<Link source="patientdata" target="Variable"/>
+<Link source="Variable" target="Row Filter"/>
+<Link source="Row Filter" target="Table Join"/>
+<Link source="DRG_LOOKUP" target="Table Join"/>
+<Link source="Table Join" target="calcVars"/>
+<Link source="calcVars" target="Calc Negative LOS"/>
+<Link source="Random Sampling" target="Training"/>
+<Link source="Random Sampling" target="Testing"/>
+<Link source="Training" target="Logistic Regression"/>
+<Link source="Testing" target="Goodness Of Fit"/>
+<Link source="Logistic Regression" target="Goodness Of Fit"/>
+<Link source="Calc Negative LOS" target="Null Value Replacement"/>
+<Link source="Null Value Replacement" target="Random Sampling"/>
+<Link source="Training" target="Decision Tree"/>
+<Link source="Decision Tree" target="Goodness Of Fit"/>
+<VariableModel>
+<Variable>
+<Name>@default_schema</Name>
+<Value>public</Value>
+</Variable>
+<Variable>
+<Name>@default_prefix</Name>
+<Value>alp</Value>
+</Variable>
+</VariableModel>
+</Process>

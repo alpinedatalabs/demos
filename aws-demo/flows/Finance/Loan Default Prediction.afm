@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Process Description="" UserName="support" Version="3.0">
+<Operator X="16" Y="35" name="BANKLOAN_DEFAULT" type="com.alpine.miner.gef.runoperator.datasource.DbTableOperator" uuid="1324474652451_0">
+<Parameter key="dbConnectionName" value="Amazon"/>
+<Parameter key="schemaName" value="finance"/>
+<Parameter key="tableName" value="BANKLOAN_DEFAULT2"/>
+<Parameter key="userName" value="miner_demo"/>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+</Operator>
+<Operator X="337" Y="35" name="Random Sampling" type="com.alpine.miner.gef.runoperator.sampling.RandomSamplingOperator" uuid="1324475156736">
+<Parameter key="sampleCount" value="2"/>
+<Parameter key="sampleSizeType" value="Percentage"/>
+<Parameter key="sampleSize" value="100"/>
+<Parameter key="randomSeed" value=".1"/>
+<Parameter key="consistent" value="false"/>
+<Parameter key="replacement" value="false"/>
+<Parameter key="disjoint" value="false"/>
+<Parameter key="keyColumnList" value="AGE_IN_YEARS,CREDIT_CARD_DEBT_IN_THOUSANDS,DEBT_TO_INCOME_RATIO,EDU,HOUSEHOLD_INCOME_IN_THOUSANDS,OTHER_DEBT_IN_THOUSANDS,PREVIOUSLY_DEFAULTED,YEARS_AT_CURRENT_ADDRESS,YEARS_WITH_CURRENT_EMPLOYER"/>
+<Parameter key="outputSchema" value="finance"/>
+<Parameter key="outputTable" value="bankSamp"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="bankNullVal"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="age" type="NUMERIC"/>
+<Field name="cc_debt" type="NUMERIC"/>
+<Field name="cur_employ_length" type="INTEGER"/>
+<Field name="other_debt" type="NUMERIC"/>
+<Field name="income_ths" type="NUMERIC"/>
+<Field name="defaulted" type="CHARACTER VARYING(5)"/>
+<Field name="debt_inc_ratio" type="NUMERIC"/>
+<Field name="cur_residence_length" type="INTEGER"/>
+<Field name="education" type="BIGINT"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="421" Y="121" name="Traning Sample" type="com.alpine.miner.gef.runoperator.sampling.SampleSelectorOperator" uuid="1324475229027">
+<Parameter key="selectedTable" value="finance.bankSamp_0"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="bankSamp_0"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="age" type="NUMERIC"/>
+<Field name="cc_debt" type="NUMERIC"/>
+<Field name="cur_employ_length" type="INTEGER"/>
+<Field name="other_debt" type="NUMERIC"/>
+<Field name="income_ths" type="NUMERIC"/>
+<Field name="defaulted" type="CHARACTER VARYING(5)"/>
+<Field name="debt_inc_ratio" type="NUMERIC"/>
+<Field name="cur_residence_length" type="INTEGER"/>
+<Field name="education" type="BIGINT"/>
+</Fields>
+</InPutFieldList>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="bankSamp_1"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="age" type="NUMERIC"/>
+<Field name="cc_debt" type="NUMERIC"/>
+<Field name="cur_employ_length" type="INTEGER"/>
+<Field name="other_debt" type="NUMERIC"/>
+<Field name="income_ths" type="NUMERIC"/>
+<Field name="defaulted" type="CHARACTER VARYING(5)"/>
+<Field name="debt_inc_ratio" type="NUMERIC"/>
+<Field name="cur_residence_length" type="INTEGER"/>
+<Field name="education" type="BIGINT"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="493" Y="326" name="Loan Default Prediction" type="com.alpine.miner.gef.runoperator.decisiontree.TreePredictOperator" uuid="1324475248468">
+<Parameter key="outputSchema" value="finance"/>
+<Parameter key="outputTable" value="bankloanScore"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="bankNullVal"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="age" type="NUMERIC"/>
+<Field name="cc_debt" type="NUMERIC"/>
+<Field name="cur_employ_length" type="INTEGER"/>
+<Field name="other_debt" type="NUMERIC"/>
+<Field name="income_ths" type="NUMERIC"/>
+<Field name="defaulted" type="CHARACTER VARYING(5)"/>
+<Field name="debt_inc_ratio" type="NUMERIC"/>
+<Field name="cur_residence_length" type="INTEGER"/>
+<Field name="education" type="BIGINT"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="487" Y="213" name="Predictive Model (CART)" type="com.alpine.miner.gef.runoperator.decisiontree.CartOperator" uuid="1324475255496">
+<Parameter key="dependentColumn" value="defaulted"/>
+<Parameter key="forceRetrain" value="Yes"/>
+<Parameter key="maximal_depth" value="5"/>
+<Parameter key="confidence" value="0.15"/>
+<Parameter key="number_of_prepruning_alternatives" value="3"/>
+<Parameter key="minimal_size_for_split" value="4"/>
+<Parameter key="no_pruning" value="false"/>
+<Parameter key="no_pre_pruning" value="false"/>
+<Parameter key="size_threshold_load_data" value="10000"/>
+<Parameter key="minimal_leaf_size" value="2"/>
+<Parameter key="columnNames" value="age,cc_debt,cur_employ_length,cur_residence_length,debt_inc_ratio,education,income_ths,other_debt"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="bankSamp_0"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="age" type="NUMERIC"/>
+<Field name="cc_debt" type="NUMERIC"/>
+<Field name="cur_employ_length" type="INTEGER"/>
+<Field name="other_debt" type="NUMERIC"/>
+<Field name="income_ths" type="NUMERIC"/>
+<Field name="defaulted" type="CHARACTER VARYING(5)"/>
+<Field name="debt_inc_ratio" type="NUMERIC"/>
+<Field name="cur_residence_length" type="INTEGER"/>
+<Field name="education" type="BIGINT"/>
+</Fields>
+</InPutFieldList>
+<Model>rO0ABXNyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuRW5naW5lTW9kZWxyBs7TjRuF
+xwIAA0wABW1vZGVsdAAmTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9vcGVyYXRvci9Nb2RlbDtMAAlt
+b2RlbFR5cGV0ABJMamF2YS9sYW5nL1N0cmluZztMAARuYW1lcQB+AAJ4cHNyAD9jb20uYWxwaW5l
+LmRhdGFtaW5pbmcub3BlcmF0b3IudHJlZS50aHJlc2hvbGQuRGVjaXNpb25UcmVlTW9kZWxT7C/s
+jE52bAIAAlsABlVQREFURXQAE1tMamF2YS9sYW5nL1N0cmluZztMAARyb290dAA0TGNvbS9hbHBp
+bmUvZGF0YW1pbmluZy9vcGVyYXRvci90cmVlL3RocmVzaG9sZC9UcmVlO3hyADNjb20uYWxwaW5l
+LmRhdGFtaW5pbmcub3BlcmF0b3IudHJhaW5pbmcuU2luZ2xlTW9kZWyxSlqt4qUX+AIAAHhyADJj
+b20uYWxwaW5lLmRhdGFtaW5pbmcub3BlcmF0b3IudHJhaW5pbmcuUHJlZGljdGlvbkEWiKnzvvSA
+AgAAeHIALGNvbS5hbHBpbmUuZGF0YW1pbmluZy5vcGVyYXRvci5BYnN0cmFjdE1vZGVs9ovBgbUg
+2xwCAAFMAA1oZWFkZXJEYXRhU2V0dAAkTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9kYi9EQkRhdGFT
+ZXQ7eHIAK2NvbS5hbHBpbmUuZGF0YW1pbmluZy5vcGVyYXRvci5PdXRwdXRPYmplY3Rbj9q0/PZ3
+bgIAAUwABnNvdXJjZXEAfgACeHBwc3IAImNvbS5hbHBpbmUuZGF0YW1pbmluZy5kYi5EQkRhdGFT
+ZXSjLTaukQhgjAIAB0wAB2F2ZXJhZ2V0ABNMamF2YS91dGlsL0hhc2hNYXA7TAAHY29sdW1uc3QA
+Ikxjb20vYWxwaW5lL2RhdGFtaW5pbmcvZGIvQ29sdW1ucztMAAdtYXhpbXVtcQB+AA5MAAdtaW5p
+bXVtcQB+AA5MAANzdW1xAH4ADkwABXRhYmxldAAgTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9kYi9U
+YWJsZTtMAAh2YXJpYW5jZXEAfgAOeHIAKGNvbS5hbHBpbmUuZGF0YW1pbmluZy5kYi5BYnN0cmFj
+dERhdGFTZXQgXHHM0QEvBAIABFoAG2NvbXB1dGVkQWxsQ29sdW1uU3RhdGlzdGljc1oAFWNvbXB1
+dGVkQWxsU3RhdGlzdGljc0wABWlkTWFwdAAPTGphdmEvdXRpbC9NYXA7TAANc3RhdGlzdGljc01h
+cHEAfgASeHEAfgALcAAAc3IAEWphdmEudXRpbC5IYXNoTWFwBQfawcMWYNEDAAJGAApsb2FkRmFj
+dG9ySQAJdGhyZXNob2xkeHA/QAAAAAAADHcIAAAAEAAAAAB4c3EAfgAUP0AAAAAAAAx3CAAAABAA
+AAAAeHBzcgAjY29tLmFscGluZS5kYXRhbWluaW5nLmRiLkNvbHVtbnNJbXAgscwk+1aF3QIAAUwA
+B2NvbHVtbnN0ABBMamF2YS91dGlsL0xpc3Q7eHBzcgAUamF2YS51dGlsLkxpbmtlZExpc3QMKVNd
+SmCIIgMAAHhwdwQAAAAJc3IAJmNvbS5hbHBpbmUuZGF0YW1pbmluZy5kYi5OdW1lcmljQ29sdW1u
+AAAAAAAAAAECAAJaAAhjYXRlZ29yeUwAB21hcHBpbmd0ACJMY29tL2FscGluZS9kYXRhbWluaW5n
+L2RiL01hcHBpbmc7eHIAJ2NvbS5hbHBpbmUuZGF0YW1pbmluZy5kYi5BYnN0cmFjdENvbHVtbt7a
+3ZGEwHRqAgAHRAAMZGVmYXVsdFZhbHVlSQAFaW5kZXhaAAdzcGVjaWFsSQAJdmFsdWVUeXBlTAAL
+Y29sdW1uU3RhdHNxAH4AGEwABG5hbWVxAH4AAkwAC3NwZWNpYWxOYW1lcQB+AAJ4cAAAAAAAAAAA
+AAAAAAAAAAACc3EAfgAadwQAAAABc3IAK2NvbS5hbHBpbmUuZGF0YW1pbmluZy5kYi5OdW1lcmlj
+Q29sdW1uU3RhdHNtt8FTBNnewgIAB0oACm1heENvdW50ZXJKAARtb2RlRAAKc3F1YXJlZFN1bUQA
+A3N1bUkADHZhbHVlQ291bnRlckwABmNvbHVtbnQAIUxjb20vYWxwaW5lL2RhdGFtaW5pbmcvZGIv
+Q29sdW1uO1sABnNjb3Jlc3QAAltKeHAAAAAAAAAAAP//////////AAAAAAAAAAAAAAAAAAAAAAAA
+AABwcHh0AANhZ2VwAHNyACRjb20uYWxwaW5lLmRhdGFtaW5pbmcuZGIuTWFwcGluZ0ltcGxjcjXO
+4I0QCwIAAkwAEGluZGV4VG9TeW1ib2xNYXBxAH4AGEwAEHN5bWJvbFRvSW5kZXhNYXBxAH4AEnhw
+c3IAE2phdmEudXRpbC5BcnJheUxpc3R4gdIdmcdhnQMAAUkABHNpemV4cAAAAAB3BAAAAAp4c3EA
+fgAUP0AAAAAAAAx3CAAAABAAAAAAeHNxAH4AHAAAAAAAAAAAAAAAAQAAAAADc3EAfgAadwQAAAAB
+c3EAfgAhAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAAAAAAAAcHB4dAARY3VyX2VtcGxv
+eV9sZW5ndGhwAHNxAH4AJnNxAH4AKAAAAAB3BAAAAAp4c3EAfgAUP0AAAAAAAAx3CAAAABAAAAAA
+eHNxAH4AHAAAAAAAAAAAAAAAAgAAAAADc3EAfgAadwQAAAABc3EAfgAhAAAAAAAAAAD/////////
+/wAAAAAAAAAAAAAAAAAAAAAAAAAAcHB4dAAUY3VyX3Jlc2lkZW5jZV9sZW5ndGhwAHNxAH4AJnNx
+AH4AKAAAAAB3BAAAAAp4c3EAfgAUP0AAAAAAAAx3CAAAABAAAAAAeHNxAH4AHAAAAAAAAAAAAAAA
+AwAAAAACc3EAfgAadwQAAAABc3EAfgAhAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAAAA
+AAAAcHB4dAAKaW5jb21lX3Roc3AAc3EAfgAmc3EAfgAoAAAAAHcEAAAACnhzcQB+ABQ/QAAAAAAA
+DHcIAAAAEAAAAAB4c3EAfgAcAAAAAAAAAAAAAAAEAAAAAAJzcQB+ABp3BAAAAAFzcQB+ACEAAAAA
+AAAAAP//////////AAAAAAAAAAAAAAAAAAAAAAAAAABwcHh0AA5kZWJ0X2luY19yYXRpb3AAc3EA
+fgAmc3EAfgAoAAAAAHcEAAAACnhzcQB+ABQ/QAAAAAAADHcIAAAAEAAAAAB4c3EAfgAcAAAAAAAA
+AAAAAAAFAAAAAAJzcQB+ABp3BAAAAAFzcQB+ACEAAAAAAAAAAP//////////AAAAAAAAAAAAAAAA
+AAAAAAAAAABwcHh0AAdjY19kZWJ0cABzcQB+ACZzcQB+ACgAAAAAdwQAAAAKeHNxAH4AFD9AAAAA
+AAAMdwgAAAAQAAAAAHhzcQB+ABwAAAAAAAAAAAAAAAYAAAAAAnNxAH4AGncEAAAAAXNxAH4AIQAA
+AAAAAAAA//////////8AAAAAAAAAAAAAAAAAAAAAAAAAAHBweHQACm90aGVyX2RlYnRwAHNxAH4A
+JnNxAH4AKAAAAAB3BAAAAAp4c3EAfgAUP0AAAAAAAAx3CAAAABAAAAAAeHNyACZjb20uYWxwaW5l
+LmRhdGFtaW5pbmcuZGIuTm9taW5hbENvbHVtbg1U+iA1h3wtAgABTAAHbWFwcGluZ3EAfgAdeHEA
+fgAeAAAAAAAAAAAAAAAIAAAAAAFzcQB+ABp3BAAAAAFzcgArY29tLmFscGluZS5kYXRhbWluaW5n
+LmRiLk5vbWluYWxDb2x1bW5TdGF0c1xNcDZUlEDoAgAESgAKbWF4Q291bnRlckoABG1vZGVMAAZj
+b2x1bW5xAH4AIlsABnNjb3Jlc3EAfgAjeHAAAAAAAAAAAP//////////cHB4dAAJZWR1Y2F0aW9u
+cHNxAH4AJnNxAH4AKAAAAAV3BAAAAAp0AAJQR3QABU5vRGlwdAADSFNEdAADQ29sdAACQ0R4c3EA
+fgAUP0AAAAAAAAx3CAAAABAAAAAFcQB+AF9zcgARamF2YS5sYW5nLkludGVnZXIS4qCk94GHOAIA
+AUkABXZhbHVleHIAEGphdmEubGFuZy5OdW1iZXKGrJUdC5TgiwIAAHhwAAAAAnEAfgBgc3EAfgBj
+AAAAA3EAfgBhc3EAfgBjAAAABHEAfgBec3EAfgBjAAAAAXEAfgBdc3EAfgBjAAAAAHhzcQB+AFUA
+AAAAAAAAAAAAAAcBAAAAAXNxAH4AGncEAAAAAXNxAH4AWAAAAAAAAAAA//////////9wcHh0AAlk
+ZWZhdWx0ZWR0ABVBTFBJTkVfREVQRU5ERU5UX05BTUVzcQB+ACZzcQB+ACgAAAACdwQAAAAKdAAD
+WWVzdAACTm94c3EAfgAUP0AAAAAAAAx3CAAAABAAAAACcQB+AHFxAH4AaXEAfgBycQB+AGh4eHBw
+cHNyACBjb20uYWxwaW5lLmRhdGFtaW5pbmcuZGIuREJUYWJsZZHwN8W1ZQNZAgAGSgAEc2l6ZUwA
+CHBhc3N3b3JkcQB+AAJMAAl0YWJsZU5hbWVxAH4AAkwAA3VybHEAfgACTAAIdXNlck5hbWVxAH4A
+AkwADndoZXJlQ29uZGl0aW9ucQB+AAJ4cgAqY29tLmFscGluZS5kYXRhbWluaW5nLmRiLkFic3Ry
+YWN0RGF0YVRhYmxlvR8DBHp6+ioCAAJMAAdjb2x1bW5zcQB+ABhMABB1bnVzZWRDb2x1bW5MaXN0
+cQB+ABh4cHNxAH4AKAAAAAl3BAAAAApzcQB+ABwAAAAAAAAAAAAAAAAAAAAAAnNxAH4AGncEAAAA
+AXNxAH4AIQAAAAAAAAAA//////////8AAAAAAAAAAAAAAAAAAAAAAAAAAHBweHQAA2FnZXAAc3EA
+fgAmc3EAfgAoAAAAAHcEAAAACnhzcQB+ABQ/QAAAAAAADHcIAAAAEAAAAAB4c3EAfgAcAAAAAAAA
+AAAAAAABAAAAAANzcQB+ABp3BAAAAAFzcQB+ACEAAAAAAAAAAP//////////AAAAAAAAAAAAAAAA
+AAAAAAAAAABwcHh0ABFjdXJfZW1wbG95X2xlbmd0aHAAc3EAfgAmc3EAfgAoAAAAAHcEAAAACnhz
+cQB+ABQ/QAAAAAAADHcIAAAAEAAAAAB4c3EAfgAcAAAAAAAAAAAAAAACAAAAAANzcQB+ABp3BAAA
+AAFzcQB+ACEAAAAAAAAAAP//////////AAAAAAAAAAAAAAAAAAAAAAAAAABwcHh0ABRjdXJfcmVz
+aWRlbmNlX2xlbmd0aHAAc3EAfgAmc3EAfgAoAAAAAHcEAAAACnhzcQB+ABQ/QAAAAAAADHcIAAAA
+EAAAAAB4c3EAfgAcAAAAAAAAAAAAAAADAAAAAAJzcQB+ABp3BAAAAAFzcQB+ACEAAAAAAAAAAP//
+////////AAAAAAAAAAAAAAAAAAAAAAAAAABwcHh0AAppbmNvbWVfdGhzcABzcQB+ACZzcQB+ACgA
+AAAAdwQAAAAKeHNxAH4AFD9AAAAAAAAMdwgAAAAQAAAAAHhzcQB+ABwAAAAAAAAAAAAAAAQAAAAA
+AnNxAH4AGncEAAAAAXNxAH4AIQAAAAAAAAAA//////////8AAAAAAAAAAAAAAAAAAAAAAAAAAHBw
+eHQADmRlYnRfaW5jX3JhdGlvcABzcQB+ACZzcQB+ACgAAAAAdwQAAAAKeHNxAH4AFD9AAAAAAAAM
+dwgAAAAQAAAAAHhzcQB+ABwAAAAAAAAAAAAAAAUAAAAAAnNxAH4AGncEAAAAAXNxAH4AIQAAAAAA
+AAAA//////////8AAAAAAAAAAAAAAAAAAAAAAAAAAHBweHQAB2NjX2RlYnRwAHNxAH4AJnNxAH4A
+KAAAAAB3BAAAAAp4c3EAfgAUP0AAAAAAAAx3CAAAABAAAAAAeHNxAH4AHAAAAAAAAAAAAAAABgAA
+AAACc3EAfgAadwQAAAABc3EAfgAhAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAAAAAAAA
+cHB4dAAKb3RoZXJfZGVidHAAc3EAfgAmc3EAfgAoAAAAAHcEAAAACnhzcQB+ABQ/QAAAAAAADHcI
+AAAAEAAAAAB4c3EAfgBVAAAAAAAAAAAAAAAHAAAAAAFzcQB+ABp3BAAAAAFzcQB+AFgAAAAAAAAA
+AP//////////cHB4dAAJZGVmYXVsdGVkcHNxAH4AJnNxAH4AKAAAAAB3BAAAAAp4c3EAfgAUP0AA
+AAAAAAx3CAAAABAAAAAAeHNxAH4AVQAAAAAAAAAAAAAACAAAAAABc3EAfgAadwQAAAABc3EAfgBY
+AAAAAAAAAAD//////////3BweHQACWVkdWNhdGlvbnBzcQB+ACZzcQB+ACgAAAAAdwQAAAAKeHNx
+AH4AFD9AAAAAAAAMdwgAAAAQAAAAAHh4c3EAfgAadwQAAAAAeAAAAAAAAAGpdAAKbWluZXJfZGVt
+b3QAFiJmaW5hbmNlIi4iYmFua1NhbXBfMCJ0AChqZGJjOnBvc3RncmVzcWw6Ly81MC4xOC4yMzAu
+MTg1OjU0MzIvYXdzdAAKbWluZXJfZGVtb3QBEiJhZ2UiIGlzIG5vdCBudWxsICBhbmQgImN1cl9l
+bXBsb3lfbGVuZ3RoIiBpcyBub3QgbnVsbCAgYW5kICJjdXJfcmVzaWRlbmNlX2xlbmd0aCIgaXMg
+bm90IG51bGwgIGFuZCAiaW5jb21lX3RocyIgaXMgbm90IG51bGwgIGFuZCAiZGVidF9pbmNfcmF0
+aW8iIGlzIG5vdCBudWxsICBhbmQgImNjX2RlYnQiIGlzIG5vdCBudWxsICBhbmQgIm90aGVyX2Rl
+YnQiIGlzIG5vdCBudWxsICBhbmQgImVkdWNhdGlvbiIgaXMgbm90IG51bGwgIGFuZCAiZGVmYXVs
+dGVkIiBpcyBub3QgbnVsbCBwdXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAA
+A3QADFAoZGVmYXVsdGVkKXQABkMoWWVzKXQABUMoTm8pc3IAMmNvbS5hbHBpbmUuZGF0YW1pbmlu
+Zy5vcGVyYXRvci50cmVlLnRocmVzaG9sZC5UcmVlYkrlE+VxqX4CAARMAAhjaGlsZHJlbnEAfgAY
+TAAKY291bnRlck1hcHEAfgASTAAMZGlzcGxheUxhYmVscQB+AAJMAAVsYWJlbHEAfgACeHBzcQB+
+ABp3BAAAAAJzcgAyY29tLmFscGluZS5kYXRhbWluaW5nLm9wZXJhdG9yLnRyZWUudGhyZXNob2xk
+LlNpZGWzgJQ1WLHZxAIAAkwABWNoaWxkcQB+AAZMAAljb25kaXRpb250ADpMY29tL2FscGluZS9k
+YXRhbWluaW5nL29wZXJhdG9yL3RyZWUvdGhyZXNob2xkL0RldmlkZUNvbmQ7eHBzcQB+AMJzcQB+
+ABp3BAAAAAJzcQB+AMVzcQB+AMJzcQB+ABp3BAAAAAJzcQB+AMVzcQB+AMJzcQB+ABp3BAAAAAB4
+c3IAF2phdmEudXRpbC5MaW5rZWRIYXNoTWFwNMBOXBBswPsCAAFaAAthY2Nlc3NPcmRlcnhxAH4A
+FD9AAAAAAAAMdwgAAAAQAAAAAnQAAk5vc3EAfgBjAAAAJXQAA1llc3NxAH4AYwAAAAt4AHQACm90
+aGVyX2RlYnRxAH4A0nNyAEFjb20uYWxwaW5lLmRhdGFtaW5pbmcub3BlcmF0b3IudHJlZS50aHJl
+c2hvbGQuTGVzc0VxdWFsRGV2aWRlQ29uZMDXwIvWlQBsAgABRAAFdmFsdWV4cgBAY29tLmFscGlu
+ZS5kYXRhbWluaW5nLm9wZXJhdG9yLnRyZWUudGhyZXNob2xkLkFic3RyYWN0RGV2aWRlQ29uZJ59
+7aNE3zBzAgABTAAKY29sdW1uTmFtZXEAfgACeHB0AA5kZWJ0X2luY19yYXRpb0AgZmZmZmZmc3EA
+fgDFc3EAfgDCc3EAfgAadwQAAAACc3EAfgDFc3EAfgDCc3EAfgAadwQAAAAAeHNxAH4A0D9AAAAA
+AAAMdwgAAAAQAAAAAnEAfgDSc3EAfgBjAAAAEnEAfgDUc3EAfgBjAAAAGXgAcHEAfgDUc3EAfgDX
+cQB+ANZAD0rAgxJumHNxAH4AxXNxAH4AwnNxAH4AGncEAAAAAHhzcQB+ANA/QAAAAAAADHcIAAAA
+EAAAAAJxAH4A0nNxAH4AYwAAAAZxAH4A1HEAfgBpeABwcQB+ANJzcgA/Y29tLmFscGluZS5kYXRh
+bWluaW5nLm9wZXJhdG9yLnRyZWUudGhyZXNob2xkLkdyZWF0ZXJEZXZpZGVDb25kue+R8uqsPZ8C
+AAFEAAV2YWx1ZXhxAH4A2HEAfgDWQA9KwIMSbph4c3EAfgDQP0AAAAAAAAx3CAAAABAAAAAAeABx
+AH4A1nBzcQB+AOpxAH4A2kAgZmZmZmZmeHNxAH4A0D9AAAAAAAAMdwgAAAAQAAAAAHgAcQB+ANpw
+c3EAfgDXdAARY3VyX2VtcGxveV9sZW5ndGhABAAAAAAAAHNxAH4AxXNxAH4AwnNxAH4AGncEAAAA
+AnNxAH4AxXNxAH4AwnNxAH4AGncEAAAAAnNxAH4AxXNxAH4AwnNxAH4AGncEAAAAAHhzcQB+ANA/
+QAAAAAAADHcIAAAAEAAAAAJxAH4A0nNxAH4AYwAAAO5xAH4A1HNxAH4AYwAAABR4AHBxAH4A0nNx
+AH4A13QAA2FnZUBJwAAAAAAAc3EAfgDFc3EAfgDCc3EAfgAadwQAAAAAeHNxAH4A0D9AAAAAAAAM
+dwgAAAAQAAAAAnEAfgDScQB+AGdxAH4A1HEAfgBneABwcQB+ANRzcQB+AOpxAH4A/kBJwAAAAAAA
+eHNxAH4A0D9AAAAAAAAMdwgAAAAQAAAAAHgAcQB+AP5wc3EAfgDXdAAHY2NfZGVidEAFnrhR64Uf
+c3EAfgDFc3EAfgDCc3EAfgAadwQAAAACc3EAfgDFc3EAfgDCc3EAfgAadwQAAAAAeHNxAH4A0D9A
+AAAAAAAMdwgAAAAQAAAAAnEAfgDScQB+AGdxAH4A1HNxAH4AYwAAAAp4AHBxAH4A1HNxAH4A13QA
+CmluY29tZV90aHNASoAAAAAAAHNxAH4AxXNxAH4AwnNxAH4AGncEAAAAAHhzcQB+ANA/QAAAAAAA
+DHcIAAAAEAAAAAJxAH4A0nNxAH4AYwAAABxxAH4A1HNxAH4AYwAAAAd4AHBxAH4A0nNxAH4A6nEA
+fgEQQEqAAAAAAAB4c3EAfgDQP0AAAAAAAAx3CAAAABAAAAAAeABxAH4BEHBzcQB+AOpxAH4BBkAF
+nrhR64UfeHNxAH4A0D9AAAAAAAAMdwgAAAAQAAAAAHgAcQB+AQZwc3EAfgDqcQB+APBABAAAAAAA
+AHhzcQB+ANA/QAAAAAAADHcIAAAAEAAAAAB4AHEAfgDwcHNxAH4A13EAfgDaQDhAAAAAAABzcQB+
+AMVzcQB+AMJzcQB+ABp3BAAAAAJzcQB+AMVzcQB+AMJzcQB+ABp3BAAAAAB4c3EAfgDQP0AAAAAA
+AAx3CAAAABAAAAACcQB+ANJxAH4AaXEAfgDUc3EAfgBjAAAACHgAcHEAfgDUc3EAfgDXcQB+ANpA
+P4zMzMzMzXNxAH4AxXNxAH4AwnNxAH4AGncEAAAAAnNxAH4AxXNxAH4AwnNxAH4AGncEAAAAAHhz
+cQB+ANA/QAAAAAAADHcIAAAAEAAAAAJxAH4A0nEAfgBlcQB+ANRxAH4AaXgAcHEAfgDSc3EAfgDX
+cQB+ANpAQHMzMzMzM3NxAH4AxXNxAH4AwnNxAH4AGncEAAAAAHhzcQB+ANA/QAAAAAAADHcIAAAA
+EAAAAAJxAH4A0nEAfgBpcQB+ANRxAH4AZngAcHEAfgDUc3EAfgDqcQB+ANpAQHMzMzMzM3hzcQB+
+ANA/QAAAAAAADHcIAAAAEAAAAAB4AHEAfgDacHNxAH4A6nEAfgDaQD+MzMzMzM14c3EAfgDQP0AA
+AAAAAAx3CAAAABAAAAAAeABxAH4A2nBzcQB+AOpxAH4A2kA4QAAAAAAAeHNxAH4A0D9AAAAAAAAM
+dwgAAAAQAAAAAHgAcQB+ANpwcHQAF1ByZWRpY3RpdmUgTW9kZWwgKENBUlQp</Model>
+</Operator>
+<Operator X="500" Y="37" name="Validation Sample" type="com.alpine.miner.gef.runoperator.sampling.SampleSelectorOperator" uuid="1324475369144">
+<Parameter key="selectedTable" value="finance.bankSamp_1"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="bankSamp_0"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="age" type="NUMERIC"/>
+<Field name="cc_debt" type="NUMERIC"/>
+<Field name="cur_employ_length" type="INTEGER"/>
+<Field name="other_debt" type="NUMERIC"/>
+<Field name="income_ths" type="NUMERIC"/>
+<Field name="defaulted" type="CHARACTER VARYING(5)"/>
+<Field name="debt_inc_ratio" type="NUMERIC"/>
+<Field name="cur_residence_length" type="INTEGER"/>
+<Field name="education" type="BIGINT"/>
+</Fields>
+</InPutFieldList>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="bankSamp_1"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="age" type="NUMERIC"/>
+<Field name="cc_debt" type="NUMERIC"/>
+<Field name="cur_employ_length" type="INTEGER"/>
+<Field name="other_debt" type="NUMERIC"/>
+<Field name="income_ths" type="NUMERIC"/>
+<Field name="defaulted" type="CHARACTER VARYING(5)"/>
+<Field name="debt_inc_ratio" type="NUMERIC"/>
+<Field name="cur_residence_length" type="INTEGER"/>
+<Field name="education" type="BIGINT"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="661" Y="115" name="LIFT" type="com.alpine.miner.gef.runoperator.model.evaluator.LIFTOperator" uuid="1324475409278">
+<Parameter key="dependentColumn" value="defaulted"/>
+<Parameter key="columnValue" value="No"/>
+<Parameter key="useModel" value="true"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="bankSamp_1"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="age" type="NUMERIC"/>
+<Field name="cc_debt" type="NUMERIC"/>
+<Field name="cur_employ_length" type="INTEGER"/>
+<Field name="other_debt" type="NUMERIC"/>
+<Field name="income_ths" type="NUMERIC"/>
+<Field name="defaulted" type="CHARACTER VARYING(5)"/>
+<Field name="debt_inc_ratio" type="NUMERIC"/>
+<Field name="cur_residence_length" type="INTEGER"/>
+<Field name="education" type="BIGINT"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="168" Y="37" name="Null Value Replacement" type="com.alpine.miner.gef.runoperator.field.ReplaceNullOperator" uuid="1324475589413">
+<Parameter key="outputType" value="VIEW"/>
+<Parameter key="outputSchema" value="finance"/>
+<Parameter key="outputTable" value="bankNullVal"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<NullReplacementModel>
+<NullReplacementItem columnName="defaulted" nullValue="'No'"/>
+</NullReplacementModel>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="bankLoanVar"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="age" type="NUMERIC"/>
+<Field name="cc_debt" type="NUMERIC"/>
+<Field name="cur_employ_length" type="INTEGER"/>
+<Field name="other_debt" type="NUMERIC"/>
+<Field name="income_ths" type="NUMERIC"/>
+<Field name="defaulted" type="CHARACTER VARYING(5)"/>
+<Field name="debt_inc_ratio" type="NUMERIC"/>
+<Field name="cur_residence_length" type="INTEGER"/>
+<Field name="education" type="BIGINT"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="662" Y="206" name="ROC" type="com.alpine.miner.gef.runoperator.model.evaluator.ROCOperator" uuid="1324476287373">
+<Parameter key="dependentColumn" value="defaulted"/>
+<Parameter key="columnValue" value="No"/>
+<Parameter key="useModel" value="true"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="bankSamp_1"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="age" type="NUMERIC"/>
+<Field name="cc_debt" type="NUMERIC"/>
+<Field name="cur_employ_length" type="INTEGER"/>
+<Field name="other_debt" type="NUMERIC"/>
+<Field name="income_ths" type="NUMERIC"/>
+<Field name="defaulted" type="CHARACTER VARYING(5)"/>
+<Field name="debt_inc_ratio" type="NUMERIC"/>
+<Field name="cur_residence_length" type="INTEGER"/>
+<Field name="education" type="BIGINT"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="636" Y="35" name="Goodness Of Fit" type="com.alpine.miner.gef.runoperator.model.evaluator.GoodnessOfFitOperator" uuid="1324476309578">
+<Parameter key="dependentColumn" value="defaulted"/>
+<Parameter key="useModel" value="true"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="bankSamp_1"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="age" type="NUMERIC"/>
+<Field name="cc_debt" type="NUMERIC"/>
+<Field name="cur_employ_length" type="INTEGER"/>
+<Field name="other_debt" type="NUMERIC"/>
+<Field name="income_ths" type="NUMERIC"/>
+<Field name="defaulted" type="CHARACTER VARYING(5)"/>
+<Field name="debt_inc_ratio" type="NUMERIC"/>
+<Field name="cur_residence_length" type="INTEGER"/>
+<Field name="education" type="BIGINT"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="19" Y="306" name="Frequency Analysis" type="com.alpine.miner.gef.runoperator.field.FrequencyAnalysisOperator" uuid="1327409395558">
+<Parameter key="columnNames" value="age,cc_debt,cur_employ_length,cur_residence_length,debt_inc_ratio,defaulted,education,income_ths,other_debt"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="bankLoanVar"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="age" type="NUMERIC"/>
+<Field name="cc_debt" type="NUMERIC"/>
+<Field name="cur_employ_length" type="INTEGER"/>
+<Field name="other_debt" type="NUMERIC"/>
+<Field name="income_ths" type="NUMERIC"/>
+<Field name="defaulted" type="CHARACTER VARYING(5)"/>
+<Field name="debt_inc_ratio" type="NUMERIC"/>
+<Field name="cur_residence_length" type="INTEGER"/>
+<Field name="education" type="BIGINT"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="218" Y="321" name="Age Histogram" type="com.alpine.miner.gef.runoperator.field.HistogramOperator" uuid="1327409628678">
+<ColumnBinsModel>
+<ColumnBin bin="10" columnName="age" isMax="false" isMin="false" max="100.0" min="0.0" type="0" width="1.0"/>
+</ColumnBinsModel>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="bankLoanVar"/>
+<Parameter key="tableType" value="VIEW"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="age" type="NUMERIC"/>
+<Field name="cc_debt" type="NUMERIC"/>
+<Field name="cur_employ_length" type="INTEGER"/>
+<Field name="other_debt" type="NUMERIC"/>
+<Field name="income_ths" type="NUMERIC"/>
+<Field name="defaulted" type="CHARACTER VARYING(5)"/>
+<Field name="debt_inc_ratio" type="NUMERIC"/>
+<Field name="cur_residence_length" type="INTEGER"/>
+<Field name="education" type="BIGINT"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="137" Y="172" name="Variable" type="com.alpine.miner.gef.runoperator.field.VariableOperator" uuid="1327410777421">
+<Parameter key="outputType" value="VIEW"/>
+<Parameter key="outputSchema" value="finance"/>
+<Parameter key="outputTable" value="bankLoanVar"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<QuantileModel/>
+<DerivedFieldsModel>
+<selectedColumnName columnName="age"/>
+<selectedColumnName columnName="cc_debt"/>
+<selectedColumnName columnName="cur_employ_length"/>
+<selectedColumnName columnName="other_debt"/>
+<selectedColumnName columnName="income_ths"/>
+<selectedColumnName columnName="defaulted"/>
+<selectedColumnName columnName="debt_inc_ratio"/>
+<selectedColumnName columnName="cur_residence_length"/>
+<DerivedFieldItem columnName="education" dataType="BIGINT" expression="case&#13;&#10; when  &quot;edu_level&quot; = 'College degree' then 'CD'&#13;&#10; when  &quot;edu_level&quot; = 'Did not complete high school' then 'NoDip'&#13;&#10; when  &quot;edu_level&quot; = 'High school degree' then 'HSD'&#13;&#10; when  &quot;edu_level&quot; = 'Post-undergraduate degree' then 'PG'&#13;&#10;else 'Col'&#13;&#10; end"/>
+</DerivedFieldsModel>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.230.185:5432/aws"/>
+<Parameter key="schema" value="finance"/>
+<Parameter key="table" value="BANKLOAN_DEFAULT2"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="age" type="NUMERIC"/>
+<Field name="edu_level" type="TEXT"/>
+<Field name="cur_employ_length" type="INTEGER"/>
+<Field name="cur_residence_length" type="INTEGER"/>
+<Field name="income_ths" type="NUMERIC"/>
+<Field name="debt_inc_ratio" type="NUMERIC"/>
+<Field name="cc_debt" type="NUMERIC"/>
+<Field name="other_debt" type="NUMERIC"/>
+<Field name="defaulted" type="CHARACTER VARYING(5)"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Link source="Random Sampling" target="Traning Sample"/>
+<Link source="Traning Sample" target="Predictive Model (CART)"/>
+<Link source="Predictive Model (CART)" target="Loan Default Prediction"/>
+<Link source="Random Sampling" target="Validation Sample"/>
+<Link source="Validation Sample" target="LIFT"/>
+<Link source="Predictive Model (CART)" target="LIFT"/>
+<Link source="Null Value Replacement" target="Random Sampling"/>
+<Link source="Predictive Model (CART)" target="ROC"/>
+<Link source="Validation Sample" target="ROC"/>
+<Link source="Validation Sample" target="Goodness Of Fit"/>
+<Link source="Predictive Model (CART)" target="Goodness Of Fit"/>
+<Link source="Null Value Replacement" target="Loan Default Prediction"/>
+<Link source="BANKLOAN_DEFAULT" target="Variable"/>
+<Link source="Variable" target="Null Value Replacement"/>
+<Link source="Variable" target="Age Histogram"/>
+<Link source="Variable" target="Frequency Analysis"/>
+<VariableModel>
+<Variable>
+<Name>@default_schema</Name>
+<Value>public</Value>
+</Variable>
+<Variable>
+<Name>@default_prefix</Name>
+<Value>alp</Value>
+</Variable>
+</VariableModel>
+</Process>

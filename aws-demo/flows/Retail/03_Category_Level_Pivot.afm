@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Process Description="" UserName="hfarinas" Version="3.0">
+<Operator X="57" Y="53" name="order lineitems" type="com.alpine.miner.gef.runoperator.datasource.DbTableOperator" uuid="1294808555841">
+<Parameter key="dbConnectionName" value="aws-retail"/>
+<Parameter key="schemaName" value="ddemo"/>
+<Parameter key="tableName" value="order_lineitems"/>
+<Parameter key="userName" value="miner_demo"/>
+<Parameter key="url" value="jdbc:postgresql://50.18.43.89:5432/retail"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+</Operator>
+<Operator X="192" Y="113" name="agg by cust by categ" type="com.alpine.miner.gef.runoperator.field.AggregateOperator" uuid="1294808578713">
+<Parameter key="outputType" value="TABLE"/>
+<Parameter key="outputSchema" value="public"/>
+<Parameter key="outputTable" value="alp_order_by_cust_categ"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<AggregateFieldsModel>
+<groupBy columnName="customer_id"/>
+<groupBy columnName="product_category_name"/>
+<parentFieldList columnName="order_id"/>
+<parentFieldList columnName="order_item_id"/>
+<parentFieldList columnName="product_id"/>
+<parentFieldList columnName="product_name"/>
+<parentFieldList columnName="customer_id"/>
+<parentFieldList columnName="store_id"/>
+<parentFieldList columnName="item_shipment_status_code"/>
+<parentFieldList columnName="order_datetime"/>
+<parentFieldList columnName="ship_datetime"/>
+<parentFieldList columnName="item_return_datetime"/>
+<parentFieldList columnName="item_refund_datetime"/>
+<parentFieldList columnName="product_category_id"/>
+<parentFieldList columnName="product_category_name"/>
+<parentFieldList columnName="payment_method_code"/>
+<parentFieldList columnName="tax_amount"/>
+<parentFieldList columnName="item_quantity"/>
+<parentFieldList columnName="item_price"/>
+<parentFieldList columnName="discount_amount"/>
+<parentFieldList columnName="coupon_code"/>
+<parentFieldList columnName="coupon_amount"/>
+<parentFieldList columnName="ship_address_line1"/>
+<parentFieldList columnName="ship_address_line2"/>
+<parentFieldList columnName="ship_address_line3"/>
+<parentFieldList columnName="ship_address_city"/>
+<parentFieldList columnName="ship_address_state"/>
+<parentFieldList columnName="ship_address_postal_code"/>
+<parentFieldList columnName="ship_address_country"/>
+<parentFieldList columnName="ship_phone_number"/>
+<parentFieldList columnName="ship_customer_name"/>
+<parentFieldList columnName="ship_customer_email_address"/>
+<parentFieldList columnName="ordering_session_id"/>
+<parentFieldList columnName="website_url"/>
+<AggregateField columnName="sales" dataType="DOUBLE PRECISION" expression="CASE WHEN sum(item_quantity)&gt;5 THEN 1 ELSE 0 END"/>
+</AggregateFieldsModel>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.43.89:5432/retail"/>
+<Parameter key="schema" value="ddemo"/>
+<Parameter key="table" value="order_lineitems"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="order_id" type="CHARACTER VARYING(20)"/>
+<Field name="order_item_id" type="INTEGER"/>
+<Field name="product_id" type="INTEGER"/>
+<Field name="product_name" type="CHARACTER VARYING(500)"/>
+<Field name="customer_id" type="INTEGER"/>
+<Field name="store_id" type="INTEGER"/>
+<Field name="item_shipment_status_code" type="CHARACTER VARYING(30)"/>
+<Field name="order_datetime" type="TIMESTAMP"/>
+<Field name="ship_datetime" type="TIMESTAMP"/>
+<Field name="item_return_datetime" type="TIMESTAMP"/>
+<Field name="item_refund_datetime" type="TIMESTAMP"/>
+<Field name="product_category_id" type="INTEGER"/>
+<Field name="product_category_name" type="CHARACTER VARYING(200)"/>
+<Field name="payment_method_code" type="CHARACTER VARYING(20)"/>
+<Field name="tax_amount" type="NUMERIC(10,5)"/>
+<Field name="item_quantity" type="INTEGER"/>
+<Field name="item_price" type="NUMERIC(10,2)"/>
+<Field name="discount_amount" type="NUMERIC(10,5)"/>
+<Field name="coupon_code" type="CHARACTER VARYING(20)"/>
+<Field name="coupon_amount" type="NUMERIC(10,5)"/>
+<Field name="ship_address_line1" type="CHARACTER VARYING(200)"/>
+<Field name="ship_address_line2" type="CHARACTER VARYING(200)"/>
+<Field name="ship_address_line3" type="CHARACTER VARYING(200)"/>
+<Field name="ship_address_city" type="CHARACTER VARYING(200)"/>
+<Field name="ship_address_state" type="CHARACTER VARYING(200)"/>
+<Field name="ship_address_postal_code" type="CHARACTER VARYING(20)"/>
+<Field name="ship_address_country" type="CHARACTER VARYING(200)"/>
+<Field name="ship_phone_number" type="CHARACTER VARYING(20)"/>
+<Field name="ship_customer_name" type="CHARACTER VARYING(200)"/>
+<Field name="ship_customer_email_address" type="CHARACTER VARYING(200)"/>
+<Field name="ordering_session_id" type="CHARACTER VARYING(20)"/>
+<Field name="website_url" type="CHARACTER VARYING(500)"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="399" Y="91" name="pivot by categ" type="com.alpine.miner.gef.runoperator.field.PivotOperator" uuid="1294808685004">
+<Parameter key="pivotColumn" value="product_category_name"/>
+<Parameter key="groupByColumn" value="customer_id"/>
+<Parameter key="aggregateType" value="max"/>
+<Parameter key="outputType" value="TABLE"/>
+<Parameter key="outputSchema" value="public"/>
+<Parameter key="outputTable" value="alp_pivot_by_category"/>
+<Parameter key="dropIfExist" value="yes"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.43.89:5432/retail"/>
+<Parameter key="schema" value="public"/>
+<Parameter key="table" value="alp_order_by_cust_categ"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="customer_id" type="INTEGER"/>
+<Field name="product_category_name" type="CHARACTER VARYING(200)"/>
+<Field name="sales" type="DOUBLE PRECISION"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Link source="order lineitems" target="agg by cust by categ"/>
+<Link source="agg by cust by categ" target="pivot by categ"/>
+<VariableModel>
+<Variable>
+<Name>@default_schema</Name>
+<Value>public</Value>
+</Variable>
+<Variable>
+<Name>@default_prefix</Name>
+<Value>alp</Value>
+</Variable>
+</VariableModel>
+</Process>

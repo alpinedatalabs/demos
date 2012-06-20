@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Process Description="" UserName="hfarinas" Version="3.0">
+<Operator X="143" Y="164" name="alp_pivot_by_category" type="com.alpine.miner.gef.runoperator.datasource.DbTableOperator" uuid="1295935027488_0">
+<Parameter key="dbConnectionName" value="aws-retail"/>
+<Parameter key="schemaName" value="public"/>
+<Parameter key="tableName" value="alp_pivot_by_category"/>
+<Parameter key="userName" value="miner_demo"/>
+<Parameter key="url" value="jdbc:postgresql://50.18.43.89:5432/retail"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+</Operator>
+<Operator X="439" Y="165" name="Association" type="com.alpine.miner.gef.runoperator.association.AssociationOperator" uuid="1315279776707">
+<Parameter key="minSupport" value="0.05"/>
+<Parameter key="tableSizeThreshold" value="10000000"/>
+<Parameter key="minConfidence" value="0.7"/>
+<Parameter key="useArray" value="false"/>
+<Parameter key="outputSchema" value="public"/>
+<Parameter key="outputTable" value="alp_assoc_categ"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<Parameter key="columnNames" value="product_category_name_Amazon Devices,product_category_name_Apparel,product_category_name_Automotive Parts and Accessories,product_category_name_BISS,product_category_name_Baby Product,product_category_name_Beauty,product_category_name_Book,product_category_name_CE,product_category_name_Car Audio or Theater,product_category_name_DVD,product_category_name_Digital Music Album,product_category_name_Digital Music Track,product_category_name_Digital Software,product_category_name_Digital Text Feeds,product_category_name_Digital Video Games,product_category_name_Furniture,product_category_name_GPS or Navigation System,product_category_name_Gift Card,product_category_name_Gourmet,product_category_name_Grocery,product_category_name_Health and Beauty,product_category_name_Home,product_category_name_Home Improvement,product_category_name_Home Theater,product_category_name_Kitchen,product_category_name_Lawn &amp;amp; Patio,product_category_name_Lighting,product_category_name_Loose Diamonds,product_category_name_Magazine,product_category_name_Music,product_category_name_Musical Instruments,product_category_name_Office Product,product_category_name_Personal Computer,product_category_name_Pet Products,product_category_name_Photography,product_category_name_Receiver or Amplifier,product_category_name_Shoes,product_category_name_Single Detail Page Misc,product_category_name_Software,product_category_name_Speakers,product_category_name_Sports,product_category_name_TV Series Episode Video on Demand,product_category_name_Target Gift Card,product_category_name_Television,product_category_name_Toy,product_category_name_Video,product_category_name_Video Games,product_category_name_Watch,product_category_name_Wireless,product_category_name_Wireless Phone Accessory"/>
+<Expression expression="=" positiveValue="1"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://50.18.43.89:5432/retail"/>
+<Parameter key="schema" value="public"/>
+<Parameter key="table" value="alp_pivot_by_category"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="customer_id" type="INTEGER"/>
+<Field name="product_category_name_Wireless Phone Accessory" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Wireless" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Watch" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Video Games" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Video" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_TV Series Episode Video on Demand" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Toy" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Television" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Target Gift Card" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Sports" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Speakers" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Software" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Single Detail Page Misc" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Shoes" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Receiver or Amplifier" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Photography" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Pet Products" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Personal Computer" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Office Product" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Musical Instruments" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Music" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Magazine" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Loose Diamonds" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Lighting" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Lawn &amp;amp; Patio" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Kitchen" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Home Theater" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Home Improvement" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Home" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Health and Beauty" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Grocery" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_GPS or Navigation System" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Gourmet" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Gift Card" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Furniture" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_DVD" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Digital Video Games" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Digital Text Feeds" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Digital Software" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Digital Music Track" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Digital Music Album" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_CE" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Car Audio or Theater" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Book" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_BISS" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Beauty" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Baby Product" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Automotive Parts and Accessories" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Apparel" type="DOUBLE PRECISION"/>
+<Field name="product_category_name_Amazon Devices" type="DOUBLE PRECISION"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Link source="alp_pivot_by_category" target="Association"/>
+<VariableModel>
+<Variable>
+<Name>@default_schema</Name>
+<Value>public</Value>
+</Variable>
+<Variable>
+<Name>@default_prefix</Name>
+<Value>alp</Value>
+</Variable>
+</VariableModel>
+</Process>

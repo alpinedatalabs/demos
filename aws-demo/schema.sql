@@ -1,0 +1,3 @@
+CREATE SCHEMA finance;
+CREATE SCHEMA health;
+CREATE SCHEMA sandbox;
