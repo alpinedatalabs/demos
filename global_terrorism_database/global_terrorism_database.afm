@@ -1,0 +1,1385 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Process Description="" UserName="admin" Version="3.0">
+<Operator X="88" Y="27" name="globalterrorismdb_0611dist.tab.txt" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFileOperator" uuid="1356070671016">
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hadoopFileName" value="/real_data/global_terrorism_database/globalterrorismdb_1012dist.txt"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<HadoopFileStructureModel delimiter="Tab" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="eventid"/>
+<columnNames columnName="iyear"/>
+<columnNames columnName="imonth"/>
+<columnNames columnName="iday"/>
+<columnNames columnName="approxdate"/>
+<columnNames columnName="extended"/>
+<columnNames columnName="resolution"/>
+<columnNames columnName="country"/>
+<columnNames columnName="country_txt"/>
+<columnNames columnName="region"/>
+<columnNames columnName="region_txt"/>
+<columnNames columnName="provstate"/>
+<columnNames columnName="city"/>
+<columnNames columnName="latitude"/>
+<columnNames columnName="longitude"/>
+<columnNames columnName="specificity"/>
+<columnNames columnName="vicinity"/>
+<columnNames columnName="location"/>
+<columnNames columnName="summary"/>
+<columnNames columnName="crit1"/>
+<columnNames columnName="crit2"/>
+<columnNames columnName="crit3"/>
+<columnNames columnName="doubtterr"/>
+<columnNames columnName="alternative"/>
+<columnNames columnName="alternative_txt"/>
+<columnNames columnName="multiple"/>
+<columnNames columnName="success"/>
+<columnNames columnName="suicide"/>
+<columnNames columnName="attacktype1"/>
+<columnNames columnName="attacktype1_txt"/>
+<columnNames columnName="attacktype2"/>
+<columnNames columnName="attacktype2_txt"/>
+<columnNames columnName="attacktype3"/>
+<columnNames columnName="attacktype3_txt"/>
+<columnNames columnName="targtype1"/>
+<columnNames columnName="targtype1_txt"/>
+<columnNames columnName="corp1"/>
+<columnNames columnName="target1"/>
+<columnNames columnName="natlty1"/>
+<columnNames columnName="natlty1_txt"/>
+<columnNames columnName="targtype2"/>
+<columnNames columnName="targtype2_txt"/>
+<columnNames columnName="corp2"/>
+<columnNames columnName="target2"/>
+<columnNames columnName="natlty2"/>
+<columnNames columnName="natlty2_txt"/>
+<columnNames columnName="targtype3"/>
+<columnNames columnName="targtype3_txt"/>
+<columnNames columnName="corp3"/>
+<columnNames columnName="target3"/>
+<columnNames columnName="natlty3"/>
+<columnNames columnName="natlty3_txt"/>
+<columnNames columnName="gname"/>
+<columnNames columnName="gsubname"/>
+<columnNames columnName="gname2"/>
+<columnNames columnName="gsubname2"/>
+<columnNames columnName="gname3"/>
+<columnNames columnName="gsubname3"/>
+<columnNames columnName="motive"/>
+<columnNames columnName="guncertain1"/>
+<columnNames columnName="guncertain2"/>
+<columnNames columnName="guncertain3"/>
+<columnNames columnName="nperps"/>
+<columnNames columnName="nperpcap"/>
+<columnNames columnName="claimed"/>
+<columnNames columnName="claimmode"/>
+<columnNames columnName="claimmode_txt"/>
+<columnNames columnName="claim2"/>
+<columnNames columnName="claimmode2"/>
+<columnNames columnName="claimmode2_txt"/>
+<columnNames columnName="claim3"/>
+<columnNames columnName="claimmode3"/>
+<columnNames columnName="claimmode3_txt"/>
+<columnNames columnName="compclaim"/>
+<columnNames columnName="weaptype1"/>
+<columnNames columnName="weaptype1_txt"/>
+<columnNames columnName="weapsubtype1"/>
+<columnNames columnName="weapsubtype1_txt"/>
+<columnNames columnName="weaptype2"/>
+<columnNames columnName="weaptype2_txt"/>
+<columnNames columnName="weapsubtype2"/>
+<columnNames columnName="weapsubtype2_txt"/>
+<columnNames columnName="weaptype3"/>
+<columnNames columnName="weaptype3_txt"/>
+<columnNames columnName="weapsubtype3"/>
+<columnNames columnName="weapsubtype3_txt"/>
+<columnNames columnName="weaptype4"/>
+<columnNames columnName="weaptype4_txt"/>
+<columnNames columnName="weapsubtype4"/>
+<columnNames columnName="weapsubtype4_txt"/>
+<columnNames columnName="weapdetail"/>
+<columnNames columnName="nkill"/>
+<columnNames columnName="nkillus"/>
+<columnNames columnName="nkillter"/>
+<columnNames columnName="nwound"/>
+<columnNames columnName="nwoundus"/>
+<columnNames columnName="nwoundte"/>
+<columnNames columnName="property"/>
+<columnNames columnName="propextent"/>
+<columnNames columnName="propextent_txt"/>
+<columnNames columnName="propvalue"/>
+<columnNames columnName="propcomment"/>
+<columnNames columnName="ishostkid"/>
+<columnNames columnName="nhostkid"/>
+<columnNames columnName="nhostkidus"/>
+<columnNames columnName="nhours"/>
+<columnNames columnName="ndays"/>
+<columnNames columnName="divert"/>
+<columnNames columnName="kidhijcountry"/>
+<columnNames columnName="ransom"/>
+<columnNames columnName="ransomamt"/>
+<columnNames columnName="ransomamtus"/>
+<columnNames columnName="ransompaid"/>
+<columnNames columnName="ransompaidus"/>
+<columnNames columnName="ransomnote"/>
+<columnNames columnName="hostkidoutcome"/>
+<columnNames columnName="hostkidoutcome_txt"/>
+<columnNames columnName="nreleased"/>
+<columnNames columnName="addnotes"/>
+<columnNames columnName="scite1"/>
+<columnNames columnName="scite2"/>
+<columnNames columnName="scite3"/>
+<columnNames columnName="dbsource"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/real_data/global_terrorism_database/globalterrorismdb_1012dist.txt"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Tab" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="eventid"/>
+<columnNames columnName="iyear"/>
+<columnNames columnName="imonth"/>
+<columnNames columnName="iday"/>
+<columnNames columnName="approxdate"/>
+<columnNames columnName="extended"/>
+<columnNames columnName="resolution"/>
+<columnNames columnName="country"/>
+<columnNames columnName="country_txt"/>
+<columnNames columnName="region"/>
+<columnNames columnName="region_txt"/>
+<columnNames columnName="provstate"/>
+<columnNames columnName="city"/>
+<columnNames columnName="latitude"/>
+<columnNames columnName="longitude"/>
+<columnNames columnName="specificity"/>
+<columnNames columnName="vicinity"/>
+<columnNames columnName="location"/>
+<columnNames columnName="summary"/>
+<columnNames columnName="crit1"/>
+<columnNames columnName="crit2"/>
+<columnNames columnName="crit3"/>
+<columnNames columnName="doubtterr"/>
+<columnNames columnName="alternative"/>
+<columnNames columnName="alternative_txt"/>
+<columnNames columnName="multiple"/>
+<columnNames columnName="success"/>
+<columnNames columnName="suicide"/>
+<columnNames columnName="attacktype1"/>
+<columnNames columnName="attacktype1_txt"/>
+<columnNames columnName="attacktype2"/>
+<columnNames columnName="attacktype2_txt"/>
+<columnNames columnName="attacktype3"/>
+<columnNames columnName="attacktype3_txt"/>
+<columnNames columnName="targtype1"/>
+<columnNames columnName="targtype1_txt"/>
+<columnNames columnName="corp1"/>
+<columnNames columnName="target1"/>
+<columnNames columnName="natlty1"/>
+<columnNames columnName="natlty1_txt"/>
+<columnNames columnName="targtype2"/>
+<columnNames columnName="targtype2_txt"/>
+<columnNames columnName="corp2"/>
+<columnNames columnName="target2"/>
+<columnNames columnName="natlty2"/>
+<columnNames columnName="natlty2_txt"/>
+<columnNames columnName="targtype3"/>
+<columnNames columnName="targtype3_txt"/>
+<columnNames columnName="corp3"/>
+<columnNames columnName="target3"/>
+<columnNames columnName="natlty3"/>
+<columnNames columnName="natlty3_txt"/>
+<columnNames columnName="gname"/>
+<columnNames columnName="gsubname"/>
+<columnNames columnName="gname2"/>
+<columnNames columnName="gsubname2"/>
+<columnNames columnName="gname3"/>
+<columnNames columnName="gsubname3"/>
+<columnNames columnName="motive"/>
+<columnNames columnName="guncertain1"/>
+<columnNames columnName="guncertain2"/>
+<columnNames columnName="guncertain3"/>
+<columnNames columnName="nperps"/>
+<columnNames columnName="nperpcap"/>
+<columnNames columnName="claimed"/>
+<columnNames columnName="claimmode"/>
+<columnNames columnName="claimmode_txt"/>
+<columnNames columnName="claim2"/>
+<columnNames columnName="claimmode2"/>
+<columnNames columnName="claimmode2_txt"/>
+<columnNames columnName="claim3"/>
+<columnNames columnName="claimmode3"/>
+<columnNames columnName="claimmode3_txt"/>
+<columnNames columnName="compclaim"/>
+<columnNames columnName="weaptype1"/>
+<columnNames columnName="weaptype1_txt"/>
+<columnNames columnName="weapsubtype1"/>
+<columnNames columnName="weapsubtype1_txt"/>
+<columnNames columnName="weaptype2"/>
+<columnNames columnName="weaptype2_txt"/>
+<columnNames columnName="weapsubtype2"/>
+<columnNames columnName="weapsubtype2_txt"/>
+<columnNames columnName="weaptype3"/>
+<columnNames columnName="weaptype3_txt"/>
+<columnNames columnName="weapsubtype3"/>
+<columnNames columnName="weapsubtype3_txt"/>
+<columnNames columnName="weaptype4"/>
+<columnNames columnName="weaptype4_txt"/>
+<columnNames columnName="weapsubtype4"/>
+<columnNames columnName="weapsubtype4_txt"/>
+<columnNames columnName="weapdetail"/>
+<columnNames columnName="nkill"/>
+<columnNames columnName="nkillus"/>
+<columnNames columnName="nkillter"/>
+<columnNames columnName="nwound"/>
+<columnNames columnName="nwoundus"/>
+<columnNames columnName="nwoundte"/>
+<columnNames columnName="property"/>
+<columnNames columnName="propextent"/>
+<columnNames columnName="propextent_txt"/>
+<columnNames columnName="propvalue"/>
+<columnNames columnName="propcomment"/>
+<columnNames columnName="ishostkid"/>
+<columnNames columnName="nhostkid"/>
+<columnNames columnName="nhostkidus"/>
+<columnNames columnName="nhours"/>
+<columnNames columnName="ndays"/>
+<columnNames columnName="divert"/>
+<columnNames columnName="kidhijcountry"/>
+<columnNames columnName="ransom"/>
+<columnNames columnName="ransomamt"/>
+<columnNames columnName="ransomamtus"/>
+<columnNames columnName="ransompaid"/>
+<columnNames columnName="ransompaidus"/>
+<columnNames columnName="ransomnote"/>
+<columnNames columnName="hostkidoutcome"/>
+<columnNames columnName="hostkidoutcome_txt"/>
+<columnNames columnName="nreleased"/>
+<columnNames columnName="addnotes"/>
+<columnNames columnName="scite1"/>
+<columnNames columnName="scite2"/>
+<columnNames columnName="scite3"/>
+<columnNames columnName="dbsource"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="89" Y="193" name="unknown only after 1993" type="com.alpine.miner.gef.runoperator.hadoop.HadoopRowFilterOperator" uuid="1356070752007">
+<Parameter key="filterCondition" value="doubtterr != 1 AND iyear &gt;1993 AND ((gname matches 'Unknown') or  (gname matches 'Individual') or  (gname matches 'Other'))"/>
+<Parameter key="storeResults" value="true"/>
+<Parameter key="resultsLocation" value="/users/guohui_hadoop"/>
+<Parameter key="resultsName" value="@default_prefix_rowfil_globalterrorismdb"/>
+<Parameter key="override" value="Yes"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/real_data/global_terrorism_database/globalterrorismdb_1012dist.txt"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Tab" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="eventid"/>
+<columnNames columnName="iyear"/>
+<columnNames columnName="imonth"/>
+<columnNames columnName="iday"/>
+<columnNames columnName="approxdate"/>
+<columnNames columnName="extended"/>
+<columnNames columnName="resolution"/>
+<columnNames columnName="country"/>
+<columnNames columnName="country_txt"/>
+<columnNames columnName="region"/>
+<columnNames columnName="region_txt"/>
+<columnNames columnName="provstate"/>
+<columnNames columnName="city"/>
+<columnNames columnName="latitude"/>
+<columnNames columnName="longitude"/>
+<columnNames columnName="specificity"/>
+<columnNames columnName="vicinity"/>
+<columnNames columnName="location"/>
+<columnNames columnName="summary"/>
+<columnNames columnName="crit1"/>
+<columnNames columnName="crit2"/>
+<columnNames columnName="crit3"/>
+<columnNames columnName="doubtterr"/>
+<columnNames columnName="alternative"/>
+<columnNames columnName="alternative_txt"/>
+<columnNames columnName="multiple"/>
+<columnNames columnName="success"/>
+<columnNames columnName="suicide"/>
+<columnNames columnName="attacktype1"/>
+<columnNames columnName="attacktype1_txt"/>
+<columnNames columnName="attacktype2"/>
+<columnNames columnName="attacktype2_txt"/>
+<columnNames columnName="attacktype3"/>
+<columnNames columnName="attacktype3_txt"/>
+<columnNames columnName="targtype1"/>
+<columnNames columnName="targtype1_txt"/>
+<columnNames columnName="corp1"/>
+<columnNames columnName="target1"/>
+<columnNames columnName="natlty1"/>
+<columnNames columnName="natlty1_txt"/>
+<columnNames columnName="targtype2"/>
+<columnNames columnName="targtype2_txt"/>
+<columnNames columnName="corp2"/>
+<columnNames columnName="target2"/>
+<columnNames columnName="natlty2"/>
+<columnNames columnName="natlty2_txt"/>
+<columnNames columnName="targtype3"/>
+<columnNames columnName="targtype3_txt"/>
+<columnNames columnName="corp3"/>
+<columnNames columnName="target3"/>
+<columnNames columnName="natlty3"/>
+<columnNames columnName="natlty3_txt"/>
+<columnNames columnName="gname"/>
+<columnNames columnName="gsubname"/>
+<columnNames columnName="gname2"/>
+<columnNames columnName="gsubname2"/>
+<columnNames columnName="gname3"/>
+<columnNames columnName="gsubname3"/>
+<columnNames columnName="motive"/>
+<columnNames columnName="guncertain1"/>
+<columnNames columnName="guncertain2"/>
+<columnNames columnName="guncertain3"/>
+<columnNames columnName="nperps"/>
+<columnNames columnName="nperpcap"/>
+<columnNames columnName="claimed"/>
+<columnNames columnName="claimmode"/>
+<columnNames columnName="claimmode_txt"/>
+<columnNames columnName="claim2"/>
+<columnNames columnName="claimmode2"/>
+<columnNames columnName="claimmode2_txt"/>
+<columnNames columnName="claim3"/>
+<columnNames columnName="claimmode3"/>
+<columnNames columnName="claimmode3_txt"/>
+<columnNames columnName="compclaim"/>
+<columnNames columnName="weaptype1"/>
+<columnNames columnName="weaptype1_txt"/>
+<columnNames columnName="weapsubtype1"/>
+<columnNames columnName="weapsubtype1_txt"/>
+<columnNames columnName="weaptype2"/>
+<columnNames columnName="weaptype2_txt"/>
+<columnNames columnName="weapsubtype2"/>
+<columnNames columnName="weapsubtype2_txt"/>
+<columnNames columnName="weaptype3"/>
+<columnNames columnName="weaptype3_txt"/>
+<columnNames columnName="weapsubtype3"/>
+<columnNames columnName="weapsubtype3_txt"/>
+<columnNames columnName="weaptype4"/>
+<columnNames columnName="weaptype4_txt"/>
+<columnNames columnName="weapsubtype4"/>
+<columnNames columnName="weapsubtype4_txt"/>
+<columnNames columnName="weapdetail"/>
+<columnNames columnName="nkill"/>
+<columnNames columnName="nkillus"/>
+<columnNames columnName="nkillter"/>
+<columnNames columnName="nwound"/>
+<columnNames columnName="nwoundus"/>
+<columnNames columnName="nwoundte"/>
+<columnNames columnName="property"/>
+<columnNames columnName="propextent"/>
+<columnNames columnName="propextent_txt"/>
+<columnNames columnName="propvalue"/>
+<columnNames columnName="propcomment"/>
+<columnNames columnName="ishostkid"/>
+<columnNames columnName="nhostkid"/>
+<columnNames columnName="nhostkidus"/>
+<columnNames columnName="nhours"/>
+<columnNames columnName="ndays"/>
+<columnNames columnName="divert"/>
+<columnNames columnName="kidhijcountry"/>
+<columnNames columnName="ransom"/>
+<columnNames columnName="ransomamt"/>
+<columnNames columnName="ransomamtus"/>
+<columnNames columnName="ransompaid"/>
+<columnNames columnName="ransompaidus"/>
+<columnNames columnName="ransomnote"/>
+<columnNames columnName="hostkidoutcome"/>
+<columnNames columnName="hostkidoutcome_txt"/>
+<columnNames columnName="nreleased"/>
+<columnNames columnName="addnotes"/>
+<columnNames columnName="scite1"/>
+<columnNames columnName="scite2"/>
+<columnNames columnName="scite3"/>
+<columnNames columnName="dbsource"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="277" Y="27" name="feature variables" type="com.alpine.miner.gef.runoperator.hadoop.HadoopVariableOperator" uuid="1356076455947">
+<Parameter key="storeResults" value="false"/>
+<Parameter key="resultsLocation" value=""/>
+<Parameter key="resultsName" value="@default_prefix_var_0"/>
+<Parameter key="override" value="Yes"/>
+<DerivedFieldsModel>
+<selectedColumnName columnName="eventid"/>
+<selectedColumnName columnName="iyear"/>
+<selectedColumnName columnName="imonth"/>
+<selectedColumnName columnName="country_txt"/>
+<selectedColumnName columnName="region_txt"/>
+<selectedColumnName columnName="city"/>
+<selectedColumnName columnName="summary"/>
+<selectedColumnName columnName="attacktype1"/>
+<selectedColumnName columnName="targtype1"/>
+<selectedColumnName columnName="target1"/>
+<selectedColumnName columnName="natlty1_txt"/>
+<selectedColumnName columnName="targtype2"/>
+<selectedColumnName columnName="target2"/>
+<selectedColumnName columnName="natlty2_txt"/>
+<selectedColumnName columnName="targtype3"/>
+<selectedColumnName columnName="target3"/>
+<selectedColumnName columnName="natlty3_txt"/>
+<selectedColumnName columnName="motive"/>
+<selectedColumnName columnName="weaptype1"/>
+<DerivedFieldItem columnName="isNationTargeted" dataType="int" expression="(natlty1_txt == country_txt OR natlty2_txt == country_txt OR natlty3_txt == country_txt)?1:0&#10;"/>
+<DerivedFieldItem columnName="foreignNatlsTargeted" dataType="int" expression="(natlty1_txt != country_txt or (natlty2_txt != country_txt and natlty2_txt != '.') or  (natlty3_txt != country_txt and natlty3_txt != '.'))?1:0&#10;"/>
+<DerivedFieldItem columnName="wereDeaths" dataType="int" expression="(nkill&gt;0)?1:0&#10;"/>
+<DerivedFieldItem columnName="weapon_Unknown" dataType="int" expression="(weaptype1_txt=='Unknown')?1:0&#10;"/>
+<DerivedFieldItem columnName="weapon_Explosives_Bombs_Dynamite" dataType="int" expression="(weaptype1_txt=='Explosives/Bombs/Dynamite')?1:0&#10;"/>
+<DerivedFieldItem columnName="weapon_Incendiary" dataType="int" expression="(weaptype1_txt=='Incendiary')?1:0&#10;"/>
+<DerivedFieldItem columnName="weapon_Firearms" dataType="int" expression="(weaptype1_txt=='Firearms')?1:0&#10;"/>
+<DerivedFieldItem columnName="weapon_Sabotage_Equipment" dataType="int" expression="(weaptype1_txt=='Sabotage Equipment')?1:0&#10;"/>
+<DerivedFieldItem columnName="weapon_Chemical" dataType="int" expression="(weaptype1_txt=='Chemical')?1:0&#10;"/>
+<DerivedFieldItem columnName="weapon_Fake_Weapons" dataType="int" expression="(weaptype1_txt=='Fake Weapons')?1:0&#10;"/>
+<DerivedFieldItem columnName="weapon_Melee" dataType="int" expression="(weaptype1_txt=='Melee')?1:0&#10;"/>
+<DerivedFieldItem columnName="weapon_Other" dataType="int" expression="(weaptype1_txt=='Other')?1:0&#10;"/>
+<DerivedFieldItem columnName="weapon_Vehicle" dataType="int" expression="(weaptype1_txt=='Vehicle (not to include vehicle-borne explosives, i.e., car or truck bombs)')?1:0&#10;"/>
+<DerivedFieldItem columnName="weapon_Radiological" dataType="int" expression="(weaptype1_txt=='Radiological')?1:0&#10;"/>
+<DerivedFieldItem columnName="weapon_Biological" dataType="int" expression="(weaptype1_txt=='Biological')?1:0&#10;"/>
+<DerivedFieldItem columnName="attacktype_Assassination" dataType="int" expression="(attacktype1_txt=='Assassination')?1:0&#10;"/>
+<DerivedFieldItem columnName="attacktype_Hostage_Taking" dataType="int" expression="(attacktype1_txt=='Hostage Taking (Kidnapping)')?1:0&#10;"/>
+<DerivedFieldItem columnName="attacktype_BombingExplosion" dataType="int" expression="(attacktype1_txt=='Bombing/Explosion')?1:0&#10;"/>
+<DerivedFieldItem columnName="attacktype_FacilityInfrastructure_Attack" dataType="int" expression="(attacktype1_txt=='Facility/Infrastructure Attack')?1:0&#10;"/>
+<DerivedFieldItem columnName="attacktype_Armed_Assault" dataType="int" expression="(attacktype1_txt=='Armed Assault')?1:0&#10;"/>
+<DerivedFieldItem columnName="attacktype_Hijacking" dataType="int" expression="(attacktype1_txt=='Hijacking')?1:0&#10;"/>
+<DerivedFieldItem columnName="attacktype_Unknown" dataType="int" expression="(attacktype1_txt=='Unknown')?1:0&#10;"/>
+<DerivedFieldItem columnName="attacktype_Unarmed_Assault" dataType="int" expression="(attacktype1_txt=='Unarmed Assault')?1:0&#10;"/>
+<DerivedFieldItem columnName="attacktype_Hostage_Taking_Barricade" dataType="int" expression="(attacktype1_txt=='Hostage Taking (Barricade Incident)')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_PrivateCitizens" dataType="int" expression="(targtype1_txt=='Private Citizens &amp; Property')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Government" dataType="int" expression="(targtype1_txt=='Government (Diplomatic)')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Journalists_Media" dataType="int" expression="(targtype1_txt=='Journalists &amp; Media')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Police" dataType="int" expression="(targtype1_txt=='Police')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Military" dataType="int" expression="(targtype1_txt=='Military')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Government_General" dataType="int" expression="(targtype1_txt=='Government (General)')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Airports_Airlines" dataType="int" expression="(targtype1_txt=='Airports &amp; Airlines')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Educational_Institution" dataType="int" expression="(targtype1_txt=='Educational Institution')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Business" dataType="int" expression="(targtype1_txt=='Business')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Violent_Political_Party" dataType="int" expression="(targtype1_txt=='Violent Political Party')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Unknown" dataType="int" expression="(targtype1_txt=='Unknown')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Transportation" dataType="int" expression="(targtype1_txt=='Transportation')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Utilities" dataType="int" expression="(targtype1_txt=='Utilities')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Other" dataType="int" expression="(targtype1_txt=='Other')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Tourists" dataType="int" expression="(targtype1_txt=='Tourists')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Religious" dataType="int" expression="(targtype1_txt=='Religious Figures/Institutions')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Telecommunication" dataType="int" expression="(targtype1_txt=='Telecommunication')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Terrorists" dataType="int" expression="(targtype1_txt=='Terrorists')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_NGO" dataType="int" expression="(targtype1_txt=='NGO')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Food" dataType="int" expression="(targtype1_txt=='Food or Water Supply')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Maritime" dataType="int" expression="(targtype1_txt=='Maritime')?1:0&#10;"/>
+<DerivedFieldItem columnName="targeted_Abortion_Related" dataType="int" expression="(targtype1_txt=='Abortion Related')?1:0&#10;"/>
+</DerivedFieldsModel>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/users/guohui_hadoop/@default_prefix_rowfil_globalterrorismdb"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="eventid"/>
+<columnNames columnName="iyear"/>
+<columnNames columnName="imonth"/>
+<columnNames columnName="iday"/>
+<columnNames columnName="approxdate"/>
+<columnNames columnName="extended"/>
+<columnNames columnName="resolution"/>
+<columnNames columnName="country"/>
+<columnNames columnName="country_txt"/>
+<columnNames columnName="region"/>
+<columnNames columnName="region_txt"/>
+<columnNames columnName="provstate"/>
+<columnNames columnName="city"/>
+<columnNames columnName="latitude"/>
+<columnNames columnName="longitude"/>
+<columnNames columnName="specificity"/>
+<columnNames columnName="vicinity"/>
+<columnNames columnName="location"/>
+<columnNames columnName="summary"/>
+<columnNames columnName="crit1"/>
+<columnNames columnName="crit2"/>
+<columnNames columnName="crit3"/>
+<columnNames columnName="doubtterr"/>
+<columnNames columnName="alternative"/>
+<columnNames columnName="alternative_txt"/>
+<columnNames columnName="multiple"/>
+<columnNames columnName="success"/>
+<columnNames columnName="suicide"/>
+<columnNames columnName="attacktype1"/>
+<columnNames columnName="attacktype1_txt"/>
+<columnNames columnName="attacktype2"/>
+<columnNames columnName="attacktype2_txt"/>
+<columnNames columnName="attacktype3"/>
+<columnNames columnName="attacktype3_txt"/>
+<columnNames columnName="targtype1"/>
+<columnNames columnName="targtype1_txt"/>
+<columnNames columnName="corp1"/>
+<columnNames columnName="target1"/>
+<columnNames columnName="natlty1"/>
+<columnNames columnName="natlty1_txt"/>
+<columnNames columnName="targtype2"/>
+<columnNames columnName="targtype2_txt"/>
+<columnNames columnName="corp2"/>
+<columnNames columnName="target2"/>
+<columnNames columnName="natlty2"/>
+<columnNames columnName="natlty2_txt"/>
+<columnNames columnName="targtype3"/>
+<columnNames columnName="targtype3_txt"/>
+<columnNames columnName="corp3"/>
+<columnNames columnName="target3"/>
+<columnNames columnName="natlty3"/>
+<columnNames columnName="natlty3_txt"/>
+<columnNames columnName="gname"/>
+<columnNames columnName="gsubname"/>
+<columnNames columnName="gname2"/>
+<columnNames columnName="gsubname2"/>
+<columnNames columnName="gname3"/>
+<columnNames columnName="gsubname3"/>
+<columnNames columnName="motive"/>
+<columnNames columnName="guncertain1"/>
+<columnNames columnName="guncertain2"/>
+<columnNames columnName="guncertain3"/>
+<columnNames columnName="nperps"/>
+<columnNames columnName="nperpcap"/>
+<columnNames columnName="claimed"/>
+<columnNames columnName="claimmode"/>
+<columnNames columnName="claimmode_txt"/>
+<columnNames columnName="claim2"/>
+<columnNames columnName="claimmode2"/>
+<columnNames columnName="claimmode2_txt"/>
+<columnNames columnName="claim3"/>
+<columnNames columnName="claimmode3"/>
+<columnNames columnName="claimmode3_txt"/>
+<columnNames columnName="compclaim"/>
+<columnNames columnName="weaptype1"/>
+<columnNames columnName="weaptype1_txt"/>
+<columnNames columnName="weapsubtype1"/>
+<columnNames columnName="weapsubtype1_txt"/>
+<columnNames columnName="weaptype2"/>
+<columnNames columnName="weaptype2_txt"/>
+<columnNames columnName="weapsubtype2"/>
+<columnNames columnName="weapsubtype2_txt"/>
+<columnNames columnName="weaptype3"/>
+<columnNames columnName="weaptype3_txt"/>
+<columnNames columnName="weapsubtype3"/>
+<columnNames columnName="weapsubtype3_txt"/>
+<columnNames columnName="weaptype4"/>
+<columnNames columnName="weaptype4_txt"/>
+<columnNames columnName="weapsubtype4"/>
+<columnNames columnName="weapsubtype4_txt"/>
+<columnNames columnName="weapdetail"/>
+<columnNames columnName="nkill"/>
+<columnNames columnName="nkillus"/>
+<columnNames columnName="nkillter"/>
+<columnNames columnName="nwound"/>
+<columnNames columnName="nwoundus"/>
+<columnNames columnName="nwoundte"/>
+<columnNames columnName="property"/>
+<columnNames columnName="propextent"/>
+<columnNames columnName="propextent_txt"/>
+<columnNames columnName="propvalue"/>
+<columnNames columnName="propcomment"/>
+<columnNames columnName="ishostkid"/>
+<columnNames columnName="nhostkid"/>
+<columnNames columnName="nhostkidus"/>
+<columnNames columnName="nhours"/>
+<columnNames columnName="ndays"/>
+<columnNames columnName="divert"/>
+<columnNames columnName="kidhijcountry"/>
+<columnNames columnName="ransom"/>
+<columnNames columnName="ransomamt"/>
+<columnNames columnName="ransomamtus"/>
+<columnNames columnName="ransompaid"/>
+<columnNames columnName="ransompaidus"/>
+<columnNames columnName="ransomnote"/>
+<columnNames columnName="hostkidoutcome"/>
+<columnNames columnName="hostkidoutcome_txt"/>
+<columnNames columnName="nreleased"/>
+<columnNames columnName="addnotes"/>
+<columnNames columnName="scite1"/>
+<columnNames columnName="scite2"/>
+<columnNames columnName="scite3"/>
+<columnNames columnName="dbsource"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="494" Y="32" name="targets and motive" type="com.alpine.miner.gef.runoperator.hadoop.HadoopColumnFilterOperator" uuid="1356673035693">
+<Parameter key="columnNames" value="eventid,summary,target1,target2,target3,motive"/>
+<Parameter key="storeResults" value="false"/>
+<Parameter key="resultsLocation" value=""/>
+<Parameter key="resultsName" value="@default_prefix_colfil_0"/>
+<Parameter key="override" value="Yes"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/@default_prefix_var_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="isNationTargeted"/>
+<columnNames columnName="foreignNatlsTargeted"/>
+<columnNames columnName="wereDeaths"/>
+<columnNames columnName="weapon_Unknown"/>
+<columnNames columnName="weapon_Explosives_Bombs_Dynamite"/>
+<columnNames columnName="weapon_Incendiary"/>
+<columnNames columnName="weapon_Firearms"/>
+<columnNames columnName="weapon_Sabotage_Equipment"/>
+<columnNames columnName="weapon_Chemical"/>
+<columnNames columnName="weapon_Fake_Weapons"/>
+<columnNames columnName="weapon_Melee"/>
+<columnNames columnName="weapon_Other"/>
+<columnNames columnName="weapon_Vehicle"/>
+<columnNames columnName="weapon_Radiological"/>
+<columnNames columnName="weapon_Biological"/>
+<columnNames columnName="attacktype_Assassination"/>
+<columnNames columnName="attacktype_Hostage_Taking"/>
+<columnNames columnName="attacktype_BombingExplosion"/>
+<columnNames columnName="attacktype_FacilityInfrastructure_Attack"/>
+<columnNames columnName="attacktype_Armed_Assault"/>
+<columnNames columnName="attacktype_Hijacking"/>
+<columnNames columnName="attacktype_Unknown"/>
+<columnNames columnName="attacktype_Unarmed_Assault"/>
+<columnNames columnName="attacktype_Hostage_Taking_Barricade"/>
+<columnNames columnName="targeted_PrivateCitizens"/>
+<columnNames columnName="targeted_Government"/>
+<columnNames columnName="targeted_Journalists_Media"/>
+<columnNames columnName="targeted_Police"/>
+<columnNames columnName="targeted_Military"/>
+<columnNames columnName="targeted_Government_General"/>
+<columnNames columnName="targeted_Airports_Airlines"/>
+<columnNames columnName="targeted_Educational_Institution"/>
+<columnNames columnName="targeted_Business"/>
+<columnNames columnName="targeted_Violent_Political_Party"/>
+<columnNames columnName="targeted_Unknown"/>
+<columnNames columnName="targeted_Transportation"/>
+<columnNames columnName="targeted_Utilities"/>
+<columnNames columnName="targeted_Other"/>
+<columnNames columnName="targeted_Tourists"/>
+<columnNames columnName="targeted_Religious"/>
+<columnNames columnName="targeted_Telecommunication"/>
+<columnNames columnName="targeted_Terrorists"/>
+<columnNames columnName="targeted_NGO"/>
+<columnNames columnName="targeted_Food"/>
+<columnNames columnName="targeted_Maritime"/>
+<columnNames columnName="targeted_Abortion_Related"/>
+<columnNames columnName="eventid"/>
+<columnNames columnName="iyear"/>
+<columnNames columnName="imonth"/>
+<columnNames columnName="country_txt"/>
+<columnNames columnName="region_txt"/>
+<columnNames columnName="city"/>
+<columnNames columnName="summary"/>
+<columnNames columnName="attacktype1"/>
+<columnNames columnName="targtype1"/>
+<columnNames columnName="target1"/>
+<columnNames columnName="natlty1_txt"/>
+<columnNames columnName="targtype2"/>
+<columnNames columnName="target2"/>
+<columnNames columnName="natlty2_txt"/>
+<columnNames columnName="targtype3"/>
+<columnNames columnName="target3"/>
+<columnNames columnName="natlty3_txt"/>
+<columnNames columnName="motive"/>
+<columnNames columnName="weaptype1"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="554" Y="173" name="Pig Execute" type="com.alpine.miner.gef.runoperator.hadoop.HadoopPigExecuteOperator" uuid="1357343062550">
+<Parameter key="resultsLocation" value="/tmp"/>
+<Parameter key="resultsName" value="@default_prefix_pigexec_9"/>
+<Parameter key="override" value="Yes"/>
+<HadoopFileStructureModel delimiter="Tab" escapChar="" includeHeader="False" other="" quoteChar="">
+<columnNames columnName="eventid"/>
+<columnNames columnName="keyword"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+<PigExecutableModel pigScript="A = FOREACH alpine_pig_input_1 GENERATE eventid, TOKENIZE(CONCAT(CONCAT(CONCAT(target1,target2),summary),motive)) as bagged;&#10;B = FOREACH A GENERATE eventid, FLATTEN(bagged);&#10;STORE B INTO '/tmp/@default_prefix_pigexec_9';">
+<PigInputMapItem inputUuid="1356673035693" pigAlias="alpine_pig_input_1"/>
+</PigExecutableModel>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/@default_prefix_colfil_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="eventid"/>
+<columnNames columnName="summary"/>
+<columnNames columnName="target1"/>
+<columnNames columnName="target2"/>
+<columnNames columnName="target3"/>
+<columnNames columnName="motive"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="600" Y="343" name="Frequency-1" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFrequencyAnalysisOperator" uuid="1357346064572">
+<Parameter key="columnNames" value="keyword"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_pigexec_9"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Tab" escapChar="" includeHeader="False" other="" quoteChar="">
+<columnNames columnName="eventid"/>
+<columnNames columnName="keyword"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Link source="globalterrorismdb_0611dist.tab.txt" target="unknown only after 1993"/>
+<Link source="unknown only after 1993" target="feature variables"/>
+<Link source="feature variables" target="targets and motive"/>
+<Link source="targets and motive" target="Pig Execute"/>
+<Link source="Pig Execute" target="Frequency-1"/>
+<VariableModel>
+<Variable>
+<Name>@default_schema</Name>
+<Value>public</Value>
+</Variable>
+<Variable>
+<Name>@default_prefix</Name>
+<Value>alp</Value>
+</Variable>
+</VariableModel>
+</Process>
