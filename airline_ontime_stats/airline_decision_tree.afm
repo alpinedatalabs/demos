@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Process Description="" UserName="admin" Version="3.0">
+<Operator X="50" Y="91" name="2003.csv" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFileOperator" uuid="1356576261952">
+<Parameter key="connName" value="cdh4"/>
+<Parameter key="hadoopFileName" value="/csv/airline/2003.csv"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="Year"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+<Parameter key="hdfsHostname" value="mdw1"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="jobHostname" value="mdw1"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4.1.1"/>
+<Parameter key="userName" value="hadoop"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<InPutFieldList>
+<Parameter key="connName" value="cdh4"/>
+<Parameter key="hdfsHostname" value="mdw1"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4.1.1"/>
+<Parameter key="jobHostname" value="mdw1"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="hadoop"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/csv/airline/2003.csv"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="Year"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="223" Y="89" name="Variable" type="com.alpine.miner.gef.runoperator.hadoop.HadoopVariableOperator" uuid="1356576370001">
+<Parameter key="storeResults" value="true"/>
+<Parameter key="resultsLocation" value="/tmp"/>
+<Parameter key="resultsName" value="@default_prefix_var_0"/>
+<Parameter key="override" value="Yes"/>
+<DerivedFieldsModel>
+<selectedColumnName columnName="DayOfWeek"/>
+<selectedColumnName columnName="DepTime"/>
+<selectedColumnName columnName="DepDelay"/>
+<DerivedFieldItem columnName="Late" dataType="int" expression="(ArrDelay &gt; 15) ? 1:0"/>
+<DerivedFieldItem columnName="CRSDepHour" dataType="float" expression="CRSDepTime/100+CRSDepTime%100/60+(float)(ROUND((float)(CRSDepTime%100)/60))/2"/>
+<DerivedFieldItem columnName="DayOfWeek_txt" dataType="chararray" expression="DayOfWeek==1?'Weekday':(DayOfWeek==2?'Weekday':(DayOfWeek==3?'Weekday':(DayOfWeek==4?'Weekday':(DayOfWeek==5?'Weekday':(DayOfWeek==6?'Weekend':(DayOfWeek==7?'Weekend':'Unknown'))))))"/>
+</DerivedFieldsModel>
+<InPutFieldList>
+<Parameter key="connName" value="cdh4"/>
+<Parameter key="hdfsHostname" value="mdw1"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4.1.1"/>
+<Parameter key="jobHostname" value="mdw1"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="hadoop"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/csv/airline/2003.csv"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="Year"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="544" Y="92" name="Decision Tree" type="com.alpine.miner.gef.runoperator.hadoop.HadoopDecisionTreeOperator" uuid="1356576445747">
+<Parameter key="dependentColumn" value="Late"/>
+<Parameter key="columnNames" value="CRSDepHour,DayOfWeek_txt"/>
+<Parameter key="maximal_depth" value="5"/>
+<Parameter key="confidence" value="0.25"/>
+<Parameter key="minimal_gain" value="0.00001"/>
+<Parameter key="minimal_size_for_split" value="5"/>
+<Parameter key="minimal_leaf_size" value="2"/>
+<Parameter key="categoryLimit" value="1000"/>
+<Parameter key="numericalGranularity" value="1000000"/>
+<InPutFieldList>
+<Parameter key="connName" value="cdh4"/>
+<Parameter key="hdfsHostname" value="mdw1"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4.1.1"/>
+<Parameter key="jobHostname" value="mdw1"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="hadoop"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_var_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="Late"/>
+<columnNames columnName="CRSDepHour"/>
+<columnNames columnName="DayOfWeek_txt"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="DepDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="float"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+<Model>rO0ABXNyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuRW5naW5lTW9kZWxyBs7TjRuF
+xwIAA0wABW1vZGVsdAAmTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9vcGVyYXRvci9Nb2RlbDtMAAlt
+b2RlbFR5cGV0ABJMamF2YS9sYW5nL1N0cmluZztMAARuYW1lcQB+AAJ4cHNyAERjb20uYWxwaW5l
+LmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLm1vZGVscy5EZWNpc2lvblRyZWVIYWRvb3BNb2Rl
+bFPsL+yMTnZsAgADTAAJZGVwZW5kZW50cQB+AAJMAApoYWRvb3BUcmVldAApTGNvbS9hbHBpbmUv
+aGFkb29wL3RyZWUvbW9kZWwvSGFkb29wVHJlZTtMAApsZWFmVmFsdWVzdAAQTGphdmEvdXRpbC9M
+aXN0O3hyADljb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLkFic3RyYWN0SGFk
+b29wTW9kZWyoqCkfN+IwfwIAAHhyACtjb20uYWxwaW5lLmRhdGFtaW5pbmcub3BlcmF0b3IuT3V0
+cHV0T2JqZWN0W4/atPz2d24CAAFMAAZzb3VyY2VxAH4AAnhwcHQABExhdGVzcgAnY29tLmFscGlu
+ZS5oYWRvb3AudHJlZS5tb2RlbC5IYWRvb3BUcmVlTYX4LaYkKacCAAxaAAtjYXRlZ29yaWNhbEkA
+B2ZlYXR1cmVJAAJpZFoACGxlc3NUaGFuWgAEcm9vdEkACHVuaXF1ZUlkTAAIY2hpbGRyZW5xAH4A
+BkwACWNvbHVtbk1hcHEAfgAGWwAGY291bnRzdAACW0lMABBkZXBlbmRhbnRNYXBwaW5ndAATTGph
+dmEvdXRpbC9IYXNoTWFwO1sADGZlYXR1cmVEZW1hcHEAfgAMTAAFbGFiZWxxAH4AAnhwAQAAAAAA
+AAAAAAEAAAAfc3IAE2phdmEudXRpbC5BcnJheUxpc3R4gdIdmcdhnQMAAUkABHNpemV4cAAAAAJ3
+BAAAAApzcQB+AAsAAAAAAQAAAAEBAAAAAABzcQB+AA8AAAACdwQAAAAKc3EAfgALAAAAAAEAAAAF
+AQAAAAAAc3EAfgAPAAAAAncEAAAACnNxAH4ACwAAAAABAAAADQEAAAAAAHNxAH4ADwAAAAJ3BAAA
+AApzcQB+AAsAAAAAAQAAABMBAAAAAABzcQB+AA8AAAAAdwQAAAAKeHNxAH4ADwAAAAd3BAAAAAp0
+AARMYXRldAAKQ1JTRGVwSG91cnQACUNSU0RlcE1pbnQADURheU9mV2Vla190eHR0AAlEYXlPZldl
+ZWt0AAdEZXBUaW1ldAAIRGVwRGVsYXl4dXIAAltJTbpgJnbqsqUCAAB4cAAAAAIAAASpAAAsE3Ny
+ABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhw
+P0AAAAAAAAx3CAAAABAAAAACdAABMXNyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAF
+dmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAAAAAdAABMHNxAH4AJgAAAAF4
+dXEAfgAhAAAAAgAAAAEAAAADdAADMS4wc3EAfgALAAAAAAEAAAAUAAAAAAAAc3EAfgAPAAAAAHcE
+AAAACnhxAH4AGXVxAH4AIQAAAAIAAHvyAAWxSXEAfgAkcQB+ACtxAH4ALHhzcQB+AA8AAAAHdwQA
+AAAKdAAETGF0ZXQACkNSU0RlcEhvdXJ0AAlDUlNEZXBNaW50AA1EYXlPZldlZWtfdHh0dAAJRGF5
+T2ZXZWVrdAAHRGVwVGltZXQACERlcERlbGF5eHVxAH4AIQAAAAIAAICbAAXdXHNxAH4AIz9AAAAA
+AAAMdwgAAAAQAAAAAnQAATFxAH4AKHQAATBxAH4AKnh1cQB+ACEAAAACAAAAAQAAAAN0AAM2LjVz
+cQB+AAsAAAAAAQAAAA4AAAAAAABzcQB+AA8AAAACdwQAAAAKc3EAfgALAQAAAAMAAAAVAAAAAAAA
+c3EAfgAPAAAAAHcEAAAACnhxAH4AGXVxAH4AIQAAAAIAADnNAAI6/HEAfgAkcQB+ACt0AAdXZWVr
+ZW5kc3EAfgALAQAAAAMAAAAWAAAAAAAAc3EAfgAPAAAAAHcEAAAACnhxAH4AGXVxAH4AIQAAAAIA
+AMvKAAaem3EAfgAkcQB+ACt0AAdXZWVrZGF5eHNxAH4ADwAAAAd3BAAAAAp0AARMYXRldAAKQ1JT
+RGVwSG91cnQACUNSU0RlcE1pbnQADURheU9mV2Vla190eHR0AAlEYXlPZldlZWt0AAdEZXBUaW1l
+dAAIRGVwRGVsYXl4dXEAfgAhAAAAAgABBZcACNmXc3EAfgAjP0AAAAAAAAx3CAAAABAAAAACdAAB
+MXEAfgAodAABMHEAfgAqeHVxAH4AIQAAAAIAAAABAAAAA3QAAzYuNXhzcQB+AA8AAAAHdwQAAAAK
+dAAETGF0ZXQACkNSU0RlcEhvdXJ0AAlDUlNEZXBNaW50AA1EYXlPZldlZWtfdHh0dAAJRGF5T2ZX
+ZWVrdAAHRGVwVGltZXQACERlcERlbGF5eHVxAH4AIQAAAAIAAYYyAA6283NxAH4AIz9AAAAAAAAM
+dwgAAAAQAAAAAnQAATFxAH4AKHQAATBxAH4AKnh1cQB+ACEAAAACAAAAAQAAAAN0AAM4LjBzcQB+
+AAsAAAAAAQAAAAYAAAAAAABzcQB+AA8AAAACdwQAAAAKc3EAfgALAAAAAAEAAAAHAQAAAAAAc3EA
+fgAPAAAAAncEAAAACnNxAH4ACwEAAAADAAAAFwAAAAAAAHNxAH4ADwAAAAB3BAAAAAp4cQB+ABl1
+cQB+ACEAAAACAACYygAEtgZxAH4AJHEAfgArcQB+AENzcQB+AAsBAAAAAwAAABgAAAAAAABzcQB+
+AA8AAAAAdwQAAAAKeHEAfgAZdXEAfgAhAAAAAgAB2C0ADDcPcQB+ACRxAH4AK3EAfgBHeHNxAH4A
+DwAAAAd3BAAAAAp0AARMYXRldAAKQ1JTRGVwSG91cnQACUNSU0RlcE1pbnQADURheU9mV2Vla190
+eHR0AAlEYXlPZldlZWt0AAdEZXBUaW1ldAAIRGVwRGVsYXl4dXEAfgAhAAAAAgACcPcAEO0Vc3EA
+fgAjP0AAAAAAAAx3CAAAABAAAAACdAABMXEAfgAodAABMHEAfgAqeHVxAH4AIQAAAAIAAAABAAAA
+A3QABDExLjBzcQB+AAsAAAAAAQAAAAgAAAAAAABzcQB+AA8AAAACdwQAAAAKc3EAfgALAQAAAAMA
+AAAZAAAAAAAAc3EAfgAPAAAAAHcEAAAACnhxAH4AGXVxAH4AIQAAAAIAAHstAAMmAHEAfgAkcQB+
+ACtxAH4AQ3NxAH4ACwEAAAADAAAAGgAAAAAAAHNxAH4ADwAAAAB3BAAAAAp4cQB+ABl1cQB+ACEA
+AAACAAFfVAAICFZxAH4AJHEAfgArcQB+AEd4c3EAfgAPAAAAB3cEAAAACnQABExhdGV0AApDUlNE
+ZXBIb3VydAAJQ1JTRGVwTWludAANRGF5T2ZXZWVrX3R4dHQACURheU9mV2Vla3QAB0RlcFRpbWV0
+AAhEZXBEZWxheXh1cQB+ACEAAAACAAHagQALLlZzcQB+ACM/QAAAAAAADHcIAAAAEAAAAAJ0AAEx
+cQB+ACh0AAEwcQB+ACp4dXEAfgAhAAAAAgAAAAEAAAADdAAEMTEuMHhzcQB+AA8AAAAHdwQAAAAK
+dAAETGF0ZXQACkNSU0RlcEhvdXJ0AAlDUlNEZXBNaW50AA1EYXlPZldlZWtfdHh0dAAJRGF5T2ZX
+ZWVrdAAHRGVwVGltZXQACERlcERlbGF5eHVxAH4AIQAAAAIABEt4ABwba3NxAH4AIz9AAAAAAAAM
+dwgAAAAQAAAAAnQAATFxAH4AKHQAATBxAH4AKnh1cQB+ACEAAAACAAAAAQAAAAN0AAM4LjB4c3EA
+fgAPAAAAB3cEAAAACnQABExhdGV0AApDUlNEZXBIb3VydAAJQ1JTRGVwTWludAANRGF5T2ZXZWVr
+X3R4dHQACURheU9mV2Vla3QAB0RlcFRpbWV0AAhEZXBEZWxheXh1cQB+ACEAAAACAAXRqgAq0l5z
+cQB+ACM/QAAAAAAADHcIAAAAEAAAAAJ0AAExcQB+ACh0AAEwcQB+ACp4dXEAfgAhAAAAAgAAAAEA
+AAADdAAEMTMuMHNxAH4ACwAAAAABAAAAAgAAAAAAAHNxAH4ADwAAAAJ3BAAAAApzcQB+AAsAAAAA
+AQAAAAMBAAAAAABzcQB+AA8AAAACdwQAAAAKc3EAfgALAQAAAAMAAAAJAAAAAAAAc3EAfgAPAAAA
+AncEAAAACnNxAH4ACwAAAAABAAAAHQEAAAAAAHNxAH4ADwAAAAB3BAAAAAp4cQB+ABl1cQB+ACEA
+AAACAABjdAACFhpxAH4AJHEAfgArdAAEMTQuNXNxAH4ACwAAAAABAAAAHgAAAAAAAHNxAH4ADwAA
+AAB3BAAAAAp4cQB+ABl1cQB+ACEAAAACAAAk5gAAsQdxAH4AJHEAfgArcQB+ALd4c3EAfgAPAAAA
+B3cEAAAACnQABExhdGV0AApDUlNEZXBIb3VydAAJQ1JTRGVwTWludAANRGF5T2ZXZWVrX3R4dHQA
+CURheU9mV2Vla3QAB0RlcFRpbWV0AAhEZXBEZWxheXh1cQB+ACEAAAACAACIWgACxyFzcQB+ACM/
+QAAAAAAADHcIAAAAEAAAAAJ0AAExcQB+ACh0AAEwcQB+ACp4dXEAfgAhAAAAAgAAAAEAAAADdAAH
+V2Vla2VuZHNxAH4ACwEAAAADAAAACgAAAAAAAHNxAH4ADwAAAAJ3BAAAAApzcQB+AAsAAAAAAQAA
+ABsBAAAAAABzcQB+AA8AAAAAdwQAAAAKeHEAfgAZdXEAfgAhAAAAAgABJjgABWN0cQB+ACRxAH4A
+K3QABDE0LjVzcQB+AAsAAAAAAQAAABwAAAAAAABzcQB+AA8AAAAAdwQAAAAKeHEAfgAZdXEAfgAh
+AAAAAgAAbKoAAcuTcQB+ACRxAH4AK3EAfgDOeHNxAH4ADwAAAAd3BAAAAAp0AARMYXRldAAKQ1JT
+RGVwSG91cnQACUNSU0RlcE1pbnQADURheU9mV2Vla190eHR0AAlEYXlPZldlZWt0AAdEZXBUaW1l
+dAAIRGVwRGVsYXl4dXEAfgAhAAAAAgABkuIABy8Hc3EAfgAjP0AAAAAAAAx3CAAAABAAAAACdAAB
+MXEAfgAodAABMHEAfgAqeHVxAH4AIQAAAAIAAAABAAAAA3QAB1dlZWtkYXl4c3EAfgAPAAAAB3cE
+AAAACnQABExhdGV0AApDUlNEZXBIb3VydAAJQ1JTRGVwTWludAANRGF5T2ZXZWVrX3R4dHQACURh
+eU9mV2Vla3QAB0RlcFRpbWV0AAhEZXBEZWxheXh1cQB+ACEAAAACAAIbPAAJ9ihzcQB+ACM/QAAA
+AAAADHcIAAAAEAAAAAJ0AAExcQB+ACh0AAEwcQB+ACp4dXEAfgAhAAAAAgAAAAEAAAADdAAEMTUu
+MHNxAH4ACwAAAAABAAAABAAAAAAAAHNxAH4ADwAAAAJ3BAAAAApzcQB+AAsAAAAAAQAAAAsBAAAA
+AABzcQB+AA8AAAACdwQAAAAKc3EAfgALAQAAAAMAAAAPAAAAAAAAc3EAfgAPAAAAAHcEAAAACnhx
+AH4AGXVxAH4AIQAAAAIAAbEsAAdWq3EAfgAkcQB+ACtxAH4AQ3NxAH4ACwEAAAADAAAAEAAAAAAA
+AHNxAH4ADwAAAAB3BAAAAAp4cQB+ABl1cQB+ACEAAAACAAVwBQAUEaNxAH4AJHEAfgArcQB+AEd4
+c3EAfgAPAAAAB3cEAAAACnQABExhdGV0AApDUlNEZXBIb3VydAAJQ1JTRGVwTWludAANRGF5T2ZX
+ZWVrX3R4dHQACURheU9mV2Vla3QAB0RlcFRpbWV0AAhEZXBEZWxheXh1cQB+ACEAAAACAAchMQAb
+aE5zcQB+ACM/QAAAAAAADHcIAAAAEAAAAAJ0AAExcQB+ACh0AAEwcQB+ACp4dXEAfgAhAAAAAgAA
+AAEAAAADdAAEMjEuNXNxAH4ACwAAAAABAAAADAAAAAAAAHNxAH4ADwAAAAJ3BAAAAApzcQB+AAsB
+AAAAAwAAABEAAAAAAABzcQB+AA8AAAAAdwQAAAAKeHEAfgAZdXEAfgAhAAAAAgAAEYsAAHfecQB+
+ACRxAH4AK3EAfgBDc3EAfgALAQAAAAMAAAASAAAAAAAAc3EAfgAPAAAAAHcEAAAACnhxAH4AGXVx
+AH4AIQAAAAIAADidAAFIGHEAfgAkcQB+ACtxAH4AR3hzcQB+AA8AAAAHdwQAAAAKdAAETGF0ZXQA
+CkNSU0RlcEhvdXJ0AAlDUlNEZXBNaW50AA1EYXlPZldlZWtfdHh0dAAJRGF5T2ZXZWVrdAAHRGVw
+VGltZXQACERlcERlbGF5eHVxAH4AIQAAAAIAAEooAAG/9nNxAH4AIz9AAAAAAAAMdwgAAAAQAAAA
+AnQAATFxAH4AKHQAATBxAH4AKnh1cQB+ACEAAAACAAAAAQAAAAN0AAQyMS41eHNxAH4ADwAAAAd3
+BAAAAAp0AARMYXRldAAKQ1JTRGVwSG91cnQACUNSU0RlcE1pbnQADURheU9mV2Vla190eHR0AAlE
+YXlPZldlZWt0AAdEZXBUaW1ldAAIRGVwRGVsYXl4dXEAfgAhAAAAAgAHa1kAHShEc3EAfgAjP0AA
+AAAAAAx3CAAAABAAAAACdAABMXEAfgAodAABMHEAfgAqeHVxAH4AIQAAAAIAAAABAAAAA3QABDE1
+LjB4c3EAfgAPAAAAB3cEAAAACnQABExhdGV0AApDUlNEZXBIb3VydAAJQ1JTRGVwTWludAANRGF5
+T2ZXZWVrX3R4dHQACURheU9mV2Vla3QAB0RlcFRpbWV0AAhEZXBEZWxheXh1cQB+ACEAAAACAAmG
+lQAnHmxzcQB+ACM/QAAAAAAADHcIAAAAEAAAAAJ0AAExcQB+ACh0AAEwcQB+ACp4dXEAfgAhAAAA
+AgAAAAEAAAADdAAEMTMuMHhzcQB+AA8AAAAHdwQAAAAKdAAETGF0ZXQACkNSU0RlcEhvdXJ0AAlD
+UlNEZXBNaW50AA1EYXlPZldlZWtfdHh0dAAJRGF5T2ZXZWVrdAAHRGVwVGltZXQACERlcERlbGF5
+eHVxAH4AIQAAAAIAD1g/AFHwynEAfgAkdXEAfgAhAAAAAgAAAAEAAAADdAAMRGVjaXNpb25UcmVl
+c3EAfgAPAAAAAHcEAAAACnhwdAANRGVjaXNpb24gVHJlZQ==</Model>
+</Operator>
+<Operator X="226" Y="382" name="Copy to Database" type="com.alpine.miner.gef.runoperator.hadoop.CopyToDBOperator" uuid="1357293428729">
+<Parameter key="dbConnectionName" value="Connection Demo"/>
+<Parameter key="schemaName" value="demo"/>
+<Parameter key="copyToTableName" value="@default_prefix_todb_0_2003"/>
+<Parameter key="ifDataExists" value="Drop"/>
+<Parameter key="userName" value="miner_demo"/>
+<Parameter key="url" value="jdbc:postgresql://192.168.1.236:5432/miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Parameter key="useSSL" value="false"/>
+<InPutFieldList>
+<Parameter key="connName" value="cdh4"/>
+<Parameter key="hdfsHostname" value="mdw1"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4.1.1"/>
+<Parameter key="jobHostname" value="mdw1"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="hadoop"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_var_0"/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="Late"/>
+<columnNames columnName="CRSDepHour"/>
+<columnNames columnName="DayOfWeek_txt"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="DepDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="float"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="544" Y="378" name="CART" type="com.alpine.miner.gef.runoperator.decisiontree.CartOperator" uuid="1357874066675">
+<Parameter key="dependentColumn" value="Late"/>
+<Parameter key="forceRetrain" value="Yes"/>
+<Parameter key="columnNames" value="CRSDepHour,DayOfWeek_txt"/>
+<Parameter key="maximal_depth" value="5"/>
+<Parameter key="confidence" value="0.25"/>
+<Parameter key="number_of_prepruning_alternatives" value="3"/>
+<Parameter key="minimal_size_for_split" value="4"/>
+<Parameter key="no_pruning" value="true"/>
+<Parameter key="no_pre_pruning" value="true"/>
+<Parameter key="size_threshold_load_data" value="10000"/>
+<Parameter key="minimal_leaf_size" value="2"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://192.168.1.236:5432/miner_demo"/>
+<Parameter key="schema" value="demo"/>
+<Parameter key="table" value="@default_prefix_todb_0_2003"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="Late" type="INTEGER"/>
+<Field name="CRSDepHour" type="DOUBLE PRECISION"/>
+<Field name="DayOfWeek_txt" type="TEXT"/>
+<Field name="DayOfWeek" type="BIGINT"/>
+<Field name="DepTime" type="TEXT"/>
+<Field name="DepDelay" type="TEXT"/>
+</Fields>
+</InPutFieldList>
+<Model>rO0ABXNyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuRW5naW5lTW9kZWxyBs7TjRuF
+xwIAA0wABW1vZGVsdAAmTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9vcGVyYXRvci9Nb2RlbDtMAAlt
+b2RlbFR5cGV0ABJMamF2YS9sYW5nL1N0cmluZztMAARuYW1lcQB+AAJ4cHNyAEZjb20uYWxwaW5l
+LmRhdGFtaW5pbmcub3BlcmF0b3IudHJlZS5jYXJ0cmVncmVzc2lvbi5SZWdyZXNzaW9uVHJlZU1v
+ZGVs+d4xAARRxRkCAAJbAAZVUERBVEV0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAEcm9vdHQAQ0xj
+b20vYWxwaW5lL2RhdGFtaW5pbmcvb3BlcmF0b3IvdHJlZS9jYXJ0cmVncmVzc2lvbi9SZWdyZXNz
+aW9uVHJlZTt4cgAzY29tLmFscGluZS5kYXRhbWluaW5nLm9wZXJhdG9yLnRyYWluaW5nLlNpbmds
+ZU1vZGVssUpareKlF/gCAAB4cgAyY29tLmFscGluZS5kYXRhbWluaW5nLm9wZXJhdG9yLnRyYWlu
+aW5nLlByZWRpY3Rpb25BFoip8770gAIAAHhyACxjb20uYWxwaW5lLmRhdGFtaW5pbmcub3BlcmF0
+b3IuQWJzdHJhY3RNb2RlbPaLwYG1INscAgABTAANaGVhZGVyRGF0YVNldHQAJExjb20vYWxwaW5l
+L2RhdGFtaW5pbmcvZGIvREJEYXRhU2V0O3hyACtjb20uYWxwaW5lLmRhdGFtaW5pbmcub3BlcmF0
+b3IuT3V0cHV0T2JqZWN0W4/atPz2d24CAAFMAAZzb3VyY2VxAH4AAnhwcHNyACJjb20uYWxwaW5l
+LmRhdGFtaW5pbmcuZGIuREJEYXRhU2V0oy02rpEIYIwCAAdMAAdhdmVyYWdldAATTGphdmEvdXRp
+bC9IYXNoTWFwO0wAB2NvbHVtbnN0ACJMY29tL2FscGluZS9kYXRhbWluaW5nL2RiL0NvbHVtbnM7
+TAAHbWF4aW11bXEAfgAOTAAHbWluaW11bXEAfgAOTAADc3VtcQB+AA5MAAV0YWJsZXQAIExjb20v
+YWxwaW5lL2RhdGFtaW5pbmcvZGIvVGFibGU7TAAIdmFyaWFuY2VxAH4ADnhyAChjb20uYWxwaW5l
+LmRhdGFtaW5pbmcuZGIuQWJzdHJhY3REYXRhU2V0IFxxzNEBLwQCAARaABtjb21wdXRlZEFsbENv
+bHVtblN0YXRpc3RpY3NaABVjb21wdXRlZEFsbFN0YXRpc3RpY3NMAAVpZE1hcHQAD0xqYXZhL3V0
+aWwvTWFwO0wADXN0YXRpc3RpY3NNYXBxAH4AEnhxAH4AC3AAAHNyABFqYXZhLnV0aWwuSGFzaE1h
+cAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAx3CAAAABAAAAAA
+eHNxAH4AFD9AAAAAAAAMdwgAAAAQAAAAAHhwc3IAI2NvbS5hbHBpbmUuZGF0YW1pbmluZy5kYi5D
+b2x1bW5zSW1wILHMJPtWhd0CAAFMAAdjb2x1bW5zdAAQTGphdmEvdXRpbC9MaXN0O3hwc3IAFGph
+dmEudXRpbC5MaW5rZWRMaXN0DClTXUpgiCIDAAB4cHcEAAAAA3NyACZjb20uYWxwaW5lLmRhdGFt
+aW5pbmcuZGIuTnVtZXJpY0NvbHVtbgAAAAAAAAABAgACWgAIY2F0ZWdvcnlMAAdtYXBwaW5ndAAi
+TGNvbS9hbHBpbmUvZGF0YW1pbmluZy9kYi9NYXBwaW5nO3hyACdjb20uYWxwaW5lLmRhdGFtaW5p
+bmcuZGIuQWJzdHJhY3RDb2x1bW7e2t2RhMB0agIAB0QADGRlZmF1bHRWYWx1ZUkABWluZGV4WgAH
+c3BlY2lhbEkACXZhbHVlVHlwZUwAC2NvbHVtblN0YXRzcQB+ABhMAARuYW1lcQB+AAJMAAtzcGVj
+aWFsTmFtZXEAfgACeHAAAAAAAAAAAAAAAAEAAAAABHNxAH4AGncEAAAAAXNyACtjb20uYWxwaW5l
+LmRhdGFtaW5pbmcuZGIuTnVtZXJpY0NvbHVtblN0YXRzbbfBUwTZ3sICAAdKAAptYXhDb3VudGVy
+SgAEbW9kZUQACnNxdWFyZWRTdW1EAANzdW1JAAx2YWx1ZUNvdW50ZXJMAAZjb2x1bW50ACFMY29t
+L2FscGluZS9kYXRhbWluaW5nL2RiL0NvbHVtbjtbAAZzY29yZXN0AAJbSnhwAAAAAAAAAAD/////
+/////wAAAAAAAAAAAAAAAAAAAAAAAAAAcHB4dAAKQ1JTRGVwSG91cnAAc3IAJGNvbS5hbHBpbmUu
+ZGF0YW1pbmluZy5kYi5NYXBwaW5nSW1wbGNyNc7gjRALAgACTAAQaW5kZXhUb1N5bWJvbE1hcHEA
+fgAYTAAQc3ltYm9sVG9JbmRleE1hcHEAfgASeHBzcgATamF2YS51dGlsLkFycmF5TGlzdHiB0h2Z
+x2GdAwABSQAEc2l6ZXhwAAAAAHcEAAAACnhzcQB+ABQ/QAAAAAAADHcIAAAAEAAAAAB4c3IAJmNv
+bS5hbHBpbmUuZGF0YW1pbmluZy5kYi5Ob21pbmFsQ29sdW1uDVT6IDWHfC0CAAFMAAdtYXBwaW5n
+cQB+AB14cQB+AB4AAAAAAAAAAAAAAAMAAAAAAXNxAH4AGncEAAAAAXNyACtjb20uYWxwaW5lLmRh
+dGFtaW5pbmcuZGIuTm9taW5hbENvbHVtblN0YXRzXE1wNlSUQOgCAARKAAptYXhDb3VudGVySgAE
+bW9kZUwABmNvbHVtbnEAfgAiWwAGc2NvcmVzcQB+ACN4cAAAAAAAAAAA//////////9wcHh0AA1E
+YXlPZldlZWtfdHh0cHNxAH4AJnNxAH4AKAAAAAJ3BAAAAAp0AAdXZWVrZW5kdAAHV2Vla2RheXhz
+cQB+ABQ/QAAAAAAADHcIAAAAEAAAAAJxAH4AM3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4
+AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAAAAAcQB+ADRzcQB+
+ADYAAAABeHNxAH4AHAAAAAAAAAAAAAAAAAEAAAADc3EAfgAadwQAAAABc3EAfgAhAAAAAAAAAAD/
+/////////wAAAAAAAAAAAAAAAAAAAAAAAAAAcHB4dAAETGF0ZXQAFUFMUElORV9ERVBFTkRFTlRf
+TkFNRQBzcQB+ACZzcQB+ACgAAAAAdwQAAAAKeHNxAH4AFD9AAAAAAAAMdwgAAAAQAAAAAHh4cHBw
+c3IAIGNvbS5hbHBpbmUuZGF0YW1pbmluZy5kYi5EQlRhYmxlkfA3xbVlA1kCAAZKAARzaXplTAAI
+cGFzc3dvcmRxAH4AAkwACXRhYmxlTmFtZXEAfgACTAADdXJscQB+AAJMAAh1c2VyTmFtZXEAfgAC
+TAAOd2hlcmVDb25kaXRpb25xAH4AAnhyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuZGIuQWJzdHJh
+Y3REYXRhVGFibGW9HwMEenr6KgIAAkwAB2NvbHVtbnNxAH4AGEwAEHVudXNlZENvbHVtbkxpc3Rx
+AH4AGHhwc3EAfgAoAAAAB3cEAAAACnNxAH4AHAAAAAAAAAAAAAAAAAAAAAADc3EAfgAadwQAAAAB
+c3EAfgAhAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAAAAAAAAcHB4dAAETGF0ZXAAc3EA
+fgAmc3EAfgAoAAAAAHcEAAAACnhzcQB+ABQ/QAAAAAAADHcIAAAAEAAAAAB4c3EAfgAcAAAAAAAA
+AAAAAAABAAAAAARzcQB+ABp3BAAAAAFzcQB+ACEAAAAAAAAAAP//////////AAAAAAAAAAAAAAAA
+AAAAAAAAAABwcHh0AApDUlNEZXBIb3VycABzcQB+ACZzcQB+ACgAAAAAdwQAAAAKeHNxAH4AFD9A
+AAAAAAAMdwgAAAAQAAAAAHhzcQB+ABwAAAAAAAAAAAAAAAIAAAAABHNxAH4AGncEAAAAAXNxAH4A
+IQAAAAAAAAAA//////////8AAAAAAAAAAAAAAAAAAAAAAAAAAHBweHQACUNSU0RlcE1pbnAAc3EA
+fgAmc3EAfgAoAAAAAHcEAAAACnhzcQB+ABQ/QAAAAAAADHcIAAAAEAAAAAB4c3EAfgArAAAAAAAA
+AAAAAAADAAAAAAFzcQB+ABp3BAAAAAFzcQB+AC4AAAAAAAAAAP//////////cHB4dAANRGF5T2ZX
+ZWVrX3R4dHBzcQB+ACZzcQB+ACgAAAAAdwQAAAAKeHNxAH4AFD9AAAAAAAAMdwgAAAAQAAAAAHhz
+cQB+ABwAAAAAAAAAAAAAAAQAAAAAA3NxAH4AGncEAAAAAXNxAH4AIQAAAAAAAAAA//////////8A
+AAAAAAAAAAAAAAAAAAAAAAAAAHBweHQACURheU9mV2Vla3AAc3EAfgAmc3EAfgAoAAAAAHcEAAAA
+CnhzcQB+ABQ/QAAAAAAADHcIAAAAEAAAAAB4c3EAfgArAAAAAAAAAAAAAAAFAAAAAAFzcQB+ABp3
+BAAAAAFzcQB+AC4AAAAAAAAAAP//////////cHB4dAAHRGVwVGltZXBzcQB+ACZzcQB+ACgAAAAA
+dwQAAAAKeHNxAH4AFD9AAAAAAAAMdwgAAAAQAAAAAHhzcQB+ACsAAAAAAAAAAAAAAAYAAAAAAXNx
+AH4AGncEAAAAAXNxAH4ALgAAAAAAAAAA//////////9wcHh0AAhEZXBEZWxheXBzcQB+ACZzcQB+
+ACgAAAAAdwQAAAAKeHNxAH4AFD9AAAAAAAAMdwgAAAAQAAAAAHh4c3EAfgAadwQAAAAAeAAAAAAA
+CgmbdAAKbWluZXJfZGVtb3QAHiJkZW1vIi4iYWRtaW5fYWxwX3RvZGJfMF8yMDAzInQAL2pkYmM6
+cG9zdGdyZXNxbDovLzE5Mi4xNjguMS4yMzY6NTQzMi9taW5lcl9kZW1vdAAKbWluZXJfZGVtb3QA
+UiJDUlNEZXBIb3VyIiBpcyBub3QgbnVsbCAgYW5kICJEYXlPZldlZWtfdHh0IiBpcyBub3QgbnVs
+bCAgYW5kICJMYXRlIiBpcyBub3QgbnVsbCBwdXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17
+RwIAAHhwAAAAAXQAB1AoTGF0ZSlzcgBBY29tLmFscGluZS5kYXRhbWluaW5nLm9wZXJhdG9yLnRy
+ZWUuY2FydHJlZ3Jlc3Npb24uUmVncmVzc2lvblRyZWWuORU/7dsojwIAA0QAA2F2Z0oABWNvdW50
+RAAIZGV2aWFuY2V4cgAyY29tLmFscGluZS5kYXRhbWluaW5nLm9wZXJhdG9yLnRyZWUudGhyZXNo
+b2xkLlRyZWViSuUT5XGpfgIAA0wACGNoaWxkcmVucQB+ABhMAApjb3VudGVyTWFwcQB+ABJMAAVs
+YWJlbHEAfgACeHBzcQB+ABp3BAAAAAJzcgAyY29tLmFscGluZS5kYXRhbWluaW5nLm9wZXJhdG9y
+LnRyZWUudGhyZXNob2xkLlNpZGWzgJQ1WLHZxAIAAkwABWNoaWxkdAA0TGNvbS9hbHBpbmUvZGF0
+YW1pbmluZy9vcGVyYXRvci90cmVlL3RocmVzaG9sZC9UcmVlO0wACWNvbmRpdGlvbnQAOkxjb20v
+YWxwaW5lL2RhdGFtaW5pbmcvb3BlcmF0b3IvdHJlZS90aHJlc2hvbGQvRGV2aWRlQ29uZDt4cHNx
+AH4AgHNxAH4AGncEAAAAAnNxAH4AhHNxAH4AgHNxAH4AGncEAAAAAnNxAH4AhHNxAH4AgHNxAH4A
+GncEAAAAAnNxAH4AhHNxAH4AgHNxAH4AGncEAAAAAHhzcgAXamF2YS51dGlsLkxpbmtlZEhhc2hN
+YXA0wE5cEGzA+wIAAVoAC2FjY2Vzc09yZGVyeHEAfgAUP0AAAAAAAAx3CAAAABAAAAAAeABwP7rJ
+R467gPUAAAAAAAAFOj+4AF5e9b+Qc3IAQWNvbS5hbHBpbmUuZGF0YW1pbmluZy5vcGVyYXRvci50
+cmVlLnRocmVzaG9sZC5MZXNzRXF1YWxEZXZpZGVDb25kwNfAi9aVAGwCAAFEAAV2YWx1ZXhyAEBj
+b20uYWxwaW5lLmRhdGFtaW5pbmcub3BlcmF0b3IudHJlZS50aHJlc2hvbGQuQWJzdHJhY3REZXZp
+ZGVDb25knn3to0TfMHMCAAFMAApjb2x1bW5OYW1lcQB+AAJ4cHEAfgAlQAYAAAAAAABzcQB+AIRz
+cQB+AIBzcQB+ABp3BAAAAAB4c3EAfgCTP0AAAAAAAAx3CAAAABAAAAAAeABwP7X93sPLmK4AAAAA
+AABQwj+0Gnwv0fpjc3IAP2NvbS5hbHBpbmUuZGF0YW1pbmluZy5vcGVyYXRvci50cmVlLnRocmVz
+aG9sZC5HcmVhdGVyRGV2aWRlQ29uZLnvkfLqrD2fAgABRAAFdmFsdWV4cQB+AJZxAH4AJUAGAAAA
+AAAAeHNxAH4Akz9AAAAAAAAMdwgAAAAQAAAAAHgAcQB+ACV/+AAAAAAAAAAAAAAAAAAAf/gAAAAA
+AABzcQB+AJVxAH4AJUAZAAAAAAAAc3EAfgCEc3EAfgCAc3EAfgAadwQAAAACc3EAfgCEc3EAfgCA
+c3EAfgAadwQAAAAAeHNxAH4Akz9AAAAAAAAMdwgAAAAQAAAAAHgAcD+4T/qNcsyUAAAAAAAAQJ4/
+tgE5xAMKlHNyAE1jb20uYWxwaW5lLmRhdGFtaW5pbmcub3BlcmF0b3IudHJlZS5jYXJ0Y2xhc3Np
+ZmljYXRpb24uQ2FydE5vcm1pbmFsRGV2aWRlQ29uZJDqovvlMBx5AgAEWgADbm90TAAGY29sdW1u
+cQB+ACJMAAZkYlR5cGVxAH4AAkwAC3ZhbHVlU3RyaW5ncQB+ABh4cQB+AJZxAH4AMABzcQB+ACsA
+AAAAAAAAAAAAAAMAAAAAAXNxAH4AGncEAAAAAXNxAH4ALgAAAAAAAAAA//////////9wcHhxAH4A
+MHBxAH4AMXQACUdyZWVucGx1bXNxAH4AKAAAAAF3BAAAAApxAH4ANHhzcQB+AIRzcQB+AIBzcQB+
+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
+AAAAAAAAAAAAf/gAAAAAAABwdAAEQ0FSVA==</Model>
+</Operator>
+<Operator X="547" Y="214" name="Tree Predictor" type="com.alpine.miner.gef.runoperator.hadoop.HadoopDecisionTreePredictOperator" uuid="1357877053102">
+<Parameter key="resultsLocation" value="/tmp"/>
+<Parameter key="resultsName" value="@default_prefix_treep_0_airline"/>
+<Parameter key="override" value="Yes"/>
+<InPutFieldList>
+<Parameter key="connName" value="cdh4"/>
+<Parameter key="hdfsHostname" value="mdw1"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4.1.1"/>
+<Parameter key="jobHostname" value="mdw1"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="hadoop"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_var_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="Late"/>
+<columnNames columnName="CRSDepHour"/>
+<columnNames columnName="DayOfWeek_txt"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="DepDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="float"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="549" Y="527" name="Tree Predictor-1" type="com.alpine.miner.gef.runoperator.decisiontree.TreePredictOperator" uuid="1357877083310">
+<Parameter key="outputSchema" value="@default_schema"/>
+<Parameter key="outputTable" value="@default_prefix_treep_0_airline"/>
+<StorageParameters appendOnly="false" columnarStorage="false" compression="false" compressionLevel="1" isDistributedRandomly="true"/>
+<Parameter key="dropIfExist" value="Yes"/>
+<InPutFieldList>
+<Parameter key="url" value="jdbc:postgresql://192.168.1.236:5432/miner_demo"/>
+<Parameter key="schema" value="demo"/>
+<Parameter key="table" value="@default_prefix_todb_0_2003"/>
+<Parameter key="tableType" value="TABLE"/>
+<Parameter key="username" value="miner_demo"/>
+<Parameter key="password" value="bWluZXJfZGVtbw=="/>
+<Parameter key="system" value="PostgreSQL"/>
+<Fields>
+<Field name="Late" type="INTEGER"/>
+<Field name="CRSDepHour" type="DOUBLE PRECISION"/>
+<Field name="DayOfWeek_txt" type="TEXT"/>
+<Field name="DayOfWeek" type="BIGINT"/>
+<Field name="DepTime" type="TEXT"/>
+<Field name="DepDelay" type="TEXT"/>
+</Fields>
+</InPutFieldList>
+</Operator>
+<Operator X="56" Y="378" name="Frequency" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFrequencyAnalysisOperator" uuid="1357878985449">
+<Parameter key="columnNames" value="Late,CRSDepHour,DayOfWeek_txt"/>
+<InPutFieldList>
+<Parameter key="connName" value="cdh4"/>
+<Parameter key="hdfsHostname" value="mdw1"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4.1.1"/>
+<Parameter key="jobHostname" value="mdw1"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="hadoop"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_var_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="Late"/>
+<columnNames columnName="CRSDepHour"/>
+<columnNames columnName="DayOfWeek_txt"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="DepDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="float"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Link source="2003.csv" target="Variable"/>
+<Link source="Variable" target="Decision Tree"/>
+<Link source="Variable" target="Copy to Database"/>
+<Link source="Copy to Database" target="CART"/>
+<Link source="Decision Tree" target="Tree Predictor"/>
+<Link source="Variable" target="Tree Predictor"/>
+<Link source="Copy to Database" target="Tree Predictor-1"/>
+<Link source="CART" target="Tree Predictor-1"/>
+<Link source="Variable" target="Frequency"/>
+<VariableModel>
+<Variable>
+<Name>@default_schema</Name>
+<Value>public</Value>
+</Variable>
+<Variable>
+<Name>@default_prefix</Name>
+<Value>alp</Value>
+</Variable>
+</VariableModel>
+</Process>
