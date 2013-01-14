@@ -1,0 +1,1331 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Process Description="" UserName="shillion" Version="3.0">
+<Operator X="149" Y="110" name="census2000_USA.xml" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFileOperator" uuid="1353379050434">
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hadoopFileName" value="/shillion/census2000_USA.xml"/>
+<Parameter key="hadoopFileFormat" value="XML"/>
+<XMLFileStructureModel attrMode="no" container="datum" includeHeader="false">
+<xPaths xPath="//STATE_NAME/text()"/>
+<xPaths xPath="//STATE_ABBR/text()"/>
+<xPaths xPath="//STATE_FIPS/text()"/>
+<xPaths xPath="//SUB_REGION/text()"/>
+<xPaths xPath="//AREA/text()"/>
+<xPaths xPath="//POP2000/text()"/>
+<xPaths xPath="//POP00_SQMI/text()"/>
+<xPaths xPath="//WHITE/text()"/>
+<xPaths xPath="//BLACK/text()"/>
+<xPaths xPath="//AMERI_ES/text()"/>
+<xPaths xPath="//ASIAN/text()"/>
+<xPaths xPath="//HAWN_PI/text()"/>
+<xPaths xPath="//OTHER/text()"/>
+<xPaths xPath="//MULT_RACE/text()"/>
+<xPaths xPath="//HISPANIC/text()"/>
+<xPaths xPath="//MALES/text()"/>
+<xPaths xPath="//FEMALES/text()"/>
+<xPaths xPath="//AGE_UNDER5/text()"/>
+<xPaths xPath="//AGE_5_17/text()"/>
+<xPaths xPath="//AGE_18_21/text()"/>
+<xPaths xPath="//AGE_22_29/text()"/>
+<xPaths xPath="//AGE_30_39/text()"/>
+<xPaths xPath="//AGE_40_49/text()"/>
+<xPaths xPath="//AGE_50_64/text()"/>
+<xPaths xPath="//AGE_65_UP/text()"/>
+<xPaths xPath="//MED_AGE/text()"/>
+<xPaths xPath="//MED_AGE_M/text()"/>
+<xPaths xPath="//MED_AGE_F/text()"/>
+<xPaths xPath="//HOUSEHOLDS/text()"/>
+<xPaths xPath="//AVE_HH_SZ/text()"/>
+<xPaths xPath="//HSEHLD_1_M/text()"/>
+<xPaths xPath="//HSEHLD_1_F/text()"/>
+<xPaths xPath="//MARHH_CHD/text()"/>
+<xPaths xPath="//MARHH_NO_C/text()"/>
+<xPaths xPath="//MHH_CHILD/text()"/>
+<xPaths xPath="//FHH_CHILD/text()"/>
+<xPaths xPath="//FAMILIES/text()"/>
+<xPaths xPath="//AVE_FAM_SZ/text()"/>
+<xPaths xPath="//HSE_UNITS/text()"/>
+<xPaths xPath="//VACANT/text()"/>
+<xPaths xPath="//OWNER_OCC/text()"/>
+<xPaths xPath="//RENTER_OCC/text()"/>
+<columnNames columnName="STATE_NAME"/>
+<columnNames columnName="STATE_ABBR"/>
+<columnNames columnName="STATE_FIPS"/>
+<columnNames columnName="SUB_REGION"/>
+<columnNames columnName="AREA"/>
+<columnNames columnName="POP2000"/>
+<columnNames columnName="POP00_SQMI"/>
+<columnNames columnName="WHITE"/>
+<columnNames columnName="BLACK"/>
+<columnNames columnName="AMERI_ES"/>
+<columnNames columnName="ASIAN"/>
+<columnNames columnName="HAWN_PI"/>
+<columnNames columnName="OTHER"/>
+<columnNames columnName="MULT_RACE"/>
+<columnNames columnName="HISPANIC"/>
+<columnNames columnName="MALES"/>
+<columnNames columnName="FEMALES"/>
+<columnNames columnName="AGE_UNDER5"/>
+<columnNames columnName="AGE_5_17"/>
+<columnNames columnName="AGE_18_21"/>
+<columnNames columnName="AGE_22_29"/>
+<columnNames columnName="AGE_30_39"/>
+<columnNames columnName="AGE_40_49"/>
+<columnNames columnName="AGE_50_64"/>
+<columnNames columnName="AGE_65_UP"/>
+<columnNames columnName="MED_AGE"/>
+<columnNames columnName="MED_AGE_M"/>
+<columnNames columnName="MED_AGE_F"/>
+<columnNames columnName="HOUSEHOLDS"/>
+<columnNames columnName="AVE_HH_SZ"/>
+<columnNames columnName="HSEHLD_1_M"/>
+<columnNames columnName="HSEHLD_1_F"/>
+<columnNames columnName="MARHH_CHD"/>
+<columnNames columnName="MARHH_NO_C"/>
+<columnNames columnName="MHH_CHILD"/>
+<columnNames columnName="FHH_CHILD"/>
+<columnNames columnName="FAMILIES"/>
+<columnNames columnName="AVE_FAM_SZ"/>
+<columnNames columnName="HSE_UNITS"/>
+<columnNames columnName="VACANT"/>
+<columnNames columnName="OWNER_OCC"/>
+<columnNames columnName="RENTER_OCC"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+</XMLFileStructureModel>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="XML"/>
+<Parameter key="hadoopFileName" value="/shillion/census2000_USA.xml"/>
+<XMLFileStructureModel attrMode="no" container="datum" includeHeader="false">
+<xPaths xPath="//STATE_NAME/text()"/>
+<xPaths xPath="//STATE_ABBR/text()"/>
+<xPaths xPath="//STATE_FIPS/text()"/>
+<xPaths xPath="//SUB_REGION/text()"/>
+<xPaths xPath="//AREA/text()"/>
+<xPaths xPath="//POP2000/text()"/>
+<xPaths xPath="//POP00_SQMI/text()"/>
+<xPaths xPath="//WHITE/text()"/>
+<xPaths xPath="//BLACK/text()"/>
+<xPaths xPath="//AMERI_ES/text()"/>
+<xPaths xPath="//ASIAN/text()"/>
+<xPaths xPath="//HAWN_PI/text()"/>
+<xPaths xPath="//OTHER/text()"/>
+<xPaths xPath="//MULT_RACE/text()"/>
+<xPaths xPath="//HISPANIC/text()"/>
+<xPaths xPath="//MALES/text()"/>
+<xPaths xPath="//FEMALES/text()"/>
+<xPaths xPath="//AGE_UNDER5/text()"/>
+<xPaths xPath="//AGE_5_17/text()"/>
+<xPaths xPath="//AGE_18_21/text()"/>
+<xPaths xPath="//AGE_22_29/text()"/>
+<xPaths xPath="//AGE_30_39/text()"/>
+<xPaths xPath="//AGE_40_49/text()"/>
+<xPaths xPath="//AGE_50_64/text()"/>
+<xPaths xPath="//AGE_65_UP/text()"/>
+<xPaths xPath="//MED_AGE/text()"/>
+<xPaths xPath="//MED_AGE_M/text()"/>
+<xPaths xPath="//MED_AGE_F/text()"/>
+<xPaths xPath="//HOUSEHOLDS/text()"/>
+<xPaths xPath="//AVE_HH_SZ/text()"/>
+<xPaths xPath="//HSEHLD_1_M/text()"/>
+<xPaths xPath="//HSEHLD_1_F/text()"/>
+<xPaths xPath="//MARHH_CHD/text()"/>
+<xPaths xPath="//MARHH_NO_C/text()"/>
+<xPaths xPath="//MHH_CHILD/text()"/>
+<xPaths xPath="//FHH_CHILD/text()"/>
+<xPaths xPath="//FAMILIES/text()"/>
+<xPaths xPath="//AVE_FAM_SZ/text()"/>
+<xPaths xPath="//HSE_UNITS/text()"/>
+<xPaths xPath="//VACANT/text()"/>
+<xPaths xPath="//OWNER_OCC/text()"/>
+<xPaths xPath="//RENTER_OCC/text()"/>
+<columnNames columnName="STATE_NAME"/>
+<columnNames columnName="STATE_ABBR"/>
+<columnNames columnName="STATE_FIPS"/>
+<columnNames columnName="SUB_REGION"/>
+<columnNames columnName="AREA"/>
+<columnNames columnName="POP2000"/>
+<columnNames columnName="POP00_SQMI"/>
+<columnNames columnName="WHITE"/>
+<columnNames columnName="BLACK"/>
+<columnNames columnName="AMERI_ES"/>
+<columnNames columnName="ASIAN"/>
+<columnNames columnName="HAWN_PI"/>
+<columnNames columnName="OTHER"/>
+<columnNames columnName="MULT_RACE"/>
+<columnNames columnName="HISPANIC"/>
+<columnNames columnName="MALES"/>
+<columnNames columnName="FEMALES"/>
+<columnNames columnName="AGE_UNDER5"/>
+<columnNames columnName="AGE_5_17"/>
+<columnNames columnName="AGE_18_21"/>
+<columnNames columnName="AGE_22_29"/>
+<columnNames columnName="AGE_30_39"/>
+<columnNames columnName="AGE_40_49"/>
+<columnNames columnName="AGE_50_64"/>
+<columnNames columnName="AGE_65_UP"/>
+<columnNames columnName="MED_AGE"/>
+<columnNames columnName="MED_AGE_M"/>
+<columnNames columnName="MED_AGE_F"/>
+<columnNames columnName="HOUSEHOLDS"/>
+<columnNames columnName="AVE_HH_SZ"/>
+<columnNames columnName="HSEHLD_1_M"/>
+<columnNames columnName="HSEHLD_1_F"/>
+<columnNames columnName="MARHH_CHD"/>
+<columnNames columnName="MARHH_NO_C"/>
+<columnNames columnName="MHH_CHILD"/>
+<columnNames columnName="FHH_CHILD"/>
+<columnNames columnName="FAMILIES"/>
+<columnNames columnName="AVE_FAM_SZ"/>
+<columnNames columnName="HSE_UNITS"/>
+<columnNames columnName="VACANT"/>
+<columnNames columnName="OWNER_OCC"/>
+<columnNames columnName="RENTER_OCC"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+</XMLFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="370" Y="151" name="Variable" type="com.alpine.miner.gef.runoperator.hadoop.HadoopVariableOperator" uuid="1353379520539">
+<Parameter key="storeResults" value="true"/>
+<Parameter key="resultsLocation" value="/tmp"/>
+<Parameter key="resultsName" value="@default_prefix_var_0"/>
+<Parameter key="override" value="Yes"/>
+<DerivedFieldsModel>
+<selectedColumnName columnName="STATE_NAME"/>
+<selectedColumnName columnName="STATE_ABBR"/>
+<selectedColumnName columnName="STATE_FIPS"/>
+<selectedColumnName columnName="SUB_REGION"/>
+<selectedColumnName columnName="AREA"/>
+<selectedColumnName columnName="POP2000"/>
+<selectedColumnName columnName="MED_AGE"/>
+<selectedColumnName columnName="AVE_FAM_SZ"/>
+<DerivedFieldItem columnName="pct_white" dataType="float" expression="WHITE / POP2000"/>
+<DerivedFieldItem columnName="pct_black" dataType="float" expression="BLACK / POP2000 "/>
+<DerivedFieldItem columnName="pct_owner_occ" dataType="float" expression="OWNER_OCC / HSE_UNITS "/>
+<DerivedFieldItem columnName="pct_old" dataType="float" expression="AGE_65_UP / POP2000 "/>
+</DerivedFieldsModel>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="XML"/>
+<Parameter key="hadoopFileName" value="/shillion/census2000_USA.xml"/>
+<XMLFileStructureModel attrMode="no" container="datum" includeHeader="false">
+<xPaths xPath="//STATE_NAME/text()"/>
+<xPaths xPath="//STATE_ABBR/text()"/>
+<xPaths xPath="//STATE_FIPS/text()"/>
+<xPaths xPath="//SUB_REGION/text()"/>
+<xPaths xPath="//AREA/text()"/>
+<xPaths xPath="//POP2000/text()"/>
+<xPaths xPath="//POP00_SQMI/text()"/>
+<xPaths xPath="//WHITE/text()"/>
+<xPaths xPath="//BLACK/text()"/>
+<xPaths xPath="//AMERI_ES/text()"/>
+<xPaths xPath="//ASIAN/text()"/>
+<xPaths xPath="//HAWN_PI/text()"/>
+<xPaths xPath="//OTHER/text()"/>
+<xPaths xPath="//MULT_RACE/text()"/>
+<xPaths xPath="//HISPANIC/text()"/>
+<xPaths xPath="//MALES/text()"/>
+<xPaths xPath="//FEMALES/text()"/>
+<xPaths xPath="//AGE_UNDER5/text()"/>
+<xPaths xPath="//AGE_5_17/text()"/>
+<xPaths xPath="//AGE_18_21/text()"/>
+<xPaths xPath="//AGE_22_29/text()"/>
+<xPaths xPath="//AGE_30_39/text()"/>
+<xPaths xPath="//AGE_40_49/text()"/>
+<xPaths xPath="//AGE_50_64/text()"/>
+<xPaths xPath="//AGE_65_UP/text()"/>
+<xPaths xPath="//MED_AGE/text()"/>
+<xPaths xPath="//MED_AGE_M/text()"/>
+<xPaths xPath="//MED_AGE_F/text()"/>
+<xPaths xPath="//HOUSEHOLDS/text()"/>
+<xPaths xPath="//AVE_HH_SZ/text()"/>
+<xPaths xPath="//HSEHLD_1_M/text()"/>
+<xPaths xPath="//HSEHLD_1_F/text()"/>
+<xPaths xPath="//MARHH_CHD/text()"/>
+<xPaths xPath="//MARHH_NO_C/text()"/>
+<xPaths xPath="//MHH_CHILD/text()"/>
+<xPaths xPath="//FHH_CHILD/text()"/>
+<xPaths xPath="//FAMILIES/text()"/>
+<xPaths xPath="//AVE_FAM_SZ/text()"/>
+<xPaths xPath="//HSE_UNITS/text()"/>
+<xPaths xPath="//VACANT/text()"/>
+<xPaths xPath="//OWNER_OCC/text()"/>
+<xPaths xPath="//RENTER_OCC/text()"/>
+<columnNames columnName="STATE_NAME"/>
+<columnNames columnName="STATE_ABBR"/>
+<columnNames columnName="STATE_FIPS"/>
+<columnNames columnName="SUB_REGION"/>
+<columnNames columnName="AREA"/>
+<columnNames columnName="POP2000"/>
+<columnNames columnName="POP00_SQMI"/>
+<columnNames columnName="WHITE"/>
+<columnNames columnName="BLACK"/>
+<columnNames columnName="AMERI_ES"/>
+<columnNames columnName="ASIAN"/>
+<columnNames columnName="HAWN_PI"/>
+<columnNames columnName="OTHER"/>
+<columnNames columnName="MULT_RACE"/>
+<columnNames columnName="HISPANIC"/>
+<columnNames columnName="MALES"/>
+<columnNames columnName="FEMALES"/>
+<columnNames columnName="AGE_UNDER5"/>
+<columnNames columnName="AGE_5_17"/>
+<columnNames columnName="AGE_18_21"/>
+<columnNames columnName="AGE_22_29"/>
+<columnNames columnName="AGE_30_39"/>
+<columnNames columnName="AGE_40_49"/>
+<columnNames columnName="AGE_50_64"/>
+<columnNames columnName="AGE_65_UP"/>
+<columnNames columnName="MED_AGE"/>
+<columnNames columnName="MED_AGE_M"/>
+<columnNames columnName="MED_AGE_F"/>
+<columnNames columnName="HOUSEHOLDS"/>
+<columnNames columnName="AVE_HH_SZ"/>
+<columnNames columnName="HSEHLD_1_M"/>
+<columnNames columnName="HSEHLD_1_F"/>
+<columnNames columnName="MARHH_CHD"/>
+<columnNames columnName="MARHH_NO_C"/>
+<columnNames columnName="MHH_CHILD"/>
+<columnNames columnName="FHH_CHILD"/>
+<columnNames columnName="FAMILIES"/>
+<columnNames columnName="AVE_FAM_SZ"/>
+<columnNames columnName="HSE_UNITS"/>
+<columnNames columnName="VACANT"/>
+<columnNames columnName="OWNER_OCC"/>
+<columnNames columnName="RENTER_OCC"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+</XMLFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="518" Y="235" name="Aggregation" type="com.alpine.miner.gef.runoperator.hadoop.HadoopAggregateOperator" uuid="1353379582166">
+<Parameter key="storeResults" value="false"/>
+<Parameter key="resultsLocation" value=""/>
+<Parameter key="resultsName" value="@default_prefix_agg_0"/>
+<Parameter key="override" value="Yes"/>
+<AggregateFieldsModel>
+<groupBy columnName="SUB_REGION"/>
+<AggregateField columnName="AVG_pct_white" dataType="double" expression="AVG(pct_white)"/>
+<AggregateField columnName="AVG_pct_black" dataType="double" expression="AVG(pct_black)"/>
+<AggregateField columnName="SUM_AREA" dataType="double" expression="SUM(AREA)"/>
+<AggregateField columnName="SUM_POP2000" dataType="long" expression="SUM(POP2000)"/>
+</AggregateFieldsModel>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="XML"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_var_0"/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="pct_white"/>
+<columnNames columnName="pct_black"/>
+<columnNames columnName="pct_owner_occ"/>
+<columnNames columnName="pct_old"/>
+<columnNames columnName="STATE_NAME"/>
+<columnNames columnName="STATE_ABBR"/>
+<columnNames columnName="STATE_FIPS"/>
+<columnNames columnName="SUB_REGION"/>
+<columnNames columnName="AREA"/>
+<columnNames columnName="POP2000"/>
+<columnNames columnName="MED_AGE"/>
+<columnNames columnName="AVE_FAM_SZ"/>
+<columnTypes columnType="float"/>
+<columnTypes columnType="float"/>
+<columnTypes columnType="float"/>
+<columnTypes columnType="float"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="446" Y="58" name="Frequency" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFrequencyAnalysisOperator" uuid="1353379618746">
+<Parameter key="columnNames" value="SUB_REGION"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="XML"/>
+<Parameter key="hadoopFileName" value="/shillion/census2000_USA.xml"/>
+<XMLFileStructureModel attrMode="no" container="datum" includeHeader="false">
+<xPaths xPath="//STATE_NAME/text()"/>
+<xPaths xPath="//STATE_ABBR/text()"/>
+<xPaths xPath="//STATE_FIPS/text()"/>
+<xPaths xPath="//SUB_REGION/text()"/>
+<xPaths xPath="//AREA/text()"/>
+<xPaths xPath="//POP2000/text()"/>
+<xPaths xPath="//POP00_SQMI/text()"/>
+<xPaths xPath="//WHITE/text()"/>
+<xPaths xPath="//BLACK/text()"/>
+<xPaths xPath="//AMERI_ES/text()"/>
+<xPaths xPath="//ASIAN/text()"/>
+<xPaths xPath="//HAWN_PI/text()"/>
+<xPaths xPath="//OTHER/text()"/>
+<xPaths xPath="//MULT_RACE/text()"/>
+<xPaths xPath="//HISPANIC/text()"/>
+<xPaths xPath="//MALES/text()"/>
+<xPaths xPath="//FEMALES/text()"/>
+<xPaths xPath="//AGE_UNDER5/text()"/>
+<xPaths xPath="//AGE_5_17/text()"/>
+<xPaths xPath="//AGE_18_21/text()"/>
+<xPaths xPath="//AGE_22_29/text()"/>
+<xPaths xPath="//AGE_30_39/text()"/>
+<xPaths xPath="//AGE_40_49/text()"/>
+<xPaths xPath="//AGE_50_64/text()"/>
+<xPaths xPath="//AGE_65_UP/text()"/>
+<xPaths xPath="//MED_AGE/text()"/>
+<xPaths xPath="//MED_AGE_M/text()"/>
+<xPaths xPath="//MED_AGE_F/text()"/>
+<xPaths xPath="//HOUSEHOLDS/text()"/>
+<xPaths xPath="//AVE_HH_SZ/text()"/>
+<xPaths xPath="//HSEHLD_1_M/text()"/>
+<xPaths xPath="//HSEHLD_1_F/text()"/>
+<xPaths xPath="//MARHH_CHD/text()"/>
+<xPaths xPath="//MARHH_NO_C/text()"/>
+<xPaths xPath="//MHH_CHILD/text()"/>
+<xPaths xPath="//FHH_CHILD/text()"/>
+<xPaths xPath="//FAMILIES/text()"/>
+<xPaths xPath="//AVE_FAM_SZ/text()"/>
+<xPaths xPath="//HSE_UNITS/text()"/>
+<xPaths xPath="//VACANT/text()"/>
+<xPaths xPath="//OWNER_OCC/text()"/>
+<xPaths xPath="//RENTER_OCC/text()"/>
+<columnNames columnName="STATE_NAME"/>
+<columnNames columnName="STATE_ABBR"/>
+<columnNames columnName="STATE_FIPS"/>
+<columnNames columnName="SUB_REGION"/>
+<columnNames columnName="AREA"/>
+<columnNames columnName="POP2000"/>
+<columnNames columnName="POP00_SQMI"/>
+<columnNames columnName="WHITE"/>
+<columnNames columnName="BLACK"/>
+<columnNames columnName="AMERI_ES"/>
+<columnNames columnName="ASIAN"/>
+<columnNames columnName="HAWN_PI"/>
+<columnNames columnName="OTHER"/>
+<columnNames columnName="MULT_RACE"/>
+<columnNames columnName="HISPANIC"/>
+<columnNames columnName="MALES"/>
+<columnNames columnName="FEMALES"/>
+<columnNames columnName="AGE_UNDER5"/>
+<columnNames columnName="AGE_5_17"/>
+<columnNames columnName="AGE_18_21"/>
+<columnNames columnName="AGE_22_29"/>
+<columnNames columnName="AGE_30_39"/>
+<columnNames columnName="AGE_40_49"/>
+<columnNames columnName="AGE_50_64"/>
+<columnNames columnName="AGE_65_UP"/>
+<columnNames columnName="MED_AGE"/>
+<columnNames columnName="MED_AGE_M"/>
+<columnNames columnName="MED_AGE_F"/>
+<columnNames columnName="HOUSEHOLDS"/>
+<columnNames columnName="AVE_HH_SZ"/>
+<columnNames columnName="HSEHLD_1_M"/>
+<columnNames columnName="HSEHLD_1_F"/>
+<columnNames columnName="MARHH_CHD"/>
+<columnNames columnName="MARHH_NO_C"/>
+<columnNames columnName="MHH_CHILD"/>
+<columnNames columnName="FHH_CHILD"/>
+<columnNames columnName="FAMILIES"/>
+<columnNames columnName="AVE_FAM_SZ"/>
+<columnNames columnName="HSE_UNITS"/>
+<columnNames columnName="VACANT"/>
+<columnNames columnName="OWNER_OCC"/>
+<columnNames columnName="RENTER_OCC"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+</XMLFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="34" Y="258" name="Summary Statistics" type="com.alpine.miner.gef.runoperator.hadoop.HadoopValueAnalysisOperator" uuid="1353379651525">
+<Parameter key="columnNames" value="STATE_NAME,STATE_ABBR,STATE_FIPS,SUB_REGION,AREA,POP2000,POP00_SQMI,WHITE,BLACK,AMERI_ES,ASIAN,HAWN_PI,OTHER,MULT_RACE,HISPANIC,MALES,FEMALES,AGE_UNDER5,AGE_5_17,AGE_18_21,AGE_22_29,AGE_30_39,AGE_40_49,AGE_50_64,AGE_65_UP,MED_AGE,MED_AGE_M,MED_AGE_F,HOUSEHOLDS,AVE_HH_SZ,HSEHLD_1_M,HSEHLD_1_F,MARHH_CHD,MARHH_NO_C,MHH_CHILD,FHH_CHILD,FAMILIES,AVE_FAM_SZ,HSE_UNITS,VACANT,OWNER_OCC,RENTER_OCC"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="XML"/>
+<Parameter key="hadoopFileName" value="/shillion/census2000_USA.xml"/>
+<XMLFileStructureModel attrMode="no" container="datum" includeHeader="false">
+<xPaths xPath="//STATE_NAME/text()"/>
+<xPaths xPath="//STATE_ABBR/text()"/>
+<xPaths xPath="//STATE_FIPS/text()"/>
+<xPaths xPath="//SUB_REGION/text()"/>
+<xPaths xPath="//AREA/text()"/>
+<xPaths xPath="//POP2000/text()"/>
+<xPaths xPath="//POP00_SQMI/text()"/>
+<xPaths xPath="//WHITE/text()"/>
+<xPaths xPath="//BLACK/text()"/>
+<xPaths xPath="//AMERI_ES/text()"/>
+<xPaths xPath="//ASIAN/text()"/>
+<xPaths xPath="//HAWN_PI/text()"/>
+<xPaths xPath="//OTHER/text()"/>
+<xPaths xPath="//MULT_RACE/text()"/>
+<xPaths xPath="//HISPANIC/text()"/>
+<xPaths xPath="//MALES/text()"/>
+<xPaths xPath="//FEMALES/text()"/>
+<xPaths xPath="//AGE_UNDER5/text()"/>
+<xPaths xPath="//AGE_5_17/text()"/>
+<xPaths xPath="//AGE_18_21/text()"/>
+<xPaths xPath="//AGE_22_29/text()"/>
+<xPaths xPath="//AGE_30_39/text()"/>
+<xPaths xPath="//AGE_40_49/text()"/>
+<xPaths xPath="//AGE_50_64/text()"/>
+<xPaths xPath="//AGE_65_UP/text()"/>
+<xPaths xPath="//MED_AGE/text()"/>
+<xPaths xPath="//MED_AGE_M/text()"/>
+<xPaths xPath="//MED_AGE_F/text()"/>
+<xPaths xPath="//HOUSEHOLDS/text()"/>
+<xPaths xPath="//AVE_HH_SZ/text()"/>
+<xPaths xPath="//HSEHLD_1_M/text()"/>
+<xPaths xPath="//HSEHLD_1_F/text()"/>
+<xPaths xPath="//MARHH_CHD/text()"/>
+<xPaths xPath="//MARHH_NO_C/text()"/>
+<xPaths xPath="//MHH_CHILD/text()"/>
+<xPaths xPath="//FHH_CHILD/text()"/>
+<xPaths xPath="//FAMILIES/text()"/>
+<xPaths xPath="//AVE_FAM_SZ/text()"/>
+<xPaths xPath="//HSE_UNITS/text()"/>
+<xPaths xPath="//VACANT/text()"/>
+<xPaths xPath="//OWNER_OCC/text()"/>
+<xPaths xPath="//RENTER_OCC/text()"/>
+<columnNames columnName="STATE_NAME"/>
+<columnNames columnName="STATE_ABBR"/>
+<columnNames columnName="STATE_FIPS"/>
+<columnNames columnName="SUB_REGION"/>
+<columnNames columnName="AREA"/>
+<columnNames columnName="POP2000"/>
+<columnNames columnName="POP00_SQMI"/>
+<columnNames columnName="WHITE"/>
+<columnNames columnName="BLACK"/>
+<columnNames columnName="AMERI_ES"/>
+<columnNames columnName="ASIAN"/>
+<columnNames columnName="HAWN_PI"/>
+<columnNames columnName="OTHER"/>
+<columnNames columnName="MULT_RACE"/>
+<columnNames columnName="HISPANIC"/>
+<columnNames columnName="MALES"/>
+<columnNames columnName="FEMALES"/>
+<columnNames columnName="AGE_UNDER5"/>
+<columnNames columnName="AGE_5_17"/>
+<columnNames columnName="AGE_18_21"/>
+<columnNames columnName="AGE_22_29"/>
+<columnNames columnName="AGE_30_39"/>
+<columnNames columnName="AGE_40_49"/>
+<columnNames columnName="AGE_50_64"/>
+<columnNames columnName="AGE_65_UP"/>
+<columnNames columnName="MED_AGE"/>
+<columnNames columnName="MED_AGE_M"/>
+<columnNames columnName="MED_AGE_F"/>
+<columnNames columnName="HOUSEHOLDS"/>
+<columnNames columnName="AVE_HH_SZ"/>
+<columnNames columnName="HSEHLD_1_M"/>
+<columnNames columnName="HSEHLD_1_F"/>
+<columnNames columnName="MARHH_CHD"/>
+<columnNames columnName="MARHH_NO_C"/>
+<columnNames columnName="MHH_CHILD"/>
+<columnNames columnName="FHH_CHILD"/>
+<columnNames columnName="FAMILIES"/>
+<columnNames columnName="AVE_FAM_SZ"/>
+<columnNames columnName="HSE_UNITS"/>
+<columnNames columnName="VACANT"/>
+<columnNames columnName="OWNER_OCC"/>
+<columnNames columnName="RENTER_OCC"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+</XMLFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="323" Y="294" name="Linear Regression" type="com.alpine.miner.gef.runoperator.hadoop.HadoopLinearRegressionOperator" uuid="1353379897040">
+<Parameter key="dependentColumn" value="pct_owner_occ"/>
+<Parameter key="forceRetrain" value="Yes"/>
+<Parameter key="columnNames" value="pct_white,pct_black,pct_old,POP2000,MED_AGE,AVE_FAM_SZ"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="XML"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_var_0"/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="pct_white"/>
+<columnNames columnName="pct_black"/>
+<columnNames columnName="pct_owner_occ"/>
+<columnNames columnName="pct_old"/>
+<columnNames columnName="STATE_NAME"/>
+<columnNames columnName="STATE_ABBR"/>
+<columnNames columnName="STATE_FIPS"/>
+<columnNames columnName="SUB_REGION"/>
+<columnNames columnName="AREA"/>
+<columnNames columnName="POP2000"/>
+<columnNames columnName="MED_AGE"/>
+<columnNames columnName="AVE_FAM_SZ"/>
+<columnTypes columnType="float"/>
+<columnTypes columnType="float"/>
+<columnTypes columnType="float"/>
+<columnTypes columnType="float"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+<Model>rO0ABXNyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuRW5naW5lTW9kZWxyBs7TjRuF
+xwIAA0wABW1vZGVsdAAmTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9vcGVyYXRvci9Nb2RlbDtMAAlt
+b2RlbFR5cGV0ABJMamF2YS9sYW5nL1N0cmluZztMAARuYW1lcQB+AAJ4cHNyAEhjb20uYWxwaW5l
+LmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLm1vZGVscy5MaW5lYXJSZWdyZXNzaW9uSGFkb29w
+TW9kZWzMCYIyzxrxIgIAEEQAAnIyRAABc0wAGGFsbFRyYW5zZm9ybU1hcF92YWx1ZUtleXQAE0xq
+YXZhL3V0aWwvSGFzaE1hcDtbAAxjb2VmZmljaWVudHN0ABNbTGphdmEvbGFuZy9Eb3VibGU7TAAP
+Y29lZmZpY2llbnRzTWFwcQB+AAVbAAtjb2x1bW5OYW1lc3QAE1tMamF2YS9sYW5nL1N0cmluZztM
+AAtlcnJvclN0cmluZ3EAfgACTAAaaW50ZXJhY3Rpb25Db2x1bW5Db2x1bW5NYXBxAH4ABUwAF2lu
+dGVyYWN0aW9uQ29sdW1uRXhwTWFwcQB+AAVbAAFwdAACW0RMABJwcmVkaWN0ZWRMYWJlbE5hbWVx
+AH4AAkwAD3JlYWxDb2x1bW5OYW1lc3QAEExqYXZhL3V0aWwvTGlzdDtMAAlyZXNpZHVhbHNxAH4A
+CVsAAnNlcQB+AAhMAA1zcGVjaWZ5Q29sdW1ucQB+AAJbAAF0cQB+AAh4cgA5Y29tLmFscGluZS5k
+YXRhbWluaW5nLmFwaS5pbXBsLmhhZG9vcC5BYnN0cmFjdEhhZG9vcE1vZGVsqKgpHzfiMH8CAAB4
+cgArY29tLmFscGluZS5kYXRhbWluaW5nLm9wZXJhdG9yLk91dHB1dE9iamVjdFuP2rT89nduAgAB
+TAAGc291cmNlcQB+AAJ4cHA/2Zo2r2SUaD+mcoDkuBQnc3IAEWphdmEudXRpbC5IYXNoTWFwBQfa
+wcMWYNEDAAJGAApsb2FkRmFjdG9ySQAJdGhyZXNob2xkeHA/QAAAAAAADHcIAAAAEAAAAAB4dXIA
+E1tMamF2YS5sYW5nLkRvdWJsZTvhEq2JAKZWpgIAAHhwAAAAB3NyABBqYXZhLmxhbmcuRG91Ymxl
+gLPCSilr+wQCAAFEAAV2YWx1ZXhyABBqYXZhLmxhbmcuTnVtYmVyhqyVHQuU4IsCAAB4cD/Rejrj
+mqwAc3EAfgARP7esLXC/4ABzcQB+ABE/21nv7iDQAHNxAH4AET3wJJKjXQAAc3EAfgARv30OzGhD
+gABzcQB+ABG/Z+UZ9nwAAHNxAH4AET/izhPIxRAAc3EAfgANP0AAAAAAAAx3CAAAABAAAAAHdAAH
+UE9QMjAwMHEAfgAWdAAHTUVEX0FHRXEAfgAXdAAJcGN0X2JsYWNrcQB+ABR0AAlJbnRlcmNlcHRx
+AH4AGXQACkFWRV9GQU1fU1pxAH4AGHQACXBjdF93aGl0ZXEAfgATdAAHcGN0X29sZHEAfgAVeHVy
+ABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAAZxAH4AIHEAfgAdcQB+ACFxAH4A
+G3EAfgAccQB+AB9wc3EAfgANP0AAAAAAAAx3CAAAABAAAAAAeHNxAH4ADT9AAAAAAAAMdwgAAAAQ
+AAAAAHh1cgACW0Q+powUq2NaHgIAAHhwAAAABz9v71OigFcAP9a4nUjzzMg/2uQbG4USQD/q8LkW
+ksd+P9g2V1rLgOg/72j/JucYmz/Yjn8rLEN8cHNyABNqYXZhLnV0aWwuQXJyYXlMaXN0eIHSHZnH
+YZ0DAAFJAARzaXpleHAAAAAMdwQAAAAQdAAJcGN0X3doaXRldAAJcGN0X2JsYWNrdAANcGN0X293
+bmVyX29jY3QAB3BjdF9vbGR0AApTVEFURV9OQU1FdAAKU1RBVEVfQUJCUnQAClNUQVRFX0ZJUFN0
+AApTVUJfUkVHSU9OdAAEQVJFQXQAB1BPUDIwMDB0AAdNRURfQUdFdAAKQVZFX0ZBTV9TWnhzcQB+
+ACgAAAAzdwQAAAA6dXEAfgAmAAAAAj/jMpIPRmVmP6UFxT7O/fB1cQB+ACYAAAACP+IWNlD5nya/
+oad6lhycMHVxAH4AJgAAAAI/40CX3jK3rr+GBMG6g2nAdXEAfgAmAAAAAj/jvbb3bXrDvxv8wWH0
+YAB1cQB+ACYAAAACP+IIftKpdSS/nEDsz6O/gHVxAH4AJgAAAAI/4253FzTkOD+Ep5RKl1YAdXEA
+fgAmAAAAAj/jWDNNRHEkP5eOj/gnvuB1cQB+ACYAAAACP+M4Z+i+aHg/ncdWezfWIHVxAH4AJgAA
+AAI/4M4S+KNa/r/EFTPpo4cIdXEAfgAmAAAAAj/jgwlOEQBnv1j+s00TngB1cQB+ACYAAAACP+LW
+w+KJuS4/nk+ftl+bAHVxAH4AJgAAAAI/3IeewkDWSD+pHNP0da6odXEAfgAmAAAAAj/kfNALdtf8
+P296HIAnjwB1cQB+ACYAAAACP+M9T3K65Dw/n8Aj6nNcAHVxAH4AJgAAAAI/5CmOhYdlpj+dxL0s
+tv8gdXEAfgAmAAAAAj/kjCfcZZjdP6CfLc6mL0B1cQB+ACYAAAACP+QNEoY1hUE/get4K7yJgHVx
+AH4AJgAAAAI/5DR91NJ6Wj+HN0MFJGNAdXEAfgAmAAAAAj/i9BJLCtytP5E4CzicgqB1cQB+ACYA
+AAACP+Q8dOzekM6/sDxZ2N1v2HVxAH4AJgAAAAI/4lksW/m6lj+qpzeK3wbgdXEAfgAmAAAAAj/j
+rTdg04kPv6RYpi+dhbB1cQB+ACYAAAACP+OiQirp3yA/p5jynj27sHVxAH4AJgAAAAI/5BbIvQcq
+aD+suVgl3zmAdXEAfgAmAAAAAj/i83jEPDq+P65UvbtGThB1cQB+ACYAAAACP+P2+jIur1Y/fykz
+TXZPAHVxAH4AJgAAAAI/48cQwR78gr+SILhOLhYAdXEAfgAmAAAAAj/kUo9wH2sfv4tNH1aXaoB1
+cQB+ACYAAAACP+LZLn2P5s2/oqVtam0p4HVxAH4AJgAAAAI/5Ck6u8XjhL+aGcvYyhjgdXEAfgAm
+AAAAAj/iybcGMc9dP5UDsBogx8B1cQB+ACYAAAACP+Im3mf70Zs/pMUvwJKY0HVxAH4AJgAAAAI/
+4qta2SOi/L+4tGjjiYOIdXEAfgAmAAAAAj/jKSTFs8eeP5IbihByviB1cQB+ACYAAAACP+Rp3i44
+XPa/p9kik2C4oHVxAH4AJgAAAAI/4/fkixR7fT+SzrYD15pAdXEAfgAmAAAAAj/jLWVP7KPpP3zr
+LI6ZhwB1cQB+ACYAAAACP+OsFE897eq/mXQpOq6mIHVxAH4AJgAAAAI/4+EcthlUOz+cSmDy9tnA
+dXEAfgAmAAAAAj/jvo5Mea+jv66IFfK7xtB1cQB+ACYAAAACP+LqsfnH6sA/pLXhCrO3cHVxAH4A
+JgAAAAI/5CteU4myh7+STMlSF/8AdXEAfgAmAAAAAj/jmpZpFlPbP5wWMrVeN8B1cQB+ACYAAAAC
+P+M5zo8BMju/lx4nLyep4HVxAH4AJgAAAAI/5VLWHW8ZOr+MSLjkOnqAdXEAfgAmAAAAAj/kMBuR
+ZSgMv6u2T7nZSsB1cQB+ACYAAAACP+LnK/PBoBE/pZMewh2fAHVxAH4AJgAAAAI/41R1gLS4mL92
+tKQo9UeAdXEAfgAmAAAAAj/kNevalS4UP5iNAF8egAB1cQB+ACYAAAACP+QeXia//G2/jRR+Tm/m
+wHVxAH4AJgAAAAI/4/o7hnlkSL+TYeh/q7QgeHVxAH4AJgAAAAc/tvF03YgTkT+5UzEdAd+FP+DO
+SVEAdcM+FByYHMsw/D+AUzD3MSrCP8ARaLgO4GQ/5V8zezKBmXQADXBjdF9vd25lcl9vY2N1cQB+
+ACYAAAAHQAhgbgEwd5g/7el9VcfSnT/qCjUu/MZAP8mvZOrsCIC/7Hq4olGLy7+XyzZSLIpZP+wo
+F5AILxlwdAARTGluZWFyIFJlZ3Jlc3Npb24=</Model>
+</Operator>
+<Operator X="233" Y="212" name="Bar Chart" type="com.alpine.miner.gef.runoperator.hadoop.HadoopBarChartOperator" uuid="1353986456604_0">
+<Parameter key="valueDomain" value="HISPANIC"/>
+<Parameter key="categoryType" value="SUB_REGION"/>
+<Parameter key="scopeDomain" value=""/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="XML"/>
+<Parameter key="hadoopFileName" value="/shillion/census2000_USA.xml"/>
+<XMLFileStructureModel attrMode="no" container="datum" includeHeader="false">
+<xPaths xPath="//STATE_NAME/text()"/>
+<xPaths xPath="//STATE_ABBR/text()"/>
+<xPaths xPath="//STATE_FIPS/text()"/>
+<xPaths xPath="//SUB_REGION/text()"/>
+<xPaths xPath="//AREA/text()"/>
+<xPaths xPath="//POP2000/text()"/>
+<xPaths xPath="//POP00_SQMI/text()"/>
+<xPaths xPath="//WHITE/text()"/>
+<xPaths xPath="//BLACK/text()"/>
+<xPaths xPath="//AMERI_ES/text()"/>
+<xPaths xPath="//ASIAN/text()"/>
+<xPaths xPath="//HAWN_PI/text()"/>
+<xPaths xPath="//OTHER/text()"/>
+<xPaths xPath="//MULT_RACE/text()"/>
+<xPaths xPath="//HISPANIC/text()"/>
+<xPaths xPath="//MALES/text()"/>
+<xPaths xPath="//FEMALES/text()"/>
+<xPaths xPath="//AGE_UNDER5/text()"/>
+<xPaths xPath="//AGE_5_17/text()"/>
+<xPaths xPath="//AGE_18_21/text()"/>
+<xPaths xPath="//AGE_22_29/text()"/>
+<xPaths xPath="//AGE_30_39/text()"/>
+<xPaths xPath="//AGE_40_49/text()"/>
+<xPaths xPath="//AGE_50_64/text()"/>
+<xPaths xPath="//AGE_65_UP/text()"/>
+<xPaths xPath="//MED_AGE/text()"/>
+<xPaths xPath="//MED_AGE_M/text()"/>
+<xPaths xPath="//MED_AGE_F/text()"/>
+<xPaths xPath="//HOUSEHOLDS/text()"/>
+<xPaths xPath="//AVE_HH_SZ/text()"/>
+<xPaths xPath="//HSEHLD_1_M/text()"/>
+<xPaths xPath="//HSEHLD_1_F/text()"/>
+<xPaths xPath="//MARHH_CHD/text()"/>
+<xPaths xPath="//MARHH_NO_C/text()"/>
+<xPaths xPath="//MHH_CHILD/text()"/>
+<xPaths xPath="//FHH_CHILD/text()"/>
+<xPaths xPath="//FAMILIES/text()"/>
+<xPaths xPath="//AVE_FAM_SZ/text()"/>
+<xPaths xPath="//HSE_UNITS/text()"/>
+<xPaths xPath="//VACANT/text()"/>
+<xPaths xPath="//OWNER_OCC/text()"/>
+<xPaths xPath="//RENTER_OCC/text()"/>
+<columnNames columnName="STATE_NAME"/>
+<columnNames columnName="STATE_ABBR"/>
+<columnNames columnName="STATE_FIPS"/>
+<columnNames columnName="SUB_REGION"/>
+<columnNames columnName="AREA"/>
+<columnNames columnName="POP2000"/>
+<columnNames columnName="POP00_SQMI"/>
+<columnNames columnName="WHITE"/>
+<columnNames columnName="BLACK"/>
+<columnNames columnName="AMERI_ES"/>
+<columnNames columnName="ASIAN"/>
+<columnNames columnName="HAWN_PI"/>
+<columnNames columnName="OTHER"/>
+<columnNames columnName="MULT_RACE"/>
+<columnNames columnName="HISPANIC"/>
+<columnNames columnName="MALES"/>
+<columnNames columnName="FEMALES"/>
+<columnNames columnName="AGE_UNDER5"/>
+<columnNames columnName="AGE_5_17"/>
+<columnNames columnName="AGE_18_21"/>
+<columnNames columnName="AGE_22_29"/>
+<columnNames columnName="AGE_30_39"/>
+<columnNames columnName="AGE_40_49"/>
+<columnNames columnName="AGE_50_64"/>
+<columnNames columnName="AGE_65_UP"/>
+<columnNames columnName="MED_AGE"/>
+<columnNames columnName="MED_AGE_M"/>
+<columnNames columnName="MED_AGE_F"/>
+<columnNames columnName="HOUSEHOLDS"/>
+<columnNames columnName="AVE_HH_SZ"/>
+<columnNames columnName="HSEHLD_1_M"/>
+<columnNames columnName="HSEHLD_1_F"/>
+<columnNames columnName="MARHH_CHD"/>
+<columnNames columnName="MARHH_NO_C"/>
+<columnNames columnName="MHH_CHILD"/>
+<columnNames columnName="FHH_CHILD"/>
+<columnNames columnName="FAMILIES"/>
+<columnNames columnName="AVE_FAM_SZ"/>
+<columnNames columnName="HSE_UNITS"/>
+<columnNames columnName="VACANT"/>
+<columnNames columnName="OWNER_OCC"/>
+<columnNames columnName="RENTER_OCC"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+</XMLFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="187" Y="281" name="Histogram" type="com.alpine.miner.gef.runoperator.hadoop.HadoopHistogramOperator" uuid="1353986507411_0">
+<ColumnBinsModel>
+<ColumnBin bin="10" columnName="POP2000" isMax="false" isMin="false" max="100" min="0" type="0" width="1"/>
+<ColumnBin bin="5" columnName="AVE_HH_SZ" isMax="false" isMin="false" max="100" min="0" type="0" width="1"/>
+<ColumnBin bin="10" columnName="WHITE" isMax="false" isMin="false" max="100" min="0" type="0" width="1"/>
+</ColumnBinsModel>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="XML"/>
+<Parameter key="hadoopFileName" value="/shillion/census2000_USA.xml"/>
+<XMLFileStructureModel attrMode="no" container="datum" includeHeader="false">
+<xPaths xPath="//STATE_NAME/text()"/>
+<xPaths xPath="//STATE_ABBR/text()"/>
+<xPaths xPath="//STATE_FIPS/text()"/>
+<xPaths xPath="//SUB_REGION/text()"/>
+<xPaths xPath="//AREA/text()"/>
+<xPaths xPath="//POP2000/text()"/>
+<xPaths xPath="//POP00_SQMI/text()"/>
+<xPaths xPath="//WHITE/text()"/>
+<xPaths xPath="//BLACK/text()"/>
+<xPaths xPath="//AMERI_ES/text()"/>
+<xPaths xPath="//ASIAN/text()"/>
+<xPaths xPath="//HAWN_PI/text()"/>
+<xPaths xPath="//OTHER/text()"/>
+<xPaths xPath="//MULT_RACE/text()"/>
+<xPaths xPath="//HISPANIC/text()"/>
+<xPaths xPath="//MALES/text()"/>
+<xPaths xPath="//FEMALES/text()"/>
+<xPaths xPath="//AGE_UNDER5/text()"/>
+<xPaths xPath="//AGE_5_17/text()"/>
+<xPaths xPath="//AGE_18_21/text()"/>
+<xPaths xPath="//AGE_22_29/text()"/>
+<xPaths xPath="//AGE_30_39/text()"/>
+<xPaths xPath="//AGE_40_49/text()"/>
+<xPaths xPath="//AGE_50_64/text()"/>
+<xPaths xPath="//AGE_65_UP/text()"/>
+<xPaths xPath="//MED_AGE/text()"/>
+<xPaths xPath="//MED_AGE_M/text()"/>
+<xPaths xPath="//MED_AGE_F/text()"/>
+<xPaths xPath="//HOUSEHOLDS/text()"/>
+<xPaths xPath="//AVE_HH_SZ/text()"/>
+<xPaths xPath="//HSEHLD_1_M/text()"/>
+<xPaths xPath="//HSEHLD_1_F/text()"/>
+<xPaths xPath="//MARHH_CHD/text()"/>
+<xPaths xPath="//MARHH_NO_C/text()"/>
+<xPaths xPath="//MHH_CHILD/text()"/>
+<xPaths xPath="//FHH_CHILD/text()"/>
+<xPaths xPath="//FAMILIES/text()"/>
+<xPaths xPath="//AVE_FAM_SZ/text()"/>
+<xPaths xPath="//HSE_UNITS/text()"/>
+<xPaths xPath="//VACANT/text()"/>
+<xPaths xPath="//OWNER_OCC/text()"/>
+<xPaths xPath="//RENTER_OCC/text()"/>
+<columnNames columnName="STATE_NAME"/>
+<columnNames columnName="STATE_ABBR"/>
+<columnNames columnName="STATE_FIPS"/>
+<columnNames columnName="SUB_REGION"/>
+<columnNames columnName="AREA"/>
+<columnNames columnName="POP2000"/>
+<columnNames columnName="POP00_SQMI"/>
+<columnNames columnName="WHITE"/>
+<columnNames columnName="BLACK"/>
+<columnNames columnName="AMERI_ES"/>
+<columnNames columnName="ASIAN"/>
+<columnNames columnName="HAWN_PI"/>
+<columnNames columnName="OTHER"/>
+<columnNames columnName="MULT_RACE"/>
+<columnNames columnName="HISPANIC"/>
+<columnNames columnName="MALES"/>
+<columnNames columnName="FEMALES"/>
+<columnNames columnName="AGE_UNDER5"/>
+<columnNames columnName="AGE_5_17"/>
+<columnNames columnName="AGE_18_21"/>
+<columnNames columnName="AGE_22_29"/>
+<columnNames columnName="AGE_30_39"/>
+<columnNames columnName="AGE_40_49"/>
+<columnNames columnName="AGE_50_64"/>
+<columnNames columnName="AGE_65_UP"/>
+<columnNames columnName="MED_AGE"/>
+<columnNames columnName="MED_AGE_M"/>
+<columnNames columnName="MED_AGE_F"/>
+<columnNames columnName="HOUSEHOLDS"/>
+<columnNames columnName="AVE_HH_SZ"/>
+<columnNames columnName="HSEHLD_1_M"/>
+<columnNames columnName="HSEHLD_1_F"/>
+<columnNames columnName="MARHH_CHD"/>
+<columnNames columnName="MARHH_NO_C"/>
+<columnNames columnName="MHH_CHILD"/>
+<columnNames columnName="FHH_CHILD"/>
+<columnNames columnName="FAMILIES"/>
+<columnNames columnName="AVE_FAM_SZ"/>
+<columnNames columnName="HSE_UNITS"/>
+<columnNames columnName="VACANT"/>
+<columnNames columnName="OWNER_OCC"/>
+<columnNames columnName="RENTER_OCC"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+</XMLFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="105" Y="343" name="Scatter Plot Matrix" type="com.alpine.miner.gef.runoperator.hadoop.HadoopScatterPlotMatrixOperator" uuid="1353986529431_0">
+<Parameter key="columnNames" value="WHITE,BLACK,HISPANIC,MALES,MED_AGE,AVE_HH_SZ,AVE_FAM_SZ,VACANT"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="XML"/>
+<Parameter key="hadoopFileName" value="/shillion/census2000_USA.xml"/>
+<XMLFileStructureModel attrMode="no" container="datum" includeHeader="false">
+<xPaths xPath="//STATE_NAME/text()"/>
+<xPaths xPath="//STATE_ABBR/text()"/>
+<xPaths xPath="//STATE_FIPS/text()"/>
+<xPaths xPath="//SUB_REGION/text()"/>
+<xPaths xPath="//AREA/text()"/>
+<xPaths xPath="//POP2000/text()"/>
+<xPaths xPath="//POP00_SQMI/text()"/>
+<xPaths xPath="//WHITE/text()"/>
+<xPaths xPath="//BLACK/text()"/>
+<xPaths xPath="//AMERI_ES/text()"/>
+<xPaths xPath="//ASIAN/text()"/>
+<xPaths xPath="//HAWN_PI/text()"/>
+<xPaths xPath="//OTHER/text()"/>
+<xPaths xPath="//MULT_RACE/text()"/>
+<xPaths xPath="//HISPANIC/text()"/>
+<xPaths xPath="//MALES/text()"/>
+<xPaths xPath="//FEMALES/text()"/>
+<xPaths xPath="//AGE_UNDER5/text()"/>
+<xPaths xPath="//AGE_5_17/text()"/>
+<xPaths xPath="//AGE_18_21/text()"/>
+<xPaths xPath="//AGE_22_29/text()"/>
+<xPaths xPath="//AGE_30_39/text()"/>
+<xPaths xPath="//AGE_40_49/text()"/>
+<xPaths xPath="//AGE_50_64/text()"/>
+<xPaths xPath="//AGE_65_UP/text()"/>
+<xPaths xPath="//MED_AGE/text()"/>
+<xPaths xPath="//MED_AGE_M/text()"/>
+<xPaths xPath="//MED_AGE_F/text()"/>
+<xPaths xPath="//HOUSEHOLDS/text()"/>
+<xPaths xPath="//AVE_HH_SZ/text()"/>
+<xPaths xPath="//HSEHLD_1_M/text()"/>
+<xPaths xPath="//HSEHLD_1_F/text()"/>
+<xPaths xPath="//MARHH_CHD/text()"/>
+<xPaths xPath="//MARHH_NO_C/text()"/>
+<xPaths xPath="//MHH_CHILD/text()"/>
+<xPaths xPath="//FHH_CHILD/text()"/>
+<xPaths xPath="//FAMILIES/text()"/>
+<xPaths xPath="//AVE_FAM_SZ/text()"/>
+<xPaths xPath="//HSE_UNITS/text()"/>
+<xPaths xPath="//VACANT/text()"/>
+<xPaths xPath="//OWNER_OCC/text()"/>
+<xPaths xPath="//RENTER_OCC/text()"/>
+<columnNames columnName="STATE_NAME"/>
+<columnNames columnName="STATE_ABBR"/>
+<columnNames columnName="STATE_FIPS"/>
+<columnNames columnName="SUB_REGION"/>
+<columnNames columnName="AREA"/>
+<columnNames columnName="POP2000"/>
+<columnNames columnName="POP00_SQMI"/>
+<columnNames columnName="WHITE"/>
+<columnNames columnName="BLACK"/>
+<columnNames columnName="AMERI_ES"/>
+<columnNames columnName="ASIAN"/>
+<columnNames columnName="HAWN_PI"/>
+<columnNames columnName="OTHER"/>
+<columnNames columnName="MULT_RACE"/>
+<columnNames columnName="HISPANIC"/>
+<columnNames columnName="MALES"/>
+<columnNames columnName="FEMALES"/>
+<columnNames columnName="AGE_UNDER5"/>
+<columnNames columnName="AGE_5_17"/>
+<columnNames columnName="AGE_18_21"/>
+<columnNames columnName="AGE_22_29"/>
+<columnNames columnName="AGE_30_39"/>
+<columnNames columnName="AGE_40_49"/>
+<columnNames columnName="AGE_50_64"/>
+<columnNames columnName="AGE_65_UP"/>
+<columnNames columnName="MED_AGE"/>
+<columnNames columnName="MED_AGE_M"/>
+<columnNames columnName="MED_AGE_F"/>
+<columnNames columnName="HOUSEHOLDS"/>
+<columnNames columnName="AVE_HH_SZ"/>
+<columnNames columnName="HSEHLD_1_M"/>
+<columnNames columnName="HSEHLD_1_F"/>
+<columnNames columnName="MARHH_CHD"/>
+<columnNames columnName="MARHH_NO_C"/>
+<columnNames columnName="MHH_CHILD"/>
+<columnNames columnName="FHH_CHILD"/>
+<columnNames columnName="FAMILIES"/>
+<columnNames columnName="AVE_FAM_SZ"/>
+<columnNames columnName="HSE_UNITS"/>
+<columnNames columnName="VACANT"/>
+<columnNames columnName="OWNER_OCC"/>
+<columnNames columnName="RENTER_OCC"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+</XMLFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Link source="census2000_USA.xml" target="Variable"/>
+<Link source="Variable" target="Aggregation"/>
+<Link source="census2000_USA.xml" target="Frequency"/>
+<Link source="census2000_USA.xml" target="Summary Statistics"/>
+<Link source="Variable" target="Linear Regression"/>
+<Link source="census2000_USA.xml" target="Bar Chart"/>
+<Link source="census2000_USA.xml" target="Histogram"/>
+<Link source="census2000_USA.xml" target="Scatter Plot Matrix"/>
+<VariableModel>
+<Variable>
+<Name>@default_schema</Name>
+<Value>public</Value>
+</Variable>
+<Variable>
+<Name>@default_prefix</Name>
+<Value>alp</Value>
+</Variable>
+</VariableModel>
+</Process>

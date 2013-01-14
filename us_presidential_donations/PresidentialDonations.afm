@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Process Description="" UserName="shillion" Version="3.0">
+<Operator X="113" Y="148" name="contributions.csv" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFileOperator" uuid="1350933600723">
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hadoopFileName" value="/shillion/contributions.csv"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="cmte_id"/>
+<columnNames columnName="cand_id"/>
+<columnNames columnName="cand_nm"/>
+<columnNames columnName="contbr_nm"/>
+<columnNames columnName="contbr_city"/>
+<columnNames columnName="contbr_st"/>
+<columnNames columnName="contbr_zip"/>
+<columnNames columnName="contbr_employer"/>
+<columnNames columnName="contbr_occupation"/>
+<columnNames columnName="contb_receipt_amt"/>
+<columnNames columnName="contb_receipt_dt"/>
+<columnNames columnName="receipt_desc"/>
+<columnNames columnName="memo_cd"/>
+<columnNames columnName="memo_text"/>
+<columnNames columnName="form_tp"/>
+<columnNames columnName="file_num"/>
+<columnNames columnName="tran_id"/>
+<columnNames columnName="election_tp"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/shillion/contributions.csv"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="cmte_id"/>
+<columnNames columnName="cand_id"/>
+<columnNames columnName="cand_nm"/>
+<columnNames columnName="contbr_nm"/>
+<columnNames columnName="contbr_city"/>
+<columnNames columnName="contbr_st"/>
+<columnNames columnName="contbr_zip"/>
+<columnNames columnName="contbr_employer"/>
+<columnNames columnName="contbr_occupation"/>
+<columnNames columnName="contb_receipt_amt"/>
+<columnNames columnName="contb_receipt_dt"/>
+<columnNames columnName="receipt_desc"/>
+<columnNames columnName="memo_cd"/>
+<columnNames columnName="memo_text"/>
+<columnNames columnName="form_tp"/>
+<columnNames columnName="file_num"/>
+<columnNames columnName="tran_id"/>
+<columnNames columnName="election_tp"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="384" Y="147" name="obama or romney" type="com.alpine.miner.gef.runoperator.hadoop.HadoopRowFilterOperator" uuid="1350934083213">
+<Parameter key="filterCondition" value="cand_id=='P80003338' or cand_id=='P80003353'"/>
+<Parameter key="storeResults" value="true"/>
+<Parameter key="resultsLocation" value="/user/nhosgur/CSVData/contributions"/>
+<Parameter key="resultsName" value="contrib_romneyobama"/>
+<Parameter key="override" value="Yes"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/@default_prefix_var_1"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="ceil_log_contb_amt"/>
+<columnNames columnName="name"/>
+<columnNames columnName="cand_id"/>
+<columnNames columnName="cand_nm"/>
+<columnNames columnName="contbr_st"/>
+<columnNames columnName="contb_receipt_amt"/>
+<columnNames columnName="contb_receipt_dt"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="238" Y="147" name="LOG(contb_amt)" type="com.alpine.miner.gef.runoperator.hadoop.HadoopVariableOperator" uuid="1350935667894">
+<Parameter key="storeResults" value="false"/>
+<Parameter key="resultsLocation" value=""/>
+<Parameter key="resultsName" value="@default_prefix_var_1"/>
+<Parameter key="override" value="Yes"/>
+<DerivedFieldsModel>
+<selectedColumnName columnName="cand_id"/>
+<selectedColumnName columnName="cand_nm"/>
+<selectedColumnName columnName="contbr_st"/>
+<selectedColumnName columnName="contb_receipt_amt"/>
+<selectedColumnName columnName="contb_receipt_dt"/>
+<DerivedFieldItem columnName="ceil_log_contb_amt" dataType="int" expression="contb_receipt_amt &lt;= 0 ? -1 : (contb_receipt_amt &lt;= 1 ? 0 : CEIL(LOG(contb_receipt_amt)))"/>
+<DerivedFieldItem columnName="name" dataType="chararray" expression="REGEX_EXTRACT(cand_nm, '(.*)\\,(.*)', 1)"/>
+</DerivedFieldsModel>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/shillion/contributions.csv"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="cmte_id"/>
+<columnNames columnName="cand_id"/>
+<columnNames columnName="cand_nm"/>
+<columnNames columnName="contbr_nm"/>
+<columnNames columnName="contbr_city"/>
+<columnNames columnName="contbr_st"/>
+<columnNames columnName="contbr_zip"/>
+<columnNames columnName="contbr_employer"/>
+<columnNames columnName="contbr_occupation"/>
+<columnNames columnName="contb_receipt_amt"/>
+<columnNames columnName="contb_receipt_dt"/>
+<columnNames columnName="receipt_desc"/>
+<columnNames columnName="memo_cd"/>
+<columnNames columnName="memo_text"/>
+<columnNames columnName="form_tp"/>
+<columnNames columnName="file_num"/>
+<columnNames columnName="tran_id"/>
+<columnNames columnName="election_tp"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="653" Y="72" name="Contribution Comparison (count)" type="com.alpine.miner.gef.runoperator.hadoop.HadoopBarChartOperator" uuid="1350937345188">
+<Parameter key="valueDomain" value="COUNT_contb_receipt_amt"/>
+<Parameter key="categoryType" value="ceil_log_contb_amt"/>
+<Parameter key="scopeDomain" value="name"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/@default_prefix_agg_1"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="ceil_log_contb_amt"/>
+<columnNames columnName="name"/>
+<columnNames columnName="COUNT_contb_receipt_amt"/>
+<columnNames columnName="MAX_contb_receipt_amt"/>
+<columnNames columnName="AVG_contb_receipt_amt"/>
+<columnNames columnName="SUM_contb_receipt_amt"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="515" Y="145" name="Binning" type="com.alpine.miner.gef.runoperator.hadoop.HadoopAggregateOperator" uuid="1350937506242">
+<Parameter key="storeResults" value="false"/>
+<Parameter key="resultsLocation" value=""/>
+<Parameter key="resultsName" value="@default_prefix_agg_1"/>
+<Parameter key="override" value="Yes"/>
+<AggregateFieldsModel>
+<groupBy columnName="ceil_log_contb_amt"/>
+<groupBy columnName="name"/>
+<AggregateField columnName="COUNT_contb_receipt_amt" dataType="long" expression="COUNT(contb_receipt_amt)"/>
+<AggregateField columnName="MAX_contb_receipt_amt" dataType="double" expression="MAX(contb_receipt_amt)"/>
+<AggregateField columnName="AVG_contb_receipt_amt" dataType="double" expression="AVG(contb_receipt_amt)"/>
+<AggregateField columnName="SUM_contb_receipt_amt" dataType="double" expression="SUM(contb_receipt_amt)"/>
+</AggregateFieldsModel>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/user/nhosgur/CSVData/contributions/contrib_romneyobama"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="ceil_log_contb_amt"/>
+<columnNames columnName="name"/>
+<columnNames columnName="cand_id"/>
+<columnNames columnName="cand_nm"/>
+<columnNames columnName="contbr_st"/>
+<columnNames columnName="contb_receipt_amt"/>
+<columnNames columnName="contb_receipt_dt"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="639" Y="232" name="Contribution Comparison (sum amt)" type="com.alpine.miner.gef.runoperator.hadoop.HadoopBarChartOperator" uuid="1350939003761">
+<Parameter key="valueDomain" value="SUM_contb_receipt_amt"/>
+<Parameter key="categoryType" value="ceil_log_contb_amt"/>
+<Parameter key="scopeDomain" value="name"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/@default_prefix_agg_1"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="ceil_log_contb_amt"/>
+<columnNames columnName="name"/>
+<columnNames columnName="COUNT_contb_receipt_amt"/>
+<columnNames columnName="MAX_contb_receipt_amt"/>
+<columnNames columnName="AVG_contb_receipt_amt"/>
+<columnNames columnName="SUM_contb_receipt_amt"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Link source="LOG(contb_amt)" target="obama or romney"/>
+<Link source="contributions.csv" target="LOG(contb_amt)"/>
+<Link source="obama or romney" target="Binning"/>
+<Link source="Binning" target="Contribution Comparison (count)"/>
+<Link source="Binning" target="Contribution Comparison (sum amt)"/>
+<VariableModel>
+<Variable>
+<Name>@default_schema</Name>
+<Value>public</Value>
+</Variable>
+<Variable>
+<Name>@default_prefix</Name>
+<Value>alp</Value>
+</Variable>
+</VariableModel>
+</Process>

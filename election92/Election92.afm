@@ -1,0 +1,1022 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Process Description="" UserName="shillion" Version="3.0">
+<Operator X="451" Y="72" name="Scatter Plot Matrix" type="com.alpine.miner.gef.runoperator.hadoop.HadoopScatterPlotMatrixOperator" uuid="1357942347772_3">
+<Parameter key="columnNames" value="age75,crime,college,income,white,black,turnout"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/shillion/election92.csv"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="county"/>
+<columnNames columnName="state"/>
+<columnNames columnName="msa"/>
+<columnNames columnName="pmsa"/>
+<columnNames columnName="popdensity"/>
+<columnNames columnName="pop"/>
+<columnNames columnName="popchange"/>
+<columnNames columnName="age6574"/>
+<columnNames columnName="age75"/>
+<columnNames columnName="crime"/>
+<columnNames columnName="college"/>
+<columnNames columnName="income"/>
+<columnNames columnName="farm"/>
+<columnNames columnName="democrat"/>
+<columnNames columnName="republican"/>
+<columnNames columnName="Perot"/>
+<columnNames columnName="white"/>
+<columnNames columnName="black"/>
+<columnNames columnName="turnout"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="260" Y="321" name="DR Flag" type="com.alpine.miner.gef.runoperator.hadoop.HadoopVariableOperator" uuid="1357942347772_6">
+<Parameter key="storeResults" value="true"/>
+<Parameter key="resultsLocation" value="/tmp"/>
+<Parameter key="resultsName" value="@default_prefix_var_2"/>
+<Parameter key="override" value="Yes"/>
+<DerivedFieldsModel>
+<selectedColumnName columnName="county"/>
+<selectedColumnName columnName="state"/>
+<selectedColumnName columnName="msa"/>
+<selectedColumnName columnName="pmsa"/>
+<selectedColumnName columnName="popdensity"/>
+<selectedColumnName columnName="pop"/>
+<selectedColumnName columnName="popchange"/>
+<selectedColumnName columnName="age6574"/>
+<selectedColumnName columnName="age75"/>
+<selectedColumnName columnName="crime"/>
+<selectedColumnName columnName="college"/>
+<selectedColumnName columnName="income"/>
+<selectedColumnName columnName="farm"/>
+<selectedColumnName columnName="democrat"/>
+<selectedColumnName columnName="republican"/>
+<selectedColumnName columnName="Perot"/>
+<selectedColumnName columnName="white"/>
+<selectedColumnName columnName="black"/>
+<selectedColumnName columnName="turnout"/>
+<DerivedFieldItem columnName="outcome" dataType="chararray" expression="(republican &gt; democrat ? 'R' : 'D')"/>
+</DerivedFieldsModel>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/@default_prefix_rowfil_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="county"/>
+<columnNames columnName="state"/>
+<columnNames columnName="msa"/>
+<columnNames columnName="pmsa"/>
+<columnNames columnName="popdensity"/>
+<columnNames columnName="pop"/>
+<columnNames columnName="popchange"/>
+<columnNames columnName="age6574"/>
+<columnNames columnName="age75"/>
+<columnNames columnName="crime"/>
+<columnNames columnName="college"/>
+<columnNames columnName="income"/>
+<columnNames columnName="farm"/>
+<columnNames columnName="democrat"/>
+<columnNames columnName="republican"/>
+<columnNames columnName="Perot"/>
+<columnNames columnName="white"/>
+<columnNames columnName="black"/>
+<columnNames columnName="turnout"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="383" Y="289" name="Variables" type="com.alpine.miner.gef.runoperator.hadoop.HadoopVariableOperator" uuid="1357942347772_5">
+<Parameter key="storeResults" value="false"/>
+<Parameter key="resultsLocation" value=""/>
+<Parameter key="resultsName" value="@default_prefix_var_0"/>
+<Parameter key="override" value="Yes"/>
+<DerivedFieldsModel>
+<selectedColumnName columnName="county"/>
+<selectedColumnName columnName="state"/>
+<selectedColumnName columnName="msa"/>
+<selectedColumnName columnName="pmsa"/>
+<selectedColumnName columnName="popdensity"/>
+<selectedColumnName columnName="pop"/>
+<selectedColumnName columnName="popchange"/>
+<selectedColumnName columnName="age6574"/>
+<selectedColumnName columnName="age75"/>
+<selectedColumnName columnName="crime"/>
+<selectedColumnName columnName="college"/>
+<selectedColumnName columnName="income"/>
+<selectedColumnName columnName="farm"/>
+<selectedColumnName columnName="democrat"/>
+<selectedColumnName columnName="republican"/>
+<selectedColumnName columnName="Perot"/>
+<selectedColumnName columnName="white"/>
+<selectedColumnName columnName="black"/>
+<selectedColumnName columnName="turnout"/>
+<DerivedFieldItem columnName="outcome" dataType="chararray" expression="(Perot &gt; republican ? (Perot &gt; democrat ? 'P' : 'D') : (republican &gt; democrat ? 'R' : 'D'))"/>
+<DerivedFieldItem columnName="count" dataType="int" expression="1*1"/>
+<DerivedFieldItem columnName="income_bin" dataType="chararray" expression="CONCAT((chararray)((1+FLOOR(7*(income-0)/(70000-0))) * 10), 'K')"/>
+<DerivedFieldItem columnName="college_bin" dataType="chararray" expression="CONCAT((chararray)((1+FLOOR(10*(college-0)/(100-0))) * 10), '%')"/>
+</DerivedFieldsModel>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/shillion/election92.csv"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="county"/>
+<columnNames columnName="state"/>
+<columnNames columnName="msa"/>
+<columnNames columnName="pmsa"/>
+<columnNames columnName="popdensity"/>
+<columnNames columnName="pop"/>
+<columnNames columnName="popchange"/>
+<columnNames columnName="age6574"/>
+<columnNames columnName="age75"/>
+<columnNames columnName="crime"/>
+<columnNames columnName="college"/>
+<columnNames columnName="income"/>
+<columnNames columnName="farm"/>
+<columnNames columnName="democrat"/>
+<columnNames columnName="republican"/>
+<columnNames columnName="Perot"/>
+<columnNames columnName="white"/>
+<columnNames columnName="black"/>
+<columnNames columnName="turnout"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="642" Y="411" name="Election Results by College" type="com.alpine.miner.gef.runoperator.hadoop.HadoopBarChartOperator" uuid="1357942347772_10">
+<Parameter key="valueDomain" value="count"/>
+<Parameter key="categoryType" value="college_bin"/>
+<Parameter key="scopeDomain" value="outcome"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/@default_prefix_var_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="outcome"/>
+<columnNames columnName="count"/>
+<columnNames columnName="income_bin"/>
+<columnNames columnName="college_bin"/>
+<columnNames columnName="county"/>
+<columnNames columnName="state"/>
+<columnNames columnName="msa"/>
+<columnNames columnName="pmsa"/>
+<columnNames columnName="popdensity"/>
+<columnNames columnName="pop"/>
+<columnNames columnName="popchange"/>
+<columnNames columnName="age6574"/>
+<columnNames columnName="age75"/>
+<columnNames columnName="crime"/>
+<columnNames columnName="college"/>
+<columnNames columnName="income"/>
+<columnNames columnName="farm"/>
+<columnNames columnName="democrat"/>
+<columnNames columnName="republican"/>
+<columnNames columnName="Perot"/>
+<columnNames columnName="white"/>
+<columnNames columnName="black"/>
+<columnNames columnName="turnout"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="476" Y="187" name="Linear Regression" type="com.alpine.miner.gef.runoperator.hadoop.HadoopLinearRegressionOperator" uuid="1357942347772_4">
+<Parameter key="dependentColumn" value="turnout"/>
+<Parameter key="forceRetrain" value="Yes"/>
+<Parameter key="columnNames" value="popdensity,age75,crime,college,income,farm,white,black"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/shillion/election92.csv"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="county"/>
+<columnNames columnName="state"/>
+<columnNames columnName="msa"/>
+<columnNames columnName="pmsa"/>
+<columnNames columnName="popdensity"/>
+<columnNames columnName="pop"/>
+<columnNames columnName="popchange"/>
+<columnNames columnName="age6574"/>
+<columnNames columnName="age75"/>
+<columnNames columnName="crime"/>
+<columnNames columnName="college"/>
+<columnNames columnName="income"/>
+<columnNames columnName="farm"/>
+<columnNames columnName="democrat"/>
+<columnNames columnName="republican"/>
+<columnNames columnName="Perot"/>
+<columnNames columnName="white"/>
+<columnNames columnName="black"/>
+<columnNames columnName="turnout"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+<Model>rO0ABXNyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuRW5naW5lTW9kZWxyBs7TjRuF
+xwIAA0wABW1vZGVsdAAmTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9vcGVyYXRvci9Nb2RlbDtMAAlt
+b2RlbFR5cGV0ABJMamF2YS9sYW5nL1N0cmluZztMAARuYW1lcQB+AAJ4cHNyAEhjb20uYWxwaW5l
+LmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLm1vZGVscy5MaW5lYXJSZWdyZXNzaW9uSGFkb29w
+TW9kZWzMCYIyzxrxIgIAEUQAAnIyRAABc0wAGGFsbFRyYW5zZm9ybU1hcF92YWx1ZUtleXQAE0xq
+YXZhL3V0aWwvSGFzaE1hcDtMAA1jaGFyQ29sdW1uTWFwdAAPTGphdmEvdXRpbC9NYXA7WwAMY29l
+ZmZpY2llbnRzdAATW0xqYXZhL2xhbmcvRG91YmxlO0wAD2NvZWZmaWNpZW50c01hcHQAGUxqYXZh
+L3V0aWwvTGlua2VkSGFzaE1hcDtbAAtjb2x1bW5OYW1lc3QAE1tMamF2YS9sYW5nL1N0cmluZztM
+AAtlcnJvclN0cmluZ3EAfgACTAAaaW50ZXJhY3Rpb25Db2x1bW5Db2x1bW5NYXBxAH4ABUwAF2lu
+dGVyYWN0aW9uQ29sdW1uRXhwTWFwcQB+AAVbAAFwdAACW0RMABJwcmVkaWN0ZWRMYWJlbE5hbWVx
+AH4AAkwAD3JlYWxDb2x1bW5OYW1lc3QAEExqYXZhL3V0aWwvTGlzdDtMAAlyZXNpZHVhbHNxAH4A
+C1sAAnNlcQB+AApMAA1zcGVjaWZ5Q29sdW1ucQB+AAJbAAF0cQB+AAp4cgA5Y29tLmFscGluZS5k
+YXRhbWluaW5nLmFwaS5pbXBsLmhhZG9vcC5BYnN0cmFjdEhhZG9vcE1vZGVsqKgpHzfiMH8CAAB4
+cgArY29tLmFscGluZS5kYXRhbWluaW5nLm9wZXJhdG9yLk91dHB1dE9iamVjdFuP2rT89nduAgAB
+TAAGc291cmNlcQB+AAJ4cHA/3RuwXVZxekAZbczCL2F0c3IAEWphdmEudXRpbC5IYXNoTWFwBQfa
+wcMWYNEDAAJGAApsb2FkRmFjdG9ySQAJdGhyZXNob2xkeHA/QAAAAAAADHcIAAAAEAAAAAB4c3EA
+fgAPP0AAAAAAAAx3CAAAABAAAAAAeHVyABNbTGphdmEubGFuZy5Eb3VibGU74RKtiQCmVqYCAAB4
+cAAAAAlzcgAQamF2YS5sYW5nLkRvdWJsZYCzwkopa/sEAgABRAAFdmFsdWV4cgAQamF2YS5sYW5n
+Lk51bWJlcoaslR0LlOCLAgAAeHC/M5V+HaCygHNxAH4AFD/uONeClS7gc3EAfgAUvzIUw33K2pJz
+cQB+ABQ/4RdltpptnXNxAH4AFL8WelQEOV2Uc3EAfgAUP8YbaXgtkURzcQB+ABQ/1Xri1XuMsHNx
+AH4AFD/HsjGSMI/gc3EAfgAUP/ruHgJoowBzcgAXamF2YS51dGlsLkxpbmtlZEhhc2hNYXA0wE5c
+EGzA+wIAAVoAC2FjY2Vzc09yZGVyeHEAfgAPP0AAAAAAAAx3CAAAABAAAAAJdAAKcG9wZGVuc2l0
+eXEAfgAWdAAFYWdlNzVxAH4AF3QABWNyaW1lcQB+ABh0AAdjb2xsZWdlcQB+ABl0AAZpbmNvbWVx
+AH4AGnQABGZhcm1xAH4AG3QABXdoaXRlcQB+ABx0AAVibGFja3EAfgAddAAJSW50ZXJjZXB0cQB+
+AB54AHVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAAhxAH4AIXEAfgAicQB+
+ACNxAH4AJHEAfgAlcQB+ACZxAH4AJ3EAfgAocHNxAH4ADz9AAAAAAAAMdwgAAAAQAAAAAHhzcQB+
+AA8/QAAAAAAADHcIAAAAEAAAAAB4dXIAAltEPqaMFKtjWh4CAAB4cAAAAAk/NH/sBg/IADzQAAAA
+AAAAPtI8bHMIAAA8yAAAAAAAAD84YRPktNAAPOkAAAAAAAA83AAAAAAAADzpAAAAAAAAP8m850qT
+OpBwc3IAE2phdmEudXRpbC5BcnJheUxpc3R4gdIdmcdhnQMAAUkABHNpemV4cAAAABN3BAAAABl0
+AAZjb3VudHl0AAVzdGF0ZXQAA21zYXQABHBtc2F0AApwb3BkZW5zaXR5dAADcG9wdAAJcG9wY2hh
+bmdldAAHYWdlNjU3NHQABWFnZTc1dAAFY3JpbWV0AAdjb2xsZWdldAAGaW5jb21ldAAEZmFybXQA
+CGRlbW9jcmF0dAAKcmVwdWJsaWNhbnQABVBlcm90dAAFd2hpdGV0AAVibGFja3QAB3R1cm5vdXR4
+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</Model>
+</Operator>
+<Operator X="405" Y="439" name="Decision Tree" type="com.alpine.miner.gef.runoperator.hadoop.HadoopDecisionTreeOperator" uuid="1357942347772_7">
+<Parameter key="dependentColumn" value="outcome"/>
+<Parameter key="columnNames" value="popdensity,age75,crime,income,white"/>
+<Parameter key="maximal_depth" value="5"/>
+<Parameter key="confidence" value="0.25"/>
+<Parameter key="minimal_gain" value="0.01"/>
+<Parameter key="minimal_size_for_split" value="4"/>
+<Parameter key="minimal_leaf_size" value="2"/>
+<Parameter key="categoryLimit" value="1000"/>
+<Parameter key="numericalGranularity" value="1000000"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_var_2"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="outcome"/>
+<columnNames columnName="county"/>
+<columnNames columnName="state"/>
+<columnNames columnName="msa"/>
+<columnNames columnName="pmsa"/>
+<columnNames columnName="popdensity"/>
+<columnNames columnName="pop"/>
+<columnNames columnName="popchange"/>
+<columnNames columnName="age6574"/>
+<columnNames columnName="age75"/>
+<columnNames columnName="crime"/>
+<columnNames columnName="college"/>
+<columnNames columnName="income"/>
+<columnNames columnName="farm"/>
+<columnNames columnName="democrat"/>
+<columnNames columnName="republican"/>
+<columnNames columnName="Perot"/>
+<columnNames columnName="white"/>
+<columnNames columnName="black"/>
+<columnNames columnName="turnout"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+<Model>rO0ABXNyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuRW5naW5lTW9kZWxyBs7TjRuF
+xwIAA0wABW1vZGVsdAAmTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9vcGVyYXRvci9Nb2RlbDtMAAlt
+b2RlbFR5cGV0ABJMamF2YS9sYW5nL1N0cmluZztMAARuYW1lcQB+AAJ4cHNyAERjb20uYWxwaW5l
+LmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLm1vZGVscy5EZWNpc2lvblRyZWVIYWRvb3BNb2Rl
+bFPsL+yMTnZsAgADTAAJZGVwZW5kZW50cQB+AAJMAApoYWRvb3BUcmVldAApTGNvbS9hbHBpbmUv
+aGFkb29wL3RyZWUvbW9kZWwvSGFkb29wVHJlZTtMAApsZWFmVmFsdWVzdAAQTGphdmEvdXRpbC9M
+aXN0O3hyADljb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLkFic3RyYWN0SGFk
+b29wTW9kZWyoqCkfN+IwfwIAAHhyACtjb20uYWxwaW5lLmRhdGFtaW5pbmcub3BlcmF0b3IuT3V0
+cHV0T2JqZWN0W4/atPz2d24CAAFMAAZzb3VyY2VxAH4AAnhwcHQAB291dGNvbWVzcgAnY29tLmFs
+cGluZS5oYWRvb3AudHJlZS5tb2RlbC5IYWRvb3BUcmVlTYX4LaYkKacCAAxaAAtjYXRlZ29yaWNh
+bEkAB2ZlYXR1cmVJAAJpZFoACGxlc3NUaGFuWgAEcm9vdEkACHVuaXF1ZUlkTAAIY2hpbGRyZW5x
+AH4ABkwACWNvbHVtbk1hcHEAfgAGWwAGY291bnRzdAACW0lMABBkZXBlbmRhbnRNYXBwaW5ndAAT
+TGphdmEvdXRpbC9IYXNoTWFwO1sADGZlYXR1cmVEZW1hcHEAfgAMTAAFbGFiZWxxAH4AAnhwAQAA
+AAAAAAAAAAEAAAAbc3IAE2phdmEudXRpbC5BcnJheUxpc3R4gdIdmcdhnQMAAUkABHNpemV4cAAA
+AAJ3BAAAAApzcQB+AAsAAAAAEQAAAAEBAAAAAABzcQB+AA8AAAACdwQAAAAKc3EAfgALAAAAAAUA
+AAADAQAAAAAAc3EAfgAPAAAAAncEAAAACnNxAH4ACwAAAAAKAAAABwEAAAAAAHNxAH4ADwAAAAJ3
+BAAAAApzcQB+AAsAAAAACQAAABkBAAAAAABzcQB+AA8AAAAAdwQAAAAKeHNxAH4ADwAAABR3BAAA
+ABl0AAdvdXRjb21ldAAGY291bnR5dAAFc3RhdGV0AANtc2F0AARwbXNhdAAKcG9wZGVuc2l0eXQA
+A3BvcHQACXBvcGNoYW5nZXQAB2FnZTY1NzR0AAVhZ2U3NXQABWNyaW1ldAAHY29sbGVnZXQABmlu
+Y29tZXQABGZhcm10AAhkZW1vY3JhdHQACnJlcHVibGljYW50AAVQZXJvdHQABXdoaXRldAAFYmxh
+Y2t0AAd0dXJub3V0eHVyAAJbSU26YCZ26rKlAgAAeHAAAAACAAAAAgAAAABzcgARamF2YS51dGls
+Lkhhc2hNYXAFB9rBwxZg0QMAAkYACmxvYWRGYWN0b3JJAAl0aHJlc2hvbGR4cD9AAAAAAAAMdwgA
+AAAQAAAAAnQAAURzcgARamF2YS5sYW5nLkludGVnZXIS4qCk94GHOAIAAUkABXZhbHVleHIAEGph
+dmEubGFuZy5OdW1iZXKGrJUdC5TgiwIAAHhwAAAAAXQAAVJzcQB+ADMAAAAAeHVxAH4ALgAAAAUA
+AAAFAAAACQAAAAoAAAAMAAAAEXQACzMuMDk5OTk5OTA1c3EAfgALAAAAAAkAAAAaAAAAAAAAc3EA
+fgAPAAAAAHcEAAAACnhxAH4AGXVxAH4ALgAAAAIAAAABAAAAA3EAfgAxcQB+ADhxAH4AOXhzcQB+
+AA8AAAAUdwQAAAAZdAAHb3V0Y29tZXQABmNvdW50eXQABXN0YXRldAADbXNhdAAEcG1zYXQACnBv
+cGRlbnNpdHl0AANwb3B0AAlwb3BjaGFuZ2V0AAdhZ2U2NTc0dAAFYWdlNzV0AAVjcmltZXQAB2Nv
+bGxlZ2V0AAZpbmNvbWV0AARmYXJtdAAIZGVtb2NyYXR0AApyZXB1YmxpY2FudAAFUGVyb3R0AAV3
+aGl0ZXQABWJsYWNrdAAHdHVybm91dHh1cQB+AC4AAAACAAAAAwAAAANzcQB+ADA/QAAAAAAADHcI
+AAAAEAAAAAJ0AAFEcQB+ADV0AAFScQB+ADd4dXEAfgAuAAAABQAAAAUAAAAJAAAACgAAAAwAAAAR
+dAADOTQwc3EAfgALAAAAAAoAAAAIAAAAAAAAc3EAfgAPAAAAAHcEAAAACnhzcQB+AA8AAAAUdwQA
+AAAZdAAHb3V0Y29tZXQABmNvdW50eXQABXN0YXRldAADbXNhdAAEcG1zYXQACnBvcGRlbnNpdHl0
+AANwb3B0AAlwb3BjaGFuZ2V0AAdhZ2U2NTc0dAAFYWdlNzV0AAVjcmltZXQAB2NvbGxlZ2V0AAZp
+bmNvbWV0AARmYXJtdAAIZGVtb2NyYXR0AApyZXB1YmxpY2FudAAFUGVyb3R0AAV3aGl0ZXQABWJs
+YWNrdAAHdHVybm91dHh1cQB+AC4AAAACAAAAAwAAAABzcQB+ADA/QAAAAAAADHcIAAAAEAAAAAJ0
+AAFEcQB+ADV0AAFScQB+ADd4dXEAfgAuAAAABQAAAAUAAAAJAAAACgAAAAwAAAARdAADOTQweHNx
+AH4ADwAAABR3BAAAABl0AAdvdXRjb21ldAAGY291bnR5dAAFc3RhdGV0AANtc2F0AARwbXNhdAAK
+cG9wZGVuc2l0eXQAA3BvcHQACXBvcGNoYW5nZXQAB2FnZTY1NzR0AAVhZ2U3NXQABWNyaW1ldAAH
+Y29sbGVnZXQABmluY29tZXQABGZhcm10AAhkZW1vY3JhdHQACnJlcHVibGljYW50AAVQZXJvdHQA
+BXdoaXRldAAFYmxhY2t0AAd0dXJub3V0eHVxAH4ALgAAAAIAAAAGAAAAA3NxAH4AMD9AAAAAAAAM
+dwgAAAAQAAAAAnQAAURxAH4ANXQAAVJxAH4AN3h1cQB+AC4AAAAFAAAABQAAAAkAAAAKAAAADAAA
+ABF0AAEzc3EAfgALAAAAAAUAAAAEAAAAAAAAc3EAfgAPAAAAAncEAAAACnNxAH4ACwAAAAARAAAA
+CQEAAAAAAHNxAH4ADwAAAAB3BAAAAAp4c3EAfgAPAAAAFHcEAAAAGXQAB291dGNvbWV0AAZjb3Vu
+dHl0AAVzdGF0ZXQAA21zYXQABHBtc2F0AApwb3BkZW5zaXR5dAADcG9wdAAJcG9wY2hhbmdldAAH
+YWdlNjU3NHQABWFnZTc1dAAFY3JpbWV0AAdjb2xsZWdldAAGaW5jb21ldAAEZmFybXQACGRlbW9j
+cmF0dAAKcmVwdWJsaWNhbnQABVBlcm90dAAFd2hpdGV0AAVibGFja3QAB3R1cm5vdXR4dXEAfgAu
+AAAAAgAAAAAAAABec3EAfgAwP0AAAAAAAAx3CAAAABAAAAACdAABRHEAfgA1dAABUnEAfgA3eHVx
+AH4ALgAAAAUAAAAFAAAACQAAAAoAAAAMAAAAEXQACzQ2Ljg3OTkwMTg5c3EAfgALAAAAABEAAAAK
+AAAAAAAAc3EAfgAPAAAAAncEAAAACnNxAH4ACwAAAAARAAAADwEAAAAAAHNxAH4ADwAAAAB3BAAA
+AAp4cQB+ABl1cQB+AC4AAAACAAAABAAAADdxAH4AMXEAfgA4dAALNTUuMjQ3Mzc1NDlzcQB+AAsA
+AAAAEQAAABAAAAAAAABzcQB+AA8AAAAAdwQAAAAKeHEAfgAZdXEAfgAuAAAAAgAAAA8AAAAycQB+
+ADFxAH4AOHEAfgC0eHNxAH4ADwAAABR3BAAAABl0AAdvdXRjb21ldAAGY291bnR5dAAFc3RhdGV0
+AANtc2F0AARwbXNhdAAKcG9wZGVuc2l0eXQAA3BvcHQACXBvcGNoYW5nZXQAB2FnZTY1NzR0AAVh
+Z2U3NXQABWNyaW1ldAAHY29sbGVnZXQABmluY29tZXQABGZhcm10AAhkZW1vY3JhdHQACnJlcHVi
+bGljYW50AAVQZXJvdHQABXdoaXRldAAFYmxhY2t0AAd0dXJub3V0eHVxAH4ALgAAAAIAAAATAAAA
+aXNxAH4AMD9AAAAAAAAMdwgAAAAQAAAAAnQAAURxAH4ANXQAAVJxAH4AN3h1cQB+AC4AAAAFAAAA
+BQAAAAkAAAAKAAAADAAAABF0AAs0Ni44Nzk5MDE4OXhzcQB+AA8AAAAUdwQAAAAZdAAHb3V0Y29t
+ZXQABmNvdW50eXQABXN0YXRldAADbXNhdAAEcG1zYXQACnBvcGRlbnNpdHl0AANwb3B0AAlwb3Bj
+aGFuZ2V0AAdhZ2U2NTc0dAAFYWdlNzV0AAVjcmltZXQAB2NvbGxlZ2V0AAZpbmNvbWV0AARmYXJt
+dAAIZGVtb2NyYXR0AApyZXB1YmxpY2FudAAFUGVyb3R0AAV3aGl0ZXQABWJsYWNrdAAHdHVybm91
+dHh1cQB+AC4AAAACAAAAEwAAAMdzcQB+ADA/QAAAAAAADHcIAAAAEAAAAAJ0AAFEcQB+ADV0AAFS
+cQB+ADd4dXEAfgAuAAAABQAAAAUAAAAJAAAACgAAAAwAAAARdAABM3hzcQB+AA8AAAAUdwQAAAAZ
+dAAHb3V0Y29tZXQABmNvdW50eXQABXN0YXRldAADbXNhdAAEcG1zYXQACnBvcGRlbnNpdHl0AANw
+b3B0AAlwb3BjaGFuZ2V0AAdhZ2U2NTc0dAAFYWdlNzV0AAVjcmltZXQAB2NvbGxlZ2V0AAZpbmNv
+bWV0AARmYXJtdAAIZGVtb2NyYXR0AApyZXB1YmxpY2FudAAFUGVyb3R0AAV3aGl0ZXQABWJsYWNr
+dAAHdHVybm91dHh1cQB+AC4AAAACAAAAGQAAAMpzcQB+ADA/QAAAAAAADHcIAAAAEAAAAAJ0AAFE
+cQB+ADV0AAFScQB+ADd4dXEAfgAuAAAABQAAAAUAAAAJAAAACgAAAAwAAAARdAALNTkuNjkxODk4
+MzVzcQB+AAsAAAAAEQAAAAIAAAAAAABzcQB+AA8AAAACdwQAAAAKc3EAfgALAAAAAAUAAAAFAQAA
+AAAAc3EAfgAPAAAAAncEAAAACnNxAH4ACwAAAAAMAAAACwEAAAAAAHNxAH4ADwAAAAJ3BAAAAApz
+cQB+AAsAAAAAEQAAABEBAAAAAABzcQB+AA8AAAAAdwQAAAAKeHEAfgAZdXEAfgAuAAAAAgAAAAAA
+AAAMcQB+ADFxAH4AOHQACzg3LjcwNDA2MzQyc3EAfgALAAAAABEAAAASAAAAAAAAc3EAfgAPAAAA
+AHcEAAAACnhxAH4AGXVxAH4ALgAAAAIAAAAEAAAAA3EAfgAxcQB+ADhxAH4BEnhzcQB+AA8AAAAU
+dwQAAAAZdAAHb3V0Y29tZXQABmNvdW50eXQABXN0YXRldAADbXNhdAAEcG1zYXQACnBvcGRlbnNp
+dHl0AANwb3B0AAlwb3BjaGFuZ2V0AAdhZ2U2NTc0dAAFYWdlNzV0AAVjcmltZXQAB2NvbGxlZ2V0
+AAZpbmNvbWV0AARmYXJtdAAIZGVtb2NyYXR0AApyZXB1YmxpY2FudAAFUGVyb3R0AAV3aGl0ZXQA
+BWJsYWNrdAAHdHVybm91dHh1cQB+AC4AAAACAAAABAAAAA9zcQB+ADA/QAAAAAAADHcIAAAAEAAA
+AAJ0AAFEcQB+ADV0AAFScQB+ADd4dXEAfgAuAAAABQAAAAUAAAAJAAAACgAAAAwAAAARdAAFMTkx
+NTVzcQB+AAsAAAAADAAAAAwAAAAAAABzcQB+AA8AAAACdwQAAAAKc3EAfgALAAAAAAoAAAATAQAA
+AAAAc3EAfgAPAAAAAHcEAAAACnhxAH4AGXVxAH4ALgAAAAIAAAD9AAAAJnEAfgAxcQB+ADh0AAQz
+ODEzc3EAfgALAAAAAAoAAAAUAAAAAAAAc3EAfgAPAAAAAHcEAAAACnhxAH4AGXVxAH4ALgAAAAIA
+AAAUAAAAEXEAfgAxcQB+ADhxAH4BNnhzcQB+AA8AAAAUdwQAAAAZdAAHb3V0Y29tZXQABmNvdW50
+eXQABXN0YXRldAADbXNhdAAEcG1zYXQACnBvcGRlbnNpdHl0AANwb3B0AAlwb3BjaGFuZ2V0AAdh
+Z2U2NTc0dAAFYWdlNzV0AAVjcmltZXQAB2NvbGxlZ2V0AAZpbmNvbWV0AARmYXJtdAAIZGVtb2Ny
+YXR0AApyZXB1YmxpY2FudAAFUGVyb3R0AAV3aGl0ZXQABWJsYWNrdAAHdHVybm91dHh1cQB+AC4A
+AAACAAABEQAAADdzcQB+ADA/QAAAAAAADHcIAAAAEAAAAAJ0AAFEcQB+ADV0AAFScQB+ADd4dXEA
+fgAuAAAABQAAAAUAAAAJAAAACgAAAAwAAAARdAAFMTkxNTV4c3EAfgAPAAAAFHcEAAAAGXQAB291
+dGNvbWV0AAZjb3VudHl0AAVzdGF0ZXQAA21zYXQABHBtc2F0AApwb3BkZW5zaXR5dAADcG9wdAAJ
+cG9wY2hhbmdldAAHYWdlNjU3NHQABWFnZTc1dAAFY3JpbWV0AAdjb2xsZWdldAAGaW5jb21ldAAE
+ZmFybXQACGRlbW9jcmF0dAAKcmVwdWJsaWNhbnQABVBlcm90dAAFd2hpdGV0AAVibGFja3QAB3R1
+cm5vdXR4dXEAfgAuAAAAAgAAARUAAABGc3EAfgAwP0AAAAAAAAx3CAAAABAAAAACdAABRHEAfgA1
+dAABUnEAfgA3eHVxAH4ALgAAAAUAAAAFAAAACQAAAAoAAAAMAAAAEXQAATVzcQB+AAsAAAAABQAA
+AAYAAAAAAABzcQB+AA8AAAACdwQAAAAKc3EAfgALAAAAAAwAAAANAQAAAAAAc3EAfgAPAAAAAncE
+AAAACnNxAH4ACwAAAAAKAAAAFQEAAAAAAHNxAH4ADwAAAAB3BAAAAAp4cQB+ABl1cQB+AC4AAAAC
+AAAAfAAAAPZxAH4AMXEAfgA4dAAEMjgzOXNxAH4ACwAAAAAKAAAAFgAAAAAAAHNxAH4ADwAAAAB3
+BAAAAAp4cQB+ABl1cQB+AC4AAAACAAAAEgAAAHJxAH4AMXEAfgA4cQB+AXd4c3EAfgAPAAAAFHcE
+AAAAGXQAB291dGNvbWV0AAZjb3VudHl0AAVzdGF0ZXQAA21zYXQABHBtc2F0AApwb3BkZW5zaXR5
+dAADcG9wdAAJcG9wY2hhbmdldAAHYWdlNjU3NHQABWFnZTc1dAAFY3JpbWV0AAdjb2xsZWdldAAG
+aW5jb21ldAAEZmFybXQACGRlbW9jcmF0dAAKcmVwdWJsaWNhbnQABVBlcm90dAAFd2hpdGV0AAVi
+bGFja3QAB3R1cm5vdXR4dXEAfgAuAAAAAgAAAI4AAAFoc3EAfgAwP0AAAAAAAAx3CAAAABAAAAAC
+dAABRHEAfgA1dAABUnEAfgA3eHVxAH4ALgAAAAUAAAAFAAAACQAAAAoAAAAMAAAAEXQABTIzNjkx
+c3EAfgALAAAAAAwAAAAOAAAAAAAAc3EAfgAPAAAAAncEAAAACnNxAH4ACwAAAAAJAAAAFwEAAAAA
+AHNxAH4ADwAAAAB3BAAAAAp4cQB+ABl1cQB+AC4AAAACAAABaAAAAKdxAH4AMXEAfgA4dAALNC44
+MDAwMDAxOTFzcQB+AAsAAAAACQAAABgAAAAAAABzcQB+AA8AAAAAdwQAAAAKeHEAfgAZdXEAfgAu
+AAAAAgAAAwUAAALTcQB+ADFxAH4AOHEAfgGbeHNxAH4ADwAAABR3BAAAABl0AAdvdXRjb21ldAAG
+Y291bnR5dAAFc3RhdGV0AANtc2F0AARwbXNhdAAKcG9wZGVuc2l0eXQAA3BvcHQACXBvcGNoYW5n
+ZXQAB2FnZTY1NzR0AAVhZ2U3NXQABWNyaW1ldAAHY29sbGVnZXQABmluY29tZXQABGZhcm10AAhk
+ZW1vY3JhdHQACnJlcHVibGljYW50AAVQZXJvdHQABXdoaXRldAAFYmxhY2t0AAd0dXJub3V0eHVx
+AH4ALgAAAAIAAARtAAADenNxAH4AMD9AAAAAAAAMdwgAAAAQAAAAAnQAAURxAH4ANXQAAVJxAH4A
+N3h1cQB+AC4AAAAFAAAABQAAAAkAAAAKAAAADAAAABF0AAUyMzY5MXhzcQB+AA8AAAAUdwQAAAAZ
+dAAHb3V0Y29tZXQABmNvdW50eXQABXN0YXRldAADbXNhdAAEcG1zYXQACnBvcGRlbnNpdHl0AANw
+b3B0AAlwb3BjaGFuZ2V0AAdhZ2U2NTc0dAAFYWdlNzV0AAVjcmltZXQAB2NvbGxlZ2V0AAZpbmNv
+bWV0AARmYXJtdAAIZGVtb2NyYXR0AApyZXB1YmxpY2FudAAFUGVyb3R0AAV3aGl0ZXQABWJsYWNr
+dAAHdHVybm91dHh1cQB+AC4AAAACAAAE+wAABOJzcQB+ADA/QAAAAAAADHcIAAAAEAAAAAJ0AAFE
+cQB+ADV0AAFScQB+ADd4dXEAfgAuAAAABQAAAAUAAAAJAAAACgAAAAwAAAARdAABNXhzcQB+AA8A
+AAAUdwQAAAAZdAAHb3V0Y29tZXQABmNvdW50eXQABXN0YXRldAADbXNhdAAEcG1zYXQACnBvcGRl
+bnNpdHl0AANwb3B0AAlwb3BjaGFuZ2V0AAdhZ2U2NTc0dAAFYWdlNzV0AAVjcmltZXQAB2NvbGxl
+Z2V0AAZpbmNvbWV0AARmYXJtdAAIZGVtb2NyYXR0AApyZXB1YmxpY2FudAAFUGVyb3R0AAV3aGl0
+ZXQABWJsYWNrdAAHdHVybm91dHh1cQB+AC4AAAACAAAGEAAABShzcQB+ADA/QAAAAAAADHcIAAAA
+EAAAAAJ0AAFEcQB+ADV0AAFScQB+ADd4dXEAfgAuAAAABQAAAAUAAAAJAAAACgAAAAwAAAARdAAL
+NTkuNjkxODk4MzV4c3EAfgAPAAAAFHcEAAAAGXQAB291dGNvbWV0AAZjb3VudHl0AAVzdGF0ZXQA
+A21zYXQABHBtc2F0AApwb3BkZW5zaXR5dAADcG9wdAAJcG9wY2hhbmdldAAHYWdlNjU3NHQABWFn
+ZTc1dAAFY3JpbWV0AAdjb2xsZWdldAAGaW5jb21ldAAEZmFybXQACGRlbW9jcmF0dAAKcmVwdWJs
+aWNhbnQABVBlcm90dAAFd2hpdGV0AAVibGFja3QAB3R1cm5vdXR4dXEAfgAuAAAAAgAABikAAAXy
+cQB+ADF1cQB+AC4AAAAFAAAABQAAAAkAAAAKAAAADAAAABF0AAxEZWNpc2lvblRyZWVzcQB+AA8A
+AAAAdwQAAAAKeHB0AA1EZWNpc2lvbiBUcmVl</Model>
+</Operator>
+<Operator X="140" Y="206" name="Remove Perot" type="com.alpine.miner.gef.runoperator.hadoop.HadoopRowFilterOperator" uuid="1357942347772_1">
+<Parameter key="filterCondition" value="turnout &gt; 0 AND (republican &gt; Perot OR democrat &gt; Perot)"/>
+<Parameter key="storeResults" value="false"/>
+<Parameter key="resultsLocation" value=""/>
+<Parameter key="resultsName" value="@default_prefix_rowfil_0"/>
+<Parameter key="override" value="Yes"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/shillion/election92.csv"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="county"/>
+<columnNames columnName="state"/>
+<columnNames columnName="msa"/>
+<columnNames columnName="pmsa"/>
+<columnNames columnName="popdensity"/>
+<columnNames columnName="pop"/>
+<columnNames columnName="popchange"/>
+<columnNames columnName="age6574"/>
+<columnNames columnName="age75"/>
+<columnNames columnName="crime"/>
+<columnNames columnName="college"/>
+<columnNames columnName="income"/>
+<columnNames columnName="farm"/>
+<columnNames columnName="democrat"/>
+<columnNames columnName="republican"/>
+<columnNames columnName="Perot"/>
+<columnNames columnName="white"/>
+<columnNames columnName="black"/>
+<columnNames columnName="turnout"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="139" Y="394" name="Histogram" type="com.alpine.miner.gef.runoperator.hadoop.HadoopHistogramOperator" uuid="1357942347772_2">
+<ColumnBinsModel>
+<ColumnBin bin="10" columnName="college" isMax="false" isMin="false" max="100" min="0" type="0" width="1"/>
+<ColumnBin bin="10" columnName="income" isMax="false" isMin="false" max="100" min="0" type="0" width="1"/>
+<ColumnBin bin="10" columnName="turnout" isMax="false" isMin="false" max="100" min="0" type="0" width="1"/>
+</ColumnBinsModel>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/@default_prefix_rowfil_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="county"/>
+<columnNames columnName="state"/>
+<columnNames columnName="msa"/>
+<columnNames columnName="pmsa"/>
+<columnNames columnName="popdensity"/>
+<columnNames columnName="pop"/>
+<columnNames columnName="popchange"/>
+<columnNames columnName="age6574"/>
+<columnNames columnName="age75"/>
+<columnNames columnName="crime"/>
+<columnNames columnName="college"/>
+<columnNames columnName="income"/>
+<columnNames columnName="farm"/>
+<columnNames columnName="democrat"/>
+<columnNames columnName="republican"/>
+<columnNames columnName="Perot"/>
+<columnNames columnName="white"/>
+<columnNames columnName="black"/>
+<columnNames columnName="turnout"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="139" Y="69" name="election92.csv" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFileOperator" uuid="1357942347772_0">
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hadoopFileName" value="/shillion/election92.csv"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="county"/>
+<columnNames columnName="state"/>
+<columnNames columnName="msa"/>
+<columnNames columnName="pmsa"/>
+<columnNames columnName="popdensity"/>
+<columnNames columnName="pop"/>
+<columnNames columnName="popchange"/>
+<columnNames columnName="age6574"/>
+<columnNames columnName="age75"/>
+<columnNames columnName="crime"/>
+<columnNames columnName="college"/>
+<columnNames columnName="income"/>
+<columnNames columnName="farm"/>
+<columnNames columnName="democrat"/>
+<columnNames columnName="republican"/>
+<columnNames columnName="Perot"/>
+<columnNames columnName="white"/>
+<columnNames columnName="black"/>
+<columnNames columnName="turnout"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+</HadoopFileStructureModel>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/shillion/election92.csv"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="county"/>
+<columnNames columnName="state"/>
+<columnNames columnName="msa"/>
+<columnNames columnName="pmsa"/>
+<columnNames columnName="popdensity"/>
+<columnNames columnName="pop"/>
+<columnNames columnName="popchange"/>
+<columnNames columnName="age6574"/>
+<columnNames columnName="age75"/>
+<columnNames columnName="crime"/>
+<columnNames columnName="college"/>
+<columnNames columnName="income"/>
+<columnNames columnName="farm"/>
+<columnNames columnName="democrat"/>
+<columnNames columnName="republican"/>
+<columnNames columnName="Perot"/>
+<columnNames columnName="white"/>
+<columnNames columnName="black"/>
+<columnNames columnName="turnout"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="638" Y="309" name="Election Results by Income" type="com.alpine.miner.gef.runoperator.hadoop.HadoopBarChartOperator" uuid="1357942347772_9">
+<Parameter key="valueDomain" value="count"/>
+<Parameter key="categoryType" value="income_bin"/>
+<Parameter key="scopeDomain" value="outcome"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/@default_prefix_var_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="outcome"/>
+<columnNames columnName="count"/>
+<columnNames columnName="income_bin"/>
+<columnNames columnName="college_bin"/>
+<columnNames columnName="county"/>
+<columnNames columnName="state"/>
+<columnNames columnName="msa"/>
+<columnNames columnName="pmsa"/>
+<columnNames columnName="popdensity"/>
+<columnNames columnName="pop"/>
+<columnNames columnName="popchange"/>
+<columnNames columnName="age6574"/>
+<columnNames columnName="age75"/>
+<columnNames columnName="crime"/>
+<columnNames columnName="college"/>
+<columnNames columnName="income"/>
+<columnNames columnName="farm"/>
+<columnNames columnName="democrat"/>
+<columnNames columnName="republican"/>
+<columnNames columnName="Perot"/>
+<columnNames columnName="white"/>
+<columnNames columnName="black"/>
+<columnNames columnName="turnout"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Link source="election92.csv" target="Scatter Plot Matrix"/>
+<Link source="election92.csv" target="Linear Regression"/>
+<Link source="election92.csv" target="Variables"/>
+<Link source="Variables" target="Election Results by Income"/>
+<Link source="Variables" target="Election Results by College"/>
+<Link source="election92.csv" target="Remove Perot"/>
+<Link source="Remove Perot" target="DR Flag"/>
+<Link source="DR Flag" target="Decision Tree"/>
+<Link source="Remove Perot" target="Histogram"/>
+<VariableModel>
+<Variable>
+<Name>@default_schema</Name>
+<Value>public</Value>
+</Variable>
+<Variable>
+<Name>@default_prefix</Name>
+<Value>alp</Value>
+</Variable>
+</VariableModel>
+</Process>
