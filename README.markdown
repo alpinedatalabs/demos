@@ -25,7 +25,7 @@ Demos
 -----
 
 
-__Census results by state__
+[__Census results by state__] (/alpinedatalabs/demos/tree/master/us_census)
 
 Simple summary statistics, charts, correlations, and a linear regression on home ownership by demographics.
 
