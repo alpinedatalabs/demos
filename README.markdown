@@ -32,14 +32,14 @@ Simple summary statistics, charts, correlations, and a linear regression on home
 _Size:_ dozens of rows, runs in ~1 minute
 
 
-[__Election 92__] (election92)
+[__Election 92__] (/alpinedatalabs/demos/tree/master/election92)
 
 Election results by county
 Various charts and correlations for demographic factors and election results, regression on turnout by demographics, decision tree on outcome by demographics.
 
 _Size:_ thousands of rows, runs in ~1 minute
 
-[__Presidential Donations__] (us_presidential_donations)
+[__Presidential Donations__] (/alpinedatalabs/demos/tree/master/us_presidential_donations)
 
 Donations by individual
 Comparison of the distribution of contributions at various levels
@@ -47,13 +47,13 @@ Comparison of the distribution of contributions at various levels
 _Size:_ millions of rows, runs in ~5 minutes
 
 
-[__USFullCensus__] (us_census_full)
+[__USFullCensus__] (/alpinedatalabs/demos/tree/master/us_census_full)
 
 1% sample of census data. Frequency chart and correlations, decision tree on marital status by demographics, regression on income by demographics, clusters based on demographics.
 
 _Size:_ millions of rows, runs in ~10 minutes
 
-[__Forest Cover__] (forest_cover)
+[__Forest Cover__] (/alpinedatalabs/demos/tree/master/forest_cover)
 
 Ecological data for US forests (classic test dataset)
 Box plots on elevation, clustering on environmental factors, regression and decision tree to predict type of forest based on environmental factors.
