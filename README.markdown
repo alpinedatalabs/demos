@@ -6,14 +6,14 @@ The following workflows attempt to explain how Alpine works through concrete exa
 Installation
 ------------
 
-_Importing the Workflow_
+__Importing Workflows__
 
 * Download the zip from github or git clone the directory of interest
 * Under Workflows tab click on _Import_ button 
 * Select the directory of the workflow and pick the .afm file (repeat as necessary)
 * Check the workflow you want to import and click on _Import_ or _Import and Open_
 
-__Importing the Data__
+__Importing Data__
 
 * Create a data source pointing to your [Hadoop cluster] (https://alpine.atlassian.net/wiki/display/DOC/Hadoop+Connection+Prerequisites "Hadoop cluster configuration")
 * Browse to an HDFS location where you would like to copy the data files
