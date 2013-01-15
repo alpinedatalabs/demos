@@ -12,7 +12,6 @@ _Importing the Workflow_
 * Under Workflows tab click on _Import_ button 
 * Select the directory of the workflow and pick the .afm file (repeat as necessary)
 * Check the workflow you want to import and click on _Import_ or _Import and Open_
-* Click on the 
 
 __Importing the Data__
 
@@ -27,30 +26,39 @@ Demos
 
 
 __Census results by state__
+
 Simple summary statistics, charts, correlations, and a linear regression on home ownership by demographics
 Size: dozens of rows, runs in ~1 minute
 
 
 __Election 92__
+
 Election results by county
 Various charts and correlations for demographic factors and election results, regression on turnout by demographics, decision tree on outcome by demographics
-_Size: thousands of rows, runs in ~1 minute_
+
+_Size:_ thousands of rows, runs in ~1 minute
 
 __Presidential Donations__
+
 Donations by individual
 Comparison of the distribution of contributions at various levels
-_Size: millions of rows, runs in ~5 minutes_
+
+_Size:_ millions of rows, runs in ~5 minutes
 
 
 __USFullCensus__
+
 1% sample of census data
 Frequency chart and correlations, decision tree on marital status by demographics, regression on income by demographics, clusters based on demographics
-_Size: millions of rows, runs in ~10 minutes_
 
-__ForestCover__
+_Size:_ millions of rows, runs in ~10 minutes
+
+__ForestCover__ (
+
 Ecological data for US forests (classic test dataset)
 Box plots on elevation, clustering on environmental factors, regression and decision tree to predict type of forest based on environmental factors
-_Size: half a million rows, runs in ~30 minutes_
+
+_Size:_ half a million rows, runs in ~30 minutes
 
 
  
