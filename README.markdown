@@ -27,14 +27,15 @@ Demos
 
 __Census results by state__
 
-Simple summary statistics, charts, correlations, and a linear regression on home ownership by demographics
-Size: dozens of rows, runs in ~1 minute
+Simple summary statistics, charts, correlations, and a linear regression on home ownership by demographics.
+
+_Size:_ dozens of rows, runs in ~1 minute
 
 
-__Election 92__
+[__Election 92__] (/election92)
 
 Election results by county
-Various charts and correlations for demographic factors and election results, regression on turnout by demographics, decision tree on outcome by demographics
+Various charts and correlations for demographic factors and election results, regression on turnout by demographics, decision tree on outcome by demographics.
 
 _Size:_ thousands of rows, runs in ~1 minute
 
@@ -48,15 +49,14 @@ _Size:_ millions of rows, runs in ~5 minutes
 
 __USFullCensus__
 
-1% sample of census data
-Frequency chart and correlations, decision tree on marital status by demographics, regression on income by demographics, clusters based on demographics
+1% sample of census data. Frequency chart and correlations, decision tree on marital status by demographics, regression on income by demographics, clusters based on demographics.
 
 _Size:_ millions of rows, runs in ~10 minutes
 
 __ForestCover__ (
 
 Ecological data for US forests (classic test dataset)
-Box plots on elevation, clustering on environmental factors, regression and decision tree to predict type of forest based on environmental factors
+Box plots on elevation, clustering on environmental factors, regression and decision tree to predict type of forest based on environmental factors.
 
 _Size:_ half a million rows, runs in ~30 minutes
 
