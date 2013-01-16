@@ -25,6 +25,11 @@ __Importing Data__
 Demos
 -----
 
+[__Airline On-Time Statistics__] (/alpinedatalabs/demos/tree/master/airline)
+
+Predict flight arrival delays based on seasonality, departure delays and geography. 
+
+_Size:_ 7M rows for 2008, 120M for full data set, runs in ~1 hour
 
 [__Census results by state__] (/alpinedatalabs/demos/tree/master/us_census)
 
