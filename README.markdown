@@ -25,7 +25,7 @@ __Importing Data__
 Demos
 -----
 
-[__Airline On-Time Statistics__] (/alpinedatalabs/demos/tree/master/airline)
+[__Airline On-Time Statistics__] (/alpinedatalabs/demos/tree/master/airline_ontime_stats)
 
 Predict flight arrival delays based on seasonality, departure delays and geography.
 
