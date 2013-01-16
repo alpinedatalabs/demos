@@ -27,7 +27,9 @@ Demos
 
 [__Airline On-Time Statistics__] (/alpinedatalabs/demos/tree/master/airline)
 
-Predict flight arrival delays based on seasonality, departure delays and geography. 
+Predict flight arrival delays based on seasonality, departure delays and geography.
+
+_Data:_ 2008 available in current repo, 1987-2008 available from [ASA] (http://stat-computing.org/dataexpo/2009/the-data.html) 
 
 _Size:_ 7M rows for 2008, 120M for full data set, runs in ~1 hour
 
