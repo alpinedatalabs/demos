@@ -47,7 +47,7 @@ Various charts and correlations for demographic factors and election results, re
 
 _Size:_ thousands of rows, runs in ~1 minute
 
-[__FAA Service Difficulty Reports__]
+[__FAA Service Difficulty Reports__] (/alpinedatalabs/demos/tree/master/faa)
 
 Predict unscheduled landings based on flight stage (takeoff, approach, landing, cruising, etc), region and aircraft manufacturer.  
 This workflow is based on Venky Rao's [post] (http://themainstreamseer.blogspot.com/2013/01/data-mining-and-airline-safety.html)
@@ -65,7 +65,7 @@ Comparison of the distribution of contributions at various levels
 _Size:_ millions of rows, runs in ~5 minutes
 
 
-[__USFullCensus__] (/alpinedatalabs/demos/tree/master/us_census_full)
+[__US Census__] (/alpinedatalabs/demos/tree/master/us_census_full)
 
 1% sample of census data. Frequency chart and correlations, decision tree on marital status by demographics, regression on income by demographics, clusters based on demographics.
 
