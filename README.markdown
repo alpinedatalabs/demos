@@ -10,7 +10,7 @@ Installation
 __Importing Workflows__
 
 * Download the zip from github or git clone the directory of interest
-* Under Workflows tab click on _Import_ button 
+* Under Workflows tab click on _Import_ button.
 * Select the directory of the workflow and pick the .afm file (repeat as necessary)
 * Check the workflow you want to import and click on _Import_ or _Import and Open_
 
