@@ -3,12 +3,12 @@
 <Operator X="37" Y="396" name="Summary Statistics" type="com.alpine.miner.gef.runoperator.hadoop.HadoopValueAnalysisOperator" uuid="1355174038411">
 <Parameter key="columnNames" value="Year,Month,DayofMonth,DayOfWeek,DepTime,CRSDepTime,ArrTime,CRSArrTime,UniqueCarrier,FlightNum,TailNum,ActualElapsedTime,CRSElapsedTime,AirTime,ArrDelay,DepDelay,Origin,Dest,Distance,TaxiIn,TaxiOut,Cancelled,CancellationCode,Diverted,CarrierDelay,WeatherDelay,NASDelay,SecurityDelay,LateAircraftDelay"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -87,12 +87,12 @@
 <Parameter key="resultsName" value="@default_prefix_rowfil_0"/>
 <Parameter key="override" value="Yes"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -118,12 +118,12 @@
 <AggregateField columnName="AVG_ArrDelay" dataType="double" expression="AVG(ArrDelay)"/>
 </AggregateFieldsModel>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -139,7 +139,7 @@
 <columnNames columnName="city"/>
 <columnNames columnName="state"/>
 <columnNames columnName="country"/>
-<columnNames columnName="lat"/>
+<columnNames columnName="latitude"/>
 <columnNames columnName="longitude"/>
 <columnNames columnName="SrsArrDelay"/>
 <columnNames columnName="Year"/>
@@ -212,7 +212,7 @@
 </InPutFieldList>
 </Operator>
 <Operator X="38" Y="186" name="2008.csv" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFileOperator" uuid="1358280776674">
-<Parameter key="connName" value="Cloudera"/>
+<Parameter key="connName" value="Hadoop"/>
 <Parameter key="hadoopFileName" value="/real_data/airline_delay/2008.csv"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
 <HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
@@ -275,11 +275,11 @@
 <columnTypes columnType="chararray"/>
 <columnTypes columnType="chararray"/>
 </HadoopFileStructureModel>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="securityMode" value="simple"/>
@@ -288,12 +288,12 @@
 <Parameter key="mapredPrincipal" value=""/>
 <Parameter key="mapredKeyTab" value=""/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -366,8 +366,8 @@
 </InPutFieldList>
 </Operator>
 <Operator X="159" Y="187" name="ArrDelay gtn 10 mins" type="com.alpine.miner.gef.runoperator.hadoop.HadoopVariableOperator" uuid="1358280796024">
-<Parameter key="storeResults" value="false"/>
-<Parameter key="resultsLocation" value=""/>
+<Parameter key="storeResults" value="true"/>
+<Parameter key="resultsLocation" value="/tmp/airline_delay"/>
 <Parameter key="resultsName" value="@default_prefix_var_0"/>
 <Parameter key="override" value="Yes"/>
 <DerivedFieldsModel>
@@ -403,12 +403,12 @@
 <DerivedFieldItem columnName="SrsArrDelay" dataType="int" expression="(ArrDelay &gt; 10) ? 1 : 0"/>
 </DerivedFieldsModel>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -493,12 +493,12 @@
 <sampleSizes sampleSize="10"/>
 </SampleSizeModel>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -514,7 +514,7 @@
 <columnNames columnName="city"/>
 <columnNames columnName="state"/>
 <columnNames columnName="country"/>
-<columnNames columnName="lat"/>
+<columnNames columnName="latitude"/>
 <columnNames columnName="longitude"/>
 <columnNames columnName="SrsArrDelay"/>
 <columnNames columnName="Year"/>
@@ -589,12 +589,12 @@
 <Operator X="475" Y="188" name="Training Set" type="com.alpine.miner.gef.runoperator.hadoop.HadoopSampleSelectorOperator" uuid="1358280992938">
 <Parameter key="selectedFile" value="/tmp/@default_prefix_rsamp_0_1"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -610,7 +610,7 @@
 <columnNames columnName="city"/>
 <columnNames columnName="state"/>
 <columnNames columnName="country"/>
-<columnNames columnName="lat"/>
+<columnNames columnName="latitude"/>
 <columnNames columnName="longitude"/>
 <columnNames columnName="SrsArrDelay"/>
 <columnNames columnName="Year"/>
@@ -682,12 +682,12 @@
 </HadoopFileStructureModel>
 </InPutFieldList>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -703,7 +703,7 @@
 <columnNames columnName="city"/>
 <columnNames columnName="state"/>
 <columnNames columnName="country"/>
-<columnNames columnName="lat"/>
+<columnNames columnName="latitude"/>
 <columnNames columnName="longitude"/>
 <columnNames columnName="SrsArrDelay"/>
 <columnNames columnName="Year"/>
@@ -778,12 +778,12 @@
 <Operator X="285" Y="412" name="Validation Set" type="com.alpine.miner.gef.runoperator.hadoop.HadoopSampleSelectorOperator" uuid="1358281006472_0">
 <Parameter key="selectedFile" value="/tmp/@default_prefix_rsamp_0_2"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -799,7 +799,7 @@
 <columnNames columnName="city"/>
 <columnNames columnName="state"/>
 <columnNames columnName="country"/>
-<columnNames columnName="lat"/>
+<columnNames columnName="latitude"/>
 <columnNames columnName="longitude"/>
 <columnNames columnName="SrsArrDelay"/>
 <columnNames columnName="Year"/>
@@ -871,12 +871,12 @@
 </HadoopFileStructureModel>
 </InPutFieldList>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -892,7 +892,7 @@
 <columnNames columnName="city"/>
 <columnNames columnName="state"/>
 <columnNames columnName="country"/>
-<columnNames columnName="lat"/>
+<columnNames columnName="latitude"/>
 <columnNames columnName="longitude"/>
 <columnNames columnName="SrsArrDelay"/>
 <columnNames columnName="Year"/>
@@ -967,12 +967,12 @@
 <Operator X="717" Y="17" name="Summary Statistics-2" type="com.alpine.miner.gef.runoperator.hadoop.HadoopValueAnalysisOperator" uuid="1358281049153_0">
 <Parameter key="columnNames" value="SrsArrDelay,Year,Month,DayofMonth,DayOfWeek,DepTime,CRSDepTime,ArrTime,CRSArrTime,UniqueCarrier,FlightNum,TailNum,ActualElapsedTime,CRSElapsedTime,AirTime,ArrDelay,DepDelay,Origin,Dest,Distance,TaxiIn,TaxiOut,Cancelled,CancellationCode,Diverted,CarrierDelay,WeatherDelay,NASDelay,SecurityDelay,LateAircraftDelay"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -988,7 +988,7 @@
 <columnNames columnName="city"/>
 <columnNames columnName="state"/>
 <columnNames columnName="country"/>
-<columnNames columnName="lat"/>
+<columnNames columnName="latitude"/>
 <columnNames columnName="longitude"/>
 <columnNames columnName="SrsArrDelay"/>
 <columnNames columnName="Year"/>
@@ -1063,12 +1063,12 @@
 <Operator X="793" Y="79" name="Scatter Plot Matrix" type="com.alpine.miner.gef.runoperator.hadoop.HadoopScatterPlotMatrixOperator" uuid="1358281115820">
 <Parameter key="columnNames" value="SrsArrDelay,Year,Month,DayofMonth,DayOfWeek,DepTime,CRSDepTime,ArrTime,CRSArrTime,FlightNum,ActualElapsedTime,CRSElapsedTime,AirTime,ArrDelay,DepDelay,Distance,TaxiIn,TaxiOut,Cancelled,Diverted"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -1084,7 +1084,7 @@
 <columnNames columnName="city"/>
 <columnNames columnName="state"/>
 <columnNames columnName="country"/>
-<columnNames columnName="lat"/>
+<columnNames columnName="latitude"/>
 <columnNames columnName="longitude"/>
 <columnNames columnName="SrsArrDelay"/>
 <columnNames columnName="Year"/>
@@ -1170,12 +1170,12 @@
 <Parameter key="categoryLimit" value="1000"/>
 <Parameter key="numericalGranularity" value="1000000"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -1191,7 +1191,7 @@
 <columnNames columnName="city"/>
 <columnNames columnName="state"/>
 <columnNames columnName="country"/>
-<columnNames columnName="lat"/>
+<columnNames columnName="latitude"/>
 <columnNames columnName="longitude"/>
 <columnNames columnName="SrsArrDelay"/>
 <columnNames columnName="Year"/>
@@ -1286,7 +1286,7 @@ RGVsYXl0AAZPcmlnaW50AAREZXN0dAAIRGlzdGFuY2V0AAZUYXhpSW50AAdUYXhpT3V0dAAJQ2Fu
 Y2VsbGVkdAAQQ2FuY2VsbGF0aW9uQ29kZXQACERpdmVydGVkdAAMQ2FycmllckRlbGF5dAAMV2Vh
 dGhlckRlbGF5dAAITkFTRGVsYXl0AA1TZWN1cml0eURlbGF5dAARTGF0ZUFpcmNyYWZ0RGVsYXl4
 dXIAAltJTbpgJnbqsqUCAAB4cAAAAAIAAAzGAAKUqnNyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHD
-FmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAx3CAAAABAAAAACdAABMXNy
+FmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAF3CAAAAAIAAAACdAABMXNy
 ABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJl
 coaslR0LlOCLAgAAeHAAAAAAdAABMHNxAH4AOwAAAAF4dXEAfgA2AAAABAAAAAIAAAAMAAAAEAAA
 ABF0AAI4OHNxAH4ACwAAAAAMAAAACAAAAAAAAHNxAH4ADwAAAAJ3BAAAAApzcQB+AAsAAAAADAAA
@@ -1297,7 +1297,7 @@ B1RhaWxOdW10ABFBY3R1YWxFbGFwc2VkVGltZXQADkNSU0VsYXBzZWRUaW1ldAAHQWlyVGltZXQA
 CEFyckRlbGF5dAAIRGVwRGVsYXl0AAZPcmlnaW50AAREZXN0dAAIRGlzdGFuY2V0AAZUYXhpSW50
 AAdUYXhpT3V0dAAJQ2FuY2VsbGVkdAAQQ2FuY2VsbGF0aW9uQ29kZXQACERpdmVydGVkdAAMQ2Fy
 cmllckRlbGF5dAAMV2VhdGhlckRlbGF5dAAITkFTRGVsYXl0AA1TZWN1cml0eURlbGF5dAARTGF0
-ZUFpcmNyYWZ0RGVsYXl4dXEAfgA2AAAAAgAAQ7IAAs6vc3EAfgA4P0AAAAAAAAx3CAAAABAAAAAC
+ZUFpcmNyYWZ0RGVsYXl4dXEAfgA2AAAAAgAAQ7IAAs6vc3EAfgA4P0AAAAAAAAF3CAAAAAIAAAAC
 dAABMXEAfgA9dAABMHEAfgA/eHVxAH4ANgAAAAQAAAACAAAADAAAABAAAAARdAADMTY1c3EAfgAL
 AAAAAAwAAATMAAAAAAAAc3EAfgAPAAAAAHcEAAAACnhxAH4ARnVxAH4ANgAAAAIAAEIwAAEyhXEA
 fgBmcQB+AGlxAH4AanhzcQB+AA8AAAAedwQAAAAmdAALU3JzQXJyRGVsYXl0AARZZWFydAAFTW9u
@@ -1307,7 +1307,7 @@ QWN0dWFsRWxhcHNlZFRpbWV0AA5DUlNFbGFwc2VkVGltZXQAB0FpclRpbWV0AAhBcnJEZWxheXQA
 CERlcERlbGF5dAAGT3JpZ2ludAAERGVzdHQACERpc3RhbmNldAAGVGF4aUludAAHVGF4aU91dHQA
 CUNhbmNlbGxlZHQAEENhbmNlbGxhdGlvbkNvZGV0AAhEaXZlcnRlZHQADENhcnJpZXJEZWxheXQA
 DFdlYXRoZXJEZWxheXQACE5BU0RlbGF5dAANU2VjdXJpdHlEZWxheXQAEUxhdGVBaXJjcmFmdERl
-bGF5eHVxAH4ANgAAAAIAAIXiAAQBNHNxAH4AOD9AAAAAAAAMdwgAAAAQAAAAAnQAATFxAH4APXQA
+bGF5eHVxAH4ANgAAAAIAAIXiAAQBNHNxAH4AOD9AAAAAAAABdwgAAAACAAAAAnQAATFxAH4APXQA
 ATBxAH4AP3h1cQB+ADYAAAAEAAAAAgAAAAwAAAAQAAAAEXQAAjg4eHNxAH4ADwAAAB53BAAAACZ0
 AAtTcnNBcnJEZWxheXQABFllYXJ0AAVNb250aHQACkRheW9mTW9udGh0AAlEYXlPZldlZWt0AAdE
 ZXBUaW1ldAAKQ1JTRGVwVGltZXQAB0FyclRpbWV0AApDUlNBcnJUaW1ldAANVW5pcXVlQ2Fycmll
@@ -1316,7 +1316,7 @@ aW1ldAAHQWlyVGltZXQACEFyckRlbGF5dAAIRGVwRGVsYXl0AAZPcmlnaW50AAREZXN0dAAIRGlz
 dGFuY2V0AAZUYXhpSW50AAdUYXhpT3V0dAAJQ2FuY2VsbGVkdAAQQ2FuY2VsbGF0aW9uQ29kZXQA
 CERpdmVydGVkdAAMQ2FycmllckRlbGF5dAAMV2VhdGhlckRlbGF5dAAITkFTRGVsYXl0AA1TZWN1
 cml0eURlbGF5dAARTGF0ZUFpcmNyYWZ0RGVsYXl4dXEAfgA2AAAAAgAAkqgABpXec3EAfgA4P0AA
-AAAAAAx3CAAAABAAAAACdAABMXEAfgA9dAABMHEAfgA/eHVxAH4ANgAAAAQAAAACAAAADAAAABAA
+AAAAAAF3CAAAAAIAAAACdAABMXEAfgA9dAABMHEAfgA/eHVxAH4ANgAAAAQAAAACAAAADAAAABAA
 AAARdAABM3NxAH4ACwAAAAAQAAAABAAAAAAAAHNxAH4ADwAAAAJ3BAAAAApzcQB+AAsAAAAAEAAA
 AAkBAAAAAABzcQB+AA8AAAACdwQAAAAKc3EAfgALAAAAAAwAAATNAQAAAAAAc3EAfgAPAAAAAHcE
 AAAACnhxAH4ARnVxAH4ANgAAAAIAAAXbAAAxFXEAfgBmcQB+AGl0AAI4NHNxAH4ACwAAAAAMAAAE
@@ -1328,7 +1328,7 @@ YXBzZWRUaW1ldAAOQ1JTRWxhcHNlZFRpbWV0AAdBaXJUaW1ldAAIQXJyRGVsYXl0AAhEZXBEZWxh
 eXQABk9yaWdpbnQABERlc3R0AAhEaXN0YW5jZXQABlRheGlJbnQAB1RheGlPdXR0AAlDYW5jZWxs
 ZWR0ABBDYW5jZWxsYXRpb25Db2RldAAIRGl2ZXJ0ZWR0AAxDYXJyaWVyRGVsYXl0AAxXZWF0aGVy
 RGVsYXl0AAhOQVNEZWxheXQADVNlY3VyaXR5RGVsYXl0ABFMYXRlQWlyY3JhZnREZWxheXh1cQB+
-ADYAAAACAAAoswAAkXNzcQB+ADg/QAAAAAAADHcIAAAAEAAAAAJ0AAExcQB+AD10AAEwcQB+AD94
+ADYAAAACAAAoswAAkXNzcQB+ADg/QAAAAAAAAXcIAAAAAgAAAAJ0AAExcQB+AD10AAEwcQB+AD94
 dXEAfgA2AAAABAAAAAIAAAAMAAAAEAAAABF0AAE4c3EAfgALAAAAABAAAAAKAAAAAAAAc3EAfgAP
 AAABL3cEAAABxHNxAH4ACwEAAAARAAAADwAAAAAAAHNxAH4ADwAAAAB3BAAAAAp4cQB+AEZ1cQB+
 ADYAAAACAAAABQAAAAJxAH4AZnEAfgBpdAADWVVNc3EAfgALAQAAABEAAAAQAAAAAAAAc3EAfgAP
@@ -1746,7 +1746,7 @@ dW10AAdUYWlsTnVtdAARQWN0dWFsRWxhcHNlZFRpbWV0AA5DUlNFbGFwc2VkVGltZXQAB0FpclRp
 bWV0AAhBcnJEZWxheXQACERlcERlbGF5dAAGT3JpZ2ludAAERGVzdHQACERpc3RhbmNldAAGVGF4
 aUludAAHVGF4aU91dHQACUNhbmNlbGxlZHQAEENhbmNlbGxhdGlvbkNvZGV0AAhEaXZlcnRlZHQA
 DENhcnJpZXJEZWxheXQADFdlYXRoZXJEZWxheXQACE5BU0RlbGF5dAANU2VjdXJpdHlEZWxheXQA
-EUxhdGVBaXJjcmFmdERlbGF5eHVxAH4ANgAAAAIAACzvAABLsHNxAH4AOD9AAAAAAAAMdwgAAAAQ
+EUxhdGVBaXJjcmFmdERlbGF5eHVxAH4ANgAAAAIAACzvAABLsHNxAH4AOD9AAAAAAAABdwgAAAAC
 AAAAAnQAATFxAH4APXQAATBxAH4AP3h1cQB+ADYAAAAEAAAAAgAAAAwAAAAQAAAAEXQAATh4c3EA
 fgAPAAAAHncEAAAAJnQAC1Nyc0FyckRlbGF5dAAEWWVhcnQABU1vbnRodAAKRGF5b2ZNb250aHQA
 CURheU9mV2Vla3QAB0RlcFRpbWV0AApDUlNEZXBUaW1ldAAHQXJyVGltZXQACkNSU0FyclRpbWV0
@@ -1755,7 +1755,7 @@ dAAOQ1JTRWxhcHNlZFRpbWV0AAdBaXJUaW1ldAAIQXJyRGVsYXl0AAhEZXBEZWxheXQABk9yaWdp
 bnQABERlc3R0AAhEaXN0YW5jZXQABlRheGlJbnQAB1RheGlPdXR0AAlDYW5jZWxsZWR0ABBDYW5j
 ZWxsYXRpb25Db2RldAAIRGl2ZXJ0ZWR0AAxDYXJyaWVyRGVsYXl0AAxXZWF0aGVyRGVsYXl0AAhO
 QVNEZWxheXQADVNlY3VyaXR5RGVsYXl0ABFMYXRlQWlyY3JhZnREZWxheXh1cQB+ADYAAAACAABV
-ogAA3SNzcQB+ADg/QAAAAAAADHcIAAAAEAAAAAJ0AAExcQB+AD10AAEwcQB+AD94dXEAfgA2AAAA
+ogAA3SNzcQB+ADg/QAAAAAAAAXcIAAAAAgAAAAJ0AAExcQB+AD10AAEwcQB+AD94dXEAfgA2AAAA
 BAAAAAIAAAAMAAAAEAAAABF0AAEzeHNxAH4ADwAAAB53BAAAACZ0AAtTcnNBcnJEZWxheXQABFll
 YXJ0AAVNb250aHQACkRheW9mTW9udGh0AAlEYXlPZldlZWt0AAdEZXBUaW1ldAAKQ1JTRGVwVGlt
 ZXQAB0FyclRpbWV0AApDUlNBcnJUaW1ldAANVW5pcXVlQ2FycmllcnQACUZsaWdodE51bXQAB1Rh
@@ -1763,7 +1763,7 @@ aWxOdW10ABFBY3R1YWxFbGFwc2VkVGltZXQADkNSU0VsYXBzZWRUaW1ldAAHQWlyVGltZXQACEFy
 ckRlbGF5dAAIRGVwRGVsYXl0AAZPcmlnaW50AAREZXN0dAAIRGlzdGFuY2V0AAZUYXhpSW50AAdU
 YXhpT3V0dAAJQ2FuY2VsbGVkdAAQQ2FuY2VsbGF0aW9uQ29kZXQACERpdmVydGVkdAAMQ2Fycmll
 ckRlbGF5dAAMV2VhdGhlckRlbGF5dAAITkFTRGVsYXl0AA1TZWN1cml0eURlbGF5dAARTGF0ZUFp
-cmNyYWZ0RGVsYXl4dXEAfgA2AAAAAgAA6EoAB3MBc3EAfgA4P0AAAAAAAAx3CAAAABAAAAACdAAB
+cmNyYWZ0RGVsYXl4dXEAfgA2AAAAAgAA6EoAB3MBc3EAfgA4P0AAAAAAAAF3CAAAAAIAAAACdAAB
 MXEAfgA9dAABMHEAfgA/eHVxAH4ANgAAAAQAAAACAAAADAAAABAAAAARdAACMTNzcQB+AAsAAAAA
 EAAAAAIAAAAAAABzcQB+AA8AAAACdwQAAAAKc3EAfgALAAAAABAAAAAFAQAAAAAAc3EAfgAPAAAA
 AncEAAAACnNxAH4ACwAAAAAQAAAACwEAAAAAAHNxAH4ADwAAAS93BAAAAcRzcQB+AAsBAAAAEQAA
@@ -2178,7 +2178,7 @@ cHNlZFRpbWV0AAdBaXJUaW1ldAAIQXJyRGVsYXl0AAhEZXBEZWxheXQABk9yaWdpbnQABERlc3R0
 AAhEaXN0YW5jZXQABlRheGlJbnQAB1RheGlPdXR0AAlDYW5jZWxsZWR0ABBDYW5jZWxsYXRpb25D
 b2RldAAIRGl2ZXJ0ZWR0AAxDYXJyaWVyRGVsYXl0AAxXZWF0aGVyRGVsYXl0AAhOQVNEZWxheXQA
 DVNlY3VyaXR5RGVsYXl0ABFMYXRlQWlyY3JhZnREZWxheXh1cQB+ADYAAAACAAAxSwAAI/VzcQB+
-ADg/QAAAAAAADHcIAAAAEAAAAAJ0AAExcQB+AD10AAEwcQB+AD94dXEAfgA2AAAABAAAAAIAAAAM
+ADg/QAAAAAAAAXcIAAAAAgAAAAJ0AAExcQB+AD10AAEwcQB+AD94dXEAfgA2AAAABAAAAAIAAAAM
 AAAAEAAAABF0AAIxOHNxAH4ACwAAAAAQAAAADAAAAAAAAHNxAH4ADwAAAS93BAAAAcRzcQB+AAsB
 AAAAEQAAAm0AAAAAAABzcQB+AA8AAAAAdwQAAAAKeHEAfgBGdXEAfgA2AAAAAgAAAAQAAAACcQB+
 AGZxAH4AaXEAfgDtc3EAfgALAQAAABEAAAJuAAAAAAAAc3EAfgAPAAAAAHcEAAAACnhxAH4ARnVx
@@ -2591,7 +2591,7 @@ Q1JTRWxhcHNlZFRpbWV0AAdBaXJUaW1ldAAIQXJyRGVsYXl0AAhEZXBEZWxheXQABk9yaWdpbnQA
 BERlc3R0AAhEaXN0YW5jZXQABlRheGlJbnQAB1RheGlPdXR0AAlDYW5jZWxsZWR0ABBDYW5jZWxs
 YXRpb25Db2RldAAIRGl2ZXJ0ZWR0AAxDYXJyaWVyRGVsYXl0AAxXZWF0aGVyRGVsYXl0AAhOQVNE
 ZWxheXQADVNlY3VyaXR5RGVsYXl0ABFMYXRlQWlyY3JhZnREZWxheXh1cQB+ADYAAAACAABMnAAA
-FDBzcQB+ADg/QAAAAAAADHcIAAAAEAAAAAJ0AAExcQB+AD10AAEwcQB+AD94dXEAfgA2AAAABAAA
+FDBzcQB+ADg/QAAAAAAAAXcIAAAAAgAAAAJ0AAExcQB+AD10AAEwcQB+AD94dXEAfgA2AAAABAAA
 AAIAAAAMAAAAEAAAABF0AAIxOHhzcQB+AA8AAAAedwQAAAAmdAALU3JzQXJyRGVsYXl0AARZZWFy
 dAAFTW9udGh0AApEYXlvZk1vbnRodAAJRGF5T2ZXZWVrdAAHRGVwVGltZXQACkNSU0RlcFRpbWV0
 AAdBcnJUaW1ldAAKQ1JTQXJyVGltZXQADVVuaXF1ZUNhcnJpZXJ0AAlGbGlnaHROdW10AAdUYWls
@@ -2599,7 +2599,7 @@ TnVtdAARQWN0dWFsRWxhcHNlZFRpbWV0AA5DUlNFbGFwc2VkVGltZXQAB0FpclRpbWV0AAhBcnJE
 ZWxheXQACERlcERlbGF5dAAGT3JpZ2ludAAERGVzdHQACERpc3RhbmNldAAGVGF4aUludAAHVGF4
 aU91dHQACUNhbmNlbGxlZHQAEENhbmNlbGxhdGlvbkNvZGV0AAhEaXZlcnRlZHQADENhcnJpZXJE
 ZWxheXQADFdlYXRoZXJEZWxheXQACE5BU0RlbGF5dAANU2VjdXJpdHlEZWxheXQAEUxhdGVBaXJj
-cmFmdERlbGF5eHVxAH4ANgAAAAIAAH3nAAA4JXNxAH4AOD9AAAAAAAAMdwgAAAAQAAAAAnQAATFx
+cmFmdERlbGF5eHVxAH4ANgAAAAIAAH3nAAA4JXNxAH4AOD9AAAAAAAABdwgAAAACAAAAAnQAATFx
 AH4APXQAATBxAH4AP3h1cQB+ADYAAAAEAAAAAgAAAAwAAAAQAAAAEXQAAjI2c3EAfgALAAAAABAA
 AAAGAAAAAAAAc3EAfgAPAAAAAncEAAAACnNxAH4ACwAAAAAQAAAADQEAAAAAAHNxAH4ADwAAAS93
 BAAAAcRzcQB+AAsBAAAAEQAAA5wAAAAAAABzcQB+AA8AAAAAdwQAAAAKeHEAfgBGdXEAfgA2AAAA
@@ -3013,7 +3013,7 @@ YXBzZWRUaW1ldAAOQ1JTRWxhcHNlZFRpbWV0AAdBaXJUaW1ldAAIQXJyRGVsYXl0AAhEZXBEZWxh
 eXQABk9yaWdpbnQABERlc3R0AAhEaXN0YW5jZXQABlRheGlJbnQAB1RheGlPdXR0AAlDYW5jZWxs
 ZWR0ABBDYW5jZWxsYXRpb25Db2RldAAIRGl2ZXJ0ZWR0AAxDYXJyaWVyRGVsYXl0AAxXZWF0aGVy
 RGVsYXl0AAhOQVNEZWxheXQADVNlY3VyaXR5RGVsYXl0ABFMYXRlQWlyY3JhZnREZWxheXh1cQB+
-ADYAAAACAABjKwAABUdzcQB+ADg/QAAAAAAADHcIAAAAEAAAAAJ0AAExcQB+AD10AAEwcQB+AD94
+ADYAAAACAABjKwAABUdzcQB+ADg/QAAAAAAAAXcIAAAAAgAAAAJ0AAExcQB+AD10AAEwcQB+AD94
 dXEAfgA2AAAABAAAAAIAAAAMAAAAEAAAABF0AAI0MHNxAH4ACwAAAAAQAAAADgAAAAAAAHNxAH4A
 DwAAAAB3BAAAAAp4c3EAfgAPAAAAHncEAAAAJnQAC1Nyc0FyckRlbGF5dAAEWWVhcnQABU1vbnRo
 dAAKRGF5b2ZNb250aHQACURheU9mV2Vla3QAB0RlcFRpbWV0AApDUlNEZXBUaW1ldAAHQXJyVGlt
@@ -3022,7 +3022,7 @@ dHVhbEVsYXBzZWRUaW1ldAAOQ1JTRWxhcHNlZFRpbWV0AAdBaXJUaW1ldAAIQXJyRGVsYXl0AAhE
 ZXBEZWxheXQABk9yaWdpbnQABERlc3R0AAhEaXN0YW5jZXQABlRheGlJbnQAB1RheGlPdXR0AAlD
 YW5jZWxsZWR0ABBDYW5jZWxsYXRpb25Db2RldAAIRGl2ZXJ0ZWR0AAxDYXJyaWVyRGVsYXl0AAxX
 ZWF0aGVyRGVsYXl0AAhOQVNEZWxheXQADVNlY3VyaXR5RGVsYXl0ABFMYXRlQWlyY3JhZnREZWxh
-eXh1cQB+ADYAAAACAAD34gAAAG9zcQB+ADg/QAAAAAAADHcIAAAAEAAAAAJ0AAExcQB+AD10AAEw
+eXh1cQB+ADYAAAACAAD34gAAAG9zcQB+ADg/QAAAAAAAAXcIAAAAAgAAAAJ0AAExcQB+AD10AAEw
 cQB+AD94dXEAfgA2AAAABAAAAAIAAAAMAAAAEAAAABF0AAI0MHhzcQB+AA8AAAAedwQAAAAmdAAL
 U3JzQXJyRGVsYXl0AARZZWFydAAFTW9udGh0AApEYXlvZk1vbnRodAAJRGF5T2ZXZWVrdAAHRGVw
 VGltZXQACkNSU0RlcFRpbWV0AAdBcnJUaW1ldAAKQ1JTQXJyVGltZXQADVVuaXF1ZUNhcnJpZXJ0
@@ -3031,7 +3031,7 @@ ZXQAB0FpclRpbWV0AAhBcnJEZWxheXQACERlcERlbGF5dAAGT3JpZ2ludAAERGVzdHQACERpc3Rh
 bmNldAAGVGF4aUludAAHVGF4aU91dHQACUNhbmNlbGxlZHQAEENhbmNlbGxhdGlvbkNvZGV0AAhE
 aXZlcnRlZHQADENhcnJpZXJEZWxheXQADFdlYXRoZXJEZWxheXQACE5BU0RlbGF5dAANU2VjdXJp
 dHlEZWxheXQAEUxhdGVBaXJjcmFmdERlbGF5eHVxAH4ANgAAAAIAAVsNAAAFtnNxAH4AOD9AAAAA
-AAAMdwgAAAAQAAAAAnQAATFxAH4APXQAATBxAH4AP3h1cQB+ADYAAAAEAAAAAgAAAAwAAAAQAAAA
+AAABdwgAAAACAAAAAnQAATFxAH4APXQAATBxAH4AP3h1cQB+ADYAAAAEAAAAAgAAAAwAAAAQAAAA
 EXQAAjI2eHNxAH4ADwAAAB53BAAAACZ0AAtTcnNBcnJEZWxheXQABFllYXJ0AAVNb250aHQACkRh
 eW9mTW9udGh0AAlEYXlPZldlZWt0AAdEZXBUaW1ldAAKQ1JTRGVwVGltZXQAB0FyclRpbWV0AApD
 UlNBcnJUaW1ldAANVW5pcXVlQ2FycmllcnQACUZsaWdodE51bXQAB1RhaWxOdW10ABFBY3R1YWxF
@@ -3039,7 +3039,7 @@ bGFwc2VkVGltZXQADkNSU0VsYXBzZWRUaW1ldAAHQWlyVGltZXQACEFyckRlbGF5dAAIRGVwRGVs
 YXl0AAZPcmlnaW50AAREZXN0dAAIRGlzdGFuY2V0AAZUYXhpSW50AAdUYXhpT3V0dAAJQ2FuY2Vs
 bGVkdAAQQ2FuY2VsbGF0aW9uQ29kZXQACERpdmVydGVkdAAMQ2FycmllckRlbGF5dAAMV2VhdGhl
 ckRlbGF5dAAITkFTRGVsYXl0AA1TZWN1cml0eURlbGF5dAARTGF0ZUFpcmNyYWZ0RGVsYXl4dXEA
-fgA2AAAAAgAB2PQAAD3bc3EAfgA4P0AAAAAAAAx3CAAAABAAAAACdAABMXEAfgA9dAABMHEAfgA/
+fgA2AAAAAgAB2PQAAD3bc3EAfgA4P0AAAAAAAAF3CAAAAAIAAAACdAABMXEAfgA9dAABMHEAfgA/
 eHVxAH4ANgAAAAQAAAACAAAADAAAABAAAAARdAACMTN4c3EAfgAPAAAAHncEAAAAJnQAC1Nyc0Fy
 ckRlbGF5dAAEWWVhcnQABU1vbnRodAAKRGF5b2ZNb250aHQACURheU9mV2Vla3QAB0RlcFRpbWV0
 AApDUlNEZXBUaW1ldAAHQXJyVGltZXQACkNSU0FyclRpbWV0AA1VbmlxdWVDYXJyaWVydAAJRmxp
@@ -3059,12 +3059,12 @@ b24gVHJlZQ==</Model>
 <Parameter key="epsilon" value="0.00001"/>
 <Parameter key="columnNames" value="Month,ActualElapsedTime,DepDelay,state"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -3080,7 +3080,7 @@ b24gVHJlZQ==</Model>
 <columnNames columnName="city"/>
 <columnNames columnName="state"/>
 <columnNames columnName="country"/>
-<columnNames columnName="lat"/>
+<columnNames columnName="latitude"/>
 <columnNames columnName="longitude"/>
 <columnNames columnName="SrsArrDelay"/>
 <columnNames columnName="Year"/>
@@ -3165,11 +3165,11 @@ U3RhdGlzdGljcQB+AAZbAAZ6VmFsdWVxAH4ABnhyADljb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBp
 LmltcGwuaGFkb29wLkFic3RyYWN0SGFkb29wTW9kZWyoqCkfN+IwfwIAAHhyACtjb20uYWxwaW5l
 LmRhdGFtaW5pbmcub3BlcmF0b3IuT3V0cHV0T2JqZWN0W4/atPz2d24CAAFMAAZzb3VyY2VxAH4A
 AnhwcEEXwyXRddNaAQAAAAAAAAAGQRhy2t7mKgZBKBsAWC3+sHNyABFqYXZhLnV0aWwuSGFzaE1h
-cAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAx3CAAAABAAAAAA
+cAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAB3CAAAAAEAAAAA
 eHQAATB1cgACW0Q+powUq2NaHgIAAHhwAAAABL+ZxIb3O5HBP3ipT/AVpTI/w1NAUKEcH8AF1/ZV
-o5x7c3EAfgAMP0AAAAAAAAx3CAAAABAAAAAAeHVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kd
+o5x7c3EAfgAMP0AAAAAAAAB3CAAAAAEAAAAAeHVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kd
 e0cCAAB4cAAAAAN0AAVNb250aHQAEUFjdHVhbEVsYXBzZWRUaW1ldAAIRGVwRGVsYXl0AAExc3EA
-fgAMP0AAAAAAAAx3CAAAABAAAAAAeHVxAH4ADwAAAAQ2jisqISXKBig3vCQeU4FSHsuxEmQD/nki
+fgAMP0AAAAAAAAB3CAAAAAEAAAAAeHVxAH4ADwAAAAQ2jisqISXKBig3vCQeU4FSHsuxEmQD/nki
 QSY0NA4JJXQAC1Nyc0FyckRlbGF5dXEAfgAPAAAABD9T3MSfKqU3PwtXVCpsRLo/PJw8Xccb0T+I
 KC8jTwzkdXEAfgAPAAAABEB67aLoS5TPQMoI3sYfguNA/TM1CUCw4EDqKiFP5QXudXEAfgAPAAAA
 BMA0wcmGoJAeQFzdFnJMBcJAdZ1k2b5ls8Bs74Bx2Z0dcHQAE0xvZ2lzdGljIFJlZ3Jlc3Npb24=</Model>
@@ -3178,12 +3178,12 @@ BMA0wcmGoJAeQFzdFnJMBcJAdZ1k2b5ls8Bs74Bx2Z0dcHQAE0xvZ2lzdGljIFJlZ3Jlc3Npb24=</Mo
 <Parameter key="dependentColumn" value="SrsArrDelay"/>
 <Parameter key="columnValue" value="1"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -3199,7 +3199,7 @@ BMA0wcmGoJAeQFzdFnJMBcJAdZ1k2b5ls8Bs74Bx2Z0dcHQAE0xvZ2lzdGljIFJlZ3Jlc3Npb24=</Mo
 <columnNames columnName="city"/>
 <columnNames columnName="state"/>
 <columnNames columnName="country"/>
-<columnNames columnName="lat"/>
+<columnNames columnName="latitude"/>
 <columnNames columnName="longitude"/>
 <columnNames columnName="SrsArrDelay"/>
 <columnNames columnName="Year"/>
@@ -3276,12 +3276,12 @@ BMA0wcmGoJAeQFzdFnJMBcJAdZ1k2b5ls8Bs74Bx2Z0dcHQAE0xvZ2lzdGljIFJlZ3Jlc3Npb24=</Mo
 <Parameter key="forceRetrain" value="Yes"/>
 <Parameter key="columnNames" value="Month,ActualElapsedTime,DepDelay,Origin"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -3297,7 +3297,7 @@ BMA0wcmGoJAeQFzdFnJMBcJAdZ1k2b5ls8Bs74Bx2Z0dcHQAE0xvZ2lzdGljIFJlZ3Jlc3Npb24=</Mo
 <columnNames columnName="city"/>
 <columnNames columnName="state"/>
 <columnNames columnName="country"/>
-<columnNames columnName="lat"/>
+<columnNames columnName="latitude"/>
 <columnNames columnName="longitude"/>
 <columnNames columnName="SrsArrDelay"/>
 <columnNames columnName="Year"/>
@@ -3379,12 +3379,12 @@ BMA0wcmGoJAeQFzdFnJMBcJAdZ1k2b5ls8Bs74Bx2Z0dcHQAE0xvZ2lzdGljIFJlZ3Jlc3Npb24=</Mo
 <Parameter key="resultsName" value="@default_prefix_pivot_0"/>
 <Parameter key="override" value="Yes"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -3400,7 +3400,7 @@ BMA0wcmGoJAeQFzdFnJMBcJAdZ1k2b5ls8Bs74Bx2Z0dcHQAE0xvZ2lzdGljIFJlZ3Jlc3Npb24=</Mo
 <columnNames columnName="city"/>
 <columnNames columnName="state"/>
 <columnNames columnName="country"/>
-<columnNames columnName="lat"/>
+<columnNames columnName="latitude"/>
 <columnNames columnName="longitude"/>
 <columnNames columnName="SrsArrDelay"/>
 <columnNames columnName="Year"/>
@@ -3481,12 +3481,12 @@ BMA0wcmGoJAeQFzdFnJMBcJAdZ1k2b5ls8Bs74Bx2Z0dcHQAE0xvZ2lzdGljIFJlZ3Jlc3Npb24=</Mo
 <DerivedFieldItem columnName="ID" dataType="chararray" expression="CONCAT((chararray) FlightNum, TailNum)"/>
 </DerivedFieldsModel>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -3502,7 +3502,7 @@ BMA0wcmGoJAeQFzdFnJMBcJAdZ1k2b5ls8Bs74Bx2Z0dcHQAE0xvZ2lzdGljIFJlZ3Jlc3Npb24=</Mo
 <columnNames columnName="city"/>
 <columnNames columnName="state"/>
 <columnNames columnName="country"/>
-<columnNames columnName="lat"/>
+<columnNames columnName="latitude"/>
 <columnNames columnName="longitude"/>
 <columnNames columnName="SrsArrDelay"/>
 <columnNames columnName="Year"/>
@@ -3575,7 +3575,7 @@ BMA0wcmGoJAeQFzdFnJMBcJAdZ1k2b5ls8Bs74Bx2Z0dcHQAE0xvZ2lzdGljIFJlZ3Jlc3Npb24=</Mo
 </InPutFieldList>
 </Operator>
 <Operator X="39" Y="25" name="airports.csv" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFileOperator" uuid="1358283736584">
-<Parameter key="connName" value="Cloudera"/>
+<Parameter key="connName" value="Hadoop"/>
 <Parameter key="hadoopFileName" value="/real_data/airline_delay/airports.csv"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
 <HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
@@ -3584,7 +3584,7 @@ BMA0wcmGoJAeQFzdFnJMBcJAdZ1k2b5ls8Bs74Bx2Z0dcHQAE0xvZ2lzdGljIFJlZ3Jlc3Npb24=</Mo
 <columnNames columnName="city"/>
 <columnNames columnName="state"/>
 <columnNames columnName="country"/>
-<columnNames columnName="lat"/>
+<columnNames columnName="latitude"/>
 <columnNames columnName="longitude"/>
 <columnTypes columnType="chararray"/>
 <columnTypes columnType="chararray"/>
@@ -3594,11 +3594,11 @@ BMA0wcmGoJAeQFzdFnJMBcJAdZ1k2b5ls8Bs74Bx2Z0dcHQAE0xvZ2lzdGljIFJlZ3Jlc3Npb24=</Mo
 <columnTypes columnType="double"/>
 <columnTypes columnType="double"/>
 </HadoopFileStructureModel>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="securityMode" value="simple"/>
@@ -3607,12 +3607,12 @@ BMA0wcmGoJAeQFzdFnJMBcJAdZ1k2b5ls8Bs74Bx2Z0dcHQAE0xvZ2lzdGljIFJlZ3Jlc3Npb24=</Mo
 <Parameter key="mapredPrincipal" value=""/>
 <Parameter key="mapredKeyTab" value=""/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -3628,7 +3628,7 @@ BMA0wcmGoJAeQFzdFnJMBcJAdZ1k2b5ls8Bs74Bx2Z0dcHQAE0xvZ2lzdGljIFJlZ3Jlc3Npb24=</Mo
 <columnNames columnName="city"/>
 <columnNames columnName="state"/>
 <columnNames columnName="country"/>
-<columnNames columnName="lat"/>
+<columnNames columnName="latitude"/>
 <columnNames columnName="longitude"/>
 <columnTypes columnType="chararray"/>
 <columnTypes columnType="chararray"/>
@@ -3640,20 +3640,20 @@ BMA0wcmGoJAeQFzdFnJMBcJAdZ1k2b5ls8Bs74Bx2Z0dcHQAE0xvZ2lzdGljIFJlZ3Jlc3Npb24=</Mo
 </HadoopFileStructureModel>
 </InPutFieldList>
 </Operator>
-<Operator X="158" Y="26" name="Join to Airports" type="com.alpine.miner.gef.runoperator.hadoop.HadoopJoinOperator" uuid="1358283752232">
+<Operator X="162" Y="25" name="Join to Airports" type="com.alpine.miner.gef.runoperator.hadoop.HadoopJoinOperator" uuid="1358283752232">
 <Parameter key="storeResults" value="true"/>
 <Parameter key="resultsLocation" value="/tmp"/>
 <Parameter key="resultsName" value="@default_prefix_join_0"/>
 <Parameter key="override" value="Yes"/>
 <HadoopJoinDefinition>
 <JoinFileModel file="/real_data/airline_delay/airports.csv" operID="1358283736584"/>
-<JoinFileModel file="ArrDelay gtn 10 mins" operID="1358280796024"/>
+<JoinFileModel file="@default_prefix_var_0" operID="1358280796024"/>
 <JoinColumnModel columnName="iata" columnType="chararray" fileId="1358283736584" newColumnName="iata"/>
 <JoinColumnModel columnName="airport" columnType="chararray" fileId="1358283736584" newColumnName="airport"/>
 <JoinColumnModel columnName="city" columnType="chararray" fileId="1358283736584" newColumnName="city"/>
 <JoinColumnModel columnName="state" columnType="chararray" fileId="1358283736584" newColumnName="state"/>
 <JoinColumnModel columnName="country" columnType="chararray" fileId="1358283736584" newColumnName="country"/>
-<JoinColumnModel columnName="lat" columnType="double" fileId="1358283736584" newColumnName="lat"/>
+<JoinColumnModel columnName="latitude" columnType="double" fileId="1358283736584" newColumnName="latitude"/>
 <JoinColumnModel columnName="longitude" columnType="double" fileId="1358283736584" newColumnName="longitude"/>
 <JoinColumnModel columnName="SrsArrDelay" columnType="int" fileId="1358280796024" newColumnName="SrsArrDelay"/>
 <JoinColumnModel columnName="Year" columnType="long" fileId="1358280796024" newColumnName="Year"/>
@@ -3690,12 +3690,12 @@ BMA0wcmGoJAeQFzdFnJMBcJAdZ1k2b5ls8Bs74Bx2Z0dcHQAE0xvZ2lzdGljIFJlZ3Jlc3Npb24=</Mo
 <joinType joinTypeValue="RIGHT OUTER"/>
 </HadoopJoinDefinition>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -3711,7 +3711,7 @@ BMA0wcmGoJAeQFzdFnJMBcJAdZ1k2b5ls8Bs74Bx2Z0dcHQAE0xvZ2lzdGljIFJlZ3Jlc3Npb24=</Mo
 <columnNames columnName="city"/>
 <columnNames columnName="state"/>
 <columnNames columnName="country"/>
-<columnNames columnName="lat"/>
+<columnNames columnName="latitude"/>
 <columnNames columnName="longitude"/>
 <columnTypes columnType="chararray"/>
 <columnTypes columnType="chararray"/>
@@ -3723,16 +3723,16 @@ BMA0wcmGoJAeQFzdFnJMBcJAdZ1k2b5ls8Bs74Bx2Z0dcHQAE0xvZ2lzdGljIFJlZ3Jlc3Npb24=</Mo
 </HadoopFileStructureModel>
 </InPutFieldList>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/@default_prefix_var_0"/>
+<Parameter key="hadoopFileName" value="/tmp/airline_delay/@default_prefix_var_0"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
