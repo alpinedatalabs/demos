@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Process Description="" UserName="shillion" Version="3.0">
-<Operator X="451" Y="72" name="Scatter Plot Matrix" type="com.alpine.miner.gef.runoperator.hadoop.HadoopScatterPlotMatrixOperator" uuid="1357942347772_3">
+<Operator X="547" Y="14" name="Scatter Plot Matrix" type="com.alpine.miner.gef.runoperator.hadoop.HadoopScatterPlotMatrixOperator" uuid="1357942347772_3">
 <Parameter key="columnNames" value="age75,crime,college,income,white,black,turnout"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/shillion/election92.csv"/>
+<Parameter key="hadoopFileName" value="/real_data/election92/election92.csv"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
@@ -88,12 +88,12 @@
 <DerivedFieldItem columnName="outcome" dataType="chararray" expression="(republican &gt; democrat ? 'R' : 'D')"/>
 </DerivedFieldsModel>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -145,7 +145,7 @@
 </HadoopFileStructureModel>
 </InPutFieldList>
 </Operator>
-<Operator X="383" Y="289" name="Variables" type="com.alpine.miner.gef.runoperator.hadoop.HadoopVariableOperator" uuid="1357942347772_5">
+<Operator X="379" Y="234" name="Variables" type="com.alpine.miner.gef.runoperator.hadoop.HadoopVariableOperator" uuid="1357942347772_5">
 <Parameter key="storeResults" value="false"/>
 <Parameter key="resultsLocation" value=""/>
 <Parameter key="resultsName" value="@default_prefix_var_0"/>
@@ -176,16 +176,16 @@
 <DerivedFieldItem columnName="college_bin" dataType="chararray" expression="CONCAT((chararray)((1+FLOOR(10*(college-0)/(100-0))) * 10), '%')"/>
 </DerivedFieldsModel>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/shillion/election92.csv"/>
+<Parameter key="hadoopFileName" value="/real_data/election92/election92.csv"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
@@ -233,17 +233,17 @@
 </HadoopFileStructureModel>
 </InPutFieldList>
 </Operator>
-<Operator X="642" Y="411" name="Election Results by College" type="com.alpine.miner.gef.runoperator.hadoop.HadoopBarChartOperator" uuid="1357942347772_10">
+<Operator X="562" Y="418" name="Election Results by College" type="com.alpine.miner.gef.runoperator.hadoop.HadoopBarChartOperator" uuid="1357942347772_10">
 <Parameter key="valueDomain" value="count"/>
 <Parameter key="categoryType" value="college_bin"/>
 <Parameter key="scopeDomain" value="outcome"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -303,21 +303,21 @@
 </HadoopFileStructureModel>
 </InPutFieldList>
 </Operator>
-<Operator X="476" Y="187" name="Linear Regression" type="com.alpine.miner.gef.runoperator.hadoop.HadoopLinearRegressionOperator" uuid="1357942347772_4">
+<Operator X="566" Y="177" name="Linear Regression of Voter Turnout" type="com.alpine.miner.gef.runoperator.hadoop.HadoopLinearRegressionOperator" uuid="1357942347772_4">
 <Parameter key="dependentColumn" value="turnout"/>
 <Parameter key="forceRetrain" value="Yes"/>
 <Parameter key="columnNames" value="popdensity,age75,crime,college,income,farm,white,black"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/shillion/election92.csv"/>
+<Parameter key="hadoopFileName" value="/real_data/election92/election92.csv"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
@@ -379,8 +379,8 @@ C1sAAnNlcQB+AApMAA1zcGVjaWZ5Q29sdW1ucQB+AAJbAAF0cQB+AAp4cgA5Y29tLmFscGluZS5k
 YXRhbWluaW5nLmFwaS5pbXBsLmhhZG9vcC5BYnN0cmFjdEhhZG9vcE1vZGVsqKgpHzfiMH8CAAB4
 cgArY29tLmFscGluZS5kYXRhbWluaW5nLm9wZXJhdG9yLk91dHB1dE9iamVjdFuP2rT89nduAgAB
 TAAGc291cmNlcQB+AAJ4cHA/3RuwXVZxekAZbczCL2F0c3IAEWphdmEudXRpbC5IYXNoTWFwBQfa
-wcMWYNEDAAJGAApsb2FkRmFjdG9ySQAJdGhyZXNob2xkeHA/QAAAAAAADHcIAAAAEAAAAAB4c3EA
-fgAPP0AAAAAAAAx3CAAAABAAAAAAeHVyABNbTGphdmEubGFuZy5Eb3VibGU74RKtiQCmVqYCAAB4
+wcMWYNEDAAJGAApsb2FkRmFjdG9ySQAJdGhyZXNob2xkeHA/QAAAAAAAAHcIAAAAAQAAAAB4c3EA
+fgAPP0AAAAAAAAB3CAAAAAEAAAAAeHVyABNbTGphdmEubGFuZy5Eb3VibGU74RKtiQCmVqYCAAB4
 cAAAAAlzcgAQamF2YS5sYW5nLkRvdWJsZYCzwkopa/sEAgABRAAFdmFsdWV4cgAQamF2YS5sYW5n
 Lk51bWJlcoaslR0LlOCLAgAAeHC/M5V+HaCygHNxAH4AFD/uONeClS7gc3EAfgAUvzIUw33K2pJz
 cQB+ABQ/4RdltpptnXNxAH4AFL8WelQEOV2Uc3EAfgAUP8YbaXgtkURzcQB+ABQ/1Xri1XuMsHNx
@@ -389,8 +389,8 @@ EGzA+wIAAVoAC2FjY2Vzc09yZGVyeHEAfgAPP0AAAAAAAAx3CAAAABAAAAAJdAAKcG9wZGVuc2l0
 eXEAfgAWdAAFYWdlNzVxAH4AF3QABWNyaW1lcQB+ABh0AAdjb2xsZWdlcQB+ABl0AAZpbmNvbWVx
 AH4AGnQABGZhcm1xAH4AG3QABXdoaXRlcQB+ABx0AAVibGFja3EAfgAddAAJSW50ZXJjZXB0cQB+
 AB54AHVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAAhxAH4AIXEAfgAicQB+
-ACNxAH4AJHEAfgAlcQB+ACZxAH4AJ3EAfgAocHNxAH4ADz9AAAAAAAAMdwgAAAAQAAAAAHhzcQB+
-AA8/QAAAAAAADHcIAAAAEAAAAAB4dXIAAltEPqaMFKtjWh4CAAB4cAAAAAk/NH/sBg/IADzQAAAA
+ACNxAH4AJHEAfgAlcQB+ACZxAH4AJ3EAfgAocHNxAH4ADz9AAAAAAAAAdwgAAAABAAAAAHhzcQB+
+AA8/QAAAAAAAAHcIAAAAAQAAAAB4dXIAAltEPqaMFKtjWh4CAAB4cAAAAAk/NH/sBg/IADzQAAAA
 AAAAPtI8bHMIAAA8yAAAAAAAAD84YRPktNAAPOkAAAAAAAA83AAAAAAAADzpAAAAAAAAP8m850qT
 OpBwc3IAE2phdmEudXRpbC5BcnJheUxpc3R4gdIdmcdhnQMAAUkABHNpemV4cAAAABN3BAAAABl0
 AAZjb3VudHl0AAVzdGF0ZXQAA21zYXQABHBtc2F0AApwb3BkZW5zaXR5dAADcG9wdAAJcG9wY2hh
@@ -490,9 +490,10 @@ P+UE34NOVEB1cQB+AC4AAAACQD1ZiNTDTqvAEEfI0rkXaHVxAH4ALgAAAAJARae//uk6sUAES3wR
 bQDAdXEAfgAuAAAAAkBDs5D4wO6Yv/204xe8hEB4dXEAfgAuAAAACT8VtXBT3m93P69QpFXkdnM/
 D25HAgldFz+ZxMm6hPByPvk78zjdAPA/lD+SD783gD+LpQsP9hJ7P40bd3Z8Oe8/9Q9DsgqM33QA
 B3R1cm5vdXR1cQB+AC4AAAAJwAzeMMmrGOlALuIUWPERwMASaJfZXb+OQDU5cMHdEfbADIEvlYv6
-VkAheAEva84+QDjdNhDnBBNAKg0OrQMCST/0dcnq0ZSrcHQAEUxpbmVhciBSZWdyZXNzaW9u</Model>
+VkAheAEva84+QDjdNhDnBBNAKg0OrQMCST/0dcnq0ZSrcHQAIkxpbmVhciBSZWdyZXNzaW9uIG9m
+IFZvdGVyIFR1cm5vdXQ=</Model>
 </Operator>
-<Operator X="405" Y="439" name="Decision Tree" type="com.alpine.miner.gef.runoperator.hadoop.HadoopDecisionTreeOperator" uuid="1357942347772_7">
+<Operator X="375" Y="438" name="Decision Tree Republican vs Democrat" type="com.alpine.miner.gef.runoperator.hadoop.HadoopDecisionTreeOperator" uuid="1357942347772_7">
 <Parameter key="dependentColumn" value="outcome"/>
 <Parameter key="columnNames" value="popdensity,age75,crime,income,white"/>
 <Parameter key="maximal_depth" value="5"/>
@@ -503,12 +504,12 @@ VkAheAEva84+QDjdNhDnBBNAKg0OrQMCST/0dcnq0ZSrcHQAEUxpbmVhciBSZWdyZXNzaW9u</Model>
 <Parameter key="categoryLimit" value="1000"/>
 <Parameter key="numericalGranularity" value="1000000"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -582,33 +583,33 @@ ABl0AAdvdXRjb21ldAAGY291bnR5dAAFc3RhdGV0AANtc2F0AARwbXNhdAAKcG9wZGVuc2l0eXQA
 A3BvcHQACXBvcGNoYW5nZXQAB2FnZTY1NzR0AAVhZ2U3NXQABWNyaW1ldAAHY29sbGVnZXQABmlu
 Y29tZXQABGZhcm10AAhkZW1vY3JhdHQACnJlcHVibGljYW50AAVQZXJvdHQABXdoaXRldAAFYmxh
 Y2t0AAd0dXJub3V0eHVyAAJbSU26YCZ26rKlAgAAeHAAAAACAAAAAgAAAABzcgARamF2YS51dGls
-Lkhhc2hNYXAFB9rBwxZg0QMAAkYACmxvYWRGYWN0b3JJAAl0aHJlc2hvbGR4cD9AAAAAAAAMdwgA
-AAAQAAAAAnQAAURzcgARamF2YS5sYW5nLkludGVnZXIS4qCk94GHOAIAAUkABXZhbHVleHIAEGph
+Lkhhc2hNYXAFB9rBwxZg0QMAAkYACmxvYWRGYWN0b3JJAAl0aHJlc2hvbGR4cD9AAAAAAAABdwgA
+AAACAAAAAnQAAURzcgARamF2YS5sYW5nLkludGVnZXIS4qCk94GHOAIAAUkABXZhbHVleHIAEGph
 dmEubGFuZy5OdW1iZXKGrJUdC5TgiwIAAHhwAAAAAXQAAVJzcQB+ADMAAAAAeHVxAH4ALgAAAAUA
 AAAFAAAACQAAAAoAAAAMAAAAEXQACzMuMDk5OTk5OTA1c3EAfgALAAAAAAkAAAAaAAAAAAAAc3EA
 fgAPAAAAAHcEAAAACnhxAH4AGXVxAH4ALgAAAAIAAAABAAAAA3EAfgAxcQB+ADhxAH4AOXhzcQB+
 AA8AAAAUdwQAAAAZdAAHb3V0Y29tZXQABmNvdW50eXQABXN0YXRldAADbXNhdAAEcG1zYXQACnBv
 cGRlbnNpdHl0AANwb3B0AAlwb3BjaGFuZ2V0AAdhZ2U2NTc0dAAFYWdlNzV0AAVjcmltZXQAB2Nv
 bGxlZ2V0AAZpbmNvbWV0AARmYXJtdAAIZGVtb2NyYXR0AApyZXB1YmxpY2FudAAFUGVyb3R0AAV3
-aGl0ZXQABWJsYWNrdAAHdHVybm91dHh1cQB+AC4AAAACAAAAAwAAAANzcQB+ADA/QAAAAAAADHcI
-AAAAEAAAAAJ0AAFEcQB+ADV0AAFScQB+ADd4dXEAfgAuAAAABQAAAAUAAAAJAAAACgAAAAwAAAAR
+aGl0ZXQABWJsYWNrdAAHdHVybm91dHh1cQB+AC4AAAACAAAAAwAAAANzcQB+ADA/QAAAAAAAAXcI
+AAAAAgAAAAJ0AAFEcQB+ADV0AAFScQB+ADd4dXEAfgAuAAAABQAAAAUAAAAJAAAACgAAAAwAAAAR
 dAADOTQwc3EAfgALAAAAAAoAAAAIAAAAAAAAc3EAfgAPAAAAAHcEAAAACnhzcQB+AA8AAAAUdwQA
 AAAZdAAHb3V0Y29tZXQABmNvdW50eXQABXN0YXRldAADbXNhdAAEcG1zYXQACnBvcGRlbnNpdHl0
 AANwb3B0AAlwb3BjaGFuZ2V0AAdhZ2U2NTc0dAAFYWdlNzV0AAVjcmltZXQAB2NvbGxlZ2V0AAZp
 bmNvbWV0AARmYXJtdAAIZGVtb2NyYXR0AApyZXB1YmxpY2FudAAFUGVyb3R0AAV3aGl0ZXQABWJs
-YWNrdAAHdHVybm91dHh1cQB+AC4AAAACAAAAAwAAAABzcQB+ADA/QAAAAAAADHcIAAAAEAAAAAJ0
+YWNrdAAHdHVybm91dHh1cQB+AC4AAAACAAAAAwAAAABzcQB+ADA/QAAAAAAAAXcIAAAAAgAAAAJ0
 AAFEcQB+ADV0AAFScQB+ADd4dXEAfgAuAAAABQAAAAUAAAAJAAAACgAAAAwAAAARdAADOTQweHNx
 AH4ADwAAABR3BAAAABl0AAdvdXRjb21ldAAGY291bnR5dAAFc3RhdGV0AANtc2F0AARwbXNhdAAK
 cG9wZGVuc2l0eXQAA3BvcHQACXBvcGNoYW5nZXQAB2FnZTY1NzR0AAVhZ2U3NXQABWNyaW1ldAAH
 Y29sbGVnZXQABmluY29tZXQABGZhcm10AAhkZW1vY3JhdHQACnJlcHVibGljYW50AAVQZXJvdHQA
-BXdoaXRldAAFYmxhY2t0AAd0dXJub3V0eHVxAH4ALgAAAAIAAAAGAAAAA3NxAH4AMD9AAAAAAAAM
-dwgAAAAQAAAAAnQAAURxAH4ANXQAAVJxAH4AN3h1cQB+AC4AAAAFAAAABQAAAAkAAAAKAAAADAAA
+BXdoaXRldAAFYmxhY2t0AAd0dXJub3V0eHVxAH4ALgAAAAIAAAAGAAAAA3NxAH4AMD9AAAAAAAAB
+dwgAAAACAAAAAnQAAURxAH4ANXQAAVJxAH4AN3h1cQB+AC4AAAAFAAAABQAAAAkAAAAKAAAADAAA
 ABF0AAEzc3EAfgALAAAAAAUAAAAEAAAAAAAAc3EAfgAPAAAAAncEAAAACnNxAH4ACwAAAAARAAAA
 CQEAAAAAAHNxAH4ADwAAAAB3BAAAAAp4c3EAfgAPAAAAFHcEAAAAGXQAB291dGNvbWV0AAZjb3Vu
 dHl0AAVzdGF0ZXQAA21zYXQABHBtc2F0AApwb3BkZW5zaXR5dAADcG9wdAAJcG9wY2hhbmdldAAH
 YWdlNjU3NHQABWFnZTc1dAAFY3JpbWV0AAdjb2xsZWdldAAGaW5jb21ldAAEZmFybXQACGRlbW9j
 cmF0dAAKcmVwdWJsaWNhbnQABVBlcm90dAAFd2hpdGV0AAVibGFja3QAB3R1cm5vdXR4dXEAfgAu
-AAAAAgAAAAAAAABec3EAfgAwP0AAAAAAAAx3CAAAABAAAAACdAABRHEAfgA1dAABUnEAfgA3eHVx
+AAAAAgAAAAAAAABec3EAfgAwP0AAAAAAAAF3CAAAAAIAAAACdAABRHEAfgA1dAABUnEAfgA3eHVx
 AH4ALgAAAAUAAAAFAAAACQAAAAoAAAAMAAAAEXQACzQ2Ljg3OTkwMTg5c3EAfgALAAAAABEAAAAK
 AAAAAAAAc3EAfgAPAAAAAncEAAAACnNxAH4ACwAAAAARAAAADwEAAAAAAHNxAH4ADwAAAAB3BAAA
 AAp4cQB+ABl1cQB+AC4AAAACAAAABAAAADdxAH4AMXEAfgA4dAALNTUuMjQ3Mzc1NDlzcQB+AAsA
@@ -617,17 +618,17 @@ ADFxAH4AOHEAfgC0eHNxAH4ADwAAABR3BAAAABl0AAdvdXRjb21ldAAGY291bnR5dAAFc3RhdGV0
 AANtc2F0AARwbXNhdAAKcG9wZGVuc2l0eXQAA3BvcHQACXBvcGNoYW5nZXQAB2FnZTY1NzR0AAVh
 Z2U3NXQABWNyaW1ldAAHY29sbGVnZXQABmluY29tZXQABGZhcm10AAhkZW1vY3JhdHQACnJlcHVi
 bGljYW50AAVQZXJvdHQABXdoaXRldAAFYmxhY2t0AAd0dXJub3V0eHVxAH4ALgAAAAIAAAATAAAA
-aXNxAH4AMD9AAAAAAAAMdwgAAAAQAAAAAnQAAURxAH4ANXQAAVJxAH4AN3h1cQB+AC4AAAAFAAAA
+aXNxAH4AMD9AAAAAAAABdwgAAAACAAAAAnQAAURxAH4ANXQAAVJxAH4AN3h1cQB+AC4AAAAFAAAA
 BQAAAAkAAAAKAAAADAAAABF0AAs0Ni44Nzk5MDE4OXhzcQB+AA8AAAAUdwQAAAAZdAAHb3V0Y29t
 ZXQABmNvdW50eXQABXN0YXRldAADbXNhdAAEcG1zYXQACnBvcGRlbnNpdHl0AANwb3B0AAlwb3Bj
 aGFuZ2V0AAdhZ2U2NTc0dAAFYWdlNzV0AAVjcmltZXQAB2NvbGxlZ2V0AAZpbmNvbWV0AARmYXJt
 dAAIZGVtb2NyYXR0AApyZXB1YmxpY2FudAAFUGVyb3R0AAV3aGl0ZXQABWJsYWNrdAAHdHVybm91
-dHh1cQB+AC4AAAACAAAAEwAAAMdzcQB+ADA/QAAAAAAADHcIAAAAEAAAAAJ0AAFEcQB+ADV0AAFS
+dHh1cQB+AC4AAAACAAAAEwAAAMdzcQB+ADA/QAAAAAAAAXcIAAAAAgAAAAJ0AAFEcQB+ADV0AAFS
 cQB+ADd4dXEAfgAuAAAABQAAAAUAAAAJAAAACgAAAAwAAAARdAABM3hzcQB+AA8AAAAUdwQAAAAZ
 dAAHb3V0Y29tZXQABmNvdW50eXQABXN0YXRldAADbXNhdAAEcG1zYXQACnBvcGRlbnNpdHl0AANw
 b3B0AAlwb3BjaGFuZ2V0AAdhZ2U2NTc0dAAFYWdlNzV0AAVjcmltZXQAB2NvbGxlZ2V0AAZpbmNv
 bWV0AARmYXJtdAAIZGVtb2NyYXR0AApyZXB1YmxpY2FudAAFUGVyb3R0AAV3aGl0ZXQABWJsYWNr
-dAAHdHVybm91dHh1cQB+AC4AAAACAAAAGQAAAMpzcQB+ADA/QAAAAAAADHcIAAAAEAAAAAJ0AAFE
+dAAHdHVybm91dHh1cQB+AC4AAAACAAAAGQAAAMpzcQB+ADA/QAAAAAAAAXcIAAAAAgAAAAJ0AAFE
 cQB+ADV0AAFScQB+ADd4dXEAfgAuAAAABQAAAAUAAAAJAAAACgAAAAwAAAARdAALNTkuNjkxODk4
 MzVzcQB+AAsAAAAAEQAAAAIAAAAAAABzcQB+AA8AAAACdwQAAAAKc3EAfgALAAAAAAUAAAAFAQAA
 AAAAc3EAfgAPAAAAAncEAAAACnNxAH4ACwAAAAAMAAAACwEAAAAAAHNxAH4ADwAAAAJ3BAAAAApz
@@ -637,7 +638,7 @@ AHcEAAAACnhxAH4AGXVxAH4ALgAAAAIAAAAEAAAAA3EAfgAxcQB+ADhxAH4BEnhzcQB+AA8AAAAU
 dwQAAAAZdAAHb3V0Y29tZXQABmNvdW50eXQABXN0YXRldAADbXNhdAAEcG1zYXQACnBvcGRlbnNp
 dHl0AANwb3B0AAlwb3BjaGFuZ2V0AAdhZ2U2NTc0dAAFYWdlNzV0AAVjcmltZXQAB2NvbGxlZ2V0
 AAZpbmNvbWV0AARmYXJtdAAIZGVtb2NyYXR0AApyZXB1YmxpY2FudAAFUGVyb3R0AAV3aGl0ZXQA
-BWJsYWNrdAAHdHVybm91dHh1cQB+AC4AAAACAAAABAAAAA9zcQB+ADA/QAAAAAAADHcIAAAAEAAA
+BWJsYWNrdAAHdHVybm91dHh1cQB+AC4AAAACAAAABAAAAA9zcQB+ADA/QAAAAAAAAXcIAAAAAgAA
 AAJ0AAFEcQB+ADV0AAFScQB+ADd4dXEAfgAuAAAABQAAAAUAAAAJAAAACgAAAAwAAAARdAAFMTkx
 NTVzcQB+AAsAAAAADAAAAAwAAAAAAABzcQB+AA8AAAACdwQAAAAKc3EAfgALAAAAAAoAAAATAQAA
 AAAAc3EAfgAPAAAAAHcEAAAACnhxAH4AGXVxAH4ALgAAAAIAAAD9AAAAJnEAfgAxcQB+ADh0AAQz
@@ -646,12 +647,12 @@ AAAUAAAAEXEAfgAxcQB+ADhxAH4BNnhzcQB+AA8AAAAUdwQAAAAZdAAHb3V0Y29tZXQABmNvdW50
 eXQABXN0YXRldAADbXNhdAAEcG1zYXQACnBvcGRlbnNpdHl0AANwb3B0AAlwb3BjaGFuZ2V0AAdh
 Z2U2NTc0dAAFYWdlNzV0AAVjcmltZXQAB2NvbGxlZ2V0AAZpbmNvbWV0AARmYXJtdAAIZGVtb2Ny
 YXR0AApyZXB1YmxpY2FudAAFUGVyb3R0AAV3aGl0ZXQABWJsYWNrdAAHdHVybm91dHh1cQB+AC4A
-AAACAAABEQAAADdzcQB+ADA/QAAAAAAADHcIAAAAEAAAAAJ0AAFEcQB+ADV0AAFScQB+ADd4dXEA
+AAACAAABEQAAADdzcQB+ADA/QAAAAAAAAXcIAAAAAgAAAAJ0AAFEcQB+ADV0AAFScQB+ADd4dXEA
 fgAuAAAABQAAAAUAAAAJAAAACgAAAAwAAAARdAAFMTkxNTV4c3EAfgAPAAAAFHcEAAAAGXQAB291
 dGNvbWV0AAZjb3VudHl0AAVzdGF0ZXQAA21zYXQABHBtc2F0AApwb3BkZW5zaXR5dAADcG9wdAAJ
 cG9wY2hhbmdldAAHYWdlNjU3NHQABWFnZTc1dAAFY3JpbWV0AAdjb2xsZWdldAAGaW5jb21ldAAE
 ZmFybXQACGRlbW9jcmF0dAAKcmVwdWJsaWNhbnQABVBlcm90dAAFd2hpdGV0AAVibGFja3QAB3R1
-cm5vdXR4dXEAfgAuAAAAAgAAARUAAABGc3EAfgAwP0AAAAAAAAx3CAAAABAAAAACdAABRHEAfgA1
+cm5vdXR4dXEAfgAuAAAAAgAAARUAAABGc3EAfgAwP0AAAAAAAAF3CAAAAAIAAAACdAABRHEAfgA1
 dAABUnEAfgA3eHVxAH4ALgAAAAUAAAAFAAAACQAAAAoAAAAMAAAAEXQAATVzcQB+AAsAAAAABQAA
 AAYAAAAAAABzcQB+AA8AAAACdwQAAAAKc3EAfgALAAAAAAwAAAANAQAAAAAAc3EAfgAPAAAAAncE
 AAAACnNxAH4ACwAAAAAKAAAAFQEAAAAAAHNxAH4ADwAAAAB3BAAAAAp4cQB+ABl1cQB+AC4AAAAC
@@ -660,7 +661,7 @@ BAAAAAp4cQB+ABl1cQB+AC4AAAACAAAAEgAAAHJxAH4AMXEAfgA4cQB+AXd4c3EAfgAPAAAAFHcE
 AAAAGXQAB291dGNvbWV0AAZjb3VudHl0AAVzdGF0ZXQAA21zYXQABHBtc2F0AApwb3BkZW5zaXR5
 dAADcG9wdAAJcG9wY2hhbmdldAAHYWdlNjU3NHQABWFnZTc1dAAFY3JpbWV0AAdjb2xsZWdldAAG
 aW5jb21ldAAEZmFybXQACGRlbW9jcmF0dAAKcmVwdWJsaWNhbnQABVBlcm90dAAFd2hpdGV0AAVi
-bGFja3QAB3R1cm5vdXR4dXEAfgAuAAAAAgAAAI4AAAFoc3EAfgAwP0AAAAAAAAx3CAAAABAAAAAC
+bGFja3QAB3R1cm5vdXR4dXEAfgAuAAAAAgAAAI4AAAFoc3EAfgAwP0AAAAAAAAF3CAAAAAIAAAAC
 dAABRHEAfgA1dAABUnEAfgA3eHVxAH4ALgAAAAUAAAAFAAAACQAAAAoAAAAMAAAAEXQABTIzNjkx
 c3EAfgALAAAAAAwAAAAOAAAAAAAAc3EAfgAPAAAAAncEAAAACnNxAH4ACwAAAAAJAAAAFwEAAAAA
 AHNxAH4ADwAAAAB3BAAAAAp4cQB+ABl1cQB+AC4AAAACAAABaAAAAKdxAH4AMXEAfgA4dAALNC44
@@ -669,42 +670,42 @@ AAAAAgAAAwUAAALTcQB+ADFxAH4AOHEAfgGbeHNxAH4ADwAAABR3BAAAABl0AAdvdXRjb21ldAAG
 Y291bnR5dAAFc3RhdGV0AANtc2F0AARwbXNhdAAKcG9wZGVuc2l0eXQAA3BvcHQACXBvcGNoYW5n
 ZXQAB2FnZTY1NzR0AAVhZ2U3NXQABWNyaW1ldAAHY29sbGVnZXQABmluY29tZXQABGZhcm10AAhk
 ZW1vY3JhdHQACnJlcHVibGljYW50AAVQZXJvdHQABXdoaXRldAAFYmxhY2t0AAd0dXJub3V0eHVx
-AH4ALgAAAAIAAARtAAADenNxAH4AMD9AAAAAAAAMdwgAAAAQAAAAAnQAAURxAH4ANXQAAVJxAH4A
+AH4ALgAAAAIAAARtAAADenNxAH4AMD9AAAAAAAABdwgAAAACAAAAAnQAAURxAH4ANXQAAVJxAH4A
 N3h1cQB+AC4AAAAFAAAABQAAAAkAAAAKAAAADAAAABF0AAUyMzY5MXhzcQB+AA8AAAAUdwQAAAAZ
 dAAHb3V0Y29tZXQABmNvdW50eXQABXN0YXRldAADbXNhdAAEcG1zYXQACnBvcGRlbnNpdHl0AANw
 b3B0AAlwb3BjaGFuZ2V0AAdhZ2U2NTc0dAAFYWdlNzV0AAVjcmltZXQAB2NvbGxlZ2V0AAZpbmNv
 bWV0AARmYXJtdAAIZGVtb2NyYXR0AApyZXB1YmxpY2FudAAFUGVyb3R0AAV3aGl0ZXQABWJsYWNr
-dAAHdHVybm91dHh1cQB+AC4AAAACAAAE+wAABOJzcQB+ADA/QAAAAAAADHcIAAAAEAAAAAJ0AAFE
+dAAHdHVybm91dHh1cQB+AC4AAAACAAAE+wAABOJzcQB+ADA/QAAAAAAAAXcIAAAAAgAAAAJ0AAFE
 cQB+ADV0AAFScQB+ADd4dXEAfgAuAAAABQAAAAUAAAAJAAAACgAAAAwAAAARdAABNXhzcQB+AA8A
 AAAUdwQAAAAZdAAHb3V0Y29tZXQABmNvdW50eXQABXN0YXRldAADbXNhdAAEcG1zYXQACnBvcGRl
 bnNpdHl0AANwb3B0AAlwb3BjaGFuZ2V0AAdhZ2U2NTc0dAAFYWdlNzV0AAVjcmltZXQAB2NvbGxl
 Z2V0AAZpbmNvbWV0AARmYXJtdAAIZGVtb2NyYXR0AApyZXB1YmxpY2FudAAFUGVyb3R0AAV3aGl0
-ZXQABWJsYWNrdAAHdHVybm91dHh1cQB+AC4AAAACAAAGEAAABShzcQB+ADA/QAAAAAAADHcIAAAA
-EAAAAAJ0AAFEcQB+ADV0AAFScQB+ADd4dXEAfgAuAAAABQAAAAUAAAAJAAAACgAAAAwAAAARdAAL
+ZXQABWJsYWNrdAAHdHVybm91dHh1cQB+AC4AAAACAAAGEAAABShzcQB+ADA/QAAAAAAAAXcIAAAA
+AgAAAAJ0AAFEcQB+ADV0AAFScQB+ADd4dXEAfgAuAAAABQAAAAUAAAAJAAAACgAAAAwAAAARdAAL
 NTkuNjkxODk4MzV4c3EAfgAPAAAAFHcEAAAAGXQAB291dGNvbWV0AAZjb3VudHl0AAVzdGF0ZXQA
 A21zYXQABHBtc2F0AApwb3BkZW5zaXR5dAADcG9wdAAJcG9wY2hhbmdldAAHYWdlNjU3NHQABWFn
 ZTc1dAAFY3JpbWV0AAdjb2xsZWdldAAGaW5jb21ldAAEZmFybXQACGRlbW9jcmF0dAAKcmVwdWJs
 aWNhbnQABVBlcm90dAAFd2hpdGV0AAVibGFja3QAB3R1cm5vdXR4dXEAfgAuAAAAAgAABikAAAXy
 cQB+ADF1cQB+AC4AAAAFAAAABQAAAAkAAAAKAAAADAAAABF0AAxEZWNpc2lvblRyZWVzcQB+AA8A
-AAAAdwQAAAAKeHB0AA1EZWNpc2lvbiBUcmVl</Model>
+AAAAdwQAAAAKeHB0ACREZWNpc2lvbiBUcmVlIFJlcHVibGljYW4gdnMgRGVtb2NyYXQ=</Model>
 </Operator>
-<Operator X="140" Y="206" name="Remove Perot" type="com.alpine.miner.gef.runoperator.hadoop.HadoopRowFilterOperator" uuid="1357942347772_1">
+<Operator X="134" Y="216" name="Remove Perot" type="com.alpine.miner.gef.runoperator.hadoop.HadoopRowFilterOperator" uuid="1357942347772_1">
 <Parameter key="filterCondition" value="turnout &gt; 0 AND (republican &gt; Perot OR democrat &gt; Perot)"/>
 <Parameter key="storeResults" value="false"/>
 <Parameter key="resultsLocation" value=""/>
 <Parameter key="resultsName" value="@default_prefix_rowfil_0"/>
 <Parameter key="override" value="Yes"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/shillion/election92.csv"/>
+<Parameter key="hadoopFileName" value="/real_data/election92/election92.csv"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
@@ -752,19 +753,19 @@ AAAAdwQAAAAKeHB0AA1EZWNpc2lvbiBUcmVl</Model>
 </HadoopFileStructureModel>
 </InPutFieldList>
 </Operator>
-<Operator X="139" Y="394" name="Histogram" type="com.alpine.miner.gef.runoperator.hadoop.HadoopHistogramOperator" uuid="1357942347772_2">
+<Operator X="132" Y="390" name="Histogram" type="com.alpine.miner.gef.runoperator.hadoop.HadoopHistogramOperator" uuid="1357942347772_2">
 <ColumnBinsModel>
 <ColumnBin bin="10" columnName="college" isMax="false" isMin="false" max="100" min="0" type="0" width="1"/>
 <ColumnBin bin="10" columnName="income" isMax="false" isMin="false" max="100" min="0" type="0" width="1"/>
 <ColumnBin bin="10" columnName="turnout" isMax="false" isMin="false" max="100" min="0" type="0" width="1"/>
 </ColumnBinsModel>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -816,9 +817,9 @@ AAAAdwQAAAAKeHB0AA1EZWNpc2lvbiBUcmVl</Model>
 </HadoopFileStructureModel>
 </InPutFieldList>
 </Operator>
-<Operator X="139" Y="69" name="election92.csv" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFileOperator" uuid="1357942347772_0">
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hadoopFileName" value="/shillion/election92.csv"/>
+<Operator X="134" Y="69" name="election92.csv" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFileOperator" uuid="1357942347772_0">
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hadoopFileName" value="/real_data/election92/election92.csv"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
 <HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
 <columnNames columnName="county"/>
@@ -860,11 +861,11 @@ AAAAdwQAAAAKeHB0AA1EZWNpc2lvbiBUcmVl</Model>
 <columnTypes columnType="double"/>
 <columnTypes columnType="double"/>
 </HadoopFileStructureModel>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="securityMode" value="simple"/>
@@ -873,16 +874,16 @@ AAAAdwQAAAAKeHB0AA1EZWNpc2lvbiBUcmVl</Model>
 <Parameter key="mapredPrincipal" value=""/>
 <Parameter key="mapredKeyTab" value=""/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/shillion/election92.csv"/>
+<Parameter key="hadoopFileName" value="/real_data/election92/election92.csv"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
@@ -930,17 +931,17 @@ AAAAdwQAAAAKeHB0AA1EZWNpc2lvbiBUcmVl</Model>
 </HadoopFileStructureModel>
 </InPutFieldList>
 </Operator>
-<Operator X="638" Y="309" name="Election Results by Income" type="com.alpine.miner.gef.runoperator.hadoop.HadoopBarChartOperator" uuid="1357942347772_9">
+<Operator X="613" Y="327" name="Election Results by Income" type="com.alpine.miner.gef.runoperator.hadoop.HadoopBarChartOperator" uuid="1357942347772_9">
 <Parameter key="valueDomain" value="count"/>
 <Parameter key="categoryType" value="income_bin"/>
 <Parameter key="scopeDomain" value="outcome"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
@@ -1000,14 +1001,17 @@ AAAAdwQAAAAKeHB0AA1EZWNpc2lvbiBUcmVl</Model>
 </HadoopFileStructureModel>
 </InPutFieldList>
 </Operator>
+<Operator X="72" Y="26" name="Data Source" type="com.alpine.miner.gef.runoperator.structual.NoteOperator" uuid="1359414252154">
+<Parameter key="note" value="U.S. counties and 1992 presidential election dataset &#10;&#10;http://biostat.mc.vanderbilt.edu/wiki/Main/DataSets"/>
+</Operator>
 <Link source="election92.csv" target="Scatter Plot Matrix"/>
-<Link source="election92.csv" target="Linear Regression"/>
+<Link source="election92.csv" target="Linear Regression of Voter Turnout"/>
 <Link source="election92.csv" target="Variables"/>
 <Link source="Variables" target="Election Results by Income"/>
 <Link source="Variables" target="Election Results by College"/>
 <Link source="election92.csv" target="Remove Perot"/>
 <Link source="Remove Perot" target="DR Flag"/>
-<Link source="DR Flag" target="Decision Tree"/>
+<Link source="DR Flag" target="Decision Tree Republican vs Democrat"/>
 <Link source="Remove Perot" target="Histogram"/>
 <VariableModel>
 <Variable>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Process Description="" UserName="shillion" Version="3.0">
 <Operator X="113" Y="148" name="contributions.csv" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFileOperator" uuid="1350933600723">
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hadoopFileName" value="/shillion/contributions.csv"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hadoopFileName" value="/real_data/us_presidential_donations/contributions.csv"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
 <HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
 <columnNames columnName="cmte_id"/>
@@ -29,7 +29,7 @@
 <columnTypes columnType="chararray"/>
 <columnTypes columnType="chararray"/>
 <columnTypes columnType="chararray"/>
-<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
 <columnTypes columnType="chararray"/>
 <columnTypes columnType="chararray"/>
 <columnTypes columnType="double"/>
@@ -42,11 +42,11 @@
 <columnTypes columnType="chararray"/>
 <columnTypes columnType="chararray"/>
 </HadoopFileStructureModel>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="securityMode" value="simple"/>
@@ -55,16 +55,16 @@
 <Parameter key="mapredPrincipal" value=""/>
 <Parameter key="mapredKeyTab" value=""/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/shillion/contributions.csv"/>
+<Parameter key="hadoopFileName" value="/real_data/us_presidential_donations/contributions.csv"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
@@ -95,7 +95,7 @@
 <columnTypes columnType="chararray"/>
 <columnTypes columnType="chararray"/>
 <columnTypes columnType="chararray"/>
-<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
 <columnTypes columnType="chararray"/>
 <columnTypes columnType="chararray"/>
 <columnTypes columnType="double"/>
@@ -113,20 +113,20 @@
 <Operator X="384" Y="147" name="obama or romney" type="com.alpine.miner.gef.runoperator.hadoop.HadoopRowFilterOperator" uuid="1350934083213">
 <Parameter key="filterCondition" value="cand_id=='P80003338' or cand_id=='P80003353'"/>
 <Parameter key="storeResults" value="true"/>
-<Parameter key="resultsLocation" value="/user/nhosgur/CSVData/contributions"/>
+<Parameter key="resultsLocation" value="/tmp/us_presidential_donations"/>
 <Parameter key="resultsName" value="contrib_romneyobama"/>
 <Parameter key="override" value="Yes"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/@default_prefix_var_1"/>
+<Parameter key="hadoopFileName" value="/tmp/us_presidential_donations/@default_prefix_var_1"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
@@ -151,8 +151,8 @@
 </InPutFieldList>
 </Operator>
 <Operator X="238" Y="147" name="LOG(contb_amt)" type="com.alpine.miner.gef.runoperator.hadoop.HadoopVariableOperator" uuid="1350935667894">
-<Parameter key="storeResults" value="false"/>
-<Parameter key="resultsLocation" value=""/>
+<Parameter key="storeResults" value="true"/>
+<Parameter key="resultsLocation" value="/tmp/us_presidential_donations"/>
 <Parameter key="resultsName" value="@default_prefix_var_1"/>
 <Parameter key="override" value="Yes"/>
 <DerivedFieldsModel>
@@ -165,16 +165,16 @@
 <DerivedFieldItem columnName="name" dataType="chararray" expression="REGEX_EXTRACT(cand_nm, '(.*)\\,(.*)', 1)"/>
 </DerivedFieldsModel>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/shillion/contributions.csv"/>
+<Parameter key="hadoopFileName" value="/real_data/us_presidential_donations/contributions.csv"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
@@ -205,7 +205,7 @@
 <columnTypes columnType="chararray"/>
 <columnTypes columnType="chararray"/>
 <columnTypes columnType="chararray"/>
-<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
 <columnTypes columnType="chararray"/>
 <columnTypes columnType="chararray"/>
 <columnTypes columnType="double"/>
@@ -225,16 +225,16 @@
 <Parameter key="categoryType" value="ceil_log_contb_amt"/>
 <Parameter key="scopeDomain" value="name"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/@default_prefix_agg_1"/>
+<Parameter key="hadoopFileName" value="/tmp/us_presidential_donations/@default_prefix_agg_1"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
@@ -257,8 +257,8 @@
 </InPutFieldList>
 </Operator>
 <Operator X="515" Y="145" name="Binning" type="com.alpine.miner.gef.runoperator.hadoop.HadoopAggregateOperator" uuid="1350937506242">
-<Parameter key="storeResults" value="false"/>
-<Parameter key="resultsLocation" value=""/>
+<Parameter key="storeResults" value="true"/>
+<Parameter key="resultsLocation" value="/tmp/us_presidential_donations"/>
 <Parameter key="resultsName" value="@default_prefix_agg_1"/>
 <Parameter key="override" value="Yes"/>
 <AggregateFieldsModel>
@@ -270,16 +270,16 @@
 <AggregateField columnName="SUM_contb_receipt_amt" dataType="double" expression="SUM(contb_receipt_amt)"/>
 </AggregateFieldsModel>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/user/nhosgur/CSVData/contributions/contrib_romneyobama"/>
+<Parameter key="hadoopFileName" value="/tmp/us_presidential_donations/contrib_romneyobama"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
@@ -308,16 +308,16 @@
 <Parameter key="categoryType" value="ceil_log_contb_amt"/>
 <Parameter key="scopeDomain" value="name"/>
 <InPutFieldList>
-<Parameter key="connName" value="Cloudera"/>
-<Parameter key="hdfsHostname" value="devone.local"/>
-<Parameter key="hdfsPort" value="54310"/>
-<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
-<Parameter key="jobHostname" value="devone.local"/>
-<Parameter key="jobPort" value="54311"/>
+<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/@default_prefix_agg_1"/>
+<Parameter key="hadoopFileName" value="/tmp/us_presidential_donations/@default_prefix_agg_1"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
@@ -338,6 +338,9 @@
 <columnTypes columnType="double"/>
 </HadoopFileStructureModel>
 </InPutFieldList>
+</Operator>
+<Operator X="109" Y="72" name="Data Source" type="com.alpine.miner.gef.runoperator.structual.NoteOperator" uuid="1359427523054">
+<Parameter key="note" value="http://www.fec.gov/disclosurep/pnational.do?cf=phome"/>
 </Operator>
 <Link source="LOG(contb_amt)" target="obama or romney"/>
 <Link source="contributions.csv" target="LOG(contb_amt)"/>
