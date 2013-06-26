@@ -10,7 +10,7 @@ __Use case:__  Predicting flight arrival delays based on seasonality, flight sch
 
 __Explanation:__  The purpose of this demo is to predict arrival delays of US domestic airline flights.  The demo data set comes from public information provided by the US Department of Transportation, Bureau of Transportation Statistics (http://www.transtats.bts.gov).
 
-The data set contains scheduled arrival and departure times of all US domestic public passenger flights for the year 2008. The data set also includes actual arrival and departure times, flight information (carrier, origin airport, destination airport, etc.), arrival and departure delays, and delays cause attribution (columns Y : AC in the spreadsheet). Time formatting in columns E : H is specified as HHMM (i.e., 1715 stands for 17:15). The total number of US domestic flights for the year 2008 listed in the data set were approximately 7 min.
+The data set contains scheduled arrival and departure times of all US domestic public passenger flights for the year 2008. The data set also includes actual arrival and departure times, flight information (carrier, origin airport, destination airport, etc.), arrival and departure delays, and delays cause attribution (columns Y : AC in the spreadsheet). Time formatting in columns E : H is specified as HHMM (i.e., 1715 stands for 17:15). The total number of US domestic flights for the year 2008 listed in the data set were approximately 7 mln.
 
 __Operators:__  The work-flow logic works in the following way:
 
