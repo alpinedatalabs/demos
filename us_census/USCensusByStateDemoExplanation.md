@@ -66,5 +66,5 @@ If you run into issues please review our [knowledge base] (https://alpinedatalab
 
 # About Alpine Data Labs
 
-Alpine Data Labs is the leader in predictive analytics for big data. Alpine’s products uniquely combine intuitive interfaces, native analytic processing in Hadoop and in-database, and lightweight deployment to deliver solutions that harness the power of parallel computing platforms and realize the predictive value of big data analytics. Alpine enables data experts and novices alike to rapidly develop predictive analytics on Hadoop.
+Alpine Data Labs is the leader in data science for Hadoop and big data. The company’s products uniquely combine intuitive interfaces, native analytic processing in Hadoop, high performance in-database analytics, and the efficiencies of cloud computing to define the new paradigm in advanced analytics: accessible, easy to use and built for big data. Alpine’s customers include A.T. Kearney, Havas Media and Zions Bancorporation. Alpine’s solutions enable data experts and novices alike to work across organizational barriers and collaboratively realize the predictive power of big data analytics. For more information visit [alpinedatalabs.com] (http://www.alpinedatalabs.com/).
  
