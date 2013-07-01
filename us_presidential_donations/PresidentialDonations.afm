@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Process Description="" UserName="shillion" Version="3.0">
 <Operator X="113" Y="148" name="contributions.csv" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFileOperator" uuid="1350933600723">
-<Parameter key="connName" value="Hadoop"/>
+<Parameter key="connName" value="hadoop"/>
 <Parameter key="hadoopFileName" value="/real_data/us_presidential_donations/contributions.csv"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
 <HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
@@ -42,27 +42,28 @@
 <columnTypes columnType="chararray"/>
 <columnTypes columnType="chararray"/>
 </HadoopFileStructureModel>
-<Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
 <Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
-<Parameter key="securityMode" value="simple"/>
-<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="hdfsPort" value="9000"/>
 <Parameter key="hdfsKeyTab" value=""/>
-<Parameter key="mapredPrincipal" value=""/>
-<Parameter key="mapredKeyTab" value=""/>
-<InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="userName" value="justinkim"/>
 <Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="mapredKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<InPutFieldList>
+<Parameter key="connName" value="hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="9000"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
 <Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="userName" value="alpine"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="justinkim"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
 <Parameter key="hadoopFileName" value="/real_data/us_presidential_donations/contributions.csv"/>
 <Parameter key="securityMode" value="simple"/>
@@ -111,20 +112,21 @@
 </InPutFieldList>
 </Operator>
 <Operator X="384" Y="147" name="obama or romney" type="com.alpine.miner.gef.runoperator.hadoop.HadoopRowFilterOperator" uuid="1350934083213">
-<Parameter key="filterCondition" value="cand_id=='P80003338' or cand_id=='P80003353'"/>
 <Parameter key="storeResults" value="true"/>
 <Parameter key="resultsLocation" value="/tmp/us_presidential_donations"/>
 <Parameter key="resultsName" value="contrib_romneyobama"/>
 <Parameter key="override" value="Yes"/>
+<RowFilterConditionModel conditionValue="cand_id=='P80003338' or cand_id=='P80003353'" sqlType="sql" useAll="true"/>
 <InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
+<Parameter key="connName" value="hadoop"/>
 <Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="hdfsPort" value="9000"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
 <Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="userName" value="alpine"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="justinkim"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
 <Parameter key="hadoopFileName" value="/tmp/us_presidential_donations/@default_prefix_var_1"/>
 <Parameter key="securityMode" value="simple"/>
@@ -165,14 +167,15 @@
 <DerivedFieldItem columnName="name" dataType="chararray" expression="REGEX_EXTRACT(cand_nm, '(.*)\\,(.*)', 1)"/>
 </DerivedFieldsModel>
 <InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
+<Parameter key="connName" value="hadoop"/>
 <Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="hdfsPort" value="9000"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
 <Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="userName" value="alpine"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="justinkim"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
 <Parameter key="hadoopFileName" value="/real_data/us_presidential_donations/contributions.csv"/>
 <Parameter key="securityMode" value="simple"/>
@@ -220,19 +223,20 @@
 </HadoopFileStructureModel>
 </InPutFieldList>
 </Operator>
-<Operator X="653" Y="72" name="Contribution Comparison (count)" type="com.alpine.miner.gef.runoperator.hadoop.HadoopBarChartOperator" uuid="1350937345188">
+<Operator X="655" Y="74" name="Contribution Comparison (count)" type="com.alpine.miner.gef.runoperator.hadoop.HadoopBarChartOperator" uuid="1350937345188">
 <Parameter key="valueDomain" value="COUNT_contb_receipt_amt"/>
 <Parameter key="categoryType" value="ceil_log_contb_amt"/>
 <Parameter key="scopeDomain" value="name"/>
 <InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
+<Parameter key="connName" value="hadoop"/>
 <Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="hdfsPort" value="9000"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
 <Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="userName" value="alpine"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="justinkim"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
 <Parameter key="hadoopFileName" value="/tmp/us_presidential_donations/@default_prefix_agg_1"/>
 <Parameter key="securityMode" value="simple"/>
@@ -264,20 +268,21 @@
 <AggregateFieldsModel>
 <groupBy columnName="ceil_log_contb_amt"/>
 <groupBy columnName="name"/>
-<AggregateField columnName="COUNT_contb_receipt_amt" dataType="long" expression="COUNT(contb_receipt_amt)"/>
-<AggregateField columnName="MAX_contb_receipt_amt" dataType="double" expression="MAX(contb_receipt_amt)"/>
-<AggregateField columnName="AVG_contb_receipt_amt" dataType="double" expression="AVG(contb_receipt_amt)"/>
-<AggregateField columnName="SUM_contb_receipt_amt" dataType="double" expression="SUM(contb_receipt_amt)"/>
+<AggregateField aggregateType="custom" columnName="COUNT_contb_receipt_amt" dataType="long" expression="COUNT(contb_receipt_amt)"/>
+<AggregateField aggregateType="custom" columnName="MAX_contb_receipt_amt" dataType="double" expression="MAX(contb_receipt_amt)"/>
+<AggregateField aggregateType="custom" columnName="AVG_contb_receipt_amt" dataType="double" expression="AVG(contb_receipt_amt)"/>
+<AggregateField aggregateType="custom" columnName="SUM_contb_receipt_amt" dataType="double" expression="SUM(contb_receipt_amt)"/>
 </AggregateFieldsModel>
 <InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
+<Parameter key="connName" value="hadoop"/>
 <Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="hdfsPort" value="9000"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
 <Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="userName" value="alpine"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="justinkim"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
 <Parameter key="hadoopFileName" value="/tmp/us_presidential_donations/contrib_romneyobama"/>
 <Parameter key="securityMode" value="simple"/>
@@ -303,19 +308,20 @@
 </HadoopFileStructureModel>
 </InPutFieldList>
 </Operator>
-<Operator X="639" Y="232" name="Contribution Comparison (sum amt)" type="com.alpine.miner.gef.runoperator.hadoop.HadoopBarChartOperator" uuid="1350939003761">
+<Operator X="656" Y="228" name="Contribution Comparison (sum amt)" type="com.alpine.miner.gef.runoperator.hadoop.HadoopBarChartOperator" uuid="1350939003761">
 <Parameter key="valueDomain" value="SUM_contb_receipt_amt"/>
 <Parameter key="categoryType" value="ceil_log_contb_amt"/>
 <Parameter key="scopeDomain" value="name"/>
 <InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
+<Parameter key="connName" value="hadoop"/>
 <Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="hdfsPort" value="9000"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
 <Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="userName" value="alpine"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="justinkim"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
 <Parameter key="hadoopFileName" value="/tmp/us_presidential_donations/@default_prefix_agg_1"/>
 <Parameter key="securityMode" value="simple"/>
@@ -354,7 +360,11 @@
 </Variable>
 <Variable>
 <Name>@default_prefix</Name>
-<Value>alp</Value>
+<Value>admin</Value>
+</Variable>
+<Variable>
+<Name>@default_tempdir</Name>
+<Value>/tmp</Value>
 </Variable>
 </VariableModel>
 </Process>

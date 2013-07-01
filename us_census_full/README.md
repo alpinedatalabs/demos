@@ -7,7 +7,7 @@ __Industry:__ Financial Services, Government, Healthcare, Insurance, Retail, Tel
 
 __Use case:__ clustering the US population and determining the factors that predict marital status and income bracket
 
-__Explanation:__ The data is brought into the workflow for exploratory analysis, clustering, and unsupervised learning. Variables are created and removed from the data. We preform k-means to cluster the US population, linear regression to predict income, and decision tree to predict marital status. For the predictive models, we conduct various measures of accuracy and precision (including training and testing) to support the predictions.
+__Explanation:__ The data is brought into the workflow for exploratory analysis, clustering, and supervised learning. Variables are created and removed from the data. We preform k-means to cluster the US population, linear regression to predict income, and decision tree to predict marital status. For the predictive models, we conduct various measures of accuracy and precision (including training and testing) to support the predictions.
 
 
 ## Using the Demo
@@ -32,13 +32,13 @@ __Key Points__
 
 __Operators__
 
-* _Variable Selection and Transformation (Variable Operator):_ Selects subset of 7 columns (iCitizen, iClass, iDisabl1, iMarital, dAge, iSex, iEnglish) from the full census data. Transforms selected columns into 9 columns (usborn, private_employee, disabled, married, adjusted_age, female, poor_english, only_english, naturalized) with bins using pig expressions. Renames transformed columns.
+* _Variable Selection and Transformation:_ Selects subset of 7 columns (iCitizen, iClass, iDisabl1, iMarital, dAge, iSex, iEnglish) from the full census data. Transforms selected columns into 9 columns (usborn, private_employee, disabled, married, adjusted_age, female, poor_english, only_english, naturalized) with bins using pig expressions. Renames transformed columns.
 * _Random Sampling:_ Creates 2 disjoint random samples. One is a 70% random sample and the other is the remaining 30%.
-* _Training/Test Sample (Sample Selector Operators)_: Selects the random samples created in the Random Sampling operator. The Training Sample is used to build the model. The Test Sample is used to test the accuracy of the model.
+* _Training/Test Sample_: Selects the random samples created in the Random Sampling operator. The Training Sample is used to build the model. The Test Sample is used to test the accuracy of the model.
 * _Scatter Plot Matrix:_ Visualizes the scatter plot matrix and computes correlation between 6 columns (married, female, dAge, dHours, dIncome1, dYearsch).
 * _Frequency:_ Computes the frequency for 12 columns (usborn, private_employee, disabled, married, adjusted_age, female, poor_english, only_english, naturalized, dHours, dIncome1, iYearsch) and displays it as a bar chart and as a data spreadsheet view.
 * _K-Means:_ Performs k-means using private employee, married, female, dAge, dHours, dIncome1, and iYearsch.
-* _Linear Regression:_ Linear regression with dIncome1 as dependent variable and usborn, private_employee, disabled, married, adjusted_age, female, poor_english, only_english, naturalized, dHours, iYearsch as regressors. Provides the linear regression equation, R-squared value, and standard error in the "Summary" results tab. Provides the coefficient value, standard error, t-statistic, and p-value of the intercept and 3 regressor variables in the "Data" results tab. Visualizes a residual plot in the "Residual Plot" results tab. Visualizes a Q-Q plot in the "Q-Q Plot" results tab.
+* _Linear Regression:_ Linear regression with dIncome1 as dependent variable and usborn, private_employee, disabled, married, adjusted_age, female, poor_english, only_english, naturalized, dHours, iYearsch as regressors. Provides the linear regression equation, R-squared value, and standard error in the "Summary" results tab. Provides the coefficient value, standard error, t-statistic, and p-value of the intercept and 11 regressor variables in the "Data" results tab. Visualizes a residual plot in the "Residual Plot" results tab. Visualizes a Q-Q plot in the "Q-Q Plot" results tab.
 * _Decision Tree:_ Makes a decision tree with married as the dependent variable and with usborn, private_employee, disabled, adjusted_age, female, poor_english, only_english, naturalized, dHours, dIncome1, iYearsch as the variables used to predict married. Output is a visualization of a decision tree.
 
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Process Description="" UserName="admin" Version="3.0">
-<Operator X="196" Y="136" name="USFullCensus.csv" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFileOperator" uuid="1350418671192">
-<Parameter key="connName" value="Hadoop"/>
+<Operator X="135" Y="310" name="USFullCensus.csv" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFileOperator" uuid="1350418671192">
+<Parameter key="connName" value="hadoop"/>
 <Parameter key="hadoopFileName" value="/real_data/us_census_full/USCensus1990.data.txt"/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
 <HadoopFileStructureModel delimiter="Comma" escapChar="" includeHeader="true" other="" quoteChar="">
@@ -144,27 +144,28 @@
 <columnTypes columnType="long"/>
 <columnTypes columnType="long"/>
 </HadoopFileStructureModel>
-<Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
 <Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="userName" value="alpine"/>
 <Parameter key="groupName" value="supergroup"/>
-<Parameter key="securityMode" value="simple"/>
-<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="hdfsPort" value="9000"/>
 <Parameter key="hdfsKeyTab" value=""/>
-<Parameter key="mapredPrincipal" value=""/>
-<Parameter key="mapredKeyTab" value=""/>
-<InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="userName" value="justinkim"/>
 <Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="mapredKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<InPutFieldList>
+<Parameter key="connName" value="hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="9000"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
 <Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="userName" value="alpine"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="justinkim"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
 <Parameter key="hadoopFileName" value="/real_data/us_census_full/USCensus1990.data.txt"/>
 <Parameter key="securityMode" value="simple"/>
@@ -314,19 +315,21 @@
 </HadoopFileStructureModel>
 </InPutFieldList>
 </Operator>
-<Operator X="585" Y="303" name="Linear Regression" type="com.alpine.miner.gef.runoperator.hadoop.HadoopLinearRegressionOperator" uuid="1350419185054_2">
+<Operator X="724" Y="240" name="Linear Regression" type="com.alpine.miner.gef.runoperator.hadoop.HadoopLinearRegressionOperator" uuid="1350419185054_2">
 <Parameter key="dependentColumn" value="dIncome1"/>
 <Parameter key="forceRetrain" value="Yes"/>
 <Parameter key="columnNames" value="usborn,private_employee,disabled,married,adjusted_age,female,poor_english,only_english,naturalized,dHours,iYearsch"/>
+<Parameter key="varSelPath" value=""/>
 <InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
+<Parameter key="connName" value="hadoop"/>
 <Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="hdfsPort" value="9000"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
 <Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="userName" value="alpine"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="justinkim"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
 <Parameter key="hadoopFileName" value="/tmp/@default_prefix_var_0"/>
 <Parameter key="securityMode" value="simple"/>
@@ -368,51 +371,49 @@
 </HadoopFileStructureModel>
 </InPutFieldList>
 <Model>rO0ABXNyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuRW5naW5lTW9kZWxyBs7TjRuF
-xwIAA0wABW1vZGVsdAAmTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9vcGVyYXRvci9Nb2RlbDtMAAlt
-b2RlbFR5cGV0ABJMamF2YS9sYW5nL1N0cmluZztMAARuYW1lcQB+AAJ4cHNyAEhjb20uYWxwaW5l
-LmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLm1vZGVscy5MaW5lYXJSZWdyZXNzaW9uSGFkb29w
-TW9kZWzMCYIyzxrxIgIAEUQAAnIyRAABc0wAGGFsbFRyYW5zZm9ybU1hcF92YWx1ZUtleXQAE0xq
-YXZhL3V0aWwvSGFzaE1hcDtMAA1jaGFyQ29sdW1uTWFwdAAPTGphdmEvdXRpbC9NYXA7WwAMY29l
-ZmZpY2llbnRzdAATW0xqYXZhL2xhbmcvRG91YmxlO0wAD2NvZWZmaWNpZW50c01hcHQAGUxqYXZh
-L3V0aWwvTGlua2VkSGFzaE1hcDtbAAtjb2x1bW5OYW1lc3QAE1tMamF2YS9sYW5nL1N0cmluZztM
-AAtlcnJvclN0cmluZ3EAfgACTAAaaW50ZXJhY3Rpb25Db2x1bW5Db2x1bW5NYXBxAH4ABUwAF2lu
-dGVyYWN0aW9uQ29sdW1uRXhwTWFwcQB+AAVbAAFwdAACW0RMABJwcmVkaWN0ZWRMYWJlbE5hbWVx
-AH4AAkwAD3JlYWxDb2x1bW5OYW1lc3QAEExqYXZhL3V0aWwvTGlzdDtMAAlyZXNpZHVhbHNxAH4A
-C1sAAnNlcQB+AApMAA1zcGVjaWZ5Q29sdW1ucQB+AAJbAAF0cQB+AAp4cgA5Y29tLmFscGluZS5k
-YXRhbWluaW5nLmFwaS5pbXBsLmhhZG9vcC5BYnN0cmFjdEhhZG9vcE1vZGVsqKgpHzfiMH8CAAB4
-cgArY29tLmFscGluZS5kYXRhbWluaW5nLm9wZXJhdG9yLk91dHB1dE9iamVjdFuP2rT89nduAgAB
-TAAGc291cmNlcQB+AAJ4cHA/4pOhOZmjBj/m0KtJlw+kc3IAEWphdmEudXRpbC5IYXNoTWFwBQfa
-wcMWYNEDAAJGAApsb2FkRmFjdG9ySQAJdGhyZXNob2xkeHA/QAAAAAAAAHcIAAAAAQAAAAB4c3EA
-fgAPP0AAAAAAAAB3CAAAAAEAAAAAeHVyABNbTGphdmEubGFuZy5Eb3VibGU74RKtiQCmVqYCAAB4
-cAAAAAxzcgAQamF2YS5sYW5nLkRvdWJsZYCzwkopa/sEAgABRAAFdmFsdWV4cgAQamF2YS5sYW5n
-Lk51bWJlcoaslR0LlOCLAgAAeHA/sH3XZcOCUHNxAH4AFD/OIYlAB1mIc3EAfgAUv8sbhvQ6G15z
-cQB+ABQ/tuAJsrBVoHNxAH4AFD+4ZnwGwE4gc3EAfgAUv8hwD2uiHTxzcQB+ABS/wCr6HdJ4OHNx
-AH4AFD+pDx2yL0Ouc3EAfgAUP779Zq3YzehzcQB+ABQ/01ngWrYA0nNxAH4AFD+kRZrHb3kQc3EA
-fgAUv8r48WamC0hzcgAXamF2YS51dGlsLkxpbmtlZEhhc2hNYXA0wE5cEGzA+wIAAVoAC2FjY2Vz
-c09yZGVyeHEAfgAPP0AAAAAAAAx3CAAAABAAAAAMdAAGdXNib3JucQB+ABZ0ABBwcml2YXRlX2Vt
-cGxveWVlcQB+ABd0AAhkaXNhYmxlZHEAfgAYdAAHbWFycmllZHEAfgAZdAAMYWRqdXN0ZWRfYWdl
-cQB+ABp0AAZmZW1hbGVxAH4AG3QADHBvb3JfZW5nbGlzaHEAfgAcdAAMb25seV9lbmdsaXNocQB+
-AB10AAtuYXR1cmFsaXplZHEAfgAedAAGZEhvdXJzcQB+AB90AAhpWWVhcnNjaHEAfgAgdAAJSW50
-ZXJjZXB0cQB+ACF4AHVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAAtxAH4A
-JHEAfgAlcQB+ACZxAH4AJ3EAfgAocQB+AClxAH4AKnEAfgArcQB+ACxxAH4ALXEAfgAucHNxAH4A
-Dz9AAAAAAAAAdwgAAAABAAAAAHhzcQB+AA8/QAAAAAAAAHcIAAAAAQAAAAB4dXIAAltEPqaMFKtj
-Wh4CAAB4cAAAAAw9IFAAAAAAALzIAAAAAAAAPPUAAAAAAAA9CUAAAAAAADzzgAAAAAAAPOQAAAAA
-AAA9SMQAAAAAAD1JsAAAAAAAPTEoAAAAAAAAAAAAAAAAADzUAAAAAAAAPRQAAAAAAABwc3IAE2ph
-dmEudXRpbC5BcnJheUxpc3R4gdIdmcdhnQMAAUkABHNpemV4cAAAAA93BAAAAA90AAZ1c2Jvcm50
-ABBwcml2YXRlX2VtcGxveWVldAAIZGlzYWJsZWR0AAdtYXJyaWVkdAAMYWRqdXN0ZWRfYWdldAAG
-ZmVtYWxldAAMcG9vcl9lbmdsaXNodAAMb25seV9lbmdsaXNodAALbmF0dXJhbGl6ZWR0AAZjYXNl
-SUR0AARkQWdldAAGZEhvdXJzdAAIZEluY29tZTF0AARpU2V4dAAIaVllYXJzY2h4c3EAfgA2AAAA
-yHcEAAAA9HVxAH4ANAAAAAJAApCOvPLuML/UhHXnl3GAdXEAfgA0AAAAAkACkI688u4wv9SEdeeX
-cYB1cQB+ADQAAAACQAKQjrzy7jC/1IR155dxgHVxAH4ANAAAAAJAApCOvPLuML/UhHXnl3GAdXEA
-fgA0AAAAAkACkI688u4wv9SEdeeXcYB1cQB+ADQAAAACQAKQjrzy7jC/1IR155dxgHVxAH4ANAAA
+xwIABEwABW1vZGVsdAArTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9tb2RlbC9BbmFseXRpY01vZGVs
+O0wACW1vZGVsVHlwZXQAEkxqYXZhL2xhbmcvU3RyaW5nO0wABG5hbWVxAH4AAkwABXJ1bklkcQB+
+AAJ4cHNyAEhjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLm1vZGVscy5MaW5l
+YXJSZWdyZXNzaW9uSGFkb29wTW9kZWzMCYIyzxrxIgIAEUQAAnIyRAABc0wAGGFsbFRyYW5zZm9y
+bU1hcF92YWx1ZUtleXQAE0xqYXZhL3V0aWwvSGFzaE1hcDtMAA1jaGFyQ29sdW1uTWFwdAAPTGph
+dmEvdXRpbC9NYXA7WwAMY29lZmZpY2llbnRzdAATW0xqYXZhL2xhbmcvRG91YmxlO0wAD2NvZWZm
+aWNpZW50c01hcHQAGUxqYXZhL3V0aWwvTGlua2VkSGFzaE1hcDtbAAtjb2x1bW5OYW1lc3QAE1tM
+amF2YS9sYW5nL1N0cmluZztMAAtlcnJvclN0cmluZ3EAfgACTAAaaW50ZXJhY3Rpb25Db2x1bW5D
+b2x1bW5NYXBxAH4ABUwAF2ludGVyYWN0aW9uQ29sdW1uRXhwTWFwcQB+AAVbAAFwdAACW0RMABJw
+cmVkaWN0ZWRMYWJlbE5hbWVxAH4AAkwAD3JlYWxDb2x1bW5OYW1lc3QAEExqYXZhL3V0aWwvTGlz
+dDtMAAlyZXNpZHVhbHNxAH4AC1sAAnNlcQB+AApMAA1zcGVjaWZ5Q29sdW1ucQB+AAJbAAF0cQB+
+AAp4cgA5Y29tLmFscGluZS5kYXRhbWluaW5nLmFwaS5pbXBsLmhhZG9vcC5BYnN0cmFjdEhhZG9v
+cE1vZGVsqKgpHzfiMH8CAAFMAA92YXJNYXNrQXNTdHJpbmdxAH4AAnhyACtjb20uYWxwaW5lLmRh
+dGFtaW5pbmcub3BlcmF0b3IuT3V0cHV0T2JqZWN0W4/atPz2d24CAAFMAAZzb3VyY2VxAH4AAnhw
+cHA/4pOhOZmjBj/m0KtJlw+kc3IAEWphdmEudXRpbC5IYXNoTWFwBQfawcMWYNEDAAJGAApsb2Fk
+RmFjdG9ySQAJdGhyZXNob2xkeHA/QAAAAAAAAHcIAAAAAQAAAAB4c3EAfgAPP0AAAAAAAAB3CAAA
+AAEAAAAAeHVyABNbTGphdmEubGFuZy5Eb3VibGU74RKtiQCmVqYCAAB4cAAAAAxzcgAQamF2YS5s
+YW5nLkRvdWJsZYCzwkopa/sEAgABRAAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCL
+AgAAeHA/sH3XZcOCUHNxAH4AFD/OIYlAB1mIc3EAfgAUv8sbhvQ6G15zcQB+ABQ/tuAJsrBVoHNx
+AH4AFD+4ZnwGwE4gc3EAfgAUv8hwD2uiHTxzcQB+ABS/wCr6HdJ4OHNxAH4AFD+pDx2yL0Ouc3EA
+fgAUP779Zq3YzehzcQB+ABQ/01ngWrYA0nNxAH4AFD+kRZrHb3kQc3EAfgAUv8r48WamC0hzcgAX
+amF2YS51dGlsLkxpbmtlZEhhc2hNYXA0wE5cEGzA+wIAAVoAC2FjY2Vzc09yZGVyeHEAfgAPP0AA
+AAAAAAx3CAAAABAAAAAMdAAGdXNib3JucQB+ABZ0ABBwcml2YXRlX2VtcGxveWVlcQB+ABd0AAhk
+aXNhYmxlZHEAfgAYdAAHbWFycmllZHEAfgAZdAAMYWRqdXN0ZWRfYWdlcQB+ABp0AAZmZW1hbGVx
+AH4AG3QADHBvb3JfZW5nbGlzaHEAfgAcdAAMb25seV9lbmdsaXNocQB+AB10AAtuYXR1cmFsaXpl
+ZHEAfgAedAAGZEhvdXJzcQB+AB90AAhpWWVhcnNjaHEAfgAgdAAJSW50ZXJjZXB0cQB+ACF4AHVy
+ABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAAtxAH4AJHEAfgAlcQB+ACZxAH4A
+J3EAfgAocQB+AClxAH4AKnEAfgArcQB+ACxxAH4ALXEAfgAucHNxAH4ADz9AAAAAAAAAdwgAAAAB
+AAAAAHhzcQB+AA8/QAAAAAAAAHcIAAAAAQAAAAB4dXIAAltEPqaMFKtjWh4CAAB4cAAAAAw9IFAA
+AAAAALzIAAAAAAAAPPUAAAAAAAA9CUAAAAAAADzzgAAAAAAAPOQAAAAAAAA9SMQAAAAAAD1JsAAA
+AAAAPTEoAAAAAAAAAAAAAAAAADzUAAAAAAAAPRQAAAAAAABwc3IAE2phdmEudXRpbC5BcnJheUxp
+c3R4gdIdmcdhnQMAAUkABHNpemV4cAAAAA93BAAAAA90AAZ1c2Jvcm50ABBwcml2YXRlX2VtcGxv
+eWVldAAIZGlzYWJsZWR0AAdtYXJyaWVkdAAMYWRqdXN0ZWRfYWdldAAGZmVtYWxldAAMcG9vcl9l
+bmdsaXNodAAMb25seV9lbmdsaXNodAALbmF0dXJhbGl6ZWR0AAZjYXNlSUR0AARkQWdldAAGZEhv
+dXJzdAAIZEluY29tZTF0AARpU2V4dAAIaVllYXJzY2h4c3EAfgA2AAAAyHcEAAAA9HVxAH4ANAAA
 AAJAApCOvPLuML/UhHXnl3GAdXEAfgA0AAAAAkACkI688u4wv9SEdeeXcYB1cQB+ADQAAAACQAKQ
 jrzy7jC/1IR155dxgHVxAH4ANAAAAAJAApCOvPLuML/UhHXnl3GAdXEAfgA0AAAAAkACkI688u4w
 v9SEdeeXcYB1cQB+ADQAAAACQAKQjrzy7jC/1IR155dxgHVxAH4ANAAAAAJAApCOvPLuML/UhHXn
 l3GAdXEAfgA0AAAAAkACkI688u4wv9SEdeeXcYB1cQB+ADQAAAACQAKQjrzy7jC/1IR155dxgHVx
-AH4ANAAAAAJAApCOvPLuML/UhHXnl3GAdXEAfgA0AAAAAj/jxYY2HC9jv+PFhjYcL2N1cQB+ADQA
-AAACP+PFhjYcL2O/48WGNhwvY3VxAH4ANAAAAAI/48WGNhwvY7/jxYY2HC9jdXEAfgA0AAAAAj/j
-xYY2HC9jv+PFhjYcL2N1cQB+ADQAAAACP+PFhjYcL2O/48WGNhwvY3VxAH4ANAAAAAI/48WGNhwv
-Y7/jxYY2HC9jdXEAfgA0AAAAAj/jxYY2HC9jv+PFhjYcL2N1cQB+ADQAAAACP+PFhjYcL2O/48WG
+AH4ANAAAAAJAApCOvPLuML/UhHXnl3GAdXEAfgA0AAAAAkACkI688u4wv9SEdeeXcYB1cQB+ADQA
+AAACQAKQjrzy7jC/1IR155dxgHVxAH4ANAAAAAJAApCOvPLuML/UhHXnl3GAdXEAfgA0AAAAAkAC
+kI688u4wv9SEdeeXcYB1cQB+ADQAAAACQAKQjrzy7jC/1IR155dxgHVxAH4ANAAAAAJAApCOvPLu
+ML/UhHXnl3GAdXEAfgA0AAAAAj/jxYY2HC9jv+PFhjYcL2N1cQB+ADQAAAACP+PFhjYcL2O/48WG
 NhwvY3VxAH4ANAAAAAI/48WGNhwvY7/jxYY2HC9jdXEAfgA0AAAAAj/jxYY2HC9jv+PFhjYcL2N1
 cQB+ADQAAAACP+PFhjYcL2O/48WGNhwvY3VxAH4ANAAAAAI/48WGNhwvY7/jxYY2HC9jdXEAfgA0
 AAAAAj/jxYY2HC9jv+PFhjYcL2N1cQB+ADQAAAACP+PFhjYcL2O/48WGNhwvY3VxAH4ANAAAAAI/
@@ -441,9 +442,9 @@ xYY2HC9jv+PFhjYcL2N1cQB+ADQAAAACP+PFhjYcL2O/48WGNhwvY3VxAH4ANAAAAAI/48WGNhwv
 Y7/jxYY2HC9jdXEAfgA0AAAAAj/jxYY2HC9jv+PFhjYcL2N1cQB+ADQAAAACP+PFhjYcL2O/48WG
 NhwvY3VxAH4ANAAAAAI/48WGNhwvY7/jxYY2HC9jdXEAfgA0AAAAAj/jxYY2HC9jv+PFhjYcL2N1
 cQB+ADQAAAACP+PFhjYcL2O/48WGNhwvY3VxAH4ANAAAAAI/48WGNhwvY7/jxYY2HC9jdXEAfgA0
-AAAAAj/EApqDlybsv8QCmoOXJux1cQB+ADQAAAACP8QCmoOXJuy/xAKag5cm7HVxAH4ANAAAAAI/
-xAKag5cm7L/EApqDlybsdXEAfgA0AAAAAj/EApqDlybsv8QCmoOXJux1cQB+ADQAAAACP8QCmoOX
-Juy/xAKag5cm7HVxAH4ANAAAAAI/xAKag5cm7L/EApqDlybsdXEAfgA0AAAAAj/EApqDlybsv8QC
+AAAAAj/jxYY2HC9jv+PFhjYcL2N1cQB+ADQAAAACP+PFhjYcL2O/48WGNhwvY3VxAH4ANAAAAAI/
+48WGNhwvY7/jxYY2HC9jdXEAfgA0AAAAAj/jxYY2HC9jv+PFhjYcL2N1cQB+ADQAAAACP+PFhjYc
+L2O/48WGNhwvY3VxAH4ANAAAAAI/48WGNhwvY7/jxYY2HC9jdXEAfgA0AAAAAj/EApqDlybsv8QC
 moOXJux1cQB+ADQAAAACP8QCmoOXJuy/xAKag5cm7HVxAH4ANAAAAAI/xAKag5cm7L/EApqDlybs
 dXEAfgA0AAAAAj/EApqDlybsv8QCmoOXJux1cQB+ADQAAAACP8QCmoOXJuy/xAKag5cm7HVxAH4A
 NAAAAAI/xAKag5cm7L/EApqDlybsdXEAfgA0AAAAAj/EApqDlybsv8QCmoOXJux1cQB+ADQAAAAC
@@ -493,13 +494,599 @@ ApqDlybsv8QCmoOXJux1cQB+ADQAAAACP8QCmoOXJuy/xAKag5cm7HVxAH4ANAAAAAI/xAKag5cm
 7L/EApqDlybsdXEAfgA0AAAAAj/EApqDlybsv8QCmoOXJux1cQB+ADQAAAACP8QCmoOXJuy/xAKa
 g5cm7HVxAH4ANAAAAAI/xAKag5cm7L/EApqDlybsdXEAfgA0AAAAAj/EApqDlybsv8QCmoOXJux1
 cQB+ADQAAAACP8QCmoOXJuy/xAKag5cm7HVxAH4ANAAAAAI/xAKag5cm7L/EApqDlybsdXEAfgA0
-AAAAAj/EApqDlybsv8QCmoOXJux4dXEAfgA0AAAADD82pZhBLF7gPyVEVOe7q0E/LmNSlI2HkD8k
-JJHvtiLyPxIxgaGmtrM/IjCqdP7Kgz8/ymrRr1MUPzDsFo9vJUY/P1isdg92/j8K6e4W8jtdPvM1
-fNMtAdQ/OAjNQsZfEHQACGRJbmNvbWUxdXEAfgA0AAAADEBnTXX9EjMWQJarN9T5U8fAjIuntmIR
-xECCK5sVFDcYQJV1aWsWjDPAlX7TgF/+n8BwRjpM71YrQGexgguLHthAb6LTAbwLxkC3AhFeAPaj
-QKDiqJ9/yN/AgfS1y6ScnXB0ABFMaW5lYXIgUmVncmVzc2lvbg==</Model>
+AAAAAj/EApqDlybsv8QCmoOXJux1cQB+ADQAAAACP8QCmoOXJuy/xAKag5cm7HVxAH4ANAAAAAI/
+xAKag5cm7L/EApqDlybsdXEAfgA0AAAAAj/EApqDlybsv8QCmoOXJux1cQB+ADQAAAACP8QCmoOX
+Juy/xAKag5cm7HVxAH4ANAAAAAI/xAKag5cm7L/EApqDlybsdXEAfgA0AAAAAj/EApqDlybsv8QC
+moOXJux4dXEAfgA0AAAADD82pZhBLF7gPyVEVOe7q0E/LmNSlI2HkD8kJJHvtiLyPxIxgaGmtrM/
+IjCqdP7Kgz8/ymrRr1MUPzDsFo9vJUY/P1isdg92/j8K6e4W8jtdPvM1fNMtAdQ/OAjNQsZfEHQA
+CGRJbmNvbWUxdXEAfgA0AAAADEBnTXX9EjMWQJarN9T5U8fAjIuntmIRxECCK5sVFDcYQJV1aWsW
+jDPAlX7TgF/+n8BwRjpM71YrQGexgguLHthAb6LTAbwLxkC3AhFeAPajQKDiqJ9/yN/AgfS1y6Sc
+nXB0ABFMaW5lYXIgUmVncmVzc2lvbnA=</Model>
 </Operator>
-<Operator X="340" Y="210" name="Variable-1" type="com.alpine.miner.gef.runoperator.hadoop.HadoopVariableOperator" uuid="1350419185054_0">
+<Operator X="729" Y="151" name="K-Means" type="com.alpine.miner.gef.runoperator.hadoop.HadoopKmeansOperator" uuid="1350419185054_1">
+<Parameter key="idColumn" value="caseid"/>
+<Parameter key="k" value="7"/>
+<Parameter key="distance" value="Euclidean"/>
+<Parameter key="split_Number" value="5"/>
+<Parameter key="max_optimization_steps" value="5"/>
+<Parameter key="resultsLocation" value="/tmp"/>
+<Parameter key="resultsName" value="@default_prefix_kmean_0"/>
+<Parameter key="override" value="Yes"/>
+<Parameter key="columnNames" value="private_employee,married,female,dAge,dHours,dIncome1,iYearsch"/>
+<InPutFieldList>
+<Parameter key="connName" value="hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="9000"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="justinkim"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_var_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="usborn"/>
+<columnNames columnName="private_employee"/>
+<columnNames columnName="disabled"/>
+<columnNames columnName="married"/>
+<columnNames columnName="adjusted_age"/>
+<columnNames columnName="female"/>
+<columnNames columnName="poor_english"/>
+<columnNames columnName="only_english"/>
+<columnNames columnName="naturalized"/>
+<columnNames columnName="caseid"/>
+<columnNames columnName="dAge"/>
+<columnNames columnName="dHours"/>
+<columnNames columnName="dIncome1"/>
+<columnNames columnName="iSex"/>
+<columnNames columnName="iYearsch"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="301" Y="101" name="Scatter Plot Matrix" type="com.alpine.miner.gef.runoperator.hadoop.HadoopScatterPlotMatrixOperator" uuid="1350419185054_4">
+<Parameter key="columnNames" value="married,female,dAge,dHours,dIncome1,iYearsch"/>
+<InPutFieldList>
+<Parameter key="connName" value="hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="9000"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="justinkim"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_var_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="usborn"/>
+<columnNames columnName="private_employee"/>
+<columnNames columnName="disabled"/>
+<columnNames columnName="married"/>
+<columnNames columnName="adjusted_age"/>
+<columnNames columnName="female"/>
+<columnNames columnName="poor_english"/>
+<columnNames columnName="only_english"/>
+<columnNames columnName="naturalized"/>
+<columnNames columnName="caseid"/>
+<columnNames columnName="dAge"/>
+<columnNames columnName="dHours"/>
+<columnNames columnName="dIncome1"/>
+<columnNames columnName="iSex"/>
+<columnNames columnName="iYearsch"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="420" Y="94" name="Frequency" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFrequencyAnalysisOperator" uuid="1350420289032">
+<Parameter key="columnNames" value="usborn,private_employee,disabled,married,adjusted_age,female,poor_english,only_english,naturalized,dHours,dIncome1,iYearsch"/>
+<InPutFieldList>
+<Parameter key="connName" value="hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="9000"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="justinkim"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_var_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="usborn"/>
+<columnNames columnName="private_employee"/>
+<columnNames columnName="disabled"/>
+<columnNames columnName="married"/>
+<columnNames columnName="adjusted_age"/>
+<columnNames columnName="female"/>
+<columnNames columnName="poor_english"/>
+<columnNames columnName="only_english"/>
+<columnNames columnName="naturalized"/>
+<columnNames columnName="caseid"/>
+<columnNames columnName="dAge"/>
+<columnNames columnName="dHours"/>
+<columnNames columnName="dIncome1"/>
+<columnNames columnName="iSex"/>
+<columnNames columnName="iYearsch"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="725" Y="309" name="Decision Tree" type="com.alpine.miner.gef.runoperator.hadoop.HadoopDecisionTreeOperator" uuid="1357795881972">
+<Parameter key="dependentColumn" value="married"/>
+<Parameter key="columnNames" value="usborn,private_employee,disabled,adjusted_age,female,poor_english,only_english,naturalized,dHours,dIncome1,iYearsch"/>
+<Parameter key="maximal_depth" value="5"/>
+<Parameter key="confidence" value="0.25"/>
+<Parameter key="minimal_gain" value="0.001"/>
+<Parameter key="number_of_prepruning_alternatives" value="3"/>
+<Parameter key="minimal_size_for_split" value="4"/>
+<Parameter key="minimal_leaf_size" value="2"/>
+<Parameter key="categoryLimit" value="1000"/>
+<Parameter key="numericalGranularity" value="1000000"/>
+<Parameter key="varSelPath" value=""/>
+<InPutFieldList>
+<Parameter key="connName" value="hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="9000"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="justinkim"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rsamp_0/Sample_1"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="usborn"/>
+<columnNames columnName="private_employee"/>
+<columnNames columnName="disabled"/>
+<columnNames columnName="married"/>
+<columnNames columnName="adjusted_age"/>
+<columnNames columnName="female"/>
+<columnNames columnName="poor_english"/>
+<columnNames columnName="only_english"/>
+<columnNames columnName="naturalized"/>
+<columnNames columnName="caseid"/>
+<columnNames columnName="dAge"/>
+<columnNames columnName="dHours"/>
+<columnNames columnName="dIncome1"/>
+<columnNames columnName="iSex"/>
+<columnNames columnName="iYearsch"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+<Model>rO0ABXNyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuRW5naW5lTW9kZWxyBs7TjRuF
+xwIABEwABW1vZGVsdAArTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9tb2RlbC9BbmFseXRpY01vZGVs
+O0wACW1vZGVsVHlwZXQAEkxqYXZhL2xhbmcvU3RyaW5nO0wABG5hbWVxAH4AAkwABXJ1bklkcQB+
+AAJ4cHNyAERjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLm1vZGVscy5EZWNp
+c2lvblRyZWVIYWRvb3BNb2RlbFPsL+yMTnZsAgAFTAALY29sdW1uc0xpc3R0ABBMamF2YS91dGls
+L0xpc3Q7TAAJZGVwZW5kZW50cQB+AAJMAApoYWRvb3BUcmVldAApTGNvbS9hbHBpbmUvaGFkb29w
+L3RyZWUvbW9kZWwvSGFkb29wVHJlZTtMAApsZWFmVmFsdWVzcQB+AAVMABJtb2RlbEZpbGVEaXJl
+Y3RvcnlxAH4AAnhyADljb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLkFic3Ry
+YWN0SGFkb29wTW9kZWyoqCkfN+IwfwIAAUwAD3Zhck1hc2tBc1N0cmluZ3EAfgACeHIAK2NvbS5h
+bHBpbmUuZGF0YW1pbmluZy5vcGVyYXRvci5PdXRwdXRPYmplY3Rbj9q0/PZ3bgIAAUwABnNvdXJj
+ZXEAfgACeHBwcHB0AAdtYXJyaWVkc3IAJ2NvbS5hbHBpbmUuaGFkb29wLnRyZWUubW9kZWwuSGFk
+b29wVHJlZU2F+C2mJCmnAgANWgALY2F0ZWdvcmljYWxJAAdmZWF0dXJlSQACaWRaAAhsZXNzVGhh
+bloABHJvb3RJAAh1bmlxdWVJZEwACGNoaWxkcmVucQB+AAVMAAljb2x1bW5NYXBxAH4ABVsABmNv
+dW50c3QAAltJTAAQZGVwZW5kYW50TWFwcGluZ3QAE0xqYXZhL3V0aWwvSGFzaE1hcDtbAAxmZWF0
+dXJlRGVtYXBxAH4ADEwABWxhYmVscQB+AAJMAAFydAASTGphdmEvdXRpbC9SYW5kb207eHABAAAA
+AAAAAAAAAQAAAAtzcgATamF2YS51dGlsLkFycmF5TGlzdHiB0h2Zx2GdAwABSQAEc2l6ZXhwAAAA
+AncEAAAACnNxAH4ACwAAAAAEAAAAAQEAAAAAAHNxAH4AEAAAAAB3BAAAAAp4c3EAfgAQAAAAD3cE
+AAAAD3QABnVzYm9ybnQAEHByaXZhdGVfZW1wbG95ZWV0AAhkaXNhYmxlZHQAB21hcnJpZWR0AAxh
+ZGp1c3RlZF9hZ2V0AAZmZW1hbGV0AAxwb29yX2VuZ2xpc2h0AAxvbmx5X2VuZ2xpc2h0AAtuYXR1
+cmFsaXplZHQABmNhc2VJRHQABGRBZ2V0AAZkSG91cnN0AAhkSW5jb21lMXQABGlTZXh0AAhpWWVh
+cnNjaHh1cgACW0lNumAmduqypQIAAHhwAAAAAgAAAAABRMYZc3IAEWphdmEudXRpbC5IYXNoTWFw
+BQfawcMWYNEDAAJGAApsb2FkRmFjdG9ySQAJdGhyZXNob2xkeHA/QAAAAAAAAXcIAAAAAgAAAAJ0
+AAExc3IAEWphdmEubGFuZy5JbnRlZ2VyEuKgpPeBhzgCAAFJAAV2YWx1ZXhyABBqYXZhLmxhbmcu
+TnVtYmVyhqyVHQuU4IsCAAB4cAAAAAB0AAEwc3EAfgApAAAAAXh1cQB+ACQAAAALAAAAAAAAAAEA
+AAACAAAABAAAAAUAAAAGAAAABwAAAAgAAAALAAAADAAAAA50AAExcHNxAH4ACwAAAAAEAAAAAgAA
+AAAAAHNxAH4AEAAAAAJ3BAAAAApzcQB+AAsAAAAABAAAAAMBAAAAAABzcQB+ABAAAAACdwQAAAAK
+c3EAfgALAAAAAAwAAAAFAQAAAAAAc3EAfgAQAAAAAncEAAAACnNxAH4ACwAAAAAOAAAABwEAAAAA
+AHNxAH4AEAAAAAB3BAAAAAp4c3EAfgAQAAAAD3cEAAAAD3QABnVzYm9ybnQAEHByaXZhdGVfZW1w
+bG95ZWV0AAhkaXNhYmxlZHQAB21hcnJpZWR0AAxhZGp1c3RlZF9hZ2V0AAZmZW1hbGV0AAxwb29y
+X2VuZ2xpc2h0AAxvbmx5X2VuZ2xpc2h0AAtuYXR1cmFsaXplZHQABmNhc2VJRHQABGRBZ2V0AAZk
+SG91cnN0AAhkSW5jb21lMXQABGlTZXh0AAhpWWVhcnNjaHh1cQB+ACQAAAACAF8a1ADg1nhzcQB+
+ACY/QAAAAAAAAXcIAAAAAgAAAAJ0AAExcQB+ACt0AAEwcQB+AC14dXEAfgAkAAAACwAAAAAAAAAB
+AAAAAgAAAAQAAAAFAAAABgAAAAcAAAAIAAAACwAAAAwAAAAOdAABN3BzcQB+AAsAAAAADgAAAAgA
+AAAAAABzcQB+ABAAAAAAdwQAAAAKeHEAfgA4dXEAfgAkAAAAAgCqluUAvX4BcQB+AElxAH4ATHEA
+fgBNcHhzcQB+ABAAAAAPdwQAAAAPdAAGdXNib3JudAAQcHJpdmF0ZV9lbXBsb3llZXQACGRpc2Fi
+bGVkdAAHbWFycmllZHQADGFkanVzdGVkX2FnZXQABmZlbWFsZXQADHBvb3JfZW5nbGlzaHQADG9u
+bHlfZW5nbGlzaHQAC25hdHVyYWxpemVkdAAGY2FzZUlEdAAEZEFnZXQABmRIb3Vyc3QACGRJbmNv
+bWUxdAAEaVNleHQACGlZZWFyc2NoeHVxAH4AJAAAAAIBCbG5AZ5UeXNxAH4AJj9AAAAAAAABdwgA
+AAACAAAAAnQAATFxAH4AK3QAATBxAH4ALXh1cQB+ACQAAAALAAAAAAAAAAEAAAACAAAABAAAAAUA
+AAAGAAAABwAAAAgAAAALAAAADAAAAA50AAExcHNxAH4ACwAAAAAMAAAABgAAAAAAAHNxAH4AEAAA
+AAJ3BAAAAApzcQB+AAsAAAAABAAAAAkBAAAAAABzcQB+ABAAAAAAdwQAAAAKeHEAfgA4dXEAfgAk
+AAAAAgBLTjAAGVe0cQB+AElxAH4ATHQAATJwc3EAfgALAAAAAAQAAAAKAAAAAAAAc3EAfgAQAAAA
+AHcEAAAACnhxAH4AOHVxAH4AJAAAAAIALlu4ADHFK3EAfgBJcQB+AExxAH4AbHB4c3EAfgAQAAAA
+D3cEAAAAD3QABnVzYm9ybnQAEHByaXZhdGVfZW1wbG95ZWV0AAhkaXNhYmxlZHQAB21hcnJpZWR0
+AAxhZGp1c3RlZF9hZ2V0AAZmZW1hbGV0AAxwb29yX2VuZ2xpc2h0AAxvbmx5X2VuZ2xpc2h0AAtu
+YXR1cmFsaXplZHQABmNhc2VJRHQABGRBZ2V0AAZkSG91cnN0AAhkSW5jb21lMXQABGlTZXh0AAhp
+WWVhcnNjaHh1cQB+ACQAAAACAHmp6ABLHN9zcQB+ACY/QAAAAAAAAXcIAAAAAgAAAAJ0AAExcQB+
+ACt0AAEwcQB+AC14dXEAfgAkAAAACwAAAAAAAAABAAAAAgAAAAQAAAAFAAAABgAAAAcAAAAIAAAA
+CwAAAAwAAAAOdAABMXB4c3EAfgAQAAAAD3cEAAAAD3QABnVzYm9ybnQAEHByaXZhdGVfZW1wbG95
+ZWV0AAhkaXNhYmxlZHQAB21hcnJpZWR0AAxhZGp1c3RlZF9hZ2V0AAZmZW1hbGV0AAxwb29yX2Vu
+Z2xpc2h0AAxvbmx5X2VuZ2xpc2h0AAtuYXR1cmFsaXplZHQABmNhc2VJRHQABGRBZ2V0AAZkSG91
+cnN0AAhkSW5jb21lMXQABGlTZXh0AAhpWWVhcnNjaHh1cQB+ACQAAAACAYNboQHpcVhzcQB+ACY/
+QAAAAAAAAXcIAAAAAgAAAAJ0AAExcQB+ACt0AAEwcQB+AC14dXEAfgAkAAAACwAAAAAAAAABAAAA
+AgAAAAQAAAAFAAAABgAAAAcAAAAIAAAACwAAAAwAAAAOdAABM3BzcQB+AAsAAAAABAAAAAQAAAAA
+AABzcQB+ABAAAAAAdwQAAAAKeHNxAH4AEAAAAA93BAAAAA90AAZ1c2Jvcm50ABBwcml2YXRlX2Vt
+cGxveWVldAAIZGlzYWJsZWR0AAdtYXJyaWVkdAAMYWRqdXN0ZWRfYWdldAAGZmVtYWxldAAMcG9v
+cl9lbmdsaXNodAAMb25seV9lbmdsaXNodAALbmF0dXJhbGl6ZWR0AAZjYXNlSUR0AARkQWdldAAG
+ZEhvdXJzdAAIZEluY29tZTF0AARpU2V4dAAIaVllYXJzY2h4dXEAfgAkAAAAAgFiKhQAmvY9c3EA
+fgAmP0AAAAAAAAF3CAAAAAIAAAACdAABMXEAfgArdAABMHEAfgAteHVxAH4AJAAAAAsAAAAAAAAA
+AQAAAAIAAAAEAAAABQAAAAYAAAAHAAAACAAAAAsAAAAMAAAADnQAATNweHNxAH4AEAAAAA93BAAA
+AA90AAZ1c2Jvcm50ABBwcml2YXRlX2VtcGxveWVldAAIZGlzYWJsZWR0AAdtYXJyaWVkdAAMYWRq
+dXN0ZWRfYWdldAAGZmVtYWxldAAMcG9vcl9lbmdsaXNodAAMb25seV9lbmdsaXNodAALbmF0dXJh
+bGl6ZWR0AAZjYXNlSUR0AARkQWdldAAGZEhvdXJzdAAIZEluY29tZTF0AARpU2V4dAAIaVllYXJz
+Y2h4dXEAfgAkAAAAAgLlhbUChGeVc3EAfgAmP0AAAAAAAAF3CAAAAAIAAAACdAABMXEAfgArdAAB
+MHEAfgAteHVxAH4AJAAAAAsAAAAAAAAAAQAAAAIAAAAEAAAABQAAAAYAAAAHAAAACAAAAAsAAAAM
+AAAADnQAATFweHNxAH4AEAAAAA93BAAAAA90AAZ1c2Jvcm50ABBwcml2YXRlX2VtcGxveWVldAAI
+ZGlzYWJsZWR0AAdtYXJyaWVkdAAMYWRqdXN0ZWRfYWdldAAGZmVtYWxldAAMcG9vcl9lbmdsaXNo
+dAAMb25seV9lbmdsaXNodAALbmF0dXJhbGl6ZWR0AAZjYXNlSUR0AARkQWdldAAGZEhvdXJzdAAI
+ZEluY29tZTF0AARpU2V4dAAIaVllYXJzY2h4dXEAfgAkAAAAAgLlhbUDyS2ucQB+AEl1cQB+ACQA
+AAALAAAAAAAAAAEAAAACAAAABAAAAAUAAAAGAAAABwAAAAgAAAALAAAADAAAAA50AAxEZWNpc2lv
+blRyZWVwc3EAfgAQAAAAAHcEAAAACnhwcHQADURlY2lzaW9uIFRyZWVw</Model>
+</Operator>
+<Operator X="95" Y="231" name="Data Source" type="com.alpine.miner.gef.runoperator.structual.NoteOperator" uuid="1359509264828_0">
+<Parameter key="note" value="http://www2.census.gov/census_2000/datasets/"/>
+</Operator>
+<Operator X="359" Y="34" name="Operator Descriptions" type="com.alpine.miner.gef.runoperator.structual.NoteOperator" uuid="1371674984553">
+<Parameter key="note" value="The Scatter Plot Matrix and Frequency operators are used for exploratory analysis."/>
+</Operator>
+<Operator X="846" Y="229" name="Model Descriptions" type="com.alpine.miner.gef.runoperator.structual.NoteOperator" uuid="1371675164189">
+<Parameter key="note" value="The K-Means operator is a type of unsupervised learning model.&#10;&#10;The Decision Tree and Linear Regression operators are types of supervised learning models."/>
+</Operator>
+<Operator X="305" Y="467" name="Random Sampling" type="com.alpine.miner.gef.runoperator.hadoop.HadoopRandomSamplingOperator" uuid="1371751844471">
+<Parameter key="sampleCount" value="2"/>
+<Parameter key="sampleSizeType" value="Percentage"/>
+<Parameter key="randomSeed" value=" "/>
+<Parameter key="consistent" value="false"/>
+<Parameter key="replacement" value="false"/>
+<Parameter key="disjoint" value="true"/>
+<Parameter key="resultsLocation" value="/tmp"/>
+<Parameter key="resultsName" value="@default_prefix_rsamp_0"/>
+<Parameter key="override" value="Yes"/>
+<SampleSizeModel>
+<sampleIDs sampleID="1"/>
+<sampleIDs sampleID="2"/>
+<sampleSizes sampleSize="70"/>
+<sampleSizes sampleSize="30"/>
+</SampleSizeModel>
+<InPutFieldList>
+<Parameter key="connName" value="hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="9000"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="justinkim"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_var_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="usborn"/>
+<columnNames columnName="private_employee"/>
+<columnNames columnName="disabled"/>
+<columnNames columnName="married"/>
+<columnNames columnName="adjusted_age"/>
+<columnNames columnName="female"/>
+<columnNames columnName="poor_english"/>
+<columnNames columnName="only_english"/>
+<columnNames columnName="naturalized"/>
+<columnNames columnName="caseid"/>
+<columnNames columnName="dAge"/>
+<columnNames columnName="dHours"/>
+<columnNames columnName="dIncome1"/>
+<columnNames columnName="iSex"/>
+<columnNames columnName="iYearsch"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="565" Y="309" name="Training Sample" type="com.alpine.miner.gef.runoperator.hadoop.HadoopSampleSelectorOperator" uuid="1371751877199">
+<Parameter key="selectedFile" value="/tmp/@default_prefix_rsamp_0/Sample_1"/>
+<InPutFieldList>
+<Parameter key="connName" value="hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="9000"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="justinkim"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rsamp_0/Sample_1"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="usborn"/>
+<columnNames columnName="private_employee"/>
+<columnNames columnName="disabled"/>
+<columnNames columnName="married"/>
+<columnNames columnName="adjusted_age"/>
+<columnNames columnName="female"/>
+<columnNames columnName="poor_english"/>
+<columnNames columnName="only_english"/>
+<columnNames columnName="naturalized"/>
+<columnNames columnName="caseid"/>
+<columnNames columnName="dAge"/>
+<columnNames columnName="dHours"/>
+<columnNames columnName="dIncome1"/>
+<columnNames columnName="iSex"/>
+<columnNames columnName="iYearsch"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+<InPutFieldList>
+<Parameter key="connName" value="hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="9000"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="justinkim"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rsamp_0/Sample_2"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="usborn"/>
+<columnNames columnName="private_employee"/>
+<columnNames columnName="disabled"/>
+<columnNames columnName="married"/>
+<columnNames columnName="adjusted_age"/>
+<columnNames columnName="female"/>
+<columnNames columnName="poor_english"/>
+<columnNames columnName="only_english"/>
+<columnNames columnName="naturalized"/>
+<columnNames columnName="caseid"/>
+<columnNames columnName="dAge"/>
+<columnNames columnName="dHours"/>
+<columnNames columnName="dIncome1"/>
+<columnNames columnName="iSex"/>
+<columnNames columnName="iYearsch"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="562" Y="541" name="Test Sample" type="com.alpine.miner.gef.runoperator.hadoop.HadoopSampleSelectorOperator" uuid="1371751909303">
+<Parameter key="selectedFile" value="/tmp/@default_prefix_rsamp_0/Sample_2"/>
+<InPutFieldList>
+<Parameter key="connName" value="hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="9000"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="justinkim"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rsamp_0/Sample_1"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="usborn"/>
+<columnNames columnName="private_employee"/>
+<columnNames columnName="disabled"/>
+<columnNames columnName="married"/>
+<columnNames columnName="adjusted_age"/>
+<columnNames columnName="female"/>
+<columnNames columnName="poor_english"/>
+<columnNames columnName="only_english"/>
+<columnNames columnName="naturalized"/>
+<columnNames columnName="caseid"/>
+<columnNames columnName="dAge"/>
+<columnNames columnName="dHours"/>
+<columnNames columnName="dIncome1"/>
+<columnNames columnName="iSex"/>
+<columnNames columnName="iYearsch"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+<InPutFieldList>
+<Parameter key="connName" value="hadoop"/>
+<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="hdfsPort" value="9000"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
+<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="justinkim"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rsamp_0/Sample_2"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="usborn"/>
+<columnNames columnName="private_employee"/>
+<columnNames columnName="disabled"/>
+<columnNames columnName="married"/>
+<columnNames columnName="adjusted_age"/>
+<columnNames columnName="female"/>
+<columnNames columnName="poor_english"/>
+<columnNames columnName="only_english"/>
+<columnNames columnName="naturalized"/>
+<columnNames columnName="caseid"/>
+<columnNames columnName="dAge"/>
+<columnNames columnName="dHours"/>
+<columnNames columnName="dIncome1"/>
+<columnNames columnName="iSex"/>
+<columnNames columnName="iYearsch"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="310" Y="310" name="Variable Selection and Trasnformation" type="com.alpine.miner.gef.runoperator.hadoop.HadoopVariableOperator" uuid="1371752209580_0">
 <Parameter key="storeResults" value="true"/>
 <Parameter key="resultsLocation" value="/tmp"/>
 <Parameter key="resultsName" value="@default_prefix_var_0"/>
@@ -522,14 +1109,15 @@ QKDiqJ9/yN/AgfS1y6ScnXB0ABFMaW5lYXIgUmVncmVzc2lvbg==</Model>
 <DerivedFieldItem columnName="naturalized" dataType="int" expression="(iCitizen == 3 ? 1 : 0)"/>
 </DerivedFieldsModel>
 <InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
+<Parameter key="connName" value="hadoop"/>
 <Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="hdfsPort" value="9000"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
 <Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="userName" value="alpine"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="justinkim"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
 <Parameter key="hadoopFileName" value="/real_data/us_census_full/USCensus1990.data.txt"/>
 <Parameter key="securityMode" value="simple"/>
@@ -679,191 +1267,20 @@ QKDiqJ9/yN/AgfS1y6ScnXB0ABFMaW5lYXIgUmVncmVzc2lvbg==</Model>
 </HadoopFileStructureModel>
 </InPutFieldList>
 </Operator>
-<Operator X="593" Y="403" name="K-Means" type="com.alpine.miner.gef.runoperator.hadoop.HadoopKmeansOperator" uuid="1350419185054_1">
-<Parameter key="idColumn" value="caseid"/>
-<Parameter key="k" value="7"/>
-<Parameter key="distance" value="Euclidean"/>
-<Parameter key="split_Number" value="5"/>
-<Parameter key="max_optimization_steps" value="5"/>
-<Parameter key="resultsLocation" value="/tmp"/>
-<Parameter key="resultsName" value="@default_prefix_kmean_0"/>
-<Parameter key="override" value="Yes"/>
-<Parameter key="columnNames" value="private_employee,married,female,dAge,dHours,dIncome1,iYearsch"/>
-<InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
-<Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="userName" value="alpine"/>
-<Parameter key="groupName" value="supergroup"/>
-<Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/tmp/@default_prefix_var_0"/>
-<Parameter key="securityMode" value="simple"/>
-<Parameter key="hdfsPrincipal" value=""/>
-<Parameter key="hdfsKeyTab" value=""/>
-<Parameter key="mapredPrincipal" value=""/>
-<Parameter key="mapredKeyTab" value=""/>
-<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
-<columnNames columnName="usborn"/>
-<columnNames columnName="private_employee"/>
-<columnNames columnName="disabled"/>
-<columnNames columnName="married"/>
-<columnNames columnName="adjusted_age"/>
-<columnNames columnName="female"/>
-<columnNames columnName="poor_english"/>
-<columnNames columnName="only_english"/>
-<columnNames columnName="naturalized"/>
-<columnNames columnName="caseid"/>
-<columnNames columnName="dAge"/>
-<columnNames columnName="dHours"/>
-<columnNames columnName="dIncome1"/>
-<columnNames columnName="iSex"/>
-<columnNames columnName="iYearsch"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-</HadoopFileStructureModel>
-</InPutFieldList>
-</Operator>
-<Operator X="460" Y="131" name="Scatter Plot Matrix" type="com.alpine.miner.gef.runoperator.hadoop.HadoopScatterPlotMatrixOperator" uuid="1350419185054_4">
-<Parameter key="columnNames" value="married,female,dAge,dHours,dIncome1,iYearsch"/>
-<InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
-<Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="userName" value="alpine"/>
-<Parameter key="groupName" value="supergroup"/>
-<Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/tmp/@default_prefix_var_0"/>
-<Parameter key="securityMode" value="simple"/>
-<Parameter key="hdfsPrincipal" value=""/>
-<Parameter key="hdfsKeyTab" value=""/>
-<Parameter key="mapredPrincipal" value=""/>
-<Parameter key="mapredKeyTab" value=""/>
-<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
-<columnNames columnName="usborn"/>
-<columnNames columnName="private_employee"/>
-<columnNames columnName="disabled"/>
-<columnNames columnName="married"/>
-<columnNames columnName="adjusted_age"/>
-<columnNames columnName="female"/>
-<columnNames columnName="poor_english"/>
-<columnNames columnName="only_english"/>
-<columnNames columnName="naturalized"/>
-<columnNames columnName="caseid"/>
-<columnNames columnName="dAge"/>
-<columnNames columnName="dHours"/>
-<columnNames columnName="dIncome1"/>
-<columnNames columnName="iSex"/>
-<columnNames columnName="iYearsch"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-</HadoopFileStructureModel>
-</InPutFieldList>
-</Operator>
-<Operator X="542" Y="217" name="Frequency" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFrequencyAnalysisOperator" uuid="1350420289032">
-<Parameter key="columnNames" value="usborn,private_employee,disabled,married,adjusted_age,female,poor_english,only_english,naturalized,dHours,dIncome1,iYearsch"/>
-<InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
-<Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="userName" value="alpine"/>
-<Parameter key="groupName" value="supergroup"/>
-<Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/tmp/@default_prefix_var_0"/>
-<Parameter key="securityMode" value="simple"/>
-<Parameter key="hdfsPrincipal" value=""/>
-<Parameter key="hdfsKeyTab" value=""/>
-<Parameter key="mapredPrincipal" value=""/>
-<Parameter key="mapredKeyTab" value=""/>
-<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
-<columnNames columnName="usborn"/>
-<columnNames columnName="private_employee"/>
-<columnNames columnName="disabled"/>
-<columnNames columnName="married"/>
-<columnNames columnName="adjusted_age"/>
-<columnNames columnName="female"/>
-<columnNames columnName="poor_english"/>
-<columnNames columnName="only_english"/>
-<columnNames columnName="naturalized"/>
-<columnNames columnName="caseid"/>
-<columnNames columnName="dAge"/>
-<columnNames columnName="dHours"/>
-<columnNames columnName="dIncome1"/>
-<columnNames columnName="iSex"/>
-<columnNames columnName="iYearsch"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-</HadoopFileStructureModel>
-</InPutFieldList>
-</Operator>
-<Operator X="333" Y="414" name="Decision Tree" type="com.alpine.miner.gef.runoperator.hadoop.HadoopDecisionTreeOperator" uuid="1357795881972">
+<Operator X="642" Y="427" name="Goodness of Fit" type="com.alpine.miner.gef.runoperator.hadoop.HadoopGoodnessOfFitOperator" uuid="1371752348369">
 <Parameter key="dependentColumn" value="married"/>
-<Parameter key="columnNames" value="usborn,private_employee,disabled,adjusted_age,female,poor_english,only_english,naturalized,dHours,dIncome1,iYearsch"/>
-<Parameter key="maximal_depth" value="5"/>
-<Parameter key="confidence" value="0.25"/>
-<Parameter key="minimal_gain" value="0.001"/>
-<Parameter key="minimal_size_for_split" value="4"/>
-<Parameter key="minimal_leaf_size" value="2"/>
-<Parameter key="categoryLimit" value="1000"/>
-<Parameter key="numericalGranularity" value="1000000"/>
 <InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
+<Parameter key="connName" value="hadoop"/>
 <Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
+<Parameter key="hdfsPort" value="9000"/>
+<Parameter key="hadoopVersion" value="Apache Hadoop 1.0.4"/>
 <Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="userName" value="alpine"/>
+<Parameter key="jobPort" value="9001"/>
+<Parameter key="userName" value="justinkim"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/tmp/@default_prefix_var_0"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rsamp_0/Sample_2"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
@@ -902,85 +1319,18 @@ QKDiqJ9/yN/AgfS1y6ScnXB0ABFMaW5lYXIgUmVncmVzc2lvbg==</Model>
 <columnTypes columnType="long"/>
 </HadoopFileStructureModel>
 </InPutFieldList>
-<Model>rO0ABXNyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuRW5naW5lTW9kZWxyBs7TjRuF
-xwIAA0wABW1vZGVsdAAmTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9vcGVyYXRvci9Nb2RlbDtMAAlt
-b2RlbFR5cGV0ABJMamF2YS9sYW5nL1N0cmluZztMAARuYW1lcQB+AAJ4cHNyAERjb20uYWxwaW5l
-LmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLm1vZGVscy5EZWNpc2lvblRyZWVIYWRvb3BNb2Rl
-bFPsL+yMTnZsAgADTAAJZGVwZW5kZW50cQB+AAJMAApoYWRvb3BUcmVldAApTGNvbS9hbHBpbmUv
-aGFkb29wL3RyZWUvbW9kZWwvSGFkb29wVHJlZTtMAApsZWFmVmFsdWVzdAAQTGphdmEvdXRpbC9M
-aXN0O3hyADljb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLkFic3RyYWN0SGFk
-b29wTW9kZWyoqCkfN+IwfwIAAHhyACtjb20uYWxwaW5lLmRhdGFtaW5pbmcub3BlcmF0b3IuT3V0
-cHV0T2JqZWN0W4/atPz2d24CAAFMAAZzb3VyY2VxAH4AAnhwcHQAB21hcnJpZWRzcgAnY29tLmFs
-cGluZS5oYWRvb3AudHJlZS5tb2RlbC5IYWRvb3BUcmVlTYX4LaYkKacCAAxaAAtjYXRlZ29yaWNh
-bEkAB2ZlYXR1cmVJAAJpZFoACGxlc3NUaGFuWgAEcm9vdEkACHVuaXF1ZUlkTAAIY2hpbGRyZW5x
-AH4ABkwACWNvbHVtbk1hcHEAfgAGWwAGY291bnRzdAACW0lMABBkZXBlbmRhbnRNYXBwaW5ndAAT
-TGphdmEvdXRpbC9IYXNoTWFwO1sADGZlYXR1cmVEZW1hcHEAfgAMTAAFbGFiZWxxAH4AAnhwAQAA
-AAAAAAAAAAEAAAALc3IAE2phdmEudXRpbC5BcnJheUxpc3R4gdIdmcdhnQMAAUkABHNpemV4cAAA
-AAJ3BAAAAApzcQB+AAsAAAAABAAAAAEBAAAAAABzcQB+AA8AAAAAdwQAAAAKeHNxAH4ADwAAAA93
-BAAAAA90AAZ1c2Jvcm50ABBwcml2YXRlX2VtcGxveWVldAAIZGlzYWJsZWR0AAdtYXJyaWVkdAAM
-YWRqdXN0ZWRfYWdldAAGZmVtYWxldAAMcG9vcl9lbmdsaXNodAAMb25seV9lbmdsaXNodAALbmF0
-dXJhbGl6ZWR0AAZjYXNlSUR0AARkQWdldAAGZEhvdXJzdAAIZEluY29tZTF0AARpU2V4dAAIaVll
-YXJzY2h4dXIAAltJTbpgJnbqsqUCAAB4cAAAAAIAAAAAAUTGGXNyABFqYXZhLnV0aWwuSGFzaE1h
-cAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAF3CAAAAAIAAAAC
-dAABMXNyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5n
-Lk51bWJlcoaslR0LlOCLAgAAeHAAAAAAdAABMHNxAH4AKAAAAAF4dXEAfgAjAAAACwAAAAAAAAAB
-AAAAAgAAAAQAAAAFAAAABgAAAAcAAAAIAAAACwAAAAwAAAAOdAABMXNxAH4ACwAAAAAEAAAAAgAA
-AAAAAHNxAH4ADwAAAAJ3BAAAAApzcQB+AAsAAAAABAAAAAMBAAAAAABzcQB+AA8AAAACdwQAAAAK
-c3EAfgALAAAAAAwAAAAFAQAAAAAAc3EAfgAPAAAAAncEAAAACnNxAH4ACwAAAAAOAAAABwEAAAAA
-AHNxAH4ADwAAAAB3BAAAAAp4c3EAfgAPAAAAD3cEAAAAD3QABnVzYm9ybnQAEHByaXZhdGVfZW1w
-bG95ZWV0AAhkaXNhYmxlZHQAB21hcnJpZWR0AAxhZGp1c3RlZF9hZ2V0AAZmZW1hbGV0AAxwb29y
-X2VuZ2xpc2h0AAxvbmx5X2VuZ2xpc2h0AAtuYXR1cmFsaXplZHQABmNhc2VJRHQABGRBZ2V0AAZk
-SG91cnN0AAhkSW5jb21lMXQABGlTZXh0AAhpWWVhcnNjaHh1cQB+ACMAAAACAF8a1ADg1nhzcQB+
-ACU/QAAAAAAAAXcIAAAAAgAAAAJ0AAExcQB+ACp0AAEwcQB+ACx4dXEAfgAjAAAACwAAAAAAAAAB
-AAAAAgAAAAQAAAAFAAAABgAAAAcAAAAIAAAACwAAAAwAAAAOdAABN3NxAH4ACwAAAAAOAAAACAAA
-AAAAAHNxAH4ADwAAAAB3BAAAAAp4cQB+ADd1cQB+ACMAAAACAKqW5QC9fgFxAH4ASHEAfgBLcQB+
-AEx4c3EAfgAPAAAAD3cEAAAAD3QABnVzYm9ybnQAEHByaXZhdGVfZW1wbG95ZWV0AAhkaXNhYmxl
-ZHQAB21hcnJpZWR0AAxhZGp1c3RlZF9hZ2V0AAZmZW1hbGV0AAxwb29yX2VuZ2xpc2h0AAxvbmx5
-X2VuZ2xpc2h0AAtuYXR1cmFsaXplZHQABmNhc2VJRHQABGRBZ2V0AAZkSG91cnN0AAhkSW5jb21l
-MXQABGlTZXh0AAhpWWVhcnNjaHh1cQB+ACMAAAACAQmxuQGeVHlzcQB+ACU/QAAAAAAAAXcIAAAA
-AgAAAAJ0AAExcQB+ACp0AAEwcQB+ACx4dXEAfgAjAAAACwAAAAAAAAABAAAAAgAAAAQAAAAFAAAA
-BgAAAAcAAAAIAAAACwAAAAwAAAAOdAABMXNxAH4ACwAAAAAMAAAABgAAAAAAAHNxAH4ADwAAAAJ3
-BAAAAApzcQB+AAsAAAAABAAAAAkBAAAAAABzcQB+AA8AAAAAdwQAAAAKeHEAfgA3dXEAfgAjAAAA
-AgBLTjAAGVe0cQB+AEhxAH4AS3QAATJzcQB+AAsAAAAABAAAAAoAAAAAAABzcQB+AA8AAAAAdwQA
-AAAKeHEAfgA3dXEAfgAjAAAAAgAuW7gAMcUrcQB+AEhxAH4AS3EAfgBreHNxAH4ADwAAAA93BAAA
-AA90AAZ1c2Jvcm50ABBwcml2YXRlX2VtcGxveWVldAAIZGlzYWJsZWR0AAdtYXJyaWVkdAAMYWRq
-dXN0ZWRfYWdldAAGZmVtYWxldAAMcG9vcl9lbmdsaXNodAAMb25seV9lbmdsaXNodAALbmF0dXJh
-bGl6ZWR0AAZjYXNlSUR0AARkQWdldAAGZEhvdXJzdAAIZEluY29tZTF0AARpU2V4dAAIaVllYXJz
-Y2h4dXEAfgAjAAAAAgB5qegASxzfc3EAfgAlP0AAAAAAAAF3CAAAAAIAAAACdAABMXEAfgAqdAAB
-MHEAfgAseHVxAH4AIwAAAAsAAAAAAAAAAQAAAAIAAAAEAAAABQAAAAYAAAAHAAAACAAAAAsAAAAM
-AAAADnQAATF4c3EAfgAPAAAAD3cEAAAAD3QABnVzYm9ybnQAEHByaXZhdGVfZW1wbG95ZWV0AAhk
-aXNhYmxlZHQAB21hcnJpZWR0AAxhZGp1c3RlZF9hZ2V0AAZmZW1hbGV0AAxwb29yX2VuZ2xpc2h0
-AAxvbmx5X2VuZ2xpc2h0AAtuYXR1cmFsaXplZHQABmNhc2VJRHQABGRBZ2V0AAZkSG91cnN0AAhk
-SW5jb21lMXQABGlTZXh0AAhpWWVhcnNjaHh1cQB+ACMAAAACAYNboQHpcVhzcQB+ACU/QAAAAAAA
-AXcIAAAAAgAAAAJ0AAExcQB+ACp0AAEwcQB+ACx4dXEAfgAjAAAACwAAAAAAAAABAAAAAgAAAAQA
-AAAFAAAABgAAAAcAAAAIAAAACwAAAAwAAAAOdAABM3NxAH4ACwAAAAAEAAAABAAAAAAAAHNxAH4A
-DwAAAAB3BAAAAAp4c3EAfgAPAAAAD3cEAAAAD3QABnVzYm9ybnQAEHByaXZhdGVfZW1wbG95ZWV0
-AAhkaXNhYmxlZHQAB21hcnJpZWR0AAxhZGp1c3RlZF9hZ2V0AAZmZW1hbGV0AAxwb29yX2VuZ2xp
-c2h0AAxvbmx5X2VuZ2xpc2h0AAtuYXR1cmFsaXplZHQABmNhc2VJRHQABGRBZ2V0AAZkSG91cnN0
-AAhkSW5jb21lMXQABGlTZXh0AAhpWWVhcnNjaHh1cQB+ACMAAAACAWIqFACa9j1zcQB+ACU/QAAA
-AAAAAXcIAAAAAgAAAAJ0AAExcQB+ACp0AAEwcQB+ACx4dXEAfgAjAAAACwAAAAAAAAABAAAAAgAA
-AAQAAAAFAAAABgAAAAcAAAAIAAAACwAAAAwAAAAOdAABM3hzcQB+AA8AAAAPdwQAAAAPdAAGdXNi
-b3JudAAQcHJpdmF0ZV9lbXBsb3llZXQACGRpc2FibGVkdAAHbWFycmllZHQADGFkanVzdGVkX2Fn
-ZXQABmZlbWFsZXQADHBvb3JfZW5nbGlzaHQADG9ubHlfZW5nbGlzaHQAC25hdHVyYWxpemVkdAAG
-Y2FzZUlEdAAEZEFnZXQABmRIb3Vyc3QACGRJbmNvbWUxdAAEaVNleHQACGlZZWFyc2NoeHVxAH4A
-IwAAAAIC5YW1AoRnlXNxAH4AJT9AAAAAAAABdwgAAAACAAAAAnQAATFxAH4AKnQAATBxAH4ALHh1
-cQB+ACMAAAALAAAAAAAAAAEAAAACAAAABAAAAAUAAAAGAAAABwAAAAgAAAALAAAADAAAAA50AAEx
-eHNxAH4ADwAAAA93BAAAAA90AAZ1c2Jvcm50ABBwcml2YXRlX2VtcGxveWVldAAIZGlzYWJsZWR0
-AAdtYXJyaWVkdAAMYWRqdXN0ZWRfYWdldAAGZmVtYWxldAAMcG9vcl9lbmdsaXNodAAMb25seV9l
-bmdsaXNodAALbmF0dXJhbGl6ZWR0AAZjYXNlSUR0AARkQWdldAAGZEhvdXJzdAAIZEluY29tZTF0
-AARpU2V4dAAIaVllYXJzY2h4dXEAfgAjAAAAAgLlhbUDyS2ucQB+AEh1cQB+ACMAAAALAAAAAAAA
-AAEAAAACAAAABAAAAAUAAAAGAAAABwAAAAgAAAALAAAADAAAAA50AAxEZWNpc2lvblRyZWVzcQB+
-AA8AAAAAdwQAAAAKeHB0AA1EZWNpc2lvbiBUcmVl</Model>
 </Operator>
-<Operator X="89" Y="63" name="Data Source" type="com.alpine.miner.gef.runoperator.structual.NoteOperator" uuid="1359509264828_0">
-<Parameter key="note" value="http://www2.census.gov/census_2000/datasets/"/>
-</Operator>
-<Link source="Variable-1" target="K-Means"/>
-<Link source="Variable-1" target="Linear Regression"/>
-<Link source="Variable-1" target="Scatter Plot Matrix"/>
-<Link source="USFullCensus.csv" target="Variable-1"/>
-<Link source="Variable-1" target="Frequency"/>
-<Link source="Variable-1" target="Decision Tree"/>
+<Link source="Random Sampling" target="Training Sample"/>
+<Link source="Random Sampling" target="Test Sample"/>
+<Link source="Decision Tree" target="Goodness of Fit"/>
+<Link source="USFullCensus.csv" target="Variable Selection and Trasnformation"/>
+<Link source="Variable Selection and Trasnformation" target="Random Sampling"/>
+<Link source="Training Sample" target="Decision Tree"/>
+<Link source="Test Sample" target="Goodness of Fit"/>
+<Link source="Variable Selection and Trasnformation" target="K-Means"/>
+<Link source="Variable Selection and Trasnformation" target="Linear Regression"/>
+<Link source="Variable Selection and Trasnformation" target="Frequency"/>
+<Link source="Variable Selection and Trasnformation" target="Scatter Plot Matrix"/>
 <VariableModel>
 <Variable>
 <Name>@default_schema</Name>
@@ -988,7 +1338,11 @@ AA8AAAAAdwQAAAAKeHB0AA1EZWNpc2lvbiBUcmVl</Model>
 </Variable>
 <Variable>
 <Name>@default_prefix</Name>
-<Value>alp</Value>
+<Value>admin</Value>
+</Variable>
+<Variable>
+<Name>@default_tempdir</Name>
+<Value>/tmp</Value>
 </Variable>
 </VariableModel>
 </Process>
