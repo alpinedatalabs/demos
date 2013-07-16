@@ -1,0 +1,3070 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Process Description="" UserName="admin" Version="3.0">
+<Operator X="572" Y="211" name="Random Sampling 20%" type="com.alpine.miner.gef.runoperator.hadoop.HadoopRandomSamplingOperator" uuid="1358280923320">
+<Parameter key="sampleCount" value="2"/>
+<Parameter key="sampleSizeType" value="Percentage"/>
+<Parameter key="randomSeed" value=" "/>
+<Parameter key="consistent" value="false"/>
+<Parameter key="replacement" value="false"/>
+<Parameter key="disjoint" value="false"/>
+<Parameter key="resultsLocation" value="/tmp"/>
+<Parameter key="resultsName" value="@default_prefix_rsamp_019"/>
+<Parameter key="override" value="Yes"/>
+<SampleSizeModel>
+<sampleIDs sampleID="1"/>
+<sampleIDs sampleID="2"/>
+<sampleSizes sampleSize="80"/>
+<sampleSizes sampleSize="20"/>
+</SampleSizeModel>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rowfil_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="srsArrDelay"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="787" Y="212" name="Training Set" type="com.alpine.miner.gef.runoperator.hadoop.HadoopSampleSelectorOperator" uuid="1358280992938">
+<Parameter key="selectedFile" value="/tmp/@default_prefix_rsamp_019/Sample_1"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rsamp_019/Sample_1"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="srsArrDelay"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rsamp_019/Sample_2"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="srsArrDelay"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="572" Y="338" name="Validation Set" type="com.alpine.miner.gef.runoperator.hadoop.HadoopSampleSelectorOperator" uuid="1358281006472_0">
+<Parameter key="selectedFile" value="/tmp/@default_prefix_rsamp_019/Sample_2"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rsamp_019/Sample_1"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="srsArrDelay"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rsamp_019/Sample_2"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="srsArrDelay"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="786" Y="448" name="ROC" type="com.alpine.miner.gef.runoperator.hadoop.HadoopROCOperator" uuid="1358281870379">
+<Parameter key="dependentColumn" value="srsArrDelay"/>
+<Parameter key="columnValue" value="1"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rsamp_019/Sample_2"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="srsArrDelay"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="786" Y="301" name="Naive Bayes" type="com.alpine.miner.gef.runoperator.hadoop.HadoopNaiveBayesOperator" uuid="1370469524542">
+<Parameter key="dependentColumn" value="srsArrDelay"/>
+<Parameter key="forceRetrain" value="Yes"/>
+<Parameter key="columnNames" value="strCRSDepHour,strMonth,UniqueCarrier,FlightNum,Origin,Wind_Speed_in_kts,Visibility_in_mi,Precipitation_in_in,Precipitation_Type"/>
+<Parameter key="varSelPath" value=""/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rsamp_019/Sample_1"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="srsArrDelay"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+<Model>rO0ABXNyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuRW5naW5lTW9kZWxyBs7TjRuF
+xwIABEwABW1vZGVsdAArTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9tb2RlbC9BbmFseXRpY01vZGVs
+O0wACW1vZGVsVHlwZXQAEkxqYXZhL2xhbmcvU3RyaW5nO0wABG5hbWVxAH4AAkwABXJ1bklkcQB+
+AAJ4cHNyAEJjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLm1vZGVscy5OYWl2
+ZUJheWVzSGFkb29wTW9kZWzRJW8bNlCengIABkoACm51bVNhbXBsZXNMAAhjb2xOYW1lc3EAfgAC
+TAANZGVwQ29sdW1uTmFtZXEAfgACTAAIZmVhdHVyZXN0ABNMamF2YS91dGlsL0hhc2hNYXA7TAAS
+bW9kZWxGaWxlRGlyZWN0b3J5cQB+AAJMAAZwcmlvcnN0ABVMamF2YS91dGlsL0FycmF5TGlzdDt4
+cgA5Y29tLmFscGluZS5kYXRhbWluaW5nLmFwaS5pbXBsLmhhZG9vcC5BYnN0cmFjdEhhZG9vcE1v
+ZGVsqKgpHzfiMH8CAAFMAA92YXJNYXNrQXNTdHJpbmdxAH4AAnhyACtjb20uYWxwaW5lLmRhdGFt
+aW5pbmcub3BlcmF0b3IuT3V0cHV0T2JqZWN0W4/atPz2d24CAAFMAAZzb3VyY2VxAH4AAnhwcHQA
+AAAAAAAACnUDdAEiaXNKYW51YXJ5LGlzRmVicnVhcnksaXNNYXJjaCxpc0FwcmlsLGlzTWF5LElz
+SnVuZSxpc0p1bHksaXNBdWcsaXNTZXAsaXNPY3QsaXNOb3YsaXNEZWMsaXNEZXBIb3VyMDYsaXNE
+ZXBIb3VyMDcsaXNEZXBIb3VyMDgsaXNEZXBIb3VyMDksaXNEZXBIb3VyMTAsaXNEZXBIb3VyMTEs
+aXNEZXBIb3VyMTIsaXNEZXBIb3VyMTMsaXNEZXBIb3VyMTQsaXNEZXBIb3VyMTUsaXNEZXBIb3Vy
+MTYsaXNEZXBIb3VyMTcsaXNEZXBIb3VyMTgsaXNEZXBIb3VyMTksaXNEZXBIb3VyMjAsaXNEZXBI
+b3VyMjEsaXNEZXBIb3VyMjJ0AAtzcnNBcnJEZWxheXNyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHD
+FmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAx3CAAAABAAAAACdAALaXNE
+ZXBIb3VyMTFzcgATamF2YS51dGlsLkFycmF5TGlzdHiB0h2Zx2GdAwABSQAEc2l6ZXhwAAAAAncE
+AAAACnQASWlzRGVwSG91cjExJGFscF9fX2FscCQxJGFscF9fX2FscCQwLjA2MTIzMzAxNDAzNDMw
+NjA4LDAuMDU3NDgzODUyMTYzODcyNjJ0AElpc0RlcEhvdXIxMSRhbHBfX19hbHAkMCRhbHBfX19h
+bHAkMC4wNjcyNjU3NzA5NzYwNjU0OCwwLjA2Mjc0MTIxMTA4NTYxNTIzeHQAC2lzRGVwSG91cjA4
+c3EAfgAQAAAAAncEAAAACnQASWlzRGVwSG91cjA4JGFscF9fX2FscCQwJGFscF9fX2FscCQwLjA3
+NDc2MTQ5NTE5MDM1ODk2LDAuMDY5MTcyMzUwNzk3NzM0MzN0AEppc0RlcEhvdXIwOCRhbHBfX19h
+bHAkMSRhbHBfX19hbHAkMC4wNTI3MDY2MTYxNzI4NjcwMSwwLjA0OTkyODkwNjg0Njk5NzI5NHh4
+dAAgL3RtcC9OYWl2ZUJheWVzVGVtcDEzNzA2NTAzMTg1MzJzcQB+ABAAAAACdwQAAAAKc3IAIWph
+dmEudXRpbC5BYnN0cmFjdE1hcCRTaW1wbGVFbnRyeYoK7KX8VoAfAgACTAADa2V5dAASTGphdmEv
+bGFuZy9PYmplY3Q7TAAFdmFsdWVxAH4AG3hwdAABMHQABjUwNTc1NXNxAH4AGnQAATF0AAYxNzk1
+NjB4cHQAC05haXZlIEJheWVzdAASMC42NTg3NjcxNjc5NDQ0NjEx</Model>
+</Operator>
+<Operator X="684" Y="446" name="Goodness of Fit" type="com.alpine.miner.gef.runoperator.hadoop.HadoopGoodnessOfFitOperator" uuid="1370469668885">
+<Parameter key="dependentColumn" value="srsArrDelay"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rsamp_019/Sample_2"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="srsArrDelay"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="892" Y="447" name="Lift" type="com.alpine.miner.gef.runoperator.hadoop.HadoopLiftOperator" uuid="1370469793056">
+<Parameter key="dependentColumn" value="srsArrDelay"/>
+<Parameter key="columnValue" value="1"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rsamp_019/Sample_2"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="srsArrDelay"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="349" Y="212" name="Filter out empty rows" type="com.alpine.miner.gef.runoperator.hadoop.HadoopRowFilterOperator" uuid="1370646163299">
+<Parameter key="storeResults" value="true"/>
+<Parameter key="resultsLocation" value="/tmp"/>
+<Parameter key="resultsName" value="@default_prefix_rowfil_0"/>
+<Parameter key="override" value="Yes"/>
+<RowFilterConditionModel conditionValue="" sqlType="nosql" useAll="true">
+<RowFilterConditionItem columnName="srsArrDelay" condition="&gt;=" firstValue="0" secondValue=""/>
+<RowFilterConditionItem columnName="Month" condition="&gt;=" firstValue="1" secondValue=""/>
+</RowFilterConditionModel>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/airline_delay/@default_prefix_var_1"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="srsArrDelay"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="50" Y="208" name="Flights and weather join" type="com.alpine.miner.gef.runoperator.hadoop.HadoopJoinOperator" uuid="1372873351469">
+<Parameter key="resultsLocation" value="/tmp"/>
+<Parameter key="resultsName" value="@default_prefix_join_0"/>
+<Parameter key="override" value="Yes"/>
+<HadoopJoinDefinition>
+<JoinFileModel file="/yan/weatherData.csv" operID="1373910296849"/>
+<JoinFileModel file="/yan/flightsData.csv" operID="1373910290505"/>
+<JoinColumnModel columnName="strYMDH" columnType="chararray" fileId="1373910296849" newColumnName="strYMDH"/>
+<JoinColumnModel columnName="Time" columnType="chararray" fileId="1373910296849" newColumnName="Time"/>
+<JoinColumnModel columnName="Wind_Speed_in_kts" columnType="long" fileId="1373910296849" newColumnName="Wind_Speed_in_kts"/>
+<JoinColumnModel columnName="Wind_Gust_in_kts" columnType="long" fileId="1373910296849" newColumnName="Wind_Gust_in_kts"/>
+<JoinColumnModel columnName="Wind_Direction_in_deg" columnType="long" fileId="1373910296849" newColumnName="Wind_Direction_in_deg"/>
+<JoinColumnModel columnName="Visibility_in_mi" columnType="long" fileId="1373910296849" newColumnName="Visibility_in_mi"/>
+<JoinColumnModel columnName="Precipitation_in_in" columnType="double" fileId="1373910296849" newColumnName="Precipitation_in_in"/>
+<JoinColumnModel columnName="Precipitation_Type" columnType="chararray" fileId="1373910296849" newColumnName="Precipitation_Type"/>
+<JoinColumnModel columnName="Temperature" columnType="double" fileId="1373910296849" newColumnName="Temperature"/>
+<JoinColumnModel columnName="Dew_Point" columnType="double" fileId="1373910296849" newColumnName="Dew_Point"/>
+<JoinColumnModel columnName="Altimeter_in_in_H" columnType="double" fileId="1373910296849" newColumnName="Altimeter_in_in_H"/>
+<JoinColumnModel columnName="strDateDepHourKey" columnType="chararray" fileId="1373910290505" newColumnName="strDateDepHourKey"/>
+<JoinColumnModel columnName="strCRSDepHour" columnType="chararray" fileId="1373910290505" newColumnName="strCRSDepHour"/>
+<JoinColumnModel columnName="strMonth" columnType="chararray" fileId="1373910290505" newColumnName="strMonth"/>
+<JoinColumnModel columnName="strCRSDepTime" columnType="chararray" fileId="1373910290505" newColumnName="strCRSDepTime"/>
+<JoinColumnModel columnName="Year" columnType="long" fileId="1373910290505" newColumnName="Year"/>
+<JoinColumnModel columnName="Month" columnType="long" fileId="1373910290505" newColumnName="Month"/>
+<JoinColumnModel columnName="DayofMonth" columnType="long" fileId="1373910290505" newColumnName="DayofMonth"/>
+<JoinColumnModel columnName="DayOfWeek" columnType="long" fileId="1373910290505" newColumnName="DayOfWeek"/>
+<JoinColumnModel columnName="DepTime" columnType="long" fileId="1373910290505" newColumnName="DepTime"/>
+<JoinColumnModel columnName="CRSDepTime" columnType="long" fileId="1373910290505" newColumnName="CRSDepTime"/>
+<JoinColumnModel columnName="ArrTime" columnType="long" fileId="1373910290505" newColumnName="ArrTime"/>
+<JoinColumnModel columnName="CRSArrTime" columnType="long" fileId="1373910290505" newColumnName="CRSArrTime"/>
+<JoinColumnModel columnName="UniqueCarrier" columnType="chararray" fileId="1373910290505" newColumnName="UniqueCarrier"/>
+<JoinColumnModel columnName="FlightNum" columnType="chararray" fileId="1373910290505" newColumnName="FlightNum"/>
+<JoinColumnModel columnName="TailNum" columnType="chararray" fileId="1373910290505" newColumnName="TailNum"/>
+<JoinColumnModel columnName="ActualElapsedTime" columnType="long" fileId="1373910290505" newColumnName="ActualElapsedTime"/>
+<JoinColumnModel columnName="CRSElapsedTime" columnType="long" fileId="1373910290505" newColumnName="CRSElapsedTime"/>
+<JoinColumnModel columnName="AirTime" columnType="long" fileId="1373910290505" newColumnName="AirTime"/>
+<JoinColumnModel columnName="ArrDelay" columnType="long" fileId="1373910290505" newColumnName="ArrDelay"/>
+<JoinColumnModel columnName="DepDelay" columnType="long" fileId="1373910290505" newColumnName="DepDelay"/>
+<JoinColumnModel columnName="Origin" columnType="chararray" fileId="1373910290505" newColumnName="Origin"/>
+<JoinColumnModel columnName="Dest" columnType="chararray" fileId="1373910290505" newColumnName="Dest"/>
+<JoinColumnModel columnName="Distance" columnType="long" fileId="1373910290505" newColumnName="Distance"/>
+<JoinColumnModel columnName="TaxiIn" columnType="long" fileId="1373910290505" newColumnName="TaxiIn"/>
+<JoinColumnModel columnName="TaxiOut" columnType="long" fileId="1373910290505" newColumnName="TaxiOut"/>
+<JoinColumnModel columnName="Cancelled" columnType="long" fileId="1373910290505" newColumnName="Cancelled"/>
+<JoinColumnModel columnName="CancellationCode" columnType="chararray" fileId="1373910290505" newColumnName="CancellationCode"/>
+<JoinColumnModel columnName="Diverted" columnType="long" fileId="1373910290505" newColumnName="Diverted"/>
+<JoinColumnModel columnName="CarrierDelay" columnType="chararray" fileId="1373910290505" newColumnName="CarrierDelay"/>
+<JoinColumnModel columnName="WeatherDelay" columnType="chararray" fileId="1373910290505" newColumnName="WeatherDelay"/>
+<JoinColumnModel columnName="NASDelay" columnType="chararray" fileId="1373910290505" newColumnName="NASDelay"/>
+<JoinColumnModel columnName="SecurityDelay" columnType="chararray" fileId="1373910290505" newColumnName="SecurityDelay"/>
+<JoinColumnModel columnName="LateAircraftDelay" columnType="chararray" fileId="1373910290505" newColumnName="LateAircraftDelay"/>
+<JoinConditionModel conditionList="=" fileId="1373910296849" keyColumnAliasList="strYMDH" keyColumnList="strYMDH"/>
+<JoinConditionModel conditionList="=" fileId="1373910290505" keyColumnAliasList="strDateDepHourKey" keyColumnList="strDateDepHourKey"/>
+<joinType joinTypeValue="RIGHT OUTER"/>
+<joinReplicateOption joinReplicateOption="AUTO"/>
+</HadoopJoinDefinition>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/yan/weatherData.csv"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="strYMDH"/>
+<columnNames columnName="Time"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="Altimeter_in_in_H"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/yan/flightsData.csv"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="strDateDepHourKey"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="strCRSDepTime"/>
+<columnNames columnName="Year"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="891" Y="299" name="Decision Tree" type="com.alpine.miner.gef.runoperator.hadoop.HadoopDecisionTreeOperator" uuid="1373394096265">
+<Parameter key="dependentColumn" value="srsArrDelay"/>
+<Parameter key="columnNames" value="strCRSDepHour,strMonth,UniqueCarrier,Wind_Speed_in_kts,Visibility_in_mi,Precipitation_in_in,Precipitation_Type"/>
+<Parameter key="maximal_depth" value="5"/>
+<Parameter key="confidence" value="0.25"/>
+<Parameter key="minimal_gain" value="0.01"/>
+<Parameter key="number_of_prepruning_alternatives" value="3"/>
+<Parameter key="minimal_size_for_split" value="4"/>
+<Parameter key="no_pruning" value="false"/>
+<Parameter key="no_pre_pruning" value="false"/>
+<Parameter key="minimal_leaf_size" value="2"/>
+<Parameter key="categoryLimit" value="1000"/>
+<Parameter key="numericalGranularity" value="1000000"/>
+<Parameter key="varSelPath" value=""/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rsamp_019/Sample_1"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="srsArrDelay"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+<Model>rO0ABXNyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuRW5naW5lTW9kZWxyBs7TjRuF
+xwIABEwABW1vZGVsdAArTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9tb2RlbC9BbmFseXRpY01vZGVs
+O0wACW1vZGVsVHlwZXQAEkxqYXZhL2xhbmcvU3RyaW5nO0wABG5hbWVxAH4AAkwABXJ1bklkcQB+
+AAJ4cHNyAERjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLm1vZGVscy5EZWNp
+c2lvblRyZWVIYWRvb3BNb2RlbFPsL+yMTnZsAgAFTAALY29sdW1uc0xpc3R0ABBMamF2YS91dGls
+L0xpc3Q7TAAJZGVwZW5kZW50cQB+AAJMAApoYWRvb3BUcmVldAApTGNvbS9hbHBpbmUvaGFkb29w
+L3RyZWUvbW9kZWwvSGFkb29wVHJlZTtMAApsZWFmVmFsdWVzcQB+AAVMABJtb2RlbEZpbGVEaXJl
+Y3RvcnlxAH4AAnhyADljb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLkFic3Ry
+YWN0SGFkb29wTW9kZWyoqCkfN+IwfwIAAUwAD3Zhck1hc2tBc1N0cmluZ3EAfgACeHIAK2NvbS5h
+bHBpbmUuZGF0YW1pbmluZy5vcGVyYXRvci5PdXRwdXRPYmplY3Rbj9q0/PZ3bgIAAUwABnNvdXJj
+ZXEAfgACeHBwdAAAc3IAE2phdmEudXRpbC5BcnJheUxpc3R4gdIdmcdhnQMAAUkABHNpemV4cAAA
+AF93BAAAAIV0AA1mb3JtYXR0ZWREYXRldAARc3RyRGF0ZURlcEhvdXJLZXl0ABFzdHJEYXRlQXJy
+SG91cktleXQAB3MyTW9udGh0AAVzMkRheXQADXN0ckNSU0RlcEhvdXJ0AA1zdHJDUlNBcnJIb3Vy
+dAALc3JzQXJyRGVsYXl0AAlpc0phbnVhcnl0AAppc0ZlYnJ1YXJ5dAAHaXNNYXJjaHQAB2lzQXBy
+aWx0AAVpc01heXQABklzSnVuZXQABmlzSnVseXQABWlzQXVndAAFaXNTZXB0AAVpc09jdHQABWlz
+Tm92dAAFaXNEZWN0AAtpc0RlcEhvdXIwMHQAC2lzRGVwSG91cjAxdAALaXNEZXBIb3VyMDJ0AAtp
+c0RlcEhvdXIwM3QAC2lzRGVwSG91cjA0dAALaXNEZXBIb3VyMDV0AAtpc0RlcEhvdXIwNnQAC2lz
+RGVwSG91cjA3dAALaXNEZXBIb3VyMDh0AAtpc0RlcEhvdXIwOXQAC2lzRGVwSG91cjEwdAALaXNE
+ZXBIb3VyMTF0AAtpc0RlcEhvdXIxMnQAC2lzRGVwSG91cjEzdAALaXNEZXBIb3VyMTR0AAtpc0Rl
+cEhvdXIxNXQAC2lzRGVwSG91cjE2dAALaXNEZXBIb3VyMTd0AAtpc0RlcEhvdXIxOHQAC2lzRGVw
+SG91cjE5dAALaXNEZXBIb3VyMjB0AAtpc0RlcEhvdXIyMXQAC2lzRGVwSG91cjIydAALaXNEZXBI
+b3VyMjN0AAdzdHJZZWFydAAIc3RyTW9udGh0AAZzdHJEYXl0AA1zdHJDUlNEZXBUaW1ldAANc3Ry
+Q1JTQXJyVGltZXQABFllYXJ0AAVNb250aHQACkRheW9mTW9udGh0AAlEYXlPZldlZWt0AAdEZXBU
+aW1ldAAKQ1JTRGVwVGltZXQAB0FyclRpbWV0AApDUlNBcnJUaW1ldAANVW5pcXVlQ2FycmllcnQA
+CUZsaWdodE51bXQAB1RhaWxOdW10ABFBY3R1YWxFbGFwc2VkVGltZXQADkNSU0VsYXBzZWRUaW1l
+dAAHQWlyVGltZXQACEFyckRlbGF5dAAIRGVwRGVsYXl0AAZPcmlnaW50AAREZXN0dAAIRGlzdGFu
+Y2V0AAZUYXhpSW50AAdUYXhpT3V0dAAJQ2FuY2VsbGVkdAAQQ2FuY2VsbGF0aW9uQ29kZXQACERp
+dmVydGVkdAAMQ2FycmllckRlbGF5dAAMV2VhdGhlckRlbGF5dAAITkFTRGVsYXl0AA1TZWN1cml0
+eURlbGF5dAARTGF0ZUFpcmNyYWZ0RGVsYXl0AAdzdHJZTURIdAAJc3RyMjRIb3VydAAHaW50SG91
+cnQABnN0cllNRHQAB3N0ckhvdXJ0AAZzdHJNaW50AAdzdHJBTVBNdAAEVGltZXQAEVdpbmRfU3Bl
+ZWRfaW5fa3RzdAAQV2luZF9HdXN0X2luX2t0c3QAFVdpbmRfRGlyZWN0aW9uX2luX2RlZ3QAEFZp
+c2liaWxpdHlfaW5fbWl0ABNQcmVjaXBpdGF0aW9uX2luX2ludAASUHJlY2lwaXRhdGlvbl9UeXBl
+dAALVGVtcGVyYXR1cmV0AAlEZXdfUG9pbnR0ABJBbHRpbWV0ZXJfaW5faW5fSGd4dAALc3JzQXJy
+RGVsYXlzcgAnY29tLmFscGluZS5oYWRvb3AudHJlZS5tb2RlbC5IYWRvb3BUcmVlTYX4LaYkKacC
+AA1aAAtjYXRlZ29yaWNhbEkAB2ZlYXR1cmVJAAJpZFoACGxlc3NUaGFuWgAEcm9vdEkACHVuaXF1
+ZUlkTAAIY2hpbGRyZW5xAH4ABUwACWNvbHVtbk1hcHEAfgAFWwAGY291bnRzdAACW0lMABBkZXBl
+bmRhbnRNYXBwaW5ndAATTGphdmEvdXRpbC9IYXNoTWFwO1sADGZlYXR1cmVEZW1hcHEAfgBuTAAF
+bGFiZWxxAH4AAkwAAXJ0ABJMamF2YS91dGlsL1JhbmRvbTt4cAEAAAAAAAAAAAABAAAAF3NxAH4A
+CwAAAAJ3BAAAAApzcQB+AG0AAAAAWQAAAAEBAAAAAABzcQB+AAsAAAACdwQAAAAKc3EAfgBtAQAA
+ABoAAAADAAAAAAAAc3EAfgALAAAAAncEAAAACnNxAH4AbQEAAAAbAAAABwAAAAAAAHNxAH4ACwAA
+AAB3BAAAAAp4cQB+AAx1cgACW0lNumAmduqypQIAAHhwAAAAAgAAB0QAAA1mc3IAEWphdmEudXRp
+bC5IYXNoTWFwBQfawcMWYNEDAAJGAApsb2FkRmFjdG9ySQAJdGhyZXNob2xkeHA/QAAAAAAADHcI
+AAAAEAAAAAJ0AAExc3IAEWphdmEubGFuZy5JbnRlZ2VyEuKgpPeBhzgCAAFJAAV2YWx1ZXhyABBq
+YXZhLmxhbmcuTnVtYmVyhqyVHQuU4IsCAAB4cAAAAAF0AAEwc3EAfgB+AAAAAHh1cQB+AHkAAAAj
+AAAACAAAAAkAAAAKAAAACwAAAAwAAAANAAAADgAAAA8AAAAQAAAAEQAAABIAAAATAAAAGQAAABoA
+AAAbAAAAHAAAAB0AAAAeAAAAHwAAACAAAAAhAAAAIgAAACMAAAAkAAAAJQAAACYAAAAnAAAAKAAA
+ACkAAAAqAAAAKwAAAFYAAABZAAAAWgAAAFt0AAEwc3IAEGphdmEudXRpbC5SYW5kb202MpY0S/AK
+UwMAA1oAFGhhdmVOZXh0TmV4dEdhdXNzaWFuRAAQbmV4dE5leHRHYXVzc2lhbkoABHNlZWR4cAAA
+AAAAAAAAAAAAW4W0N09ReHNxAH4AbQEAAAAbAAAACAAAAAAAAHNxAH4ACwAAAAJ3BAAAAApzcQB+
+AG0AAAAAVgAAAA8BAAAAAABzcQB+AAsAAAAAdwQAAAAKeHEAfgAMdXEAfgB5AAAAAgAAAbcAAAC8
+cQB+AHxxAH4Ag3QABDE1LjVzcQB+AIUAAAAAAAAAAAAAAFuNAaA5qHhzcQB+AG0AAAAAVgAAABAA
+AAAAAABzcQB+AAsAAAAAdwQAAAAKeHEAfgAMdXEAfgB5AAAAAgAAACYAAABRcQB+AHxxAH4Ag3EA
+fgCMc3EAfgCFAAAAAAAAAAAAAABbjQGgDmZ4eHEAfgAMdXEAfgB5AAAAAgAAAd0AAAENcQB+AHxx
+AH4Ag3QAATFzcQB+AIUAAAAAAAAAAAAAAFuFtDdZLXh4cQB+AAx1cQB+AHkAAAACAAAJIQAADnNx
+AH4AfHEAfgCDdAABMHNxAH4AhQAAAAAAAAAAAAAAW33e8GUAeHNxAH4AbQEAAAAaAAAABAAAAAAA
+AHNxAH4ACwAAAAB3BAAAAAp4cQB+AAx1cQB+AHkAAAACAAADeAAAATZxAH4AfHEAfgCDdAABMXNx
+AH4AhQAAAAAAAAAAAAAAW33e8H7leHhxAH4ADHVxAH4AeQAAAAIAAAyZAAAPqXEAfgB8cQB+AIN0
+AAM2LjVzcQB+AIUAAAAAAAAAAAAAAFtq6z3QeHhzcQB+AG0AAAAAWQAAAAIAAAAAAABzcQB+AAsA
+AAACdwQAAAAKc3EAfgBtAQAAABoAAAAFAAAAAAAAc3EAfgALAAAAAncEAAAACnNxAH4AbQAAAABa
+AAAACwEAAAAAAHNxAH4ACwAAAAB3BAAAAAp4cQB+AAx1cQB+AHkAAAACAACJ4AAALYNxAH4AfHEA
+fgCDdAAGMC4wMDUwc3EAfgCFAAAAAAAAAAAAAABbhbQwHZ14c3EAfgBtAAAAAFoAAAAMAAAAAAAA
+c3EAfgALAAAAAHcEAAAACnhxAH4ADHVxAH4AeQAAAAIAAAGCAAAC5XEAfgB8cQB+AINxAH4Ap3Nx
+AH4AhQAAAAAAAAAAAAAAW4W0MeI/eHhxAH4ADHVxAH4AeQAAAAIAAItiAAAwaHEAfgB8cQB+AINx
+AH4AlnNxAH4AhQAAAAAAAAAAAAAAW33e8dFoeHNxAH4AbQEAAAAaAAAABgAAAAAAAHNxAH4ACwAA
+AAB3BAAAAAp4cQB+AAx1cQB+AHkAAAACAAAYlwAAAsdxAH4AfHEAfgCDcQB+AJtzcQB+AIUAAAAA
+AAAAAAAAAFt93vGnA3h4cQB+AAx1cQB+AHkAAAACAACj+QAAMy9xAH4AfHEAfgCDcQB+AJ5zcQB+
+AIUAAAAAAAAAAAAAAFtq6z1rnXh4cQB+AAx1cQB+AHkAAAACAACwkgAAQthxAH4AfHEAfgCDdAAM
+RGVjaXNpb25UcmVlc3EAfgCFAAAAAAAAAAAAAABbYV9t9lV4c3IAGmphdmEudXRpbC5BcnJheXMk
+QXJyYXlMaXN02aQ8vs2IBtICAAFbAAFhdAATW0xqYXZhL2xhbmcvT2JqZWN0O3hwdXIAE1tMamF2
+YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAnEAfgCBcQB+AH1wcHQADURlY2lzaW9uIFRy
+ZWV0ABIwLjg4NzI4MzU5NDk3NDc3OTM=</Model>
+</Operator>
+<Operator X="683" Y="299" name="Logistic Regression" type="com.alpine.miner.gef.runoperator.hadoop.HadoopLogisticRegressionOperator" uuid="1373394206470">
+<Parameter key="dependentColumn" value="srsArrDelay"/>
+<Parameter key="goodValue" value="1"/>
+<Parameter key="forceRetrain" value="Yes"/>
+<Parameter key="max_generations" value="10"/>
+<Parameter key="epsilon" value="0.00001"/>
+<Parameter key="columnNames" value="strCRSDepHour,strMonth,UniqueCarrier,Wind_Speed_in_kts,Visibility_in_mi,Precipitation_in_in,Precipitation_Type"/>
+<Parameter key="varSelPath" value=""/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rsamp_019/Sample_1"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="srsArrDelay"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+<Model>rO0ABXNyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuRW5naW5lTW9kZWxyBs7TjRuF
+xwIABEwABW1vZGVsdAArTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9tb2RlbC9BbmFseXRpY01vZGVs
+O0wACW1vZGVsVHlwZXQAEkxqYXZhL2xhbmcvU3RyaW5nO0wABG5hbWVxAH4AAkwABXJ1bklkcQB+
+AAJ4cHNyAEpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLm1vZGVscy5Mb2dp
+c3RpY1JlZ3Jlc3Npb25IYWRvb3BNb2RlbKKn3kVs08qeAgARRAAJY2hpU3F1YXJlWgAPaW1wcm92
+ZW1lbnRTdG9wSgAJaXRlcmF0aW9uRAANbW9kZWxEZXZpYW5jZUQADG51bGxEZXZpYW5jZUwAGGFs
+bFRyYW5zZm9ybU1hcF92YWx1ZUtleXQAE0xqYXZhL3V0aWwvSGFzaE1hcDtMAANiYWRxAH4AAlsA
+BGJldGF0AAJbREwADWNoYXJDb2x1bW5NYXB0AA9MamF2YS91dGlsL01hcDtbAAtjb2x1bW5OYW1l
+c3QAE1tMamF2YS9sYW5nL1N0cmluZztMAARnb29kcQB+AAJMABppbnRlcmFjdGlvbkNvbHVtbkNv
+bHVtbk1hcHEAfgAFWwAGcFZhbHVlcQB+AAZMAA1zcGVjaWZ5Q29sdW1ucQB+AAJbAA1zdGFuZGFy
+ZEVycm9ycQB+AAZbAA13YWxkU3RhdGlzdGljcQB+AAZbAAZ6VmFsdWVxAH4ABnhyADljb20uYWxw
+aW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLkFic3RyYWN0SGFkb29wTW9kZWyoqCkfN+Iw
+fwIAAUwAD3Zhck1hc2tBc1N0cmluZ3EAfgACeHIAK2NvbS5hbHBpbmUuZGF0YW1pbmluZy5vcGVy
+YXRvci5PdXRwdXRPYmplY3Rbj9q0/PZ3bgIAAUwABnNvdXJjZXEAfgACeHBwdAAAQMaVN/9ixogB
+AAAAAAAAAARA7h+TTrOhokDx4nCnRimic3IAEWphdmEudXRpbC5IYXNoTWFwBQfawcMWYNEDAAJG
+AApsb2FkRmFjdG9ySQAJdGhyZXNob2xkeHA/QAAAAAAADHcIAAAAEAAAAAB4dAABMHVyAAJbRD6m
+jBSrY1oeAgAAeHAAAABDQENX50S/DGBAQ2hQvJ28pkBDO31ZT2roQEMRarwLTTNAQwtPDbxCXEBD
+f/Cyao8IQEM+IcX9O7lAQwYaySe980BC+EzxBfk4QELFwk2UB11AQsRS0PeDPkBDS72yexdDv/Vn
+V+7XedS/7jwWgbjFXb/gPSb1iFpNv9WEdtr9HSu/y4gqTLNw8r+wvkVHCQltP63LNcteH6lAsEba
+iXc5jj/ZNpwv0GgDP986k1p9IQk/4Qn806PiMj/ifHjQRnlhP+bJWeXuU4s/7QHRwmsfoT/srimG
+oh2eP/EfWz24PSA/4KGLSUkT/j/BoBMjKJ4Wv8YTHqSJ2k8/qcak51mCJr++x7kQSWSPQAJYI43k
+L/bAFCbpEVBChsAWMhDAqHgowBNxhTu3XAvAvdRksG2l7MAYJcvALLzBwBI51YngZxDAFZzo7UN0
+WMATXFmV6Oo6wBSSkK0OMOrADr2TohszkEAJLRF4eaPVwBerCdiMxDTAFRwbZVLvncAScMHJobWw
+wBXKVQO7h3XAEupKrZgEUMAnN6NlgBCGwA9SDV9BJqbAEarXk/urq8AU2b97Q3rGwBQySscWjEzA
+E9gfkNTYycAbElrNqytBwBOQ0xb37QLADObMghQYecAU+JPgDrFmwBgE3WMKm0DAFT7wdBIJGsAV
+nKM9ga9cP9n3Tt6FlxXAFmxVzjFSPsATSEBs+PqXwECQlpJbm1JzcQB+AA0/QAAAAAAADHcIAAAA
+EAAAAAF0ABJQcmVjaXBpdGF0aW9uX1R5cGV1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtH
+AgAAeHAAAAAhdAAMcmFpbiBkcml6emxldAAXaGVhdnkgdGh1bmRlcnN0b3JtIHJhaW50AAxibG93
+aW5nIHNub3d0AAFNdAAEbm9uZXQAD2xpZ2h0IHJhaW4gc25vd3QAC3NoYWxsb3cgZm9ndAAJcmFp
+biBzbm93dAAKbGlnaHQgc25vd3QAD2xpZ2h0IHNub3cgcmFpbnQAEGZyZWV6aW5nIGRyaXp6bGV0
+AAxkcml6emxlIHJhaW50AAdkcml6emxldAARdGh1bmRlcnN0b3JtIHJhaW50ABVzaG93ZXIocykg
+aW4gdmljaW5pdHl0ABdsaWdodCB0aHVuZGVyc3Rvcm0gcmFpbnQAFmxpZ2h0IGZyZWV6aW5nIGRy
+aXp6bGV0ABh0aHVuZGVyc3Rvcm0gaW4gdmljaW5pdHl0AAx0aHVuZGVyc3Rvcm10AARzbm93dAAN
+bGlnaHQgZHJpenpsZXQACmxpZ2h0IHJhaW50ABNsaWdodCBmcmVlemluZyByYWludAAYbGlnaHQg
+ZnJlZXppbmcgcmFpbiBzbm93dAAccmFpbiBzbWFsbCBoYWlsL3Nub3cgcGVsbGV0c3QACmhlYXZ5
+IHJhaW50AARoYXpldAAEbWlzdHQAA2ZvZ3QADGRyaXp6bGUgc25vd3QACmR1c3Qgc3Rvcm10AARy
+YWludAAKaGVhdnkgc25vd3h1cQB+ABQAAABCdAAJaXNKYW51YXJ5dAAKaXNGZWJydWFyeXQAB2lz
+TWFyY2h0AAdpc0FwcmlsdAAFaXNNYXl0AAZJc0p1bmV0AAZpc0p1bHl0AAVpc0F1Z3QABWlzU2Vw
+dAAFaXNPY3R0AAVpc05vdnQABWlzRGVjdAALaXNEZXBIb3VyMDV0AAtpc0RlcEhvdXIwNnQAC2lz
+RGVwSG91cjA3dAALaXNEZXBIb3VyMDh0AAtpc0RlcEhvdXIwOXQAC2lzRGVwSG91cjEwdAALaXNE
+ZXBIb3VyMTF0AAtpc0RlcEhvdXIxMnQAC2lzRGVwSG91cjEzdAALaXNEZXBIb3VyMTR0AAtpc0Rl
+cEhvdXIxNXQAC2lzRGVwSG91cjE2dAALaXNEZXBIb3VyMTd0AAtpc0RlcEhvdXIxOHQAC2lzRGVw
+SG91cjE5dAALaXNEZXBIb3VyMjB0AAtpc0RlcEhvdXIyMXQAC2lzRGVwSG91cjIydAALaXNEZXBI
+b3VyMjN0ABFXaW5kX1NwZWVkX2luX2t0c3QAEFZpc2liaWxpdHlfaW5fbWl0ABNQcmVjaXBpdGF0
+aW9uX2luX2ludAAfUHJlY2lwaXRhdGlvbl9UeXBlX3JhaW4gZHJpenpsZXQAKlByZWNpcGl0YXRp
+b25fVHlwZV9oZWF2eSB0aHVuZGVyc3Rvcm0gcmFpbnQAH1ByZWNpcGl0YXRpb25fVHlwZV9ibG93
+aW5nIHNub3d0ABRQcmVjaXBpdGF0aW9uX1R5cGVfTXQAF1ByZWNpcGl0YXRpb25fVHlwZV9ub25l
+dAAiUHJlY2lwaXRhdGlvbl9UeXBlX2xpZ2h0IHJhaW4gc25vd3QAHlByZWNpcGl0YXRpb25fVHlw
+ZV9zaGFsbG93IGZvZ3QAHFByZWNpcGl0YXRpb25fVHlwZV9yYWluIHNub3d0AB1QcmVjaXBpdGF0
+aW9uX1R5cGVfbGlnaHQgc25vd3QAIlByZWNpcGl0YXRpb25fVHlwZV9saWdodCBzbm93IHJhaW50
+ACNQcmVjaXBpdGF0aW9uX1R5cGVfZnJlZXppbmcgZHJpenpsZXQAH1ByZWNpcGl0YXRpb25fVHlw
+ZV9kcml6emxlIHJhaW50ABpQcmVjaXBpdGF0aW9uX1R5cGVfZHJpenpsZXQAJFByZWNpcGl0YXRp
+b25fVHlwZV90aHVuZGVyc3Rvcm0gcmFpbnQAKFByZWNpcGl0YXRpb25fVHlwZV9zaG93ZXIocykg
+aW4gdmljaW5pdHl0ACpQcmVjaXBpdGF0aW9uX1R5cGVfbGlnaHQgdGh1bmRlcnN0b3JtIHJhaW50
+AClQcmVjaXBpdGF0aW9uX1R5cGVfbGlnaHQgZnJlZXppbmcgZHJpenpsZXQAK1ByZWNpcGl0YXRp
+b25fVHlwZV90aHVuZGVyc3Rvcm0gaW4gdmljaW5pdHl0AB9QcmVjaXBpdGF0aW9uX1R5cGVfdGh1
+bmRlcnN0b3JtdAAXUHJlY2lwaXRhdGlvbl9UeXBlX3Nub3d0ACBQcmVjaXBpdGF0aW9uX1R5cGVf
+bGlnaHQgZHJpenpsZXQAHVByZWNpcGl0YXRpb25fVHlwZV9saWdodCByYWludAAmUHJlY2lwaXRh
+dGlvbl9UeXBlX2xpZ2h0IGZyZWV6aW5nIHJhaW50ACtQcmVjaXBpdGF0aW9uX1R5cGVfbGlnaHQg
+ZnJlZXppbmcgcmFpbiBzbm93dAAvUHJlY2lwaXRhdGlvbl9UeXBlX3JhaW4gc21hbGwgaGFpbC9z
+bm93IHBlbGxldHN0AB1QcmVjaXBpdGF0aW9uX1R5cGVfaGVhdnkgcmFpbnQAF1ByZWNpcGl0YXRp
+b25fVHlwZV9oYXpldAAXUHJlY2lwaXRhdGlvbl9UeXBlX21pc3R0ABZQcmVjaXBpdGF0aW9uX1R5
+cGVfZm9ndAAfUHJlY2lwaXRhdGlvbl9UeXBlX2RyaXp6bGUgc25vd3QAHVByZWNpcGl0YXRpb25f
+VHlwZV9kdXN0IHN0b3JtdAAXUHJlY2lwaXRhdGlvbl9UeXBlX3JhaW50AAExc3EAfgANP0AAAAAA
+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</Model>
+</Operator>
+<Operator X="187" Y="211" name="is delay over 15 min" type="com.alpine.miner.gef.runoperator.hadoop.HadoopVariableOperator" uuid="1373416816200_0">
+<Parameter key="storeResults" value="true"/>
+<Parameter key="resultsLocation" value="/tmp/airline_delay"/>
+<Parameter key="resultsName" value="@default_prefix_var_1"/>
+<Parameter key="override" value="Yes"/>
+<DerivedFieldsModel>
+<selectedColumnName columnName="Wind_Speed_in_kts"/>
+<selectedColumnName columnName="Wind_Gust_in_kts"/>
+<selectedColumnName columnName="Wind_Direction_in_deg"/>
+<selectedColumnName columnName="Visibility_in_mi"/>
+<selectedColumnName columnName="Precipitation_in_in"/>
+<selectedColumnName columnName="Precipitation_Type"/>
+<selectedColumnName columnName="Temperature"/>
+<selectedColumnName columnName="Dew_Point"/>
+<selectedColumnName columnName="strCRSDepHour"/>
+<selectedColumnName columnName="strMonth"/>
+<selectedColumnName columnName="Month"/>
+<selectedColumnName columnName="DayofMonth"/>
+<selectedColumnName columnName="DayOfWeek"/>
+<selectedColumnName columnName="DepTime"/>
+<selectedColumnName columnName="CRSDepTime"/>
+<selectedColumnName columnName="ArrTime"/>
+<selectedColumnName columnName="CRSArrTime"/>
+<selectedColumnName columnName="UniqueCarrier"/>
+<selectedColumnName columnName="FlightNum"/>
+<selectedColumnName columnName="TailNum"/>
+<selectedColumnName columnName="ActualElapsedTime"/>
+<selectedColumnName columnName="CRSElapsedTime"/>
+<selectedColumnName columnName="AirTime"/>
+<selectedColumnName columnName="ArrDelay"/>
+<selectedColumnName columnName="DepDelay"/>
+<selectedColumnName columnName="Origin"/>
+<selectedColumnName columnName="Dest"/>
+<selectedColumnName columnName="Distance"/>
+<selectedColumnName columnName="TaxiIn"/>
+<selectedColumnName columnName="TaxiOut"/>
+<selectedColumnName columnName="Cancelled"/>
+<selectedColumnName columnName="CancellationCode"/>
+<selectedColumnName columnName="Diverted"/>
+<selectedColumnName columnName="CarrierDelay"/>
+<selectedColumnName columnName="WeatherDelay"/>
+<selectedColumnName columnName="NASDelay"/>
+<selectedColumnName columnName="SecurityDelay"/>
+<selectedColumnName columnName="LateAircraftDelay"/>
+<DerivedFieldItem columnName="srsArrDelay" dataType="int" expression="(ArrDelay &gt; 15) ? 1 : 0"/>
+</DerivedFieldsModel>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_join_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="strYMDH"/>
+<columnNames columnName="Time"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="Altimeter_in_in_H"/>
+<columnNames columnName="strDateDepHourKey"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="strCRSDepTime"/>
+<columnNames columnName="Year"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="784" Y="69" name="Linear Regression" type="com.alpine.miner.gef.runoperator.hadoop.HadoopLinearRegressionOperator" uuid="1373563539423">
+<Parameter key="dependentColumn" value="ArrDelay"/>
+<Parameter key="forceRetrain" value="Yes"/>
+<Parameter key="columnNames" value="Visibility_in_mi,Precipitation_in_in,Precipitation_Type,strCRSDepHour,strMonth"/>
+<Parameter key="numberOfCrossValidation" value="5"/>
+<Parameter key="penalizingParameter" value="ordinary"/>
+<Parameter key="varSelPath" value=""/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rsamp_019/Sample_1"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="srsArrDelay"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+<Model>rO0ABXNyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuRW5naW5lTW9kZWxyBs7TjRuF
+xwIABEwABW1vZGVsdAArTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9tb2RlbC9BbmFseXRpY01vZGVs
+O0wACW1vZGVsVHlwZXQAEkxqYXZhL2xhbmcvU3RyaW5nO0wABG5hbWVxAH4AAkwABXJ1bklkcQB+
+AAJ4cHNyAEhjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLm1vZGVscy5MaW5l
+YXJSZWdyZXNzaW9uSGFkb29wTW9kZWzMCYIyzxrxIgIAFUQACW9wdExhbWJkYUQAAnIyRAABc0wA
+GGFsbFRyYW5zZm9ybU1hcF92YWx1ZUtleXQAE0xqYXZhL3V0aWwvSGFzaE1hcDtMAA1jaGFyQ29s
+dW1uTWFwdAAPTGphdmEvdXRpbC9NYXA7WwAMY29lZmZpY2llbnRzdAATW0xqYXZhL2xhbmcvRG91
+YmxlO0wAD2NvZWZmaWNpZW50c01hcHQAGUxqYXZhL3V0aWwvTGlua2VkSGFzaE1hcDtbAAtjb2x1
+bW5OYW1lc3QAE1tMamF2YS9sYW5nL1N0cmluZztMAAtlcnJvclN0cmluZ3EAfgACTAAaaW50ZXJh
+Y3Rpb25Db2x1bW5Db2x1bW5NYXBxAH4ABUwAF2ludGVyYWN0aW9uQ29sdW1uRXhwTWFwcQB+AAVb
+AAdsYW1iZGFzdAACW0RbAAFwcQB+AApMABJwcmVkaWN0ZWRMYWJlbE5hbWVxAH4AAkwAD3JlYWxD
+b2x1bW5OYW1lc3QAEExqYXZhL3V0aWwvTGlzdDtMAAlyZXNpZHVhbHNxAH4AC1sAAnNlcQB+AApM
+AA1zcGVjaWZ5Q29sdW1ucQB+AAJbAAF0cQB+AApbAAp0ZXN0aW5nRXJycQB+AApbAAt0cmFpbmlu
+Z0VycnEAfgAKeHIAOWNvbS5hbHBpbmUuZGF0YW1pbmluZy5hcGkuaW1wbC5oYWRvb3AuQWJzdHJh
+Y3RIYWRvb3BNb2RlbKioKR834jB/AgABTAAPdmFyTWFza0FzU3RyaW5ncQB+AAJ4cgArY29tLmFs
+cGluZS5kYXRhbWluaW5nLm9wZXJhdG9yLk91dHB1dE9iamVjdFuP2rT89nduAgABTAAGc291cmNl
+cQB+AAJ4cHB0AAAAAAAAAAAAAD/FUgQfjfVwQEho9aT2idhzcgARamF2YS51dGlsLkhhc2hNYXAF
+B9rBwxZg0QMAAkYACmxvYWRGYWN0b3JJAAl0aHJlc2hvbGR4cD9AAAAAAAAMdwgAAAAQAAAAAHhz
+cQB+ABA/QAAAAAAADHcIAAAAEAAAAAF0ABJQcmVjaXBpdGF0aW9uX1R5cGV1cgATW0xqYXZhLmxh
+bmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAAgdAAEcmFpbnQACmhlYXZ5IHNub3d0AAxyYWluIGRy
+aXp6bGV0ABdoZWF2eSB0aHVuZGVyc3Rvcm0gcmFpbnQADGJsb3dpbmcgc25vd3QAAU10AARub25l
+dAAPbGlnaHQgcmFpbiBzbm93dAALc2hhbGxvdyBmb2d0AApsaWdodCBzbm93dAAPbGlnaHQgc25v
+dyByYWludAAMZHJpenpsZSByYWludAAHZHJpenpsZXQAEXRodW5kZXJzdG9ybSByYWludAAVc2hv
+d2VyKHMpIGluIHZpY2luaXR5dAAXbGlnaHQgdGh1bmRlcnN0b3JtIHJhaW50ABZsaWdodCBmcmVl
+emluZyBkcml6emxldAAMdGh1bmRlcnN0b3JtdAAEc25vd3QADWxpZ2h0IGRyaXp6bGV0AAlyYWlu
+IHNub3d0AApsaWdodCByYWludAATbGlnaHQgZnJlZXppbmcgcmFpbnQAGGxpZ2h0IGZyZWV6aW5n
+IHJhaW4gc25vd3QAHHJhaW4gc21hbGwgaGFpbC9zbm93IHBlbGxldHN0AApoZWF2eSByYWludAAE
+aGF6ZXQABG1pc3R0AANmb2d0ABh0aHVuZGVyc3Rvcm0gaW4gdmljaW5pdHl0AAxkcml6emxlIHNu
+b3d0AApkdXN0IHN0b3JteHVyABNbTGphdmEubGFuZy5Eb3VibGU74RKtiQCmVqYCAAB4cAAAAEJz
+cgAQamF2YS5sYW5nLkRvdWJsZYCzwkopa/sEAgABRAAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJl
+coaslR0LlOCLAgAAeHBAUCeXQMdnfnNxAH4AOEBQMBP/ZiTTc3EAfgA4QEzBUn42+GlzcQB+ADhA
+StRGEqhsiXNxAH4AOEBKfUaXbqwuc3EAfgA4QFEyv7WUXtxzcQB+ADhATfYxVZymCHNxAH4AOEBL
+XVXZm/ILc3EAfgA4QEl4y2/amJJzcQB+ADhAR97zBVq75HNxAH4AOEBF6bRVN1fwc3EAfgA4QE6m
+9fZ9ZF1zcQB+ADjAMA0Ff+AS+nNxAH4AOMApkB0EHGCvc3EAfgA4wCV0s4E3ivZzcQB+ADjAIPl5
+fku6MnNxAH4AOMAgWp53H0Nuc3EAfgA4wBwB9ZI0OKNzcQB+ADjAE55C2s/t8nNxAH4AOMCHTna7
+LOpvc3EAfgA4QBAKjJu3b3JzcQB+ADhAEd89MIOvGnNxAH4AOEAey4FQZ/sbc3EAfgA4QB2M+egS
+7HJzcQB+ADhAItHKl9E8z3NxAH4AOEAm+yLm60x5c3EAfgA4QCjN4+S+a4ZzcQB+ADhAJovgC3yl
+YnNxAH4AOEAJaBb1W4f9c3EAfgA4wASGbxHLCEtzcQB+ADjAEeyaurNW1nNxAH4AOD/vlISGMyRl
+c3EAfgA4wAvkxThVEmtzcQB+ADhATqGqjV/0FnNxAH4AOEAIbVzjXjPqc3EAfgA4QF3HVWEQuZZz
+cQB+ADhAVwY2m2gEDXNxAH4AOD/+/UDs9e9Kc3EAfgA4QCCzXwm83lJzcQB+ADhAmngUloalqXNx
+AH4AOMAsVIHvVbwoc3EAfgA4QDRNnipRXUhzcQB+ADjAQBYUIM73mHNxAH4AOEAlQvrBAPd9c3EA
+fgA4QEOrqpbRPEpzcQB+ADjAH86aP7UKOHNxAH4AOEA2LtUM2d9Ac3EAfgA4QEFsrXJ35x5zcQB+
+ADjAHR0JJVVGw3NxAH4AOEAteQvUCAVqc3EAfgA4wDCHAxxD87FzcQB+ADhAPI1TibDFvHNxAH4A
+OEAUWutVPyHsc3EAfgA4QBp61PP1ZrxzcQB+ADjAA+9WHBPIynNxAH4AOEAj+PBxKgJsc3EAfgA4
+wEU9GXP9NnFzcQB+ADhAXTny5+q0k3NxAH4AOEBER01iUf8Mc3EAfgA4QBHh6fggrqVzcQB+ADjA
+NYOIYZF03XNxAH4AOMANoZWjSqhcc3EAfgA4QCAfarcRghdzcQB+ADhAOefyNgCN8HNxAH4AOEA4
+B10rmDGqc3EAfgA4wCLixpoaZ/dzcgAXamF2YS51dGlsLkxpbmtlZEhhc2hNYXA0wE5cEGzA+wIA
+AVoAC2FjY2Vzc09yZGVyeHEAfgAQP0AAAAAAAGB3CAAAAIAAAABCdAAJaXNKYW51YXJ5cQB+ADp0
+AAppc0ZlYnJ1YXJ5cQB+ADt0AAdpc01hcmNocQB+ADx0AAdpc0FwcmlscQB+AD10AAVpc01heXEA
+fgA+dAAGSXNKdW5lcQB+AD90AAZpc0p1bHlxAH4AQHQABWlzQXVncQB+AEF0AAVpc1NlcHEAfgBC
+dAAFaXNPY3RxAH4AQ3QABWlzTm92cQB+AER0AAVpc0RlY3EAfgBFdAALaXNEZXBIb3VyMDVxAH4A
+RnQAC2lzRGVwSG91cjA2cQB+AEd0AAtpc0RlcEhvdXIwN3EAfgBIdAALaXNEZXBIb3VyMDhxAH4A
+SXQAC2lzRGVwSG91cjA5cQB+AEp0AAtpc0RlcEhvdXIxMHEAfgBLdAALaXNEZXBIb3VyMTFxAH4A
+THQAC2lzRGVwSG91cjEycQB+AE10AAtpc0RlcEhvdXIxM3EAfgBOdAALaXNEZXBIb3VyMTRxAH4A
+T3QAC2lzRGVwSG91cjE1cQB+AFB0AAtpc0RlcEhvdXIxNnEAfgBRdAALaXNEZXBIb3VyMTdxAH4A
+UnQAC2lzRGVwSG91cjE4cQB+AFN0AAtpc0RlcEhvdXIxOXEAfgBUdAALaXNEZXBIb3VyMjBxAH4A
+VXQAC2lzRGVwSG91cjIxcQB+AFZ0AAtpc0RlcEhvdXIyMnEAfgBXdAALaXNEZXBIb3VyMjNxAH4A
+WHQAEVdpbmRfU3BlZWRfaW5fa3RzcQB+AFl0ABBWaXNpYmlsaXR5X2luX21pcQB+AFp0ABNQcmVj
+aXBpdGF0aW9uX2luX2lucQB+AFt0ABdQcmVjaXBpdGF0aW9uX1R5cGVfcmFpbnEAfgBcdAAdUHJl
+Y2lwaXRhdGlvbl9UeXBlX2hlYXZ5IHNub3dxAH4AXXQAH1ByZWNpcGl0YXRpb25fVHlwZV9yYWlu
+IGRyaXp6bGVxAH4AXnQAKlByZWNpcGl0YXRpb25fVHlwZV9oZWF2eSB0aHVuZGVyc3Rvcm0gcmFp
+bnEAfgBfdAAfUHJlY2lwaXRhdGlvbl9UeXBlX2Jsb3dpbmcgc25vd3EAfgBgdAAUUHJlY2lwaXRh
+dGlvbl9UeXBlX01xAH4AYXQAF1ByZWNpcGl0YXRpb25fVHlwZV9ub25lcQB+AGJ0ACJQcmVjaXBp
+dGF0aW9uX1R5cGVfbGlnaHQgcmFpbiBzbm93cQB+AGN0AB5QcmVjaXBpdGF0aW9uX1R5cGVfc2hh
+bGxvdyBmb2dxAH4AZHQAHVByZWNpcGl0YXRpb25fVHlwZV9saWdodCBzbm93cQB+AGV0ACJQcmVj
+aXBpdGF0aW9uX1R5cGVfbGlnaHQgc25vdyByYWlucQB+AGZ0AB9QcmVjaXBpdGF0aW9uX1R5cGVf
+ZHJpenpsZSByYWlucQB+AGd0ABpQcmVjaXBpdGF0aW9uX1R5cGVfZHJpenpsZXEAfgBodAAkUHJl
+Y2lwaXRhdGlvbl9UeXBlX3RodW5kZXJzdG9ybSByYWlucQB+AGl0AChQcmVjaXBpdGF0aW9uX1R5
+cGVfc2hvd2VyKHMpIGluIHZpY2luaXR5cQB+AGp0ACpQcmVjaXBpdGF0aW9uX1R5cGVfbGlnaHQg
+dGh1bmRlcnN0b3JtIHJhaW5xAH4Aa3QAKVByZWNpcGl0YXRpb25fVHlwZV9saWdodCBmcmVlemlu
+ZyBkcml6emxlcQB+AGx0AB9QcmVjaXBpdGF0aW9uX1R5cGVfdGh1bmRlcnN0b3JtcQB+AG10ABdQ
+cmVjaXBpdGF0aW9uX1R5cGVfc25vd3EAfgBudAAgUHJlY2lwaXRhdGlvbl9UeXBlX2xpZ2h0IGRy
+aXp6bGVxAH4Ab3QAHFByZWNpcGl0YXRpb25fVHlwZV9yYWluIHNub3dxAH4AcHQAHVByZWNpcGl0
+YXRpb25fVHlwZV9saWdodCByYWlucQB+AHF0ACZQcmVjaXBpdGF0aW9uX1R5cGVfbGlnaHQgZnJl
+ZXppbmcgcmFpbnEAfgBydAArUHJlY2lwaXRhdGlvbl9UeXBlX2xpZ2h0IGZyZWV6aW5nIHJhaW4g
+c25vd3EAfgBzdAAvUHJlY2lwaXRhdGlvbl9UeXBlX3JhaW4gc21hbGwgaGFpbC9zbm93IHBlbGxl
+dHNxAH4AdHQAHVByZWNpcGl0YXRpb25fVHlwZV9oZWF2eSByYWlucQB+AHV0ABdQcmVjaXBpdGF0
+aW9uX1R5cGVfaGF6ZXEAfgB2dAAXUHJlY2lwaXRhdGlvbl9UeXBlX21pc3RxAH4Ad3QAFlByZWNp
+cGl0YXRpb25fVHlwZV9mb2dxAH4AeHQAK1ByZWNpcGl0YXRpb25fVHlwZV90aHVuZGVyc3Rvcm0g
+aW4gdmljaW5pdHlxAH4AeXQAH1ByZWNpcGl0YXRpb25fVHlwZV9kcml6emxlIHNub3dxAH4AenQA
+CUludGVyY2VwdHEAfgB7eAB1cQB+ABQAAABBcQB+AH5xAH4Af3EAfgCAcQB+AIFxAH4AgnEAfgCD
+cQB+AIRxAH4AhXEAfgCGcQB+AIdxAH4AiHEAfgCJcQB+AIpxAH4Ai3EAfgCMcQB+AI1xAH4AjnEA
+fgCPcQB+AJBxAH4AkXEAfgCScQB+AJNxAH4AlHEAfgCVcQB+AJZxAH4Al3EAfgCYcQB+AJlxAH4A
+mnEAfgCbcQB+AJxxAH4AnXEAfgCecQB+AJ9xAH4AoHEAfgChcQB+AKJxAH4Ao3EAfgCkcQB+AKVx
+AH4ApnEAfgCncQB+AKhxAH4AqXEAfgCqcQB+AKtxAH4ArHEAfgCtcQB+AK5xAH4Ar3EAfgCwcQB+
+ALFxAH4AsnEAfgCzcQB+ALRxAH4AtXEAfgC2cQB+ALdxAH4AuHEAfgC5cQB+ALpxAH4Au3EAfgC8
+cQB+AL1xAH4AvnBzcQB+ABA/QAAAAAAADHcIAAAAEAAAAAB4c3EAfgAQP0AAAAAAAAx3CAAAABAA
+AAAAeHB1cgACW0Q+powUq2NaHgIAAHhwAAAAQj/v/4KBITSCP+//gj8ye+s/7/+QTzMl1z/v/5fK
+S6+yP+//mRw2bhI/7/96Zb4iYT/v/4uffLKjP+//lbXr+DI/7/+dD/i1ET/v/6NH4+hqP+//quLS
+hnk/7/+I8OK7ST+pKSc0CjXgP7pfh3Y2fwA/xfv7CBCXKD/R7OAbbzfmP9MPcI+UmjA/19j7hxt2
+jj/hCtfJo+ueP+//+J0Ot4A/44IIkvP2vj/iOSbVDOmUP9T7U6DUseA/1jVDDHrLGD/Nkhb3Reis
+P8JwK51nxmg/vZHOomcukD/ELgKKrnw8P+Yxu+GrzsI/6D+K4VQMJz/ikt6uipcAPPqAAAAAAAA8
+9QAAAAAAAD06YAAAAAAAP8MbGP4J1Zg9AoAAAAAAAD774MyQkIAAP+yL/rzxSZI/vaAbW3dGCD/v
+//rhVI+9PTSgAAAAAAA+4ccGvqAAAD+gaQAs6XCwPp/IJE5AAAA/JC5NM3JAAD/c9j3Ay2I8PwOI
+HwmmAAA9LTAAAAAAAD+wJ4aOcMTwP04G2lcy9AA/5EPWUHMxyj8LA4Bom8AAP6LiCmDMq1A/qSj6
+yXLu0D/o45WsX+6GPqXOw3uAAAA/Op8xLovgAD0v8AAAAAAAPzEDMMsTUAA/1PDlEOkqPj0mMAAA
+AAAAP7tEDju8w3A/uTBpIT8kmD/dEHCEB46sP82A5X+kNbg/7//tqTLjzHBzcgATamF2YS51dGls
+LkFycmF5TGlzdHiB0h2Zx2GdAwABSQAEc2l6ZXhwAAAASncEAAAAWHQAC3Nyc0FyckRlbGF5dAAJ
+aXNKYW51YXJ5dAAKaXNGZWJydWFyeXQAB2lzTWFyY2h0AAdpc0FwcmlsdAAFaXNNYXl0AAZJc0p1
+bmV0AAZpc0p1bHl0AAVpc0F1Z3QABWlzU2VwdAAFaXNPY3R0AAVpc05vdnQABWlzRGVjdAALaXNE
+ZXBIb3VyMDB0AAtpc0RlcEhvdXIwMXQAC2lzRGVwSG91cjAydAALaXNEZXBIb3VyMDN0AAtpc0Rl
+cEhvdXIwNHQAC2lzRGVwSG91cjA1dAALaXNEZXBIb3VyMDZ0AAtpc0RlcEhvdXIwN3QAC2lzRGVw
+SG91cjA4dAALaXNEZXBIb3VyMDl0AAtpc0RlcEhvdXIxMHQAC2lzRGVwSG91cjExdAALaXNEZXBI
+b3VyMTJ0AAtpc0RlcEhvdXIxM3QAC2lzRGVwSG91cjE0dAALaXNEZXBIb3VyMTV0AAtpc0RlcEhv
+dXIxNnQAC2lzRGVwSG91cjE3dAALaXNEZXBIb3VyMTh0AAtpc0RlcEhvdXIxOXQAC2lzRGVwSG91
+cjIwdAALaXNEZXBIb3VyMjF0AAtpc0RlcEhvdXIyMnQAC2lzRGVwSG91cjIzdAAFTW9udGh0AApE
+YXlvZk1vbnRodAAJRGF5T2ZXZWVrdAAHRGVwVGltZXQACkNSU0RlcFRpbWV0AAdBcnJUaW1ldAAK
+Q1JTQXJyVGltZXQADVVuaXF1ZUNhcnJpZXJ0AAlGbGlnaHROdW10AAdUYWlsTnVtdAARQWN0dWFs
+RWxhcHNlZFRpbWV0AA5DUlNFbGFwc2VkVGltZXQAB0FpclRpbWV0AAhBcnJEZWxheXQACERlcERl
+bGF5dAAGT3JpZ2ludAAERGVzdHQACERpc3RhbmNldAAGVGF4aUludAAHVGF4aU91dHQACUNhbmNl
+bGxlZHQAEENhbmNlbGxhdGlvbkNvZGV0AAhEaXZlcnRlZHQADENhcnJpZXJEZWxheXQADFdlYXRo
+ZXJEZWxheXQACE5BU0RlbGF5dAANU2VjdXJpdHlEZWxheXQAEUxhdGVBaXJjcmFmdERlbGF5dAAR
+V2luZF9TcGVlZF9pbl9rdHN0ABBXaW5kX0d1c3RfaW5fa3RzdAAVV2luZF9EaXJlY3Rpb25faW5f
+ZGVndAAQVmlzaWJpbGl0eV9pbl9taXQAE1ByZWNpcGl0YXRpb25faW5faW50ABJQcmVjaXBpdGF0
+aW9uX1R5cGV0AAtUZW1wZXJhdHVyZXQACURld19Qb2ludHQAEkFsdGltZXRlcl9pbl9pbl9IZ3hz
+cQB+AMUAAAC0dwQAAADIdXEAfgDDAAAAAsAgkv9SH2tMQDJJf6kPtaZ1cQB+AMMAAAACQCXhEWr3
+nKjAKeERavecqHVxAH4AwwAAAAJAPCLckARlzsA0ItyQBGXOdXEAfgDDAAAAAkA8ItyQBGXOwECR
+bkgCMud1cQB+AMMAAAACQDwi3JAEZc7AOSLckARlznVxAH4AwwAAAAJAPCLckARlzsBFkW5IAjLn
+dXEAfgDDAAAAAkA8ItyQBGXOwDgi3JAEZc51cQB+AMMAAAACQDwi3JAEZc7AMSLckARlznVxAH4A
+wwAAAAJAPCLckARlzsBBEW5IAjLndXEAfgDDAAAAAkA8ItyQBGXOwDgi3JAEZc51cQB+AMMAAAAC
+QDwi3JAEZc7ANyLckARlznVxAH4AwwAAAAJAPCLckARlzkA73SNv+5oydXEAfgDDAAAAAkA8ItyQ
+BGXOwDsi3JAEZc51cQB+AMMAAAACQFHk0rPuK0nAR0mlZ9xWknVxAH4AwwAAAAJAUeTSs+4rSUAw
+bLUwR1LcdXEAfgDDAAAAAkBR5NKz7itJQD5stTBHUtx1cQB+AMMAAAACQFHk0rPuK0lAQrZamCOp
+bnVxAH4AwwAAAAJAUeTSs+4rSUBFtlqYI6ludXEAfgDDAAAAAkBR5NKz7itJQD5stTBHUtx1cQB+
+AMMAAAACQFHk0rPuK0nABJpWfcVpIHVxAH4AwwAAAAJAUSXqKlQkPEBtjQrq1e3idXEAfgDDAAAA
+AkBRJeoqVCQ8QFSaFdWr28R1cQB+AMMAAAACQFEl6ipUJDxATDQrq1e3iHVxAH4AwwAAAAJAUSXq
+KlQkPEBxhoV1avbxdXEAfgDDAAAAAkBRJeoqVCQ8wELL1FSoSHh1cQB+AMMAAAACQFEl6ipUJDxA
+V1oV1avbxHVxAH4AwwAAAAJAUSXqKlQkPMBMS9RUqEh4dXEAfgDDAAAAAkBRJeoqVCQ8QFraFdWr
+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
+Mzc4OTA3NDc5NzE3Ng==</Model>
+</Operator>
+<Operator X="47" Y="68" name="flightsData.csv" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFileOperator" uuid="1373910290505">
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hadoopFileName" value="/yan/flightsData.csv"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="strDateDepHourKey"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="strCRSDepTime"/>
+<columnNames columnName="Year"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="mapredKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/yan/flightsData.csv"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="strDateDepHourKey"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="strCRSDepTime"/>
+<columnNames columnName="Year"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="48" Y="365" name="weatherData.csv" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFileOperator" uuid="1373910296849">
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hadoopFileName" value="/yan/weatherData.csv"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="strYMDH"/>
+<columnNames columnName="Time"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="Altimeter_in_in_H"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+</HadoopFileStructureModel>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="mapredKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/yan/weatherData.csv"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="strYMDH"/>
+<columnNames columnName="Time"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="Altimeter_in_in_H"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="296" Y="337" name="Summary Statistics" type="com.alpine.miner.gef.runoperator.hadoop.HadoopValueAnalysisOperator" uuid="1373913669905">
+<Parameter key="columnNames" value="srsArrDelay,Wind_Speed_in_kts,Wind_Gust_in_kts,Visibility_in_mi,Precipitation_in_in,Precipitation_Type,strCRSDepHour,DayOfWeek,UniqueCarrier,ArrDelay,Origin,Distance"/>
+<Parameter key="storeResults" value="false"/>
+<Parameter key="resultsLocation" value="/tmp"/>
+<Parameter key="resultsName" value="@default_prefix_summary_0"/>
+<Parameter key="override" value="Yes"/>
+<Parameter key="doDistinct" value="Yes"/>
+<Parameter key="topN" value="10"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rowfil_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="srsArrDelay"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="229" Y="297" name="Histogram" type="com.alpine.miner.gef.runoperator.hadoop.HadoopHistogramOperator" uuid="1373913841224">
+<ColumnBinsModel>
+<ColumnBin bin="1" columnName="ArrDelay" isMax="false" isMin="false" max="100" min="0" type="1" width="20"/>
+</ColumnBinsModel>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rowfil_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="srsArrDelay"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="407" Y="337" name="Scatter Plot Matrix" type="com.alpine.miner.gef.runoperator.hadoop.HadoopScatterPlotMatrixOperator" uuid="1373913895542">
+<Parameter key="columnNames" value="Wind_Speed_in_kts,Wind_Gust_in_kts,Visibility_in_mi,Precipitation_in_in,Temperature,DepTime,ArrDelay,Distance"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rowfil_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="srsArrDelay"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="462" Y="283" name="Frequency" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFrequencyAnalysisOperator" uuid="1373914016120">
+<Parameter key="columnNames" value="srsArrDelay,Wind_Speed_in_kts,Visibility_in_mi,Precipitation_in_in,Precipitation_Type,DayOfWeek,UniqueCarrier,FlightNum,AirTime,ArrDelay,DepDelay,Origin,Distance"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rowfil_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="srsArrDelay"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="435" Y="121" name="Aggregation by month" type="com.alpine.miner.gef.runoperator.hadoop.HadoopAggregateOperator" uuid="1373914138942">
+<Parameter key="storeResults" value="false"/>
+<Parameter key="resultsLocation" value="/tmp"/>
+<Parameter key="resultsName" value="@default_prefix_agg_0"/>
+<Parameter key="override" value="Yes"/>
+<AggregateFieldsModel>
+<groupBy columnName="Month"/>
+<AggregateField aggregateType="custom" columnName="AVG_ArrDelay" dataType="double" expression="AVG(ArrDelay)"/>
+</AggregateFieldsModel>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rowfil_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="srsArrDelay"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="264" Y="121" name="Aggregation by hour" type="com.alpine.miner.gef.runoperator.hadoop.HadoopAggregateOperator" uuid="1373914186000">
+<Parameter key="storeResults" value="false"/>
+<Parameter key="resultsLocation" value="/tmp"/>
+<Parameter key="resultsName" value="@default_prefix_agg_1"/>
+<Parameter key="override" value="Yes"/>
+<AggregateFieldsModel>
+<groupBy columnName="strCRSDepHour"/>
+<AggregateField aggregateType="custom" columnName="AVG_ArrDelay" dataType="double" expression="AVG(ArrDelay)"/>
+</AggregateFieldsModel>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera"/>
+<Parameter key="hdfsHostname" value="devone.local"/>
+<Parameter key="hdfsPort" value="54310"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH3 Update 4"/>
+<Parameter key="jobHostname" value="devone.local"/>
+<Parameter key="jobPort" value="54311"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/@default_prefix_rowfil_0"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="srsArrDelay"/>
+<columnNames columnName="Wind_Speed_in_kts"/>
+<columnNames columnName="Wind_Gust_in_kts"/>
+<columnNames columnName="Wind_Direction_in_deg"/>
+<columnNames columnName="Visibility_in_mi"/>
+<columnNames columnName="Precipitation_in_in"/>
+<columnNames columnName="Precipitation_Type"/>
+<columnNames columnName="Temperature"/>
+<columnNames columnName="Dew_Point"/>
+<columnNames columnName="strCRSDepHour"/>
+<columnNames columnName="strMonth"/>
+<columnNames columnName="Month"/>
+<columnNames columnName="DayofMonth"/>
+<columnNames columnName="DayOfWeek"/>
+<columnNames columnName="DepTime"/>
+<columnNames columnName="CRSDepTime"/>
+<columnNames columnName="ArrTime"/>
+<columnNames columnName="CRSArrTime"/>
+<columnNames columnName="UniqueCarrier"/>
+<columnNames columnName="FlightNum"/>
+<columnNames columnName="TailNum"/>
+<columnNames columnName="ActualElapsedTime"/>
+<columnNames columnName="CRSElapsedTime"/>
+<columnNames columnName="AirTime"/>
+<columnNames columnName="ArrDelay"/>
+<columnNames columnName="DepDelay"/>
+<columnNames columnName="Origin"/>
+<columnNames columnName="Dest"/>
+<columnNames columnName="Distance"/>
+<columnNames columnName="TaxiIn"/>
+<columnNames columnName="TaxiOut"/>
+<columnNames columnName="Cancelled"/>
+<columnNames columnName="CancellationCode"/>
+<columnNames columnName="Diverted"/>
+<columnNames columnName="CarrierDelay"/>
+<columnNames columnName="WeatherDelay"/>
+<columnNames columnName="NASDelay"/>
+<columnNames columnName="SecurityDelay"/>
+<columnNames columnName="LateAircraftDelay"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="double"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+<columnTypes columnType="chararray"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="118" Y="21" name="Data source note" type="com.alpine.miner.gef.runoperator.structual.NoteOperator" uuid="1373924949761_0">
+<Parameter key="note" value="Data source for flight delays data: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236  (Bureau of Transportation Statistics)"/>
+</Operator>
+<Operator X="111" Y="422" name="Weather data source note" type="com.alpine.miner.gef.runoperator.structual.NoteOperator" uuid="1373924983361">
+<Parameter key="note" value="Historic weather data from climate.usurf.usu.edu/mapGUI/mapGUI.php  (Utah State University, Climate Center)"/>
+</Operator>
+<Operator X="346" Y="121" name="Note" type="com.alpine.miner.gef.runoperator.structual.NoteOperator" uuid="1373927569693">
+<Parameter key="note" value="Data analysis stage"/>
+</Operator>
+<Operator X="854" Y="22" name="Regression note" type="com.alpine.miner.gef.runoperator.structual.NoteOperator" uuid="1373927658705">
+<Parameter key="note" value="Please note that some independent variables are categorical and some are numeric."/>
+</Operator>
+<Operator X="102" Y="150" name="Join note" type="com.alpine.miner.gef.runoperator.structual.NoteOperator" uuid="1373927802339">
+<Parameter key="note" value="Join operator matches date and hour of flight departure to Chicago with the weather data in Chicago at the time of the departure."/>
+</Operator>
+<Operator X="983" Y="450" name="Comment" type="com.alpine.miner.gef.runoperator.structual.NoteOperator" uuid="1373928362126">
+<Parameter key="note" value="Results evaluation"/>
+</Operator>
+<Operator X="980" Y="301" name="Models note" type="com.alpine.miner.gef.runoperator.structual.NoteOperator" uuid="1373928433795">
+<Parameter key="note" value="Predicting whether or not a flight will be delayed by more than 15 minutes"/>
+</Operator>
+<Link source="Random Sampling 20%" target="Training Set"/>
+<Link source="Random Sampling 20%" target="Validation Set"/>
+<Link source="Validation Set" target="ROC"/>
+<Link source="Training Set" target="Naive Bayes"/>
+<Link source="Naive Bayes" target="ROC"/>
+<Link source="Validation Set" target="Goodness of Fit"/>
+<Link source="Naive Bayes" target="Goodness of Fit"/>
+<Link source="Validation Set" target="Lift"/>
+<Link source="Naive Bayes" target="Lift"/>
+<Link source="Filter out empty rows" target="Random Sampling 20%"/>
+<Link source="Training Set" target="Decision Tree"/>
+<Link source="Decision Tree" target="Goodness of Fit"/>
+<Link source="Decision Tree" target="ROC"/>
+<Link source="Decision Tree" target="Lift"/>
+<Link source="Training Set" target="Logistic Regression"/>
+<Link source="Logistic Regression" target="Goodness of Fit"/>
+<Link source="Logistic Regression" target="ROC"/>
+<Link source="Logistic Regression" target="Lift"/>
+<Link source="Flights and weather join" target="is delay over 15 min"/>
+<Link source="is delay over 15 min" target="Filter out empty rows"/>
+<Link source="Training Set" target="Linear Regression"/>
+<Link source="weatherData.csv" target="Flights and weather join"/>
+<Link source="flightsData.csv" target="Flights and weather join"/>
+<Link source="Filter out empty rows" target="Summary Statistics"/>
+<Link source="Filter out empty rows" target="Histogram"/>
+<Link source="Filter out empty rows" target="Scatter Plot Matrix"/>
+<Link source="Filter out empty rows" target="Frequency"/>
+<Link source="Filter out empty rows" target="Aggregation by month"/>
+<Link source="Filter out empty rows" target="Aggregation by hour"/>
+<VariableModel>
+<Variable>
+<Name>@default_schema</Name>
+<Value>public</Value>
+</Variable>
+<Variable>
+<Name>@default_prefix</Name>
+<Value>sasher</Value>
+</Variable>
+<Variable>
+<Name>@default_tempdir</Name>
+<Value>/tmp</Value>
+</Variable>
+<Variable>
+<Name>@default_delimiter</Name>
+<Value>,</Value>
+</Variable>
+</VariableModel>
+</Process>
