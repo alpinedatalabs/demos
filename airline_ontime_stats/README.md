@@ -5,31 +5,27 @@
 
 __Industry:__  Airlines, Transportation, Logistics
 
-__Use case:__  Predicting flight arrival delays based on seasonality, flight schedule, geography, and departure delay 
+__Use case:__  Predicting flight arrival delays based on seasonality, flight schedule, weather data, and geography.
 
-__Explanation:__  The purpose of this demo is to predict arrival delays of US domestic airline flights.  The demo data set comes from public information provided by the US Department of Transportation, Bureau of Transportation Statistics (http://www.transtats.bts.gov).
+__Explanation:__  The purpose of this demo is to predict arrival delays of US domestic airline flights.  The demo data sets come from public information provided by the US Department of Transportation, Bureau of Transportation Statistics (http://www.transtats.bts.gov) and by the Utah State University Climate Center (climate.usurf.usu.edu/mapGUI/mapGUI.php ).
 
-The data set contains scheduled arrival and departure times of all US domestic public passenger flights for the year 2008. The data set also includes actual arrival and departure times, flight information (carrier, origin airport, destination airport, etc.), arrival and departure delays, and delays cause attribution (columns Y : AC in the spreadsheet). Time formatting in columns E : H is specified as HHMM (i.e., 1715 stands for 17:15). The total number of US domestic flights for the year 2008 listed in the data set is approximately 7M.
+The first data set (flightsData.csv) contains scheduled arrival and departure times of all US domestic public passenger flights arriving to Chicago O'Hare airport for the year 2008, as well as the actual arrival and departure times, flight information (carrier, origin airport, destination airport, etc.), arrival delay, and delays cause attribution (columns Y : AC in the spreadsheet). Time formatting in columns I : L is the following: 1715 stands for 17:15, 715 stands for 07:15, and 15 stands for 00:15.
 
 __Operators:__  The workflow logic is as follows:
 
-In the Variable operator we define a variable srsArrDelay to indicate whether or not the flight arrival was delayed by more than 15 minutes.  The reason 15 minutes was chosen is because the US Department of Transportation defines a delayed flight as a flight that arrives at least 15 minutes late. In the same variable operator we also defined binary variables to code for a scheduled hour of departure and the applicable month. The goal of the workflow is to predict whether or not a flight will be delayed by at least 15 minutes, and to predict the absolute value of the delay. 
+Join operator joins flight information with weather information. It matches scheduled departure time (1-hour granularity) for each flight flying to Chicago with the actual weather conditions at Chicago airport at the scheduled departure time (also 1-hour granularity).   
 
-The Join operator is used to join airport and flight information.
+In the Variable operator we define a variable srsArrDelay to indicate whether or not the flight arrival was delayed by more than 15 minutes.  The reason 15 minutes value was chosen is because the US Department of Transportation defines a delayed flight as a flight that arrives at least 15 minutes late. The goal of the workflow is to predict whether or not a flight will be delayed by at least 15 minutes, and to predict the absolute value of the delay. 
 
 The Row Filter operator is used to discard empty rows and rows with important data missing.
 
-The Random Sampling operator is used to extract training and validation data sets (20% each).
+The outputs of the Arrival Delay Histogram, Summary Statistics, Scatter Plot Matrix, Frequency, and Aggregation operators are provided to better illustrate the nature of the input data.
+
+The Random Sampling operator is used to extract training and validation data sets.
 
 Logistic Regression, Decision Tree, and Naïve Bayes operators are used to predict whether or not a flight will be delayed by more than 15 minutes. srsArrDelay is selected as a Dependent Column in these operators.  
 
-For Logistic Regression and Decision Tree operators we have chosen the Month and DepDelay (Departure Delay) as the independent variables.  Note that using DepDelay as an independent variable is cheating(!). If a flight departure was delayed obviously it is likely that the flight arrival will also be delayed. 
-
-For the Naïve Bayes operator we have not used DepDelay knowledge (an “honest and unassuming” model, so to speak). Instead, we have used almost all other available knowledge about the original flight schedule, such as the month and hour of departure, origin and destination airports, carrier, etc. This approach can predict arrival delays weeks or months ahead of time, without relying on DepDelay knowledge.
-
 The Linear Regression operator was used to predict the expected absolute value of the arrival delay. 
-
-The outputs of the Arrival Delay Histogram, Summary Statistics, Scatter Plot Matrix, Pivot and Frequency operators are provided to better illustrate the nature of the input data.
 
 Goodness of Fit, ROC and Lift operators illustrate the accuracy of the model for Logistic Regression, Decision Tree and Naive Bayes operators.
 
@@ -39,13 +35,15 @@ Goodness of Fit, ROC and Lift operators illustrate the accuracy of the model for
 __Key Points__  
 Discussion and Interpretation of the Results:
 
-The ROC graph shows high prediction accuracy for the prediction operators that include DepDelay data. The Logistic Regression produced AUC (area under curve) value of approximately 0.91.  The Decision Tree produced AUC value of approximately 0.84. Higher  AUC values indicate stronger predictive power: AUC of 0.5 represents a random guess, and AUC of 1.0 represents a perfect prediction.  
+The model illustrates that the most important factors in determining the arrival delays are the weather conditions at the airport of arrival, month, and hour of the departure. That makes good sense for the following reasons:
 
-Linear regression also shows strong results with R square being approximately 0.87 (meaning that it explains 87% of the delay variance), and low standard error (approximately 14 min).  However, as explained above, these results are of limited value as they exploit knowledge of the departure delay.  
+- Poor weather conditions obviously negatively affect airlines operations. Furthermore, airlines routinely check the conditions at the airport of arrival before a plane takes off to make sure that it can safely land.
 
-For the Naïve Bayes operator we did not assume departure delay knowledge. As a result, the Naïve Bayes operator prediction was less accurate, providing AUC value of approximately 0.65. The result is better than a random guess, but worse than the operators that assumed  knowledge of the departure delay.
+- Departure hour matters because flight logistics depend on many factors, including the availability of a plane and crew, which often have to arrive in time from another location in order to be available for the current flight. For early morning flights the plane and crew are more likely to be in place by the time of departure because they usually arrive to the flight origin location at least the night before. Afternoon flights, however, frequently rely on connecting flights to bring the crew or plane or both in time for departure. If a connecting flight is late, that would cause the delays to escalate downwards through the logistical flights chain like an avalanche, because either a crew or a plane would not be available in time for scheduled departure.
 
-To get additional insights on the models accuracy, please check the output of the Goodness of Fit operator, and particularly Accuracy, Specificity and Sensitivity values.
+- Departure month likely matters for several reasons: A. Bad weather during the winter months. B. Higher vacation and holiday traffic in certain months puts an additional strain on the system.
+
+The model accuracy can be further improved by getting additinal data on other potentialy relevant factors that affect flight logistics, including weather conditions in the airport of departure, number of passengers on each flight, etc., and adding those factors to the model as independent variables.
 
 
 __Demo Tips__
@@ -53,8 +51,6 @@ __Demo Tips__
 Run the demo in Chrome or Firefox web browsers.
 
 Ensure to run the demo before you show it live and use Actions\My Flow Results to display the outputs of the analytic flow.
-
-It typically takes about 40 minutes for the model to complete the calculations on a very small Hadoop cluster, and considerably less time if you have a medium-size or a large cluster.
 
 This demo is designed to work on Hadoop. To run it on PostgreSQL you'd have to slightly adjust the model, as some operator configuration variables work differently on relational databases. These adjustments, however, should be trivial.
 
@@ -72,7 +68,7 @@ Product documentation is available online [here] (https://alpine.atlassian.net/w
 
 __Troubleshooting__
 
-If you run into issues please review our [knowledge base] (https://alpinedatalabs.zendesk.com) for tips & tricks; you can also contact Alpine Support at (650) 918-6212.
+If you run into issues, please review our [knowledge base] (https://alpinedatalabs.zendesk.com) for tips & tricks; you can also contact Alpine Support at (650) 918-6212.
 
 -----
 
