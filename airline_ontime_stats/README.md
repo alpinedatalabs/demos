@@ -7,13 +7,13 @@ __Industry:__  Airlines, Transportation, Logistics
 
 __Use case:__  Predicting flight arrival delays based on seasonality, flight schedule, weather data, and geography.
 
-__Explanation:__  The purpose of this demo is to predict arrival delays of US domestic airline flights.  The demo data sets come from public information provided by the US Department of Transportation, Bureau of Transportation Statistics (http://www.transtats.bts.gov) and by the Utah State University Climate Center (climate.usurf.usu.edu/mapGUI/mapGUI.php ).
+__Explanation:__  The purpose of this demo is to predict arrival delays of US domestic airline flights.  The demo data sets come from public information provided by the US Department of Transportation, Bureau of Transportation Statistics (http://www.transtats.bts.gov) and by the Utah State University Climate Center (http://climate.usurf.usu.edu/mapGUI/mapGUI.php ).
 
-The first data set (flightsData.csv) contains scheduled arrival and departure times of all US domestic public passenger flights arriving to Chicago O'Hare airport for the year 2008, as well as the actual arrival and departure times, flight information (carrier, origin airport, destination airport, etc.), arrival delay, and delays cause attribution (columns Y : AC in the spreadsheet). Time formatting in columns I : L is the following: 1715 stands for 17:15, 715 stands for 07:15, and 15 stands for 00:15.
+The first data set (flightsData.csv) contains scheduled arrival and departure times of all US domestic public passenger flights arriving to Chicago O'Hare airport for the year 2008, as well as the actual arrival and departure times, flight information (carrier, origin airport, destination airport, etc.), arrival delay, and delays cause attribution. Time formatting in columns I : L is the following: 1715 stands for 17:15, 715 stands for 07:15, and 15 stands for 00:15.
 
 __Operators:__  The workflow logic is as follows:
 
-Join operator joins flight information with weather information. It matches scheduled departure time (1-hour granularity) for each flight flying to Chicago with the actual weather conditions at Chicago airport at the scheduled departure time (also 1-hour granularity).   
+Join operator joins flight information with weather information. It matches scheduled departure time (1-hour granularity) for each flight going to Chicago with the actual weather conditions at Chicago airport at the scheduled departure time (also 1-hour granularity).   
 
 In the Variable operator we define a variable srsArrDelay to indicate whether or not the flight arrival was delayed by more than 15 minutes.  The reason 15 minutes value was chosen is because the US Department of Transportation defines a delayed flight as a flight that arrives at least 15 minutes late. The goal of the workflow is to predict whether or not a flight will be delayed by at least 15 minutes, and to predict the absolute value of the delay. 
 
@@ -43,7 +43,7 @@ The model illustrates that the most important factors in determining the arrival
 
 - Departure month likely matters for several reasons: A. Bad weather during the winter months. B. Higher vacation and holiday traffic in certain months puts an additional strain on the system.
 
-The model accuracy can be further improved by getting additinal data on other potentialy relevant factors that affect flight logistics, including weather conditions in the airport of departure, number of passengers on each flight, etc., and adding those factors to the model as independent variables.
+The model accuracy can be further improved by getting additional data on other potentialy relevant factors that affect flight logistics, including weather conditions in the airport of departure, number of passengers on each flight, etc., and adding those factors to the model as independent variables.
 
 
 __Demo Tips__
