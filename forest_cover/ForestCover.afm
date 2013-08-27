@@ -1,268 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Process Description="" UserName="shillion" Version="3.0">
-<Operator X="127" Y="66" name="covtype.csv" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFileOperator" uuid="1348803226240">
-<Parameter key="connName" value="Hadoop"/>
-<Parameter key="hadoopFileName" value="/real_data/forest_cover/covtype.csv"/>
-<Parameter key="hadoopFileFormat" value="Text File"/>
-<HadoopFileStructureModel delimiter="Comma" escapChar="" includeHeader="true" other="" quoteChar="">
-<columnNames columnName="elevation"/>
-<columnNames columnName="aspect"/>
-<columnNames columnName="slope"/>
-<columnNames columnName="hor_dist_to_water"/>
-<columnNames columnName="vert_dist_to_water"/>
-<columnNames columnName="hor_dist_to_roads"/>
-<columnNames columnName="shade_am"/>
-<columnNames columnName="shade_noon"/>
-<columnNames columnName="shade_pm"/>
-<columnNames columnName="hor_dist_to_fire"/>
-<columnNames columnName="wilderness_type"/>
-<columnNames columnName="soil_type1"/>
-<columnNames columnName="soil_type2"/>
-<columnNames columnName="soil_type3"/>
-<columnNames columnName="soil_type4"/>
-<columnNames columnName="soil_type5"/>
-<columnNames columnName="soil_type6"/>
-<columnNames columnName="soil_type7"/>
-<columnNames columnName="soil_type8"/>
-<columnNames columnName="soil_type9"/>
-<columnNames columnName="soil_type10"/>
-<columnNames columnName="soil_type11"/>
-<columnNames columnName="soil_type12"/>
-<columnNames columnName="soil_type13"/>
-<columnNames columnName="soil_type14"/>
-<columnNames columnName="soil_type15"/>
-<columnNames columnName="soil_type16"/>
-<columnNames columnName="soil_type17"/>
-<columnNames columnName="soil_type18"/>
-<columnNames columnName="soil_type19"/>
-<columnNames columnName="soil_type20"/>
-<columnNames columnName="soil_type21"/>
-<columnNames columnName="soil_type22"/>
-<columnNames columnName="soil_type23"/>
-<columnNames columnName="soil_type24"/>
-<columnNames columnName="soil_type25"/>
-<columnNames columnName="soil_type26"/>
-<columnNames columnName="soil_type27"/>
-<columnNames columnName="soil_type28"/>
-<columnNames columnName="soil_type29"/>
-<columnNames columnName="soil_type30"/>
-<columnNames columnName="soil_type31"/>
-<columnNames columnName="soil_type32"/>
-<columnNames columnName="soil_type33"/>
-<columnNames columnName="soil_type34"/>
-<columnNames columnName="soil_type35"/>
-<columnNames columnName="soil_type36"/>
-<columnNames columnName="soil_type37"/>
-<columnNames columnName="soil_type38"/>
-<columnNames columnName="soil_type39"/>
-<columnNames columnName="soil_type40"/>
-<columnNames columnName="soil_type41"/>
-<columnNames columnName="soil_type42"/>
-<columnNames columnName="soil_type43"/>
-<columnNames columnName="cover_type"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-</HadoopFileStructureModel>
-<Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
-<Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="userName" value="alpine"/>
-<Parameter key="groupName" value="supergroup"/>
-<Parameter key="securityMode" value="simple"/>
-<Parameter key="hdfsPrincipal" value=""/>
-<Parameter key="hdfsKeyTab" value=""/>
-<Parameter key="mapredPrincipal" value=""/>
-<Parameter key="mapredKeyTab" value=""/>
-<InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
-<Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="userName" value="alpine"/>
-<Parameter key="groupName" value="supergroup"/>
-<Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/real_data/forest_cover/covtype.csv"/>
-<Parameter key="securityMode" value="simple"/>
-<Parameter key="hdfsPrincipal" value=""/>
-<Parameter key="hdfsKeyTab" value=""/>
-<Parameter key="mapredPrincipal" value=""/>
-<Parameter key="mapredKeyTab" value=""/>
-<HadoopFileStructureModel delimiter="Comma" escapChar="" includeHeader="true" other="" quoteChar="">
-<columnNames columnName="elevation"/>
-<columnNames columnName="aspect"/>
-<columnNames columnName="slope"/>
-<columnNames columnName="hor_dist_to_water"/>
-<columnNames columnName="vert_dist_to_water"/>
-<columnNames columnName="hor_dist_to_roads"/>
-<columnNames columnName="shade_am"/>
-<columnNames columnName="shade_noon"/>
-<columnNames columnName="shade_pm"/>
-<columnNames columnName="hor_dist_to_fire"/>
-<columnNames columnName="wilderness_type"/>
-<columnNames columnName="soil_type1"/>
-<columnNames columnName="soil_type2"/>
-<columnNames columnName="soil_type3"/>
-<columnNames columnName="soil_type4"/>
-<columnNames columnName="soil_type5"/>
-<columnNames columnName="soil_type6"/>
-<columnNames columnName="soil_type7"/>
-<columnNames columnName="soil_type8"/>
-<columnNames columnName="soil_type9"/>
-<columnNames columnName="soil_type10"/>
-<columnNames columnName="soil_type11"/>
-<columnNames columnName="soil_type12"/>
-<columnNames columnName="soil_type13"/>
-<columnNames columnName="soil_type14"/>
-<columnNames columnName="soil_type15"/>
-<columnNames columnName="soil_type16"/>
-<columnNames columnName="soil_type17"/>
-<columnNames columnName="soil_type18"/>
-<columnNames columnName="soil_type19"/>
-<columnNames columnName="soil_type20"/>
-<columnNames columnName="soil_type21"/>
-<columnNames columnName="soil_type22"/>
-<columnNames columnName="soil_type23"/>
-<columnNames columnName="soil_type24"/>
-<columnNames columnName="soil_type25"/>
-<columnNames columnName="soil_type26"/>
-<columnNames columnName="soil_type27"/>
-<columnNames columnName="soil_type28"/>
-<columnNames columnName="soil_type29"/>
-<columnNames columnName="soil_type30"/>
-<columnNames columnName="soil_type31"/>
-<columnNames columnName="soil_type32"/>
-<columnNames columnName="soil_type33"/>
-<columnNames columnName="soil_type34"/>
-<columnNames columnName="soil_type35"/>
-<columnNames columnName="soil_type36"/>
-<columnNames columnName="soil_type37"/>
-<columnNames columnName="soil_type38"/>
-<columnNames columnName="soil_type39"/>
-<columnNames columnName="soil_type40"/>
-<columnNames columnName="soil_type41"/>
-<columnNames columnName="soil_type42"/>
-<columnNames columnName="soil_type43"/>
-<columnNames columnName="cover_type"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-</HadoopFileStructureModel>
-</InPutFieldList>
-</Operator>
-<Operator X="317" Y="70" name="Variable" type="com.alpine.miner.gef.runoperator.hadoop.HadoopVariableOperator" uuid="1348804576282">
+<Operator X="305" Y="71" name="Ponderosa pine" type="com.alpine.miner.gef.runoperator.hadoop.HadoopVariableOperator" uuid="1348804576282">
 <Parameter key="storeResults" value="true"/>
 <Parameter key="resultsLocation" value="/tmp/forest_cover"/>
 <Parameter key="resultsName" value="@default_prefix_var_0"/>
 <Parameter key="override" value="Yes"/>
+<QuantileModel/>
 <DerivedFieldsModel>
 <selectedColumnName columnName="elevation"/>
 <selectedColumnName columnName="aspect"/>
@@ -318,25 +61,27 @@
 <selectedColumnName columnName="soil_type41"/>
 <selectedColumnName columnName="soil_type42"/>
 <selectedColumnName columnName="soil_type43"/>
-<DerivedFieldItem columnName="deciduous" dataType="int" expression="(cover_type == 4 OR cover_type == 5 ? 1 : 0)"/>
+<DerivedFieldItem columnName="ponderosa_pine" dataType="int" expression="(cover_type == 3 ? 1 : 0)"/>
 </DerivedFieldsModel>
 <InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
-<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="connName" value="Cloudera CDH4"/>
+<Parameter key="hdfsHostname" value="devfive.local"/>
 <Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4"/>
+<Parameter key="jobHostname" value="devfive.local"/>
 <Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
+<Parameter key="useHA" value="false"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/real_data/forest_cover/covtype.csv"/>
+<Parameter key="hadoopFileName" value="/users/Yan/covtype.csv"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
 <Parameter key="mapredPrincipal" value=""/>
 <Parameter key="mapredKeyTab" value=""/>
-<HadoopFileStructureModel delimiter="Comma" escapChar="" includeHeader="true" other="" quoteChar="">
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
 <columnNames columnName="elevation"/>
 <columnNames columnName="aspect"/>
 <columnNames columnName="slope"/>
@@ -463,14 +208,16 @@
 <sampleSizes sampleSize="30"/>
 </SampleSizeModel>
 <InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
-<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="connName" value="Cloudera CDH4"/>
+<Parameter key="hdfsHostname" value="devfive.local"/>
 <Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4"/>
+<Parameter key="jobHostname" value="devfive.local"/>
 <Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
+<Parameter key="useHA" value="false"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
 <Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_var_0"/>
 <Parameter key="securityMode" value="simple"/>
@@ -479,7 +226,7 @@
 <Parameter key="mapredPrincipal" value=""/>
 <Parameter key="mapredKeyTab" value=""/>
 <HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
-<columnNames columnName="deciduous"/>
+<columnNames columnName="ponderosa_pine"/>
 <columnNames columnName="elevation"/>
 <columnNames columnName="aspect"/>
 <columnNames columnName="slope"/>
@@ -592,26 +339,28 @@
 </HadoopFileStructureModel>
 </InPutFieldList>
 </Operator>
-<Operator X="412" Y="223" name="Sample Selector" type="com.alpine.miner.gef.runoperator.hadoop.HadoopSampleSelectorOperator" uuid="1348806656637">
-<Parameter key="selectedFile" value="/tmp/forest_cover/@default_prefix_rsamp_0_1"/>
+<Operator X="422" Y="198" name="Training Set" type="com.alpine.miner.gef.runoperator.hadoop.HadoopSampleSelectorOperator" uuid="1348806656637">
+<Parameter key="selectedFile" value="/tmp/forest_cover/@default_prefix_rsamp_0/Sample_1"/>
 <InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
-<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="connName" value="Cloudera CDH4"/>
+<Parameter key="hdfsHostname" value="devfive.local"/>
 <Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4"/>
+<Parameter key="jobHostname" value="devfive.local"/>
 <Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
+<Parameter key="useHA" value="false"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_rsamp_0_1"/>
+<Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_rsamp_0/Sample_1"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
 <Parameter key="mapredPrincipal" value=""/>
 <Parameter key="mapredKeyTab" value=""/>
 <HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
-<columnNames columnName="deciduous"/>
+<columnNames columnName="ponderosa_pine"/>
 <columnNames columnName="elevation"/>
 <columnNames columnName="aspect"/>
 <columnNames columnName="slope"/>
@@ -724,284 +473,25 @@
 </HadoopFileStructureModel>
 </InPutFieldList>
 <InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
-<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="connName" value="Cloudera CDH4"/>
+<Parameter key="hdfsHostname" value="devfive.local"/>
 <Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4"/>
+<Parameter key="jobHostname" value="devfive.local"/>
 <Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
+<Parameter key="useHA" value="false"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_rsamp_0_2"/>
+<Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_rsamp_0/Sample_2"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
 <Parameter key="mapredPrincipal" value=""/>
 <Parameter key="mapredKeyTab" value=""/>
 <HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
-<columnNames columnName="deciduous"/>
-<columnNames columnName="elevation"/>
-<columnNames columnName="aspect"/>
-<columnNames columnName="slope"/>
-<columnNames columnName="hor_dist_to_water"/>
-<columnNames columnName="vert_dist_to_water"/>
-<columnNames columnName="hor_dist_to_roads"/>
-<columnNames columnName="shade_am"/>
-<columnNames columnName="shade_noon"/>
-<columnNames columnName="shade_pm"/>
-<columnNames columnName="hor_dist_to_fire"/>
-<columnNames columnName="wilderness_type"/>
-<columnNames columnName="soil_type1"/>
-<columnNames columnName="soil_type2"/>
-<columnNames columnName="soil_type3"/>
-<columnNames columnName="soil_type4"/>
-<columnNames columnName="soil_type5"/>
-<columnNames columnName="soil_type6"/>
-<columnNames columnName="soil_type7"/>
-<columnNames columnName="soil_type8"/>
-<columnNames columnName="soil_type9"/>
-<columnNames columnName="soil_type10"/>
-<columnNames columnName="soil_type11"/>
-<columnNames columnName="soil_type12"/>
-<columnNames columnName="soil_type13"/>
-<columnNames columnName="soil_type14"/>
-<columnNames columnName="soil_type15"/>
-<columnNames columnName="soil_type16"/>
-<columnNames columnName="soil_type17"/>
-<columnNames columnName="soil_type18"/>
-<columnNames columnName="soil_type19"/>
-<columnNames columnName="soil_type20"/>
-<columnNames columnName="soil_type21"/>
-<columnNames columnName="soil_type22"/>
-<columnNames columnName="soil_type23"/>
-<columnNames columnName="soil_type24"/>
-<columnNames columnName="soil_type25"/>
-<columnNames columnName="soil_type26"/>
-<columnNames columnName="soil_type27"/>
-<columnNames columnName="soil_type28"/>
-<columnNames columnName="soil_type29"/>
-<columnNames columnName="soil_type30"/>
-<columnNames columnName="soil_type31"/>
-<columnNames columnName="soil_type32"/>
-<columnNames columnName="soil_type33"/>
-<columnNames columnName="soil_type34"/>
-<columnNames columnName="soil_type35"/>
-<columnNames columnName="soil_type36"/>
-<columnNames columnName="soil_type37"/>
-<columnNames columnName="soil_type38"/>
-<columnNames columnName="soil_type39"/>
-<columnNames columnName="soil_type40"/>
-<columnNames columnName="soil_type41"/>
-<columnNames columnName="soil_type42"/>
-<columnNames columnName="soil_type43"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-</HadoopFileStructureModel>
-</InPutFieldList>
-</Operator>
-<Operator X="558" Y="219" name="Sample Selector-1" type="com.alpine.miner.gef.runoperator.hadoop.HadoopSampleSelectorOperator" uuid="1348806659960">
-<Parameter key="selectedFile" value="/tmp/forest_cover/@default_prefix_rsamp_0_2"/>
-<InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
-<Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="userName" value="alpine"/>
-<Parameter key="groupName" value="supergroup"/>
-<Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_rsamp_0_1"/>
-<Parameter key="securityMode" value="simple"/>
-<Parameter key="hdfsPrincipal" value=""/>
-<Parameter key="hdfsKeyTab" value=""/>
-<Parameter key="mapredPrincipal" value=""/>
-<Parameter key="mapredKeyTab" value=""/>
-<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
-<columnNames columnName="deciduous"/>
-<columnNames columnName="elevation"/>
-<columnNames columnName="aspect"/>
-<columnNames columnName="slope"/>
-<columnNames columnName="hor_dist_to_water"/>
-<columnNames columnName="vert_dist_to_water"/>
-<columnNames columnName="hor_dist_to_roads"/>
-<columnNames columnName="shade_am"/>
-<columnNames columnName="shade_noon"/>
-<columnNames columnName="shade_pm"/>
-<columnNames columnName="hor_dist_to_fire"/>
-<columnNames columnName="wilderness_type"/>
-<columnNames columnName="soil_type1"/>
-<columnNames columnName="soil_type2"/>
-<columnNames columnName="soil_type3"/>
-<columnNames columnName="soil_type4"/>
-<columnNames columnName="soil_type5"/>
-<columnNames columnName="soil_type6"/>
-<columnNames columnName="soil_type7"/>
-<columnNames columnName="soil_type8"/>
-<columnNames columnName="soil_type9"/>
-<columnNames columnName="soil_type10"/>
-<columnNames columnName="soil_type11"/>
-<columnNames columnName="soil_type12"/>
-<columnNames columnName="soil_type13"/>
-<columnNames columnName="soil_type14"/>
-<columnNames columnName="soil_type15"/>
-<columnNames columnName="soil_type16"/>
-<columnNames columnName="soil_type17"/>
-<columnNames columnName="soil_type18"/>
-<columnNames columnName="soil_type19"/>
-<columnNames columnName="soil_type20"/>
-<columnNames columnName="soil_type21"/>
-<columnNames columnName="soil_type22"/>
-<columnNames columnName="soil_type23"/>
-<columnNames columnName="soil_type24"/>
-<columnNames columnName="soil_type25"/>
-<columnNames columnName="soil_type26"/>
-<columnNames columnName="soil_type27"/>
-<columnNames columnName="soil_type28"/>
-<columnNames columnName="soil_type29"/>
-<columnNames columnName="soil_type30"/>
-<columnNames columnName="soil_type31"/>
-<columnNames columnName="soil_type32"/>
-<columnNames columnName="soil_type33"/>
-<columnNames columnName="soil_type34"/>
-<columnNames columnName="soil_type35"/>
-<columnNames columnName="soil_type36"/>
-<columnNames columnName="soil_type37"/>
-<columnNames columnName="soil_type38"/>
-<columnNames columnName="soil_type39"/>
-<columnNames columnName="soil_type40"/>
-<columnNames columnName="soil_type41"/>
-<columnNames columnName="soil_type42"/>
-<columnNames columnName="soil_type43"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-</HadoopFileStructureModel>
-</InPutFieldList>
-<InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
-<Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="userName" value="alpine"/>
-<Parameter key="groupName" value="supergroup"/>
-<Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_rsamp_0_2"/>
-<Parameter key="securityMode" value="simple"/>
-<Parameter key="hdfsPrincipal" value=""/>
-<Parameter key="hdfsKeyTab" value=""/>
-<Parameter key="mapredPrincipal" value=""/>
-<Parameter key="mapredKeyTab" value=""/>
-<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
-<columnNames columnName="deciduous"/>
+<columnNames columnName="ponderosa_pine"/>
 <columnNames columnName="elevation"/>
 <columnNames columnName="aspect"/>
 <columnNames columnName="slope"/>
@@ -1114,31 +604,300 @@
 </HadoopFileStructureModel>
 </InPutFieldList>
 </Operator>
-<Operator X="473" Y="370" name="Logistic Regression" type="com.alpine.miner.gef.runoperator.hadoop.HadoopLogisticRegressionOperator" uuid="1348806737982">
-<Parameter key="dependentColumn" value="deciduous"/>
-<Parameter key="goodValue" value="1"/>
+<Operator X="560" Y="198" name="Validation Set" type="com.alpine.miner.gef.runoperator.hadoop.HadoopSampleSelectorOperator" uuid="1348806659960">
+<Parameter key="selectedFile" value="/tmp/forest_cover/@default_prefix_rsamp_0/Sample_2"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera CDH4"/>
+<Parameter key="hdfsHostname" value="devfive.local"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4"/>
+<Parameter key="jobHostname" value="devfive.local"/>
+<Parameter key="jobPort" value="8021"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="useHA" value="false"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_rsamp_0/Sample_1"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="ponderosa_pine"/>
+<columnNames columnName="elevation"/>
+<columnNames columnName="aspect"/>
+<columnNames columnName="slope"/>
+<columnNames columnName="hor_dist_to_water"/>
+<columnNames columnName="vert_dist_to_water"/>
+<columnNames columnName="hor_dist_to_roads"/>
+<columnNames columnName="shade_am"/>
+<columnNames columnName="shade_noon"/>
+<columnNames columnName="shade_pm"/>
+<columnNames columnName="hor_dist_to_fire"/>
+<columnNames columnName="wilderness_type"/>
+<columnNames columnName="soil_type1"/>
+<columnNames columnName="soil_type2"/>
+<columnNames columnName="soil_type3"/>
+<columnNames columnName="soil_type4"/>
+<columnNames columnName="soil_type5"/>
+<columnNames columnName="soil_type6"/>
+<columnNames columnName="soil_type7"/>
+<columnNames columnName="soil_type8"/>
+<columnNames columnName="soil_type9"/>
+<columnNames columnName="soil_type10"/>
+<columnNames columnName="soil_type11"/>
+<columnNames columnName="soil_type12"/>
+<columnNames columnName="soil_type13"/>
+<columnNames columnName="soil_type14"/>
+<columnNames columnName="soil_type15"/>
+<columnNames columnName="soil_type16"/>
+<columnNames columnName="soil_type17"/>
+<columnNames columnName="soil_type18"/>
+<columnNames columnName="soil_type19"/>
+<columnNames columnName="soil_type20"/>
+<columnNames columnName="soil_type21"/>
+<columnNames columnName="soil_type22"/>
+<columnNames columnName="soil_type23"/>
+<columnNames columnName="soil_type24"/>
+<columnNames columnName="soil_type25"/>
+<columnNames columnName="soil_type26"/>
+<columnNames columnName="soil_type27"/>
+<columnNames columnName="soil_type28"/>
+<columnNames columnName="soil_type29"/>
+<columnNames columnName="soil_type30"/>
+<columnNames columnName="soil_type31"/>
+<columnNames columnName="soil_type32"/>
+<columnNames columnName="soil_type33"/>
+<columnNames columnName="soil_type34"/>
+<columnNames columnName="soil_type35"/>
+<columnNames columnName="soil_type36"/>
+<columnNames columnName="soil_type37"/>
+<columnNames columnName="soil_type38"/>
+<columnNames columnName="soil_type39"/>
+<columnNames columnName="soil_type40"/>
+<columnNames columnName="soil_type41"/>
+<columnNames columnName="soil_type42"/>
+<columnNames columnName="soil_type43"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera CDH4"/>
+<Parameter key="hdfsHostname" value="devfive.local"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4"/>
+<Parameter key="jobHostname" value="devfive.local"/>
+<Parameter key="jobPort" value="8021"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="useHA" value="false"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_rsamp_0/Sample_2"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="ponderosa_pine"/>
+<columnNames columnName="elevation"/>
+<columnNames columnName="aspect"/>
+<columnNames columnName="slope"/>
+<columnNames columnName="hor_dist_to_water"/>
+<columnNames columnName="vert_dist_to_water"/>
+<columnNames columnName="hor_dist_to_roads"/>
+<columnNames columnName="shade_am"/>
+<columnNames columnName="shade_noon"/>
+<columnNames columnName="shade_pm"/>
+<columnNames columnName="hor_dist_to_fire"/>
+<columnNames columnName="wilderness_type"/>
+<columnNames columnName="soil_type1"/>
+<columnNames columnName="soil_type2"/>
+<columnNames columnName="soil_type3"/>
+<columnNames columnName="soil_type4"/>
+<columnNames columnName="soil_type5"/>
+<columnNames columnName="soil_type6"/>
+<columnNames columnName="soil_type7"/>
+<columnNames columnName="soil_type8"/>
+<columnNames columnName="soil_type9"/>
+<columnNames columnName="soil_type10"/>
+<columnNames columnName="soil_type11"/>
+<columnNames columnName="soil_type12"/>
+<columnNames columnName="soil_type13"/>
+<columnNames columnName="soil_type14"/>
+<columnNames columnName="soil_type15"/>
+<columnNames columnName="soil_type16"/>
+<columnNames columnName="soil_type17"/>
+<columnNames columnName="soil_type18"/>
+<columnNames columnName="soil_type19"/>
+<columnNames columnName="soil_type20"/>
+<columnNames columnName="soil_type21"/>
+<columnNames columnName="soil_type22"/>
+<columnNames columnName="soil_type23"/>
+<columnNames columnName="soil_type24"/>
+<columnNames columnName="soil_type25"/>
+<columnNames columnName="soil_type26"/>
+<columnNames columnName="soil_type27"/>
+<columnNames columnName="soil_type28"/>
+<columnNames columnName="soil_type29"/>
+<columnNames columnName="soil_type30"/>
+<columnNames columnName="soil_type31"/>
+<columnNames columnName="soil_type32"/>
+<columnNames columnName="soil_type33"/>
+<columnNames columnName="soil_type34"/>
+<columnNames columnName="soil_type35"/>
+<columnNames columnName="soil_type36"/>
+<columnNames columnName="soil_type37"/>
+<columnNames columnName="soil_type38"/>
+<columnNames columnName="soil_type39"/>
+<columnNames columnName="soil_type40"/>
+<columnNames columnName="soil_type41"/>
+<columnNames columnName="soil_type42"/>
+<columnNames columnName="soil_type43"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="616" Y="317" name="Logistic Regression" type="com.alpine.miner.gef.runoperator.hadoop.HadoopLogisticRegressionOperator" uuid="1348806737982">
+<Parameter key="dependentColumn" value="ponderosa_pine"/>
 <Parameter key="forceRetrain" value="Yes"/>
 <Parameter key="max_generations" value="10"/>
 <Parameter key="epsilon" value="0.00001"/>
 <Parameter key="columnNames" value="elevation,aspect,slope,vert_dist_to_water,hor_dist_to_fire,wilderness_type"/>
+<Parameter key="useApproximation" value="No"/>
+<Parameter key="lorPenalizingParameter" value="0"/>
+<Parameter key="varSelPath" value=""/>
 <InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
-<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="connName" value="Cloudera CDH4"/>
+<Parameter key="hdfsHostname" value="devfive.local"/>
 <Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4"/>
+<Parameter key="jobHostname" value="devfive.local"/>
 <Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
+<Parameter key="useHA" value="false"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_rsamp_0_1"/>
+<Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_rsamp_0/Sample_1"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
 <Parameter key="mapredPrincipal" value=""/>
 <Parameter key="mapredKeyTab" value=""/>
 <HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
-<columnNames columnName="deciduous"/>
+<columnNames columnName="ponderosa_pine"/>
 <columnNames columnName="elevation"/>
 <columnNames columnName="aspect"/>
 <columnNames columnName="slope"/>
@@ -1251,184 +1010,56 @@
 </HadoopFileStructureModel>
 </InPutFieldList>
 <Model>rO0ABXNyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuRW5naW5lTW9kZWxyBs7TjRuF
-xwIAA0wABW1vZGVsdAAmTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9vcGVyYXRvci9Nb2RlbDtMAAlt
-b2RlbFR5cGV0ABJMamF2YS9sYW5nL1N0cmluZztMAARuYW1lcQB+AAJ4cHNyAEpjb20uYWxwaW5l
-LmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLm1vZGVscy5Mb2dpc3RpY1JlZ3Jlc3Npb25IYWRv
-b3BNb2RlbKKn3kVs08qeAgARRAAJY2hpU3F1YXJlWgAPaW1wcm92ZW1lbnRTdG9wSgAJaXRlcmF0
-aW9uRAANbW9kZWxEZXZpYW5jZUQADG51bGxEZXZpYW5jZUwAGGFsbFRyYW5zZm9ybU1hcF92YWx1
-ZUtleXQAE0xqYXZhL3V0aWwvSGFzaE1hcDtMAANiYWRxAH4AAlsABGJldGF0AAJbREwADWNoYXJD
-b2x1bW5NYXB0AA9MamF2YS91dGlsL01hcDtbAAtjb2x1bW5OYW1lc3QAE1tMamF2YS9sYW5nL1N0
-cmluZztMAARnb29kcQB+AAJMABppbnRlcmFjdGlvbkNvbHVtbkNvbHVtbk1hcHEAfgAFWwAGcFZh
-bHVlcQB+AAZMAA1zcGVjaWZ5Q29sdW1ucQB+AAJbAA1zdGFuZGFyZEVycm9ycQB+AAZbAA13YWxk
-U3RhdGlzdGljcQB+AAZbAAZ6VmFsdWVxAH4ABnhyADljb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBp
-LmltcGwuaGFkb29wLkFic3RyYWN0SGFkb29wTW9kZWyoqCkfN+IwfwIAAHhyACtjb20uYWxwaW5l
-LmRhdGFtaW5pbmcub3BlcmF0b3IuT3V0cHV0T2JqZWN0W4/atPz2d24CAAFMAAZzb3VyY2VxAH4A
-AnhwcEDBHiVFS1KoAQAAAAAAAAAGQPIghOae8b1A9ERJj0hcEnNyABFqYXZhLnV0aWwuSGFzaE1h
-cAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAB3CAAAAAEAAAAA
-eHQAATB1cgACW0Q+powUq2NaHgIAAHhwAAAAB79muHVvSjeqv164kfXmlkk/TwPQRaAnED9Rob4B
-FvtOvyn9Tdf3FvE/vFqVytibzUASCljv7YSHcHVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kd
-e0cCAAB4cAAAAAZ0AAllbGV2YXRpb250AAZhc3BlY3R0AAVzbG9wZXQAEnZlcnRfZGlzdF90b193
-YXRlcnQAEGhvcl9kaXN0X3RvX2ZpcmV0AA93aWxkZXJuZXNzX3R5cGV0AAExc3EAfgAMP0AAAAAA
-AAB3CAAAAAEAAAAAeHVxAH4ADwAAAAcsTLpYHjv8kTeDgc7xaxjKP+EXiFwQAA4+laPk2R2FhTgb
-uO5gcFFlPx4DoJHagoYxGhMfw+ybynQACWRlY2lkdW91c3VxAH4ADwAAAAc/BFUWxWaCbz8aw3Py
-xX+FP1jxTv/97js/K4ulAcJfez7odK3QFww/P51lasmkoos/vI7WkSJQY3VxAH4ADwAAAAdAs/q1
-h/fT9UB1FOcLv4W6P9i9GzRdbqJAOjjwC7dYRUByEdpcTBxxQC3FXVPX6Z1AmYo1gIoWWHVxAH4A
-DwAAAAfAUeEZtt3ThMAyXavYX1eMP+PlLBas/XRAFHuuZGeI3sAxAN80xNjcQA7diFzVoGdARDb9
-Agr+NnB0ABNMb2dpc3RpYyBSZWdyZXNzaW9u</Model>
+xwIABEwABW1vZGVsdAArTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9tb2RlbC9BbmFseXRpY01vZGVs
+O0wACW1vZGVsVHlwZXQAEkxqYXZhL2xhbmcvU3RyaW5nO0wABG5hbWVxAH4AAkwABXJ1bklkcQB+
+AAJ4cHNyAEpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLm1vZGVscy5Mb2dp
+c3RpY1JlZ3Jlc3Npb25IYWRvb3BNb2RlbKKn3kVs08qeAgAWRAAJY2hpU3F1YXJlWgAPaW1wcm92
+ZW1lbnRTdG9wWgAHaXRlcmF0ZUoACWl0ZXJhdGlvbkQADW1vZGVsRGV2aWFuY2VEAAxudWxsRGV2
+aWFuY2VJAA1udW1PZkNhdGVnb3J5TAAYYWxsVHJhbnNmb3JtTWFwX3ZhbHVlS2V5dAATTGphdmEv
+dXRpbC9IYXNoTWFwO0wAA2JhZHEAfgACWwAEYmV0YXQAAltEWwAKY2F0ZWdvcmllc3QAE1tMamF2
+YS9sYW5nL1N0cmluZztMAAxjYXRlZ29yeV9TdHJxAH4AAkwADWNoYXJDb2x1bW5NYXB0AA9MamF2
+YS91dGlsL01hcDtbAAtjb2x1bW5OYW1lc3EAfgAHWwAPY29uZnVzaW9uTWF0cml4dAADW1tETAAE
+Z29vZHEAfgACTAAaaW50ZXJhY3Rpb25Db2x1bW5Db2x1bW5NYXBxAH4ABVsABnBWYWx1ZXEAfgAG
+TAANc3BlY2lmeUNvbHVtbnEAfgACWwANc3RhbmRhcmRFcnJvcnEAfgAGWwANd2FsZFN0YXRpc3Rp
+Y3EAfgAGWwAGelZhbHVlcQB+AAZ4cgA5Y29tLmFscGluZS5kYXRhbWluaW5nLmFwaS5pbXBsLmhh
+ZG9vcC5BYnN0cmFjdEhhZG9vcE1vZGVsqKgpHzfiMH8CAAFMAA92YXJNYXNrQXNTdHJpbmdxAH4A
+AnhyACtjb20uYWxwaW5lLmRhdGFtaW5pbmcub3BlcmF0b3IuT3V0cHV0T2JqZWN0W4/atPz2d24C
+AAFMAAZzb3VyY2VxAH4AAnhwcHBAwR4lRUtSqAEAAAAAAAAAAAZA8iCE5p7xvUD0REmPSFwSAAAA
+AHNyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9s
+ZHhwP0AAAAAAAAB3CAAAAAEAAAAAeHQAATB1cgACW0Q+powUq2NaHgIAAHhwAAAAB79muHVvSjeq
+v164kfXmlkk/TwPQRaAnED9Rob4BFvtOvyn9Tdf3FvE/vFqVytibzUASCljv7YSHcHBwdXIAE1tM
+amF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAABnQACWVsZXZhdGlvbnQABmFzcGVjdHQA
+BXNsb3BldAASdmVydF9kaXN0X3RvX3dhdGVydAAQaG9yX2Rpc3RfdG9fZmlyZXQAD3dpbGRlcm5l
+c3NfdHlwZXB0AAExc3EAfgANP0AAAAAAAAB3CAAAAAEAAAAAeHVxAH4AEAAAAAcsTLpYHjv8kTeD
+gc7xaxjKP+EXiFwQAA4+laPk2R2FhTgbuO5gcFFlPx4DoJHagoYxGhMfw+ybynQACWRlY2lkdW91
+c3VxAH4AEAAAAAc/BFUWxWaCbz8aw3PyxX+FP1jxTv/97js/K4ulAcJfez7odK3QFww/P51lasmk
+oos/vI7WkSJQY3VxAH4AEAAAAAdAs/q1h/fT9UB1FOcLv4W6P9i9GzRdbqJAOjjwC7dYRUByEdpc
+TBxxQC3FXVPX6Z1AmYo1gIoWWHVxAH4AEAAAAAfAUeEZtt3ThMAyXavYX1eMP+PlLBas/XRAFHuu
+ZGeI3sAxAN80xNjcQA7diFzVoGdARDb9Agr+NnB0ABNMb2dpc3RpYyBSZWdyZXNzaW9ucA==</Model>
 </Operator>
-<Operator X="476" Y="498" name="Goodness of Fit" type="com.alpine.miner.gef.runoperator.hadoop.HadoopGoodnessOfFitOperator" uuid="1348807497416">
-<Parameter key="dependentColumn" value="deciduous"/>
-<InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
-<Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="userName" value="alpine"/>
-<Parameter key="groupName" value="supergroup"/>
-<Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_rsamp_0_2"/>
-<Parameter key="securityMode" value="simple"/>
-<Parameter key="hdfsPrincipal" value=""/>
-<Parameter key="hdfsKeyTab" value=""/>
-<Parameter key="mapredPrincipal" value=""/>
-<Parameter key="mapredKeyTab" value=""/>
-<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
-<columnNames columnName="deciduous"/>
-<columnNames columnName="elevation"/>
-<columnNames columnName="aspect"/>
-<columnNames columnName="slope"/>
-<columnNames columnName="hor_dist_to_water"/>
-<columnNames columnName="vert_dist_to_water"/>
-<columnNames columnName="hor_dist_to_roads"/>
-<columnNames columnName="shade_am"/>
-<columnNames columnName="shade_noon"/>
-<columnNames columnName="shade_pm"/>
-<columnNames columnName="hor_dist_to_fire"/>
-<columnNames columnName="wilderness_type"/>
-<columnNames columnName="soil_type1"/>
-<columnNames columnName="soil_type2"/>
-<columnNames columnName="soil_type3"/>
-<columnNames columnName="soil_type4"/>
-<columnNames columnName="soil_type5"/>
-<columnNames columnName="soil_type6"/>
-<columnNames columnName="soil_type7"/>
-<columnNames columnName="soil_type8"/>
-<columnNames columnName="soil_type9"/>
-<columnNames columnName="soil_type10"/>
-<columnNames columnName="soil_type11"/>
-<columnNames columnName="soil_type12"/>
-<columnNames columnName="soil_type13"/>
-<columnNames columnName="soil_type14"/>
-<columnNames columnName="soil_type15"/>
-<columnNames columnName="soil_type16"/>
-<columnNames columnName="soil_type17"/>
-<columnNames columnName="soil_type18"/>
-<columnNames columnName="soil_type19"/>
-<columnNames columnName="soil_type20"/>
-<columnNames columnName="soil_type21"/>
-<columnNames columnName="soil_type22"/>
-<columnNames columnName="soil_type23"/>
-<columnNames columnName="soil_type24"/>
-<columnNames columnName="soil_type25"/>
-<columnNames columnName="soil_type26"/>
-<columnNames columnName="soil_type27"/>
-<columnNames columnName="soil_type28"/>
-<columnNames columnName="soil_type29"/>
-<columnNames columnName="soil_type30"/>
-<columnNames columnName="soil_type31"/>
-<columnNames columnName="soil_type32"/>
-<columnNames columnName="soil_type33"/>
-<columnNames columnName="soil_type34"/>
-<columnNames columnName="soil_type35"/>
-<columnNames columnName="soil_type36"/>
-<columnNames columnName="soil_type37"/>
-<columnNames columnName="soil_type38"/>
-<columnNames columnName="soil_type39"/>
-<columnNames columnName="soil_type40"/>
-<columnNames columnName="soil_type41"/>
-<columnNames columnName="soil_type42"/>
-<columnNames columnName="soil_type43"/>
-<columnTypes columnType="int"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-</HadoopFileStructureModel>
-</InPutFieldList>
-</Operator>
-<Operator X="221" Y="506" name="Lift" type="com.alpine.miner.gef.runoperator.hadoop.HadoopLiftOperator" uuid="1348807500970">
-<Parameter key="dependentColumn" value="deciduous"/>
+<Operator X="532" Y="448" name="Lift" type="com.alpine.miner.gef.runoperator.hadoop.HadoopLiftOperator" uuid="1348807500970">
+<Parameter key="dependentColumn" value="ponderosa_pine"/>
 <Parameter key="columnValue" value="1"/>
 <InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
-<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="connName" value="Cloudera CDH4"/>
+<Parameter key="hdfsHostname" value="devfive.local"/>
 <Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4"/>
+<Parameter key="jobHostname" value="devfive.local"/>
 <Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
+<Parameter key="useHA" value="false"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_rsamp_0_2"/>
+<Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_rsamp_0/Sample_2"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
 <Parameter key="mapredPrincipal" value=""/>
 <Parameter key="mapredKeyTab" value=""/>
 <HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
-<columnNames columnName="deciduous"/>
+<columnNames columnName="ponderosa_pine"/>
 <columnNames columnName="elevation"/>
 <columnNames columnName="aspect"/>
 <columnNames columnName="slope"/>
@@ -1541,27 +1172,29 @@ Agr+NnB0ABNMb2dpc3RpYyBSZWdyZXNzaW9u</Model>
 </HadoopFileStructureModel>
 </InPutFieldList>
 </Operator>
-<Operator X="737" Y="504" name="ROC" type="com.alpine.miner.gef.runoperator.hadoop.HadoopROCOperator" uuid="1348807504462">
-<Parameter key="dependentColumn" value="deciduous"/>
+<Operator X="371" Y="447" name="ROC" type="com.alpine.miner.gef.runoperator.hadoop.HadoopROCOperator" uuid="1348807504462">
+<Parameter key="dependentColumn" value="ponderosa_pine"/>
 <Parameter key="columnValue" value="1"/>
 <InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
-<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="connName" value="Cloudera CDH4"/>
+<Parameter key="hdfsHostname" value="devfive.local"/>
 <Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4"/>
+<Parameter key="jobHostname" value="devfive.local"/>
 <Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
+<Parameter key="useHA" value="false"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_rsamp_0_2"/>
+<Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_rsamp_0/Sample_2"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
 <Parameter key="mapredPrincipal" value=""/>
 <Parameter key="mapredKeyTab" value=""/>
 <HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
-<columnNames columnName="deciduous"/>
+<columnNames columnName="ponderosa_pine"/>
 <columnNames columnName="elevation"/>
 <columnNames columnName="aspect"/>
 <columnNames columnName="slope"/>
@@ -1674,7 +1307,7 @@ Agr+NnB0ABNMb2dpc3RpYyBSZWdyZXNzaW9u</Model>
 </HadoopFileStructureModel>
 </InPutFieldList>
 </Operator>
-<Operator X="54" Y="308" name="K-Means" type="com.alpine.miner.gef.runoperator.hadoop.HadoopKmeansOperator" uuid="1348809676741">
+<Operator X="270" Y="248" name="K-Means" type="com.alpine.miner.gef.runoperator.hadoop.HadoopKmeansOperator" uuid="1348809676741">
 <Parameter key="idColumn" value=""/>
 <Parameter key="k" value="7"/>
 <Parameter key="distance" value="Euclidean"/>
@@ -1685,22 +1318,24 @@ Agr+NnB0ABNMb2dpc3RpYyBSZWdyZXNzaW9u</Model>
 <Parameter key="override" value="Yes"/>
 <Parameter key="columnNames" value="elevation,aspect,slope,vert_dist_to_water,hor_dist_to_fire,wilderness_type"/>
 <InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
-<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="connName" value="Cloudera CDH4"/>
+<Parameter key="hdfsHostname" value="devfive.local"/>
 <Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4"/>
+<Parameter key="jobHostname" value="devfive.local"/>
 <Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
+<Parameter key="useHA" value="false"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/real_data/forest_cover/covtype.csv"/>
+<Parameter key="hadoopFileName" value="/users/Yan/covtype.csv"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
 <Parameter key="mapredPrincipal" value=""/>
 <Parameter key="mapredKeyTab" value=""/>
-<HadoopFileStructureModel delimiter="Comma" escapChar="" includeHeader="true" other="" quoteChar="">
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
 <columnNames columnName="elevation"/>
 <columnNames columnName="aspect"/>
 <columnNames columnName="slope"/>
@@ -1814,163 +1449,30 @@ Agr+NnB0ABNMb2dpc3RpYyBSZWdyZXNzaW9u</Model>
 </HadoopFileStructureModel>
 </InPutFieldList>
 </Operator>
-<Operator X="131" Y="238" name="Box Plot (approx)" type="com.alpine.miner.gef.runoperator.hadoop.HadoopBoxAndWiskerOperator" uuid="1355947339595">
-<Parameter key="analysisValueDomain" value="elevation"/>
-<Parameter key="seriesDomain" value="cover_type"/>
-<Parameter key="typeDomain" value="wilderness_type"/>
-<Parameter key="useApproximation" value="Yes"/>
-<InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
-<Parameter key="hdfsHostname" value="localhost"/>
-<Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="jobHostname" value="localhost"/>
-<Parameter key="jobPort" value="8021"/>
-<Parameter key="userName" value="alpine"/>
-<Parameter key="groupName" value="supergroup"/>
-<Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/real_data/forest_cover/covtype.csv"/>
-<Parameter key="securityMode" value="simple"/>
-<Parameter key="hdfsPrincipal" value=""/>
-<Parameter key="hdfsKeyTab" value=""/>
-<Parameter key="mapredPrincipal" value=""/>
-<Parameter key="mapredKeyTab" value=""/>
-<HadoopFileStructureModel delimiter="Comma" escapChar="" includeHeader="true" other="" quoteChar="">
-<columnNames columnName="elevation"/>
-<columnNames columnName="aspect"/>
-<columnNames columnName="slope"/>
-<columnNames columnName="hor_dist_to_water"/>
-<columnNames columnName="vert_dist_to_water"/>
-<columnNames columnName="hor_dist_to_roads"/>
-<columnNames columnName="shade_am"/>
-<columnNames columnName="shade_noon"/>
-<columnNames columnName="shade_pm"/>
-<columnNames columnName="hor_dist_to_fire"/>
-<columnNames columnName="wilderness_type"/>
-<columnNames columnName="soil_type1"/>
-<columnNames columnName="soil_type2"/>
-<columnNames columnName="soil_type3"/>
-<columnNames columnName="soil_type4"/>
-<columnNames columnName="soil_type5"/>
-<columnNames columnName="soil_type6"/>
-<columnNames columnName="soil_type7"/>
-<columnNames columnName="soil_type8"/>
-<columnNames columnName="soil_type9"/>
-<columnNames columnName="soil_type10"/>
-<columnNames columnName="soil_type11"/>
-<columnNames columnName="soil_type12"/>
-<columnNames columnName="soil_type13"/>
-<columnNames columnName="soil_type14"/>
-<columnNames columnName="soil_type15"/>
-<columnNames columnName="soil_type16"/>
-<columnNames columnName="soil_type17"/>
-<columnNames columnName="soil_type18"/>
-<columnNames columnName="soil_type19"/>
-<columnNames columnName="soil_type20"/>
-<columnNames columnName="soil_type21"/>
-<columnNames columnName="soil_type22"/>
-<columnNames columnName="soil_type23"/>
-<columnNames columnName="soil_type24"/>
-<columnNames columnName="soil_type25"/>
-<columnNames columnName="soil_type26"/>
-<columnNames columnName="soil_type27"/>
-<columnNames columnName="soil_type28"/>
-<columnNames columnName="soil_type29"/>
-<columnNames columnName="soil_type30"/>
-<columnNames columnName="soil_type31"/>
-<columnNames columnName="soil_type32"/>
-<columnNames columnName="soil_type33"/>
-<columnNames columnName="soil_type34"/>
-<columnNames columnName="soil_type35"/>
-<columnNames columnName="soil_type36"/>
-<columnNames columnName="soil_type37"/>
-<columnNames columnName="soil_type38"/>
-<columnNames columnName="soil_type39"/>
-<columnNames columnName="soil_type40"/>
-<columnNames columnName="soil_type41"/>
-<columnNames columnName="soil_type42"/>
-<columnNames columnName="soil_type43"/>
-<columnNames columnName="cover_type"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-<columnTypes columnType="long"/>
-</HadoopFileStructureModel>
-</InPutFieldList>
-</Operator>
-<Operator X="204" Y="171" name="Box Plot" type="com.alpine.miner.gef.runoperator.hadoop.HadoopBoxAndWiskerOperator" uuid="1355947491723">
+<Operator X="189" Y="249" name="Box Plot" type="com.alpine.miner.gef.runoperator.hadoop.HadoopBoxAndWiskerOperator" uuid="1355947491723">
 <Parameter key="analysisValueDomain" value="elevation"/>
 <Parameter key="seriesDomain" value="cover_type"/>
 <Parameter key="typeDomain" value="wilderness_type"/>
 <Parameter key="useApproximation" value="No"/>
 <InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
-<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="connName" value="Cloudera CDH4"/>
+<Parameter key="hdfsHostname" value="devfive.local"/>
 <Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4"/>
+<Parameter key="jobHostname" value="devfive.local"/>
 <Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
+<Parameter key="useHA" value="false"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/real_data/forest_cover/covtype.csv"/>
+<Parameter key="hadoopFileName" value="/users/Yan/covtype.csv"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
 <Parameter key="mapredPrincipal" value=""/>
 <Parameter key="mapredKeyTab" value=""/>
-<HadoopFileStructureModel delimiter="Comma" escapChar="" includeHeader="true" other="" quoteChar="">
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
 <columnNames columnName="elevation"/>
 <columnNames columnName="aspect"/>
 <columnNames columnName="slope"/>
@@ -2084,34 +1586,40 @@ Agr+NnB0ABNMb2dpc3RpYyBSZWdyZXNzaW9u</Model>
 </HadoopFileStructureModel>
 </InPutFieldList>
 </Operator>
-<Operator X="316" Y="368" name="Decision Tree" type="com.alpine.miner.gef.runoperator.hadoop.HadoopDecisionTreeOperator" uuid="1357346019487">
-<Parameter key="dependentColumn" value="deciduous"/>
+<Operator X="373" Y="319" name="Decision Tree" type="com.alpine.miner.gef.runoperator.hadoop.HadoopDecisionTreeOperator" uuid="1357346019487">
+<Parameter key="dependentColumn" value="ponderosa_pine"/>
 <Parameter key="columnNames" value="elevation,aspect,slope,vert_dist_to_water,hor_dist_to_fire,wilderness_type"/>
 <Parameter key="maximal_depth" value="5"/>
 <Parameter key="confidence" value="0.25"/>
 <Parameter key="minimal_gain" value="0.00001"/>
+<Parameter key="number_of_prepruning_alternatives" value="3"/>
 <Parameter key="minimal_size_for_split" value="4"/>
+<Parameter key="no_pruning" value="false"/>
+<Parameter key="no_pre_pruning" value="false"/>
 <Parameter key="minimal_leaf_size" value="2"/>
 <Parameter key="categoryLimit" value="1000"/>
 <Parameter key="numericalGranularity" value="1000000"/>
+<Parameter key="varSelPath" value=""/>
 <InPutFieldList>
-<Parameter key="connName" value="Hadoop"/>
-<Parameter key="hdfsHostname" value="localhost"/>
+<Parameter key="connName" value="Cloudera CDH4"/>
+<Parameter key="hdfsHostname" value="devfive.local"/>
 <Parameter key="hdfsPort" value="8020"/>
-<Parameter key="hadoopVersion" value="Apache Hadoop 0.20.2"/>
-<Parameter key="jobHostname" value="localhost"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4"/>
+<Parameter key="jobHostname" value="devfive.local"/>
 <Parameter key="jobPort" value="8021"/>
 <Parameter key="userName" value="alpine"/>
+<Parameter key="useHA" value="false"/>
 <Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
 <Parameter key="hadoopFileFormat" value="Text File"/>
-<Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_rsamp_0_1"/>
+<Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_rsamp_0/Sample_1"/>
 <Parameter key="securityMode" value="simple"/>
 <Parameter key="hdfsPrincipal" value=""/>
 <Parameter key="hdfsKeyTab" value=""/>
 <Parameter key="mapredPrincipal" value=""/>
 <Parameter key="mapredKeyTab" value=""/>
 <HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
-<columnNames columnName="deciduous"/>
+<columnNames columnName="ponderosa_pine"/>
 <columnNames columnName="elevation"/>
 <columnNames columnName="aspect"/>
 <columnNames columnName="slope"/>
@@ -2224,39 +1732,41 @@ Agr+NnB0ABNMb2dpc3RpYyBSZWdyZXNzaW9u</Model>
 </HadoopFileStructureModel>
 </InPutFieldList>
 <Model>rO0ABXNyACpjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuRW5naW5lTW9kZWxyBs7TjRuF
-xwIAA0wABW1vZGVsdAAmTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9vcGVyYXRvci9Nb2RlbDtMAAlt
-b2RlbFR5cGV0ABJMamF2YS9sYW5nL1N0cmluZztMAARuYW1lcQB+AAJ4cHNyAERjb20uYWxwaW5l
-LmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLm1vZGVscy5EZWNpc2lvblRyZWVIYWRvb3BNb2Rl
-bFPsL+yMTnZsAgADTAAJZGVwZW5kZW50cQB+AAJMAApoYWRvb3BUcmVldAApTGNvbS9hbHBpbmUv
-aGFkb29wL3RyZWUvbW9kZWwvSGFkb29wVHJlZTtMAApsZWFmVmFsdWVzdAAQTGphdmEvdXRpbC9M
-aXN0O3hyADljb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLkFic3RyYWN0SGFk
-b29wTW9kZWyoqCkfN+IwfwIAAHhyACtjb20uYWxwaW5lLmRhdGFtaW5pbmcub3BlcmF0b3IuT3V0
-cHV0T2JqZWN0W4/atPz2d24CAAFMAAZzb3VyY2VxAH4AAnhwcHQACWRlY2lkdW91c3NyACdjb20u
-YWxwaW5lLmhhZG9vcC50cmVlLm1vZGVsLkhhZG9vcFRyZWVNhfgtpiQppwIADFoAC2NhdGVnb3Jp
-Y2FsSQAHZmVhdHVyZUkAAmlkWgAIbGVzc1RoYW5aAARyb290SQAIdW5pcXVlSWRMAAhjaGlsZHJl
-bnEAfgAGTAAJY29sdW1uTWFwcQB+AAZbAAZjb3VudHN0AAJbSUwAEGRlcGVuZGFudE1hcHBpbmd0
-ABNMamF2YS91dGlsL0hhc2hNYXA7WwAMZmVhdHVyZURlbWFwcQB+AAxMAAVsYWJlbHEAfgACeHAB
-AAAAAAAAAAAAAQAAAANzcgATamF2YS51dGlsLkFycmF5TGlzdHiB0h2Zx2GdAwABSQAEc2l6ZXhw
-AAAAAncEAAAACnNxAH4ACwAAAAABAAAAAQEAAAAAAHNxAH4ADwAAAAB3BAAAAAp4c3EAfgAPAAAA
-N3cEAAAAOnQACWRlY2lkdW91c3QACWVsZXZhdGlvbnQABmFzcGVjdHQABXNsb3BldAARaG9yX2Rp
-c3RfdG9fd2F0ZXJ0ABJ2ZXJ0X2Rpc3RfdG9fd2F0ZXJ0ABFob3JfZGlzdF90b19yb2Fkc3QACHNo
-YWRlX2FtdAAKc2hhZGVfbm9vbnQACHNoYWRlX3BtdAAQaG9yX2Rpc3RfdG9fZmlyZXQAD3dpbGRl
-cm5lc3NfdHlwZXQACnNvaWxfdHlwZTF0AApzb2lsX3R5cGUydAAKc29pbF90eXBlM3QACnNvaWxf
-dHlwZTR0AApzb2lsX3R5cGU1dAAKc29pbF90eXBlNnQACnNvaWxfdHlwZTd0AApzb2lsX3R5cGU4
-dAAKc29pbF90eXBlOXQAC3NvaWxfdHlwZTEwdAALc29pbF90eXBlMTF0AAtzb2lsX3R5cGUxMnQA
-C3NvaWxfdHlwZTEzdAALc29pbF90eXBlMTR0AAtzb2lsX3R5cGUxNXQAC3NvaWxfdHlwZTE2dAAL
-c29pbF90eXBlMTd0AAtzb2lsX3R5cGUxOHQAC3NvaWxfdHlwZTE5dAALc29pbF90eXBlMjB0AAtz
-b2lsX3R5cGUyMXQAC3NvaWxfdHlwZTIydAALc29pbF90eXBlMjN0AAtzb2lsX3R5cGUyNHQAC3Nv
-aWxfdHlwZTI1dAALc29pbF90eXBlMjZ0AAtzb2lsX3R5cGUyN3QAC3NvaWxfdHlwZTI4dAALc29p
-bF90eXBlMjl0AAtzb2lsX3R5cGUzMHQAC3NvaWxfdHlwZTMxdAALc29pbF90eXBlMzJ0AAtzb2ls
-X3R5cGUzM3QAC3NvaWxfdHlwZTM0dAALc29pbF90eXBlMzV0AAtzb2lsX3R5cGUzNnQAC3NvaWxf
-dHlwZTM3dAALc29pbF90eXBlMzh0AAtzb2lsX3R5cGUzOXQAC3NvaWxfdHlwZTQwdAALc29pbF90
-eXBlNDF0AAtzb2lsX3R5cGU0MnQAC3NvaWxfdHlwZTQzeHVyAAJbSU26YCZ26rKlAgAAeHAAAAAC
-AAAhVwACj2dzcgARamF2YS51dGlsLkhhc2hNYXAFB9rBwxZg0QMAAkYACmxvYWRGYWN0b3JJAAl0
-aHJlc2hvbGR4cD9AAAAAAAABdwgAAAACAAAAAnQAATFzcgARamF2YS5sYW5nLkludGVnZXIS4qCk
-94GHOAIAAUkABXZhbHVleHIAEGphdmEubGFuZy5OdW1iZXKGrJUdC5TgiwIAAHhwAAAAAHQAATBz
-cQB+AFAAAAABeHVxAH4ASwAAAAYAAAABAAAAAgAAAAMAAAAFAAAACgAAAAt0AAQyOTU4c3EAfgAL
-AAAAAAEAAAACAAAAAAAAc3EAfgAPAAAAAHcEAAAACnhzcQB+AA8AAAA3dwQAAAA6dAAJZGVjaWR1
+xwIABEwABW1vZGVsdAArTGNvbS9hbHBpbmUvZGF0YW1pbmluZy9tb2RlbC9BbmFseXRpY01vZGVs
+O0wACW1vZGVsVHlwZXQAEkxqYXZhL2xhbmcvU3RyaW5nO0wABG5hbWVxAH4AAkwABXJ1bklkcQB+
+AAJ4cHNyAERjb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLm1vZGVscy5EZWNp
+c2lvblRyZWVIYWRvb3BNb2RlbFPsL+yMTnZsAgAFTAALY29sdW1uc0xpc3R0ABBMamF2YS91dGls
+L0xpc3Q7TAAJZGVwZW5kZW50cQB+AAJMAApoYWRvb3BUcmVldAApTGNvbS9hbHBpbmUvaGFkb29w
+L3RyZWUvbW9kZWwvSGFkb29wVHJlZTtMAApsZWFmVmFsdWVzcQB+AAVMABJtb2RlbEZpbGVEaXJl
+Y3RvcnlxAH4AAnhyADljb20uYWxwaW5lLmRhdGFtaW5pbmcuYXBpLmltcGwuaGFkb29wLkFic3Ry
+YWN0SGFkb29wTW9kZWyoqCkfN+IwfwIAAUwAD3Zhck1hc2tBc1N0cmluZ3EAfgACeHIAK2NvbS5h
+bHBpbmUuZGF0YW1pbmluZy5vcGVyYXRvci5PdXRwdXRPYmplY3Rbj9q0/PZ3bgIAAUwABnNvdXJj
+ZXEAfgACeHBwcHB0AAlkZWNpZHVvdXNzcgAnY29tLmFscGluZS5oYWRvb3AudHJlZS5tb2RlbC5I
+YWRvb3BUcmVlTYX4LaYkKacCAA1aAAtjYXRlZ29yaWNhbEkAB2ZlYXR1cmVJAAJpZFoACGxlc3NU
+aGFuWgAEcm9vdEkACHVuaXF1ZUlkTAAIY2hpbGRyZW5xAH4ABUwACWNvbHVtbk1hcHEAfgAFWwAG
+Y291bnRzdAACW0lMABBkZXBlbmRhbnRNYXBwaW5ndAATTGphdmEvdXRpbC9IYXNoTWFwO1sADGZl
+YXR1cmVEZW1hcHEAfgAMTAAFbGFiZWxxAH4AAkwAAXJ0ABJMamF2YS91dGlsL1JhbmRvbTt4cAEA
+AAAAAAAAAAABAAAAA3NyABNqYXZhLnV0aWwuQXJyYXlMaXN0eIHSHZnHYZ0DAAFJAARzaXpleHAA
+AAACdwQAAAAKc3EAfgALAAAAAAEAAAABAQAAAAAAc3EAfgAQAAAAAHcEAAAACnhzcQB+ABAAAAA3
+dwQAAAA6dAAJZGVjaWR1b3VzdAAJZWxldmF0aW9udAAGYXNwZWN0dAAFc2xvcGV0ABFob3JfZGlz
+dF90b193YXRlcnQAEnZlcnRfZGlzdF90b193YXRlcnQAEWhvcl9kaXN0X3RvX3JvYWRzdAAIc2hh
+ZGVfYW10AApzaGFkZV9ub29udAAIc2hhZGVfcG10ABBob3JfZGlzdF90b19maXJldAAPd2lsZGVy
+bmVzc190eXBldAAKc29pbF90eXBlMXQACnNvaWxfdHlwZTJ0AApzb2lsX3R5cGUzdAAKc29pbF90
+eXBlNHQACnNvaWxfdHlwZTV0AApzb2lsX3R5cGU2dAAKc29pbF90eXBlN3QACnNvaWxfdHlwZTh0
+AApzb2lsX3R5cGU5dAALc29pbF90eXBlMTB0AAtzb2lsX3R5cGUxMXQAC3NvaWxfdHlwZTEydAAL
+c29pbF90eXBlMTN0AAtzb2lsX3R5cGUxNHQAC3NvaWxfdHlwZTE1dAALc29pbF90eXBlMTZ0AAtz
+b2lsX3R5cGUxN3QAC3NvaWxfdHlwZTE4dAALc29pbF90eXBlMTl0AAtzb2lsX3R5cGUyMHQAC3Nv
+aWxfdHlwZTIxdAALc29pbF90eXBlMjJ0AAtzb2lsX3R5cGUyM3QAC3NvaWxfdHlwZTI0dAALc29p
+bF90eXBlMjV0AAtzb2lsX3R5cGUyNnQAC3NvaWxfdHlwZTI3dAALc29pbF90eXBlMjh0AAtzb2ls
+X3R5cGUyOXQAC3NvaWxfdHlwZTMwdAALc29pbF90eXBlMzF0AAtzb2lsX3R5cGUzMnQAC3NvaWxf
+dHlwZTMzdAALc29pbF90eXBlMzR0AAtzb2lsX3R5cGUzNXQAC3NvaWxfdHlwZTM2dAALc29pbF90
+eXBlMzd0AAtzb2lsX3R5cGUzOHQAC3NvaWxfdHlwZTM5dAALc29pbF90eXBlNDB0AAtzb2lsX3R5
+cGU0MXQAC3NvaWxfdHlwZTQydAALc29pbF90eXBlNDN4dXIAAltJTbpgJnbqsqUCAAB4cAAAAAIA
+ACFXAAKPZ3NyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRo
+cmVzaG9sZHhwP0AAAAAAAAF3CAAAAAIAAAACdAABMXNyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3
+gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAAAAAdAABMHNx
+AH4AUQAAAAF4dXEAfgBMAAAABgAAAAEAAAACAAAAAwAAAAUAAAAKAAAAC3QABDI5NThwc3EAfgAL
+AAAAAAEAAAACAAAAAAAAc3EAfgAQAAAAAHcEAAAACnhzcQB+ABAAAAA3dwQAAAA6dAAJZGVjaWR1
 b3VzdAAJZWxldmF0aW9udAAGYXNwZWN0dAAFc2xvcGV0ABFob3JfZGlzdF90b193YXRlcnQAEnZl
 cnRfZGlzdF90b193YXRlcnQAEWhvcl9kaXN0X3RvX3JvYWRzdAAIc2hhZGVfYW10AApzaGFkZV9u
 b29udAAIc2hhZGVfcG10ABBob3JfZGlzdF90b19maXJldAAPd2lsZGVybmVzc190eXBldAAKc29p
@@ -2270,25 +1780,25 @@ X3R5cGUyNnQAC3NvaWxfdHlwZTI3dAALc29pbF90eXBlMjh0AAtzb2lsX3R5cGUyOXQAC3NvaWxf
 dHlwZTMwdAALc29pbF90eXBlMzF0AAtzb2lsX3R5cGUzMnQAC3NvaWxfdHlwZTMzdAALc29pbF90
 eXBlMzR0AAtzb2lsX3R5cGUzNXQAC3NvaWxfdHlwZTM2dAALc29pbF90eXBlMzd0AAtzb2lsX3R5
 cGUzOHQAC3NvaWxfdHlwZTM5dAALc29pbF90eXBlNDB0AAtzb2lsX3R5cGU0MXQAC3NvaWxfdHlw
-ZTQydAALc29pbF90eXBlNDN4dXEAfgBLAAAAAgAAAE8AA4Kpc3EAfgBNP0AAAAAAAAF3CAAAAAIA
-AAACdAABMXEAfgBSdAABMHEAfgBUeHVxAH4ASwAAAAYAAAABAAAAAgAAAAMAAAAFAAAACgAAAAt0
-AAQyOTU4eHNxAH4ADwAAADd3BAAAADp0AAlkZWNpZHVvdXN0AAllbGV2YXRpb250AAZhc3BlY3R0
-AAVzbG9wZXQAEWhvcl9kaXN0X3RvX3dhdGVydAASdmVydF9kaXN0X3RvX3dhdGVydAARaG9yX2Rp
-c3RfdG9fcm9hZHN0AAhzaGFkZV9hbXQACnNoYWRlX25vb250AAhzaGFkZV9wbXQAEGhvcl9kaXN0
-X3RvX2ZpcmV0AA93aWxkZXJuZXNzX3R5cGV0AApzb2lsX3R5cGUxdAAKc29pbF90eXBlMnQACnNv
-aWxfdHlwZTN0AApzb2lsX3R5cGU0dAAKc29pbF90eXBlNXQACnNvaWxfdHlwZTZ0AApzb2lsX3R5
-cGU3dAAKc29pbF90eXBlOHQACnNvaWxfdHlwZTl0AAtzb2lsX3R5cGUxMHQAC3NvaWxfdHlwZTEx
-dAALc29pbF90eXBlMTJ0AAtzb2lsX3R5cGUxM3QAC3NvaWxfdHlwZTE0dAALc29pbF90eXBlMTV0
-AAtzb2lsX3R5cGUxNnQAC3NvaWxfdHlwZTE3dAALc29pbF90eXBlMTh0AAtzb2lsX3R5cGUxOXQA
-C3NvaWxfdHlwZTIwdAALc29pbF90eXBlMjF0AAtzb2lsX3R5cGUyMnQAC3NvaWxfdHlwZTIzdAAL
-c29pbF90eXBlMjR0AAtzb2lsX3R5cGUyNXQAC3NvaWxfdHlwZTI2dAALc29pbF90eXBlMjd0AAtz
-b2lsX3R5cGUyOHQAC3NvaWxfdHlwZTI5dAALc29pbF90eXBlMzB0AAtzb2lsX3R5cGUzMXQAC3Nv
-aWxfdHlwZTMydAALc29pbF90eXBlMzN0AAtzb2lsX3R5cGUzNHQAC3NvaWxfdHlwZTM1dAALc29p
-bF90eXBlMzZ0AAtzb2lsX3R5cGUzN3QAC3NvaWxfdHlwZTM4dAALc29pbF90eXBlMzl0AAtzb2ls
-X3R5cGU0MHQAC3NvaWxfdHlwZTQxdAALc29pbF90eXBlNDJ0AAtzb2lsX3R5cGU0M3h1cQB+AEsA
-AAACAAAhpgAGEhBzcQB+AE0/QAAAAAAAAXcIAAAAAgAAAAJ0AAExcQB+AFJ0AAEwcQB+AFR4dXEA
-fgBLAAAABgAAAAEAAAACAAAAAwAAAAUAAAAKAAAAC3QADERlY2lzaW9uVHJlZXNxAH4ADwAAAAB3
-BAAAAAp4cHQADURlY2lzaW9uIFRyZWU=</Model>
+ZTQydAALc29pbF90eXBlNDN4dXEAfgBMAAAAAgAAAE8AA4Kpc3EAfgBOP0AAAAAAAAF3CAAAAAIA
+AAACdAABMXEAfgBTdAABMHEAfgBVeHVxAH4ATAAAAAYAAAABAAAAAgAAAAMAAAAFAAAACgAAAAt0
+AAQyOTU4cHhzcQB+ABAAAAA3dwQAAAA6dAAJZGVjaWR1b3VzdAAJZWxldmF0aW9udAAGYXNwZWN0
+dAAFc2xvcGV0ABFob3JfZGlzdF90b193YXRlcnQAEnZlcnRfZGlzdF90b193YXRlcnQAEWhvcl9k
+aXN0X3RvX3JvYWRzdAAIc2hhZGVfYW10AApzaGFkZV9ub29udAAIc2hhZGVfcG10ABBob3JfZGlz
+dF90b19maXJldAAPd2lsZGVybmVzc190eXBldAAKc29pbF90eXBlMXQACnNvaWxfdHlwZTJ0AApz
+b2lsX3R5cGUzdAAKc29pbF90eXBlNHQACnNvaWxfdHlwZTV0AApzb2lsX3R5cGU2dAAKc29pbF90
+eXBlN3QACnNvaWxfdHlwZTh0AApzb2lsX3R5cGU5dAALc29pbF90eXBlMTB0AAtzb2lsX3R5cGUx
+MXQAC3NvaWxfdHlwZTEydAALc29pbF90eXBlMTN0AAtzb2lsX3R5cGUxNHQAC3NvaWxfdHlwZTE1
+dAALc29pbF90eXBlMTZ0AAtzb2lsX3R5cGUxN3QAC3NvaWxfdHlwZTE4dAALc29pbF90eXBlMTl0
+AAtzb2lsX3R5cGUyMHQAC3NvaWxfdHlwZTIxdAALc29pbF90eXBlMjJ0AAtzb2lsX3R5cGUyM3QA
+C3NvaWxfdHlwZTI0dAALc29pbF90eXBlMjV0AAtzb2lsX3R5cGUyNnQAC3NvaWxfdHlwZTI3dAAL
+c29pbF90eXBlMjh0AAtzb2lsX3R5cGUyOXQAC3NvaWxfdHlwZTMwdAALc29pbF90eXBlMzF0AAtz
+b2lsX3R5cGUzMnQAC3NvaWxfdHlwZTMzdAALc29pbF90eXBlMzR0AAtzb2lsX3R5cGUzNXQAC3Nv
+aWxfdHlwZTM2dAALc29pbF90eXBlMzd0AAtzb2lsX3R5cGUzOHQAC3NvaWxfdHlwZTM5dAALc29p
+bF90eXBlNDB0AAtzb2lsX3R5cGU0MXQAC3NvaWxfdHlwZTQydAALc29pbF90eXBlNDN4dXEAfgBM
+AAAAAgAAIaYABhIQc3EAfgBOP0AAAAAAAAF3CAAAAAIAAAACdAABMXEAfgBTdAABMHEAfgBVeHVx
+AH4ATAAAAAYAAAABAAAAAgAAAAMAAAAFAAAACgAAAAt0AAxEZWNpc2lvblRyZWVwc3EAfgAQAAAA
+AHcEAAAACnhwcHQADURlY2lzaW9uIFRyZWVw</Model>
 </Operator>
 <Operator X="53" Y="13" name="Copyright" type="com.alpine.miner.gef.runoperator.structual.NoteOperator" uuid="1359420901849">
 <Parameter key="note" value="Original Owners of Database:&#10;&#10;Remote Sensing and GIS Program&#10;Department of Forest Sciences&#10;College of Natural Resources&#10;Colorado State University&#10;Fort Collins, CO 80523&#10;(contact Jock A. Blackard, jblackard '@' fs.fed.us or Dr. Denis J. Dean, denis.dean '@' utdallas.edu)&#10;&#10;Donors of database:&#10;&#10;1. Jock A. Blackard (jblackard '@' fs.fed.us)&#10;GIS Coordinator&#10;USFS - Forest Inventory &amp; Analysis&#10;Rocky Mountain Research Station&#10;507 25th Street&#10;Ogden, UT 84401&#10;&#10;2. Dr. Denis J. Dean (denis.dean '@' utdallas.edu)&#10;Professor&#10;Program in Geography and Geospatial Sciences&#10;School of Economic, Political and Policy Sciences&#10;800 West Campbell Rd&#10;Richardson, TX 75080-3021&#10;&#10;3. Dr. Charles W. Anderson (anderson '@' cs.colostate.edu)&#10;Associate Professor&#10;Department of Computer Science&#10;Colorado State University&#10;Fort Collins, CO 80523 USA&#10;"/>
@@ -2296,24 +1806,831 @@ BAAAAAp4cHQADURlY2lzaW9uIFRyZWU=</Model>
 <Operator X="49" Y="152" name="Citation Request" type="com.alpine.miner.gef.runoperator.structual.NoteOperator" uuid="1359420943584">
 <Parameter key="note" value="Reuse of this database is unlimited with retention of copyright notice for Jock A. Blackard and Colorado State University."/>
 </Operator>
-<Link source="covtype.csv" target="Variable"/>
-<Link source="Variable" target="Random Sampling"/>
-<Link source="Random Sampling" target="Sample Selector"/>
-<Link source="Random Sampling" target="Sample Selector-1"/>
-<Link source="Sample Selector" target="Logistic Regression"/>
-<Link source="Logistic Regression" target="Goodness of Fit"/>
+<Operator X="114" Y="73" name="covtype.csv" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFileOperator" uuid="1377626909479">
+<Parameter key="connName" value="Cloudera CDH4"/>
+<Parameter key="hadoopFileName" value="/users/Yan/covtype.csv"/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="elevation"/>
+<columnNames columnName="aspect"/>
+<columnNames columnName="slope"/>
+<columnNames columnName="hor_dist_to_water"/>
+<columnNames columnName="vert_dist_to_water"/>
+<columnNames columnName="hor_dist_to_roads"/>
+<columnNames columnName="shade_am"/>
+<columnNames columnName="shade_noon"/>
+<columnNames columnName="shade_pm"/>
+<columnNames columnName="hor_dist_to_fire"/>
+<columnNames columnName="wilderness_type"/>
+<columnNames columnName="soil_type1"/>
+<columnNames columnName="soil_type2"/>
+<columnNames columnName="soil_type3"/>
+<columnNames columnName="soil_type4"/>
+<columnNames columnName="soil_type5"/>
+<columnNames columnName="soil_type6"/>
+<columnNames columnName="soil_type7"/>
+<columnNames columnName="soil_type8"/>
+<columnNames columnName="soil_type9"/>
+<columnNames columnName="soil_type10"/>
+<columnNames columnName="soil_type11"/>
+<columnNames columnName="soil_type12"/>
+<columnNames columnName="soil_type13"/>
+<columnNames columnName="soil_type14"/>
+<columnNames columnName="soil_type15"/>
+<columnNames columnName="soil_type16"/>
+<columnNames columnName="soil_type17"/>
+<columnNames columnName="soil_type18"/>
+<columnNames columnName="soil_type19"/>
+<columnNames columnName="soil_type20"/>
+<columnNames columnName="soil_type21"/>
+<columnNames columnName="soil_type22"/>
+<columnNames columnName="soil_type23"/>
+<columnNames columnName="soil_type24"/>
+<columnNames columnName="soil_type25"/>
+<columnNames columnName="soil_type26"/>
+<columnNames columnName="soil_type27"/>
+<columnNames columnName="soil_type28"/>
+<columnNames columnName="soil_type29"/>
+<columnNames columnName="soil_type30"/>
+<columnNames columnName="soil_type31"/>
+<columnNames columnName="soil_type32"/>
+<columnNames columnName="soil_type33"/>
+<columnNames columnName="soil_type34"/>
+<columnNames columnName="soil_type35"/>
+<columnNames columnName="soil_type36"/>
+<columnNames columnName="soil_type37"/>
+<columnNames columnName="soil_type38"/>
+<columnNames columnName="soil_type39"/>
+<columnNames columnName="soil_type40"/>
+<columnNames columnName="soil_type41"/>
+<columnNames columnName="soil_type42"/>
+<columnNames columnName="soil_type43"/>
+<columnNames columnName="cover_type"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+</HadoopFileStructureModel>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="jobPort" value="8021"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hdfsHostname" value="devfive.local"/>
+<Parameter key="useHA" value="false"/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="jobHostname" value="devfive.local"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera CDH4"/>
+<Parameter key="hdfsHostname" value="devfive.local"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4"/>
+<Parameter key="jobHostname" value="devfive.local"/>
+<Parameter key="jobPort" value="8021"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="useHA" value="false"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/users/Yan/covtype.csv"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="elevation"/>
+<columnNames columnName="aspect"/>
+<columnNames columnName="slope"/>
+<columnNames columnName="hor_dist_to_water"/>
+<columnNames columnName="vert_dist_to_water"/>
+<columnNames columnName="hor_dist_to_roads"/>
+<columnNames columnName="shade_am"/>
+<columnNames columnName="shade_noon"/>
+<columnNames columnName="shade_pm"/>
+<columnNames columnName="hor_dist_to_fire"/>
+<columnNames columnName="wilderness_type"/>
+<columnNames columnName="soil_type1"/>
+<columnNames columnName="soil_type2"/>
+<columnNames columnName="soil_type3"/>
+<columnNames columnName="soil_type4"/>
+<columnNames columnName="soil_type5"/>
+<columnNames columnName="soil_type6"/>
+<columnNames columnName="soil_type7"/>
+<columnNames columnName="soil_type8"/>
+<columnNames columnName="soil_type9"/>
+<columnNames columnName="soil_type10"/>
+<columnNames columnName="soil_type11"/>
+<columnNames columnName="soil_type12"/>
+<columnNames columnName="soil_type13"/>
+<columnNames columnName="soil_type14"/>
+<columnNames columnName="soil_type15"/>
+<columnNames columnName="soil_type16"/>
+<columnNames columnName="soil_type17"/>
+<columnNames columnName="soil_type18"/>
+<columnNames columnName="soil_type19"/>
+<columnNames columnName="soil_type20"/>
+<columnNames columnName="soil_type21"/>
+<columnNames columnName="soil_type22"/>
+<columnNames columnName="soil_type23"/>
+<columnNames columnName="soil_type24"/>
+<columnNames columnName="soil_type25"/>
+<columnNames columnName="soil_type26"/>
+<columnNames columnName="soil_type27"/>
+<columnNames columnName="soil_type28"/>
+<columnNames columnName="soil_type29"/>
+<columnNames columnName="soil_type30"/>
+<columnNames columnName="soil_type31"/>
+<columnNames columnName="soil_type32"/>
+<columnNames columnName="soil_type33"/>
+<columnNames columnName="soil_type34"/>
+<columnNames columnName="soil_type35"/>
+<columnNames columnName="soil_type36"/>
+<columnNames columnName="soil_type37"/>
+<columnNames columnName="soil_type38"/>
+<columnNames columnName="soil_type39"/>
+<columnNames columnName="soil_type40"/>
+<columnNames columnName="soil_type41"/>
+<columnNames columnName="soil_type42"/>
+<columnNames columnName="soil_type43"/>
+<columnNames columnName="cover_type"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="35" Y="250" name="Summary Statistics" type="com.alpine.miner.gef.runoperator.hadoop.HadoopValueAnalysisOperator" uuid="1377627941118">
+<Parameter key="columnNames" value="elevation,aspect,slope,hor_dist_to_water,vert_dist_to_water,hor_dist_to_roads,hor_dist_to_fire,wilderness_type,cover_type"/>
+<Parameter key="storeResults" value="false"/>
+<Parameter key="resultsLocation" value="/tmp1"/>
+<Parameter key="resultsName" value="@default_prefix_summary_0"/>
+<Parameter key="override" value="Yes"/>
+<Parameter key="doDistinct" value="Yes"/>
+<Parameter key="topN" value="10"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera CDH4"/>
+<Parameter key="hdfsHostname" value="devfive.local"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4"/>
+<Parameter key="jobHostname" value="devfive.local"/>
+<Parameter key="jobPort" value="8021"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="useHA" value="false"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/users/Yan/covtype.csv"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="elevation"/>
+<columnNames columnName="aspect"/>
+<columnNames columnName="slope"/>
+<columnNames columnName="hor_dist_to_water"/>
+<columnNames columnName="vert_dist_to_water"/>
+<columnNames columnName="hor_dist_to_roads"/>
+<columnNames columnName="shade_am"/>
+<columnNames columnName="shade_noon"/>
+<columnNames columnName="shade_pm"/>
+<columnNames columnName="hor_dist_to_fire"/>
+<columnNames columnName="wilderness_type"/>
+<columnNames columnName="soil_type1"/>
+<columnNames columnName="soil_type2"/>
+<columnNames columnName="soil_type3"/>
+<columnNames columnName="soil_type4"/>
+<columnNames columnName="soil_type5"/>
+<columnNames columnName="soil_type6"/>
+<columnNames columnName="soil_type7"/>
+<columnNames columnName="soil_type8"/>
+<columnNames columnName="soil_type9"/>
+<columnNames columnName="soil_type10"/>
+<columnNames columnName="soil_type11"/>
+<columnNames columnName="soil_type12"/>
+<columnNames columnName="soil_type13"/>
+<columnNames columnName="soil_type14"/>
+<columnNames columnName="soil_type15"/>
+<columnNames columnName="soil_type16"/>
+<columnNames columnName="soil_type17"/>
+<columnNames columnName="soil_type18"/>
+<columnNames columnName="soil_type19"/>
+<columnNames columnName="soil_type20"/>
+<columnNames columnName="soil_type21"/>
+<columnNames columnName="soil_type22"/>
+<columnNames columnName="soil_type23"/>
+<columnNames columnName="soil_type24"/>
+<columnNames columnName="soil_type25"/>
+<columnNames columnName="soil_type26"/>
+<columnNames columnName="soil_type27"/>
+<columnNames columnName="soil_type28"/>
+<columnNames columnName="soil_type29"/>
+<columnNames columnName="soil_type30"/>
+<columnNames columnName="soil_type31"/>
+<columnNames columnName="soil_type32"/>
+<columnNames columnName="soil_type33"/>
+<columnNames columnName="soil_type34"/>
+<columnNames columnName="soil_type35"/>
+<columnNames columnName="soil_type36"/>
+<columnNames columnName="soil_type37"/>
+<columnNames columnName="soil_type38"/>
+<columnNames columnName="soil_type39"/>
+<columnNames columnName="soil_type40"/>
+<columnNames columnName="soil_type41"/>
+<columnNames columnName="soil_type42"/>
+<columnNames columnName="soil_type43"/>
+<columnNames columnName="cover_type"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="112" Y="249" name="Frequency" type="com.alpine.miner.gef.runoperator.hadoop.HadoopFrequencyAnalysisOperator" uuid="1377628647738">
+<Parameter key="columnNames" value="wilderness_type,cover_type"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera CDH4"/>
+<Parameter key="hdfsHostname" value="devfive.local"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4"/>
+<Parameter key="jobHostname" value="devfive.local"/>
+<Parameter key="jobPort" value="8021"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="useHA" value="false"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/users/Yan/covtype.csv"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="true" other="" quoteChar="&quot;">
+<columnNames columnName="elevation"/>
+<columnNames columnName="aspect"/>
+<columnNames columnName="slope"/>
+<columnNames columnName="hor_dist_to_water"/>
+<columnNames columnName="vert_dist_to_water"/>
+<columnNames columnName="hor_dist_to_roads"/>
+<columnNames columnName="shade_am"/>
+<columnNames columnName="shade_noon"/>
+<columnNames columnName="shade_pm"/>
+<columnNames columnName="hor_dist_to_fire"/>
+<columnNames columnName="wilderness_type"/>
+<columnNames columnName="soil_type1"/>
+<columnNames columnName="soil_type2"/>
+<columnNames columnName="soil_type3"/>
+<columnNames columnName="soil_type4"/>
+<columnNames columnName="soil_type5"/>
+<columnNames columnName="soil_type6"/>
+<columnNames columnName="soil_type7"/>
+<columnNames columnName="soil_type8"/>
+<columnNames columnName="soil_type9"/>
+<columnNames columnName="soil_type10"/>
+<columnNames columnName="soil_type11"/>
+<columnNames columnName="soil_type12"/>
+<columnNames columnName="soil_type13"/>
+<columnNames columnName="soil_type14"/>
+<columnNames columnName="soil_type15"/>
+<columnNames columnName="soil_type16"/>
+<columnNames columnName="soil_type17"/>
+<columnNames columnName="soil_type18"/>
+<columnNames columnName="soil_type19"/>
+<columnNames columnName="soil_type20"/>
+<columnNames columnName="soil_type21"/>
+<columnNames columnName="soil_type22"/>
+<columnNames columnName="soil_type23"/>
+<columnNames columnName="soil_type24"/>
+<columnNames columnName="soil_type25"/>
+<columnNames columnName="soil_type26"/>
+<columnNames columnName="soil_type27"/>
+<columnNames columnName="soil_type28"/>
+<columnNames columnName="soil_type29"/>
+<columnNames columnName="soil_type30"/>
+<columnNames columnName="soil_type31"/>
+<columnNames columnName="soil_type32"/>
+<columnNames columnName="soil_type33"/>
+<columnNames columnName="soil_type34"/>
+<columnNames columnName="soil_type35"/>
+<columnNames columnName="soil_type36"/>
+<columnNames columnName="soil_type37"/>
+<columnNames columnName="soil_type38"/>
+<columnNames columnName="soil_type39"/>
+<columnNames columnName="soil_type40"/>
+<columnNames columnName="soil_type41"/>
+<columnNames columnName="soil_type42"/>
+<columnNames columnName="soil_type43"/>
+<columnNames columnName="cover_type"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="452" Y="449" name="Confusion Matrix" type="com.alpine.miner.gef.runoperator.hadoop.HadoopConfusionOperator" uuid="1377630065184">
+<Parameter key="dependentColumn" value="ponderosa_pine"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera CDH4"/>
+<Parameter key="hdfsHostname" value="devfive.local"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4"/>
+<Parameter key="jobHostname" value="devfive.local"/>
+<Parameter key="jobPort" value="8021"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="useHA" value="false"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_rsamp_0/Sample_2"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="ponderosa_pine"/>
+<columnNames columnName="elevation"/>
+<columnNames columnName="aspect"/>
+<columnNames columnName="slope"/>
+<columnNames columnName="hor_dist_to_water"/>
+<columnNames columnName="vert_dist_to_water"/>
+<columnNames columnName="hor_dist_to_roads"/>
+<columnNames columnName="shade_am"/>
+<columnNames columnName="shade_noon"/>
+<columnNames columnName="shade_pm"/>
+<columnNames columnName="hor_dist_to_fire"/>
+<columnNames columnName="wilderness_type"/>
+<columnNames columnName="soil_type1"/>
+<columnNames columnName="soil_type2"/>
+<columnNames columnName="soil_type3"/>
+<columnNames columnName="soil_type4"/>
+<columnNames columnName="soil_type5"/>
+<columnNames columnName="soil_type6"/>
+<columnNames columnName="soil_type7"/>
+<columnNames columnName="soil_type8"/>
+<columnNames columnName="soil_type9"/>
+<columnNames columnName="soil_type10"/>
+<columnNames columnName="soil_type11"/>
+<columnNames columnName="soil_type12"/>
+<columnNames columnName="soil_type13"/>
+<columnNames columnName="soil_type14"/>
+<columnNames columnName="soil_type15"/>
+<columnNames columnName="soil_type16"/>
+<columnNames columnName="soil_type17"/>
+<columnNames columnName="soil_type18"/>
+<columnNames columnName="soil_type19"/>
+<columnNames columnName="soil_type20"/>
+<columnNames columnName="soil_type21"/>
+<columnNames columnName="soil_type22"/>
+<columnNames columnName="soil_type23"/>
+<columnNames columnName="soil_type24"/>
+<columnNames columnName="soil_type25"/>
+<columnNames columnName="soil_type26"/>
+<columnNames columnName="soil_type27"/>
+<columnNames columnName="soil_type28"/>
+<columnNames columnName="soil_type29"/>
+<columnNames columnName="soil_type30"/>
+<columnNames columnName="soil_type31"/>
+<columnNames columnName="soil_type32"/>
+<columnNames columnName="soil_type33"/>
+<columnNames columnName="soil_type34"/>
+<columnNames columnName="soil_type35"/>
+<columnNames columnName="soil_type36"/>
+<columnNames columnName="soil_type37"/>
+<columnNames columnName="soil_type38"/>
+<columnNames columnName="soil_type39"/>
+<columnNames columnName="soil_type40"/>
+<columnNames columnName="soil_type41"/>
+<columnNames columnName="soil_type42"/>
+<columnNames columnName="soil_type43"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Operator X="616" Y="448" name="Goodness of Fit" type="com.alpine.miner.gef.runoperator.hadoop.HadoopGoodnessOfFitOperator" uuid="1377630125879">
+<Parameter key="dependentColumn" value="ponderosa_pine"/>
+<InPutFieldList>
+<Parameter key="connName" value="Cloudera CDH4"/>
+<Parameter key="hdfsHostname" value="devfive.local"/>
+<Parameter key="hdfsPort" value="8020"/>
+<Parameter key="hadoopVersion" value="Cloudera CDH4"/>
+<Parameter key="jobHostname" value="devfive.local"/>
+<Parameter key="jobPort" value="8021"/>
+<Parameter key="userName" value="alpine"/>
+<Parameter key="useHA" value="false"/>
+<Parameter key="groupName" value="supergroup"/>
+<Parameter key="hadoopCompressionFormat" value=""/>
+<Parameter key="hadoopFileFormat" value="Text File"/>
+<Parameter key="hadoopFileName" value="/tmp/forest_cover/@default_prefix_rsamp_0/Sample_2"/>
+<Parameter key="securityMode" value="simple"/>
+<Parameter key="hdfsPrincipal" value=""/>
+<Parameter key="hdfsKeyTab" value=""/>
+<Parameter key="mapredPrincipal" value=""/>
+<Parameter key="mapredKeyTab" value=""/>
+<HadoopFileStructureModel delimiter="Comma" escapChar="\" includeHeader="false" other="" quoteChar="&quot;">
+<columnNames columnName="ponderosa_pine"/>
+<columnNames columnName="elevation"/>
+<columnNames columnName="aspect"/>
+<columnNames columnName="slope"/>
+<columnNames columnName="hor_dist_to_water"/>
+<columnNames columnName="vert_dist_to_water"/>
+<columnNames columnName="hor_dist_to_roads"/>
+<columnNames columnName="shade_am"/>
+<columnNames columnName="shade_noon"/>
+<columnNames columnName="shade_pm"/>
+<columnNames columnName="hor_dist_to_fire"/>
+<columnNames columnName="wilderness_type"/>
+<columnNames columnName="soil_type1"/>
+<columnNames columnName="soil_type2"/>
+<columnNames columnName="soil_type3"/>
+<columnNames columnName="soil_type4"/>
+<columnNames columnName="soil_type5"/>
+<columnNames columnName="soil_type6"/>
+<columnNames columnName="soil_type7"/>
+<columnNames columnName="soil_type8"/>
+<columnNames columnName="soil_type9"/>
+<columnNames columnName="soil_type10"/>
+<columnNames columnName="soil_type11"/>
+<columnNames columnName="soil_type12"/>
+<columnNames columnName="soil_type13"/>
+<columnNames columnName="soil_type14"/>
+<columnNames columnName="soil_type15"/>
+<columnNames columnName="soil_type16"/>
+<columnNames columnName="soil_type17"/>
+<columnNames columnName="soil_type18"/>
+<columnNames columnName="soil_type19"/>
+<columnNames columnName="soil_type20"/>
+<columnNames columnName="soil_type21"/>
+<columnNames columnName="soil_type22"/>
+<columnNames columnName="soil_type23"/>
+<columnNames columnName="soil_type24"/>
+<columnNames columnName="soil_type25"/>
+<columnNames columnName="soil_type26"/>
+<columnNames columnName="soil_type27"/>
+<columnNames columnName="soil_type28"/>
+<columnNames columnName="soil_type29"/>
+<columnNames columnName="soil_type30"/>
+<columnNames columnName="soil_type31"/>
+<columnNames columnName="soil_type32"/>
+<columnNames columnName="soil_type33"/>
+<columnNames columnName="soil_type34"/>
+<columnNames columnName="soil_type35"/>
+<columnNames columnName="soil_type36"/>
+<columnNames columnName="soil_type37"/>
+<columnNames columnName="soil_type38"/>
+<columnNames columnName="soil_type39"/>
+<columnNames columnName="soil_type40"/>
+<columnNames columnName="soil_type41"/>
+<columnNames columnName="soil_type42"/>
+<columnNames columnName="soil_type43"/>
+<columnTypes columnType="int"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+<columnTypes columnType="long"/>
+</HadoopFileStructureModel>
+</InPutFieldList>
+</Operator>
+<Link source="Ponderosa pine" target="Random Sampling"/>
+<Link source="Random Sampling" target="Training Set"/>
+<Link source="Random Sampling" target="Validation Set"/>
+<Link source="Training Set" target="Logistic Regression"/>
 <Link source="Logistic Regression" target="Lift"/>
 <Link source="Logistic Regression" target="ROC"/>
-<Link source="Sample Selector-1" target="Goodness of Fit"/>
-<Link source="Sample Selector-1" target="Lift"/>
-<Link source="Sample Selector-1" target="ROC"/>
-<Link source="covtype.csv" target="K-Means"/>
-<Link source="covtype.csv" target="Box Plot (approx)"/>
-<Link source="covtype.csv" target="Box Plot"/>
-<Link source="Sample Selector" target="Decision Tree"/>
+<Link source="Validation Set" target="Lift"/>
+<Link source="Validation Set" target="ROC"/>
+<Link source="Training Set" target="Decision Tree"/>
 <Link source="Decision Tree" target="ROC"/>
 <Link source="Decision Tree" target="Lift"/>
+<Link source="covtype.csv" target="Ponderosa pine"/>
+<Link source="covtype.csv" target="Box Plot"/>
+<Link source="covtype.csv" target="K-Means"/>
+<Link source="covtype.csv" target="Summary Statistics"/>
+<Link source="covtype.csv" target="Frequency"/>
+<Link source="Decision Tree" target="Confusion Matrix"/>
+<Link source="Logistic Regression" target="Confusion Matrix"/>
+<Link source="Validation Set" target="Confusion Matrix"/>
 <Link source="Decision Tree" target="Goodness of Fit"/>
+<Link source="Logistic Regression" target="Goodness of Fit"/>
+<Link source="Validation Set" target="Goodness of Fit"/>
 <VariableModel>
 <Variable>
 <Name>@default_schema</Name>
@@ -2321,7 +2638,15 @@ BAAAAAp4cHQADURlY2lzaW9uIFRyZWU=</Model>
 </Variable>
 <Variable>
 <Name>@default_prefix</Name>
-<Value>alp</Value>
+<Value>yan2</Value>
+</Variable>
+<Variable>
+<Name>@default_tempdir</Name>
+<Value>/tmp1</Value>
+</Variable>
+<Variable>
+<Name>@default_delimiter</Name>
+<Value>,</Value>
 </Variable>
 </VariableModel>
 </Process>
