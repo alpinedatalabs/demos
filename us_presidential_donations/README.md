@@ -1,4 +1,4 @@
-# Presidential Donations Demo Description & Instructions
+# Presidential Donations Comparison
 
 
 ## Context of the Demo
