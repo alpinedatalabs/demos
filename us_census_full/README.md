@@ -1,11 +1,11 @@
-# US Census Demo Description & Instructions
+# US Census Population Clustering
 
 
 ## Context of the Demo
 
 __Industry:__ Financial Services, Government, Healthcare, Insurance, Retail, Telecommunications, and any other industry that utilizes demographic data
 
-__Use case:__ clustering the US population and determining the factors that predict marital status and income bracket
+__Use case:__ Clustering the US population and determining the factors that predict marital status and income bracket
 
 __Explanation:__ The data is brought into the workflow for exploratory analysis, clustering, and supervised learning. Variables are created and removed from the data. We preform k-means to cluster the US population, linear regression to predict income, and decision tree to predict marital status. For the predictive models, we conduct various measures of accuracy and precision (including training and testing) to support the predictions.
 
